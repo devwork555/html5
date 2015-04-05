@@ -3,15 +3,130 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="description" content="HTML5のサンプルページです。">
-	<meta name="alternate" media="print" href="http://www.google.co.jp">
 	<base href="/">
 	<link rel="stylesheet" href="html5.css">
-	<style type="text/css" media="screen"></style>
+	<style type="text/css" media="screen">
+		.tl{
+			font-weight:bold;
+		}
+		.nt{
+			color:#FF0000;
+		}
+	</style>
 	<script type="text/javascript" ></script>
-	<noscript>noscript</noscript>
 	<title>HTML5テスト</title>
 </head>
 <body>
-<h1>ABC</h1>
+
+<p class="tl">■header</p>
+<header>
+	<h1>全体のタイトル</h1>
+	<hr>
+	<p class="tl">■nav</p>
+	<nav>
+		<h2>navtitle</h2>
+		<ul>
+			<li>コンテンツ1</li>
+			<li>コンテンツ2</li>
+			<li>コンテンツ3</li>
+		</ul>
+	</nav>
+</header>
+
+<hr>
+<p class="tl">■main</p>
+<main>
+	<h2>maintitle</h2>
+	<p class="tl">■section</p>
+	<section>
+	<h2>セクションのタイトル</h2>
+	<p class="tl">■footer</p>
+	<footer>
+		<p>footer</p>
+		<p class="tl">■address</p>
+		<address>セクション要素の連絡先や住所</address>
+	</footer>
+	</section>
+</main>
+
+<hr>
+<p class="tl">■article</p>
+<article>
+	<header><h2>articleのタイトル</h2></header>
+	<footer>ariticleのフッター</footer>
+</article>
+
+<hr>
+<p class="tl">■ol,li</p>
+<ol start="10" reversed>
+	<li>あ</li>
+	<li>い</li>
+	<li>う</li>
+	<li>え</li>
+	<li>お</li>
+</ol>
+
+<hr>
+<p class="tl">■ul,li</p>
+<ul>
+	<li>あ</li>
+	<li>い</li>
+	<li>う</li>
+	<li>え</li>
+	<li>お</li>
+</ul>
+
+<hr>
+<p class="tl">■dl,dt,dd</p>
+<dl>
+	<dt>データタイトル1</dt>
+	<dd>データ1</dd>
+	<dd>データ2</dd>
+	<dd>データ3</dd>
+	<dd>データ4</dd>
+	<dd>データ5</dd>
+	<dt>データタイトル2</dt>
+	<dd>データ1</dd>
+	<dd>データ2</dd>
+	<dd>データ3</dd>
+	<dd>データ4</dd>
+	<dd>データ5</dd>
+</dl>
+
+<hr>
+<p class="tl">■dv</p>
+<div style="color:#FF0000;">
+	<p>div</p>
+</div>
+
+<hr>
+<p class="tl">■pre</p>
+<pre>
+整形済みテキスト。
+改行もそのまま表示される。
+<span class="nt tl">フォントが替わるみたい。</span>
+</pre>
+
+<hr>
+<p class="tl">■blockquote</p>
+<blockquote cite="http://www.google.co.jp">
+他から引用した文章。
+<span class="nt tl">インデントされるみたい。</span>
+</blockquote>
+
+<hr>
+<p class="tl">■aside</p>
+<aside>
+<h2>サブコンテンツ</h2>
+</aside>
+
+<hr>
+<p class="tl">■figure,figcaption</p>
+<figure>
+	<figcaption>上キャプション</figcaption>
+	<img src="http://validator.w3.org/images/w3c.png">
+	<figcaption>下キャプション</figcaption>
+</figure>
+
 </body>
 </html>
