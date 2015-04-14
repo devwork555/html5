@@ -104,14 +104,14 @@
 <pre>
 整形済みテキスト。
 改行もそのまま表示される。
-<span class="nt tl">フォントが替わるみたい。</span>
+<span class="nt tl">フォントが替わる。</span>
 </pre>
 
 <hr>
 <p class="tl">■blockquote</p>
 <blockquote cite="http://www.google.co.jp">
 他から引用した文章。
-<span class="nt tl">インデントされるみたい。</span>
+<span class="nt tl">インデントされる。</span>
 </blockquote>
 
 <hr>
@@ -127,6 +127,57 @@
 	<img src="http://validator.w3.org/images/w3c.png">
 	<figcaption>下キャプション</figcaption>
 </figure>
+
+<hr>
+<p class="tl">■a</p>
+<a href="http://www.google.co.jp" target="_blank" rel="noreferrer" type="text/html" hreflang="ja">
+	<span>href属性が存在しない場合、target属性、download属性、rel属性、hreflang属性、type属性は記述できない。</span>
+	<span>target="_blank"が非推奨ではなくなった</span>
+</a>
+
+<hr>
+<p class="tl">■strong</p>
+<p><strong>重要文言<strong>【重要文言入れ子】</strong></strong>普通の文言</p>
+<p><span class="nt tl">太字になる。</span>入れ子にすることも可能。入れ子の階層が深いほど、その内容の重要性が増す。</p>
+
+<hr>
+<p class="tl">■small</p>
+<p>本文本文<small>注意事項：注意！</small></p>
+<p>
+	<span class="nt tl">フォントサイズが小さくなる。</span><BR>
+	注意事項、免責事項等に使用する。<span class="nt tl">重要度や強調の意味は無い。<BR>
+</p>
+
+<hr>
+<p class="tl">■time</p>
+<time>2015/03/03</time><br>
+<time datetime="2015/01/01">元旦(datetime属性あり)</time>
+<p>
+	正確な日付や日時を記載する場合に使用する。
+	datetime属性を指定した場合、time要素の中に日付、日時以外の内容を記載できるが、
+	<span class="nt tl">記載内容とdatetime属性で指定した日付、日時が一致する必要がある</span>
+</p>
+
+<hr>
+<p class="tl">■em</p>
+<p>普通の文言<em>強調文言</em></p>
+<p><span class="nt tl">イタリック体になる。</span>入れ子にすることも可能。入れ子の階層が深いほど、その内容の強調が増す。</p>
+
+<hr>
+<p class="tl">■cite</p>
+<cite>引用した作品のタイトル</cite>
+<p><span class="nt tl">イタリック体になる。</span>作者名などには使用できない。</p>
+
+<hr>
+<p class="tl">■q</p>
+<q>引用した文書、テキスト</q>
+<p><span class="nt tl">引用符で囲まれる。</span>q要素を使用せず、文中で引用符で囲むことも可能。</p>
+<p><span class="nt tl">html要素でlang="ja"を指定していると「」で囲まれる模様。</span>cssで言語と引用符を指定可能。</p>
+
+<hr>
+<p class="tl">■dfn</p>
+<p><dfn>HTML5</dfn>HTML5とは・・・</p>
+
 
 </body>
 </html>
