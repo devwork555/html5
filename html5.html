@@ -294,6 +294,113 @@ blockquote要素の内容
 <p><var class="el">Variable</var></p>
 <p>変数を記載する。数式やプログラムで変数や定数を表す識別子、物理量、関数のパラメータなどに使用する。</p>
 
+<hr>
+<p class="tl">■samp</p>
+<p><samp class="el">出力結果サンプル</samp></p>
+<p>プログラムを実行した際の何らかの出力結果の例や、コンピュータが返す何らかのメッセージの例。</p>
+
+<hr>
+<p class="tl">■kbd</p>
+<p><kdb class="el">ユーザーが入力する内容</kbd></p>
+<p>ユーザー入力を表す。通常はキーボード入力だが、音声コマンドのような他の入力を表すことも可能。</p>
+
+<hr>
+<p class="tl">■sub</p>
+<p>log<sub class="el">10</sub>X</p>
+<p>
+	下付き文字を表す。
+	特定の意味を持つ表記方法のために使用する要素で、
+	単に文字が下付きになるという表示の見栄えのために使用してはならない。
+</p>
+
+<hr>
+<p class="tl">■sup</p>
+<p>100m<sup class="el">2</sup></p>
+<p>
+	下付き文字を表す。
+	特定の意味を持つ表記方法のために使用する要素で、
+	単に文字が上付きになるという表示の見栄えのために使用してはならない。
+</p>
+
+<hr>
+<p class="tl">■i</p>
+<p><i class="el">声や心の中で思ったこと</i></p>
+<p>
+	<span class="nt">イタリック体になる。</span>
+	声や心の中で思ったことなど、他と区別したいテキストを表す際に使用する。
+	i要素で異なる言語のテキスト部分をマークアップする場合、lang属性で言語を指定する必要がある。
+</p>
+
+<hr>
+<p class="tl">■b</p>
+<p><b class="el">他と区別したいテキスト</b></p>
+<p>
+	<span class="nt">太字になる。</span>
+	他と区別したいテキストを表す際に使用する。他の要素でマークアップできない場合に使用する。
+</p>
+
+<hr>
+<p class="tl">■u</p>
+<p><u class="el">スペルミスなど</u></p>
+<p>
+	<span class="nt">下線が付く。</span>
+	ニュアンスなどがはっきりと伝わりにくかったり、
+	あえて本来の意味とは違う意味で使っているテキストや、スペルミスなどを表す際に使用する。
+</p>
+
+<hr>
+<p class="tl">■mark</p>
+<p><mark class="el" style="background-color:lightgreen;">ハイライト</mark></p>
+<p>ハイライトさせることにより注意が向くようにするために使用する。重要性は表さない。</p>
+
+<hr>
+<p class="tl">■ruby,rt,rp,rtc</p>
+<p>
+	<ruby class="el">
+		漢字<rp>(</rp><rt>かんじ</rt><rp>)</rp>
+	</ruby>
+	<ruby class="el">
+		あいうえおかきくけこ<rtc><rt>1つ目のルビ</rt><rt>2つ目のルビ</rt></rtc>
+	</ruby>
+</p>
+<p>[ruby]ルビ(ふりがな)を振る場合に使用する。</p>
+<p>[rt]ルビ(ふりがな)を振る。</p>
+<p>[rp]ルビ(ふりがな)をサポートしていないブラウザの場合用の文言を記述する</p>
+<p>[rtc]rtをグループ化する。1つのルビ対象テキストに対して、複数のルビを適用したい場合などに使用する。</p>
+
+<hr>
+<p class="tl">■bdi</p>
+<p><bdi class="el">right</bdi>あいうえお</p>
+<p>テキストの一部分を異なる文字の表記方向に指定する場合に使用する。</p>
+
+<hr>
+<p class="tl">■wbr</p>
+<p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa⇒<wbr class="el">return</wbr></p>
+<p>コンテンツの表示領域が小さくなったときに折り返す位置を明示的に指定する場合に使用する。</p>
+
+<hr>
+<p class="tl">■ins</p>
+<p><ins class="el">追加されたテキストや画像</ins></p>
+<p>
+	<span class="nt">下線が付く。</span>
+	追加された部分であることを示す際に使用する。
+</p>
+
+<hr>
+<p class="tl">■del</p>
+<p><del class="el">削除箇所　削除箇所</del></p>
+<p>
+	<span class="nt">取消線が付く。</span>
+	削除された部分であることを示す際に使用する。
+</p>
+
+<hr>
+<p class="tl">■s</p>
+<p><s class="el">正確ではないテキスト</s></p>
+<p>
+	<span class="nt">取消線が付く。</span>
+	テキストが正確でないことを示す場合に使用する。
+</p>
 
 </body>
 </html>
