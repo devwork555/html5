@@ -16,6 +16,10 @@
 		.el{
 			color:#0b2bd7;
 		}
+		table.content{
+			border-style:solid 1px;
+			border-collapse:collapse;
+		}
 	</style>
 	<script type="text/javascript" ></script>
 	<title>HTML5テスト</title>
@@ -401,6 +405,73 @@ blockquote要素の内容
 	<span class="nt">取消線が付く。</span>
 	テキストが正確でないことを示す場合に使用する。
 </p>
+
+<hr style="border-style:dashed;page-break-after:always;">
+<h1>(4)画像・動画関連の要素</h1>
+
+<p class="tl">■img</p>
+<img src="http://validator.w3.org/images/w3c.png" alt="W3Cロゴ">
+<p>画像を埋め込む際に使用する。src属性は必須。alt属性は必須でなくなった。</p>
+
+<hr>
+<p class="tl">■iframe</p>
+<p><iframe src="http://www.html5.jp/" width="100%" height="50%" sandbox="allow-same-origin allow-forms allow-scripts"></iframe></p>
+<p>インラインフレームでコンテンツを表示する場合に使用する。</p>
+<p>
+	seamless属性はインラインフレームのコンテンツを親コンテンツの一部のように表示する際に使用するが、
+	現状メジャーなブラウザでもサポートされていない模様。
+</p>
+<p>
+	sandbox属性は、悪意あるコンテンツから被害を受けるのを避けるために、
+	フレーム内コンテンツの表示に制限を加える際に使用する。指定できる値は下記(複数指定可)。
+	<table border="1" class="content">
+	<tbody>
+	<tr>
+		<th>値</th>
+		<th>概要</th>
+	</tr>
+	<tr>
+		<td>allow-same-origin</td>
+		<td>フレーム内のコンテンツの出処が、親ページと同じものとされる</td>
+	</tr>
+	<tr>
+		<td>allow-forms</td>
+		<td>フレーム内のコンテンツのフォームを有効にする</td>
+	</tr>
+	<tr>
+		<td>allow-scripts</td>
+		<td>フレーム内のコンテンツのスクリプトを有効にする。ただし、ポップアップは無効</td>
+	</tr>
+	</tbody>
+	</table>
+</p>
+
+<hr>
+<p class="tl">■embed</p>
+<p><embed src="http://www.htmq.com/html5/images/wave.swf" type="application/x-shockwave-flash"></p>
+<p>
+	外部アプリケーションやインタラクティブなコンテンツ、
+	例えば、Flashなどのプラグインを必要とするデータをHTML文書に埋め込む際に使用する。
+</p>
+
+<hr>
+<p class="tl">■object</p>
+<p><object data="http://www.htmq.com/html5/images/kaeru.gif" width="20%" height="20%">object要素がサポートされていません。</object></p>
+<p>
+	文書に外部リソースを埋め込む際に使用する。
+	embed要素がプラグインを必要とするデータを埋め込むのに対して、
+	objectには外部リソース全般を指定することができる。
+</p>
+
+<hr>
+<p class="tl">■param</p>
+<p>
+	<object>
+		<param name="movie" value="http://www.htmq.com/html5/sample/kaeru02.swf">
+		<param name="bgcolor" value="#ffffff">
+	</object>
+</p>
+<p>object要素の子要素として、object要素で指定されたオブジェクトのパラメータを指定する。</p>
 
 </body>
 </html>
