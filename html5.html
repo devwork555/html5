@@ -21,10 +21,22 @@
 			border-collapse:collapse;
 		}
 	</style>
-	<script type="text/javascript" ></script>
+	<script type="text/javascript">
+	function renderCanvas(){
+		var canvas = document.getElementById('canvas');
+		if(canvas.getContext){
+			var context = canvas.getContext('2d');
+			context.fillRect(20,40,50,100); 
+
+			context.fillStyle = '#ff3333'; 
+			context.arc(150,75,60,Math.PI*1,Math.PI*2,true);
+			context.fill();
+		}
+	}
+	</script>
 	<title>HTML5テスト</title>
 </head>
-<body>
+<body onload="renderCanvas()">
 
 <h1>(1)セクション関連の要素</h1>
 <p class="tl">■header</p>
@@ -193,7 +205,7 @@ blockquote要素の内容
 <p class="tl">■figure,figcaption</p>
 <figure class="el">
 	<figcaption>top figcaption</figcaption>
-	<img src="http://validator.w3.org/images/w3c.png">
+	<img src="https://c.ap2.content.force.com/servlet/servlet.ImageServer?id=01528000000Jpjy&oid=00D28000000Jkxx&lastMod=1430384605000">
 </figure>
 <p>
 	説明文の付いた図や表などを表す。figure要素はドキュメントの流れに影響を及ぼさない。
@@ -410,7 +422,7 @@ blockquote要素の内容
 <h1>(4)画像・動画関連の要素</h1>
 
 <p class="tl">■img</p>
-<img src="http://validator.w3.org/images/w3c.png" alt="W3Cロゴ">
+<img src="https://c.ap2.content.force.com/servlet/servlet.ImageServer?id=01528000000Jpjy&oid=00D28000000Jkxx&lastMod=1430384605000" alt="W3Cロゴ">
 <p>画像を埋め込む際に使用する。src属性は必須。alt属性は必須でなくなった。</p>
 
 <hr>
@@ -448,7 +460,7 @@ blockquote要素の内容
 
 <hr>
 <p class="tl">■embed</p>
-<p><embed src="http://www.htmq.com/html5/images/wave.swf" type="application/x-shockwave-flash"></p>
+<p><embed src="https://c.ap2.content.force.com/servlet/servlet.FileDownload?file=01528000000Jpk3" type="application/x-shockwave-flash"></p>
 <p>
 	外部アプリケーションやインタラクティブなコンテンツ、
 	例えば、Flashなどのプラグインを必要とするデータをHTML文書に埋め込む際に使用する。
@@ -456,7 +468,7 @@ blockquote要素の内容
 
 <hr>
 <p class="tl">■object</p>
-<p><object data="http://www.htmq.com/html5/images/kaeru.gif" width="20%" height="20%">object要素がサポートされていません。</object></p>
+<p><object data="https://c.ap2.content.force.com/servlet/servlet.ImageServer?id=01528000000JpjZ&oid=00D28000000Jkxx&lastMod=1430384256000" width="20%" height="20%">object要素がサポートされていません。</object></p>
 <p>
 	文書に外部リソースを埋め込む際に使用する。
 	embed要素がプラグインを必要とするデータを埋め込むのに対して、
@@ -467,11 +479,91 @@ blockquote要素の内容
 <p class="tl">■param</p>
 <p>
 	<object>
-		<param name="movie" value="http://www.htmq.com/html5/sample/kaeru02.swf">
-		<param name="bgcolor" value="#ffffff">
+		<param name="movie" value="https://c.ap2.content.force.com/servlet/servlet.FileDownload?file=01528000000Jpjj">
+		<param name="bgcolor" value="#ff3333">
 	</object>
 </p>
 <p>object要素の子要素として、object要素で指定されたオブジェクトのパラメータを指定する。</p>
+
+<hr>
+<p class="tl">■video,source</p>
+<p>
+	<video poster="firstframe.jpg" preload="none" controls>
+		<source src="https://c.ap2.content.force.com/servlet/servlet.FileDownload?file=01528000000Jpjt">
+		<source src="https://c.ap2.content.force.com/servlet/servlet.FileDownload?file=01528000000Jpjo">
+		<track kind="subtitles" src="http://www.html5rocks.com/ja/tutorials/track/basics/treeOfLife/tracks/developerStories-subtitles-en.vtt">
+	</video>
+</p>
+<p>
+	video要素は動画を読み込み、再生する際に使用する。
+	現状、ブラウザによってサポートされている動画形式が異なる。
+</p>
+<p>
+	source要素は動画や音声などのメディアファイルのURLや種類を指定する際に、
+	video要素、audio要素などの中で子要素として使用する。
+</p>
+
+<hr>
+<p class="tl">■canvas</p>
+<p>
+	<canvas id="canvas">Canvas表示不可の場合に表示される文言</canvas>
+</p>
+<p>グラフィックを描画する際に使用する。</p>
+
+<hr>
+<p class="tl">■map,area</p>
+<p>
+	<img src="https://c.ap2.content.force.com/servlet/servlet.ImageServer?id=01528000000JpjP&oid=00D28000000Jkxx&lastMod=1430384093000" alt="日本地図" width="400" height="305" usemap="#shape1" id="shape1">
+	<map name="shape1">
+		<area shape="poly" coords="305,11,390,11,390,66,330,66,330,79,305,79" href="javascript:alert('北海道(図)');" alt="北海道">
+		<area shape="poly" coords="302,83,349,83,349,141,343,141,343,169,279,169,279,149,291,150,291,141,302,141" href="javascript:alert('東北(図)');" alt="東北">
+		<area shape="poly" coords="286,168,342,169,342,177,347,177,348,236,332,235,332,213,319,213,320,227,295,228,297,202,291,202,291,191,285,191" href="javascript:alert('関東(図)');" alt="関東">
+		<area shape="poly" coords="278,150,279,169,287,169,287,191,291,190,291,202,296,202,296,249,239,248,238,195,208,195,208,180,243,180,242,135,254,135,254,150" href="javascript:alert('中部(図)');" alt="中部">
+		<area shape="poly" coords="207,180,207,195,238,194,238,252,182,252,181,228,171,229,171,219,159,219,159,180" href="javascript:alert('近畿(図)');" alt="近畿">
+		<area shape="rect" coords="101,179,159,220" href="javascript:alert('中国(図)');" alt="中国">
+		<area shape="rect" coords="109,226,169,259" href="javascript:alert('四国(図)');" alt="四国">
+		<area shape="poly" coords="33,195,87,195,87,217,99,218,98,293,84,293,77,290,65,290,31,280,14,281,14,262,33,226" href="javascript:alert('九州(図)');" alt="九州">
+		<!--AREA for text-->
+		<area shape="rect" coords="132,30,209,48" href="javascript:alert('北海道(テキスト)');" alt="北海道">
+		<area shape="rect" coords="132,58,209,76" href="javascript:alert('東北(テキスト)');" alt="東北">
+		<area shape="rect" coords="132,86,209,104" href="javascript:alert('関東(テキスト)');" alt="関東">
+		<area shape="rect" coords="132,114,209,132" href="javascript:alert('中部(テキスト)');" alt="中部">
+		<area shape="rect" coords="31,30,105,48" href="javascript:alert('近畿(テキスト)');" alt="近畿">
+		<area shape="rect" coords="31,58,105,76" href="javascript:alert('中国(テキスト)');" alt="中国">
+		<area shape="rect" coords="31,86,105,104" href="javascript:alert('四国(テキスト)');" alt="四国">
+		<area shape="rect" coords="31,114,105,132" href="javascript:alert('九州(テキスト)');" alt="九州">
+	</map>
+</p>
+<p>
+	map要素は任意のimg要素のイメージマップを定義する。map要素内に複数のarea要素を配置する。
+	また、map要素の中には、その他のコンテンツも配置することが可能。
+</p>
+<p>
+	area要素は画像内にリンクを指定する場合にmap要素内に指定する。
+	id属性を指定する場合は、name属性と同値にしなければならない。
+	HTML5ではリンク領域はarea要素でのみ指定が可能となった。また、input要素との関連付けが不可となった。
+<pre>
+【ara要素のshape属性について】
+画像の座標を指定する。
+
+「circle(円)」を指定した場合、coords属性の値は3つの整数のリストとなる。
+・1つ目の整数は画像の左端から円の中心までのピクセル距離
+・2つ目の整数は画像の上端から円の中心までのピクセル距離
+・3つ目の整数は円の半径のピクセル距離
+
+「poly(多角形)」を指定した場合、coords属性の値は少なくとも<BR>
+6つ以上の偶数個の整数のリストとなる。
+整数2つごとに順番にペアとなって座標が決定されるが、<BR>
+整数のペアが3組あれば三角形、4組あれば四角形…となる。
+
+「rect(四角形)」を指定した場合、coords属性の値は4つの整数のリストとなる。
+polyで四角形を指定する場合は8つの整数のリストが必要だが、 
+rectで四角形を指定する場合は4つの整数のリストでよい。 
+
+「default」のキーワードで初期状態を指定している場合には、coords属性は指定できない。
+この場合、画像全体がハイパーリンク領域となる。
+</pre>
+</p>
 
 </body>
 </html>
