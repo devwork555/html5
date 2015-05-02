@@ -20,9 +20,6 @@
 			border-style:solid 1px;
 			border-collapse:collapse;
 		}
-		table,td,th{
-			border: 1px solid black;
-		}
 	</style>
 	<script type="text/javascript">
 	function renderCanvas(){
@@ -378,8 +375,8 @@ blockquote要素の内容
 	<ruby class="el">
 		漢字<rp>(</rp><rt>かんじ</rt><rp>)</rp>
 	</ruby>
+	<ruby>あああ<rp>(</rp><rt>test</rt><rtc><rt>ほ</rt><rt>け</rt></rtc><rp>)</rp></ruby>
 </p>
-<ruby>あああ<rtc><rt>ほ</rt><rt>け</rt></rtc></ruby>
 <p>[ruby]ルビ(ふりがな)を振る場合に使用する。</p>
 <p>[rt]ルビ(ふりがな)を振る。</p>
 <p>[rp]ルビ(ふりがな)をサポートしていないブラウザの場合用の文言を記述する</p>
@@ -437,7 +434,7 @@ blockquote要素の内容
 
 sandbox属性は、悪意あるコンテンツから被害を受けるのを避けるために、
 フレーム内コンテンツの表示に制限を加える際に使用する。指定できる値は下記(複数指定可)。
-<table class="content">
+<table border="1">
 <tbody>
 <tr>
 	<th>値</th>
@@ -572,8 +569,18 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 　この場合、画像全体がハイパーリンク領域となる。
 
 　※ペイントで座標取得可能
-
 </pre>
+
+<hr style="border-style:dashed;page-break-after:always;">
+<h1>(5)テーブル関連の要素</h1>
+
+<p class="tl">■table</p>
+<img src="http://www.htmq.com/html5/images/kaeru.gif" alt="カエル">
+<p>画像を埋め込む際に使用する。src属性は必須。alt属性は必須でなくなった。</p>
+
+
+
+
 
 </body>
 </html>
