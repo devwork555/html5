@@ -20,6 +20,9 @@
 			border-style:solid 1px;
 			border-collapse:collapse;
 		}
+		table,td,th{
+			border: 1px solid black;
+		}
 	</style>
 	<script type="text/javascript">
 	function renderCanvas(){
@@ -205,7 +208,7 @@ blockquote要素の内容
 <p class="tl">■figure,figcaption</p>
 <figure class="el">
 	<figcaption>top figcaption</figcaption>
-	<img src="https://c.ap2.content.force.com/servlet/servlet.ImageServer?id=01528000000Jpjy&oid=00D28000000Jkxx&lastMod=1430384605000">
+	<img src="https://c.ap2.content.force.com/servlet/servlet.ImageServer?id=01528000000Jpjy%26oid=00D28000000Jkxx%26lastMod=1430384605000">
 </figure>
 <p>
 	説明文の付いた図や表などを表す。figure要素はドキュメントの流れに影響を及ぼさない。
@@ -317,7 +320,7 @@ blockquote要素の内容
 
 <hr>
 <p class="tl">■kbd</p>
-<p><kdb class="el">ユーザーが入力する内容</kbd></p>
+<p><kbd class="el">ユーザーが入力する内容</kbd></p>
 <p>ユーザー入力を表す。通常はキーボード入力だが、音声コマンドのような他の入力を表すことも可能。</p>
 
 <hr>
@@ -375,10 +378,8 @@ blockquote要素の内容
 	<ruby class="el">
 		漢字<rp>(</rp><rt>かんじ</rt><rp>)</rp>
 	</ruby>
-	<ruby class="el">
-		あいうえおかきくけこ<rtc><rt>1つ目のルビ</rt><rt>2つ目のルビ</rt></rtc>
-	</ruby>
 </p>
+<ruby>あああ<rtc><rt>ほ</rt><rt>け</rt></rtc></ruby>
 <p>[ruby]ルビ(ふりがな)を振る場合に使用する。</p>
 <p>[rt]ルビ(ふりがな)を振る。</p>
 <p>[rp]ルビ(ふりがな)をサポートしていないブラウザの場合用の文言を記述する</p>
@@ -391,7 +392,7 @@ blockquote要素の内容
 
 <hr>
 <p class="tl">■wbr</p>
-<p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa⇒<wbr class="el">return</wbr></p>
+<p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa⇒<wbr class="el">return</p>
 <p>コンテンツの表示領域が小さくなったときに折り返す位置を明示的に指定する場合に使用する。</p>
 
 <hr>
@@ -422,45 +423,44 @@ blockquote要素の内容
 <h1>(4)画像・動画関連の要素</h1>
 
 <p class="tl">■img</p>
-<img src="https://c.ap2.content.force.com/servlet/servlet.ImageServer?id=01528000000Jpjy&oid=00D28000000Jkxx&lastMod=1430384605000" alt="W3Cロゴ">
+<img src="http://www.htmq.com/html5/images/kaeru.gif" alt="カエル">
 <p>画像を埋め込む際に使用する。src属性は必須。alt属性は必須でなくなった。</p>
 
 <hr>
 <p class="tl">■iframe</p>
-<p><iframe src="http://www.html5.jp/" width="100%" height="50%" sandbox="allow-same-origin allow-forms allow-scripts"></iframe></p>
+<p><iframe src="http://www.html5.jp/" width="800" height="500" sandbox="allow-same-origin allow-forms allow-scripts"></iframe></p>
 <p>インラインフレームでコンテンツを表示する場合に使用する。</p>
 <p>
 	seamless属性はインラインフレームのコンテンツを親コンテンツの一部のように表示する際に使用するが、
 	現状メジャーなブラウザでもサポートされていない模様。
 </p>
-<p>
-	sandbox属性は、悪意あるコンテンツから被害を受けるのを避けるために、
-	フレーム内コンテンツの表示に制限を加える際に使用する。指定できる値は下記(複数指定可)。
-	<table border="1" class="content">
-	<tbody>
-	<tr>
-		<th>値</th>
-		<th>概要</th>
-	</tr>
-	<tr>
-		<td>allow-same-origin</td>
-		<td>フレーム内のコンテンツの出処が、親ページと同じものとされる</td>
-	</tr>
-	<tr>
-		<td>allow-forms</td>
-		<td>フレーム内のコンテンツのフォームを有効にする</td>
-	</tr>
-	<tr>
-		<td>allow-scripts</td>
-		<td>フレーム内のコンテンツのスクリプトを有効にする。ただし、ポップアップは無効</td>
-	</tr>
-	</tbody>
-	</table>
-</p>
+
+sandbox属性は、悪意あるコンテンツから被害を受けるのを避けるために、
+フレーム内コンテンツの表示に制限を加える際に使用する。指定できる値は下記(複数指定可)。
+<table class="content">
+<tbody>
+<tr>
+	<th>値</th>
+	<th>概要</th>
+</tr>
+<tr>
+	<td>allow-same-origin</td>
+	<td>フレーム内のコンテンツの出処が、親ページと同じものとされる</td>
+</tr>
+<tr>
+	<td>allow-forms</td>
+	<td>フレーム内のコンテンツのフォームを有効にする</td>
+</tr>
+<tr>
+	<td>allow-scripts</td>
+	<td>フレーム内のコンテンツのスクリプトを有効にする。ただし、ポップアップは無効</td>
+</tr>
+</tbody>
+</table>
 
 <hr>
 <p class="tl">■embed</p>
-<p><embed src="https://c.ap2.content.force.com/servlet/servlet.FileDownload?file=01528000000Jpk3" type="application/x-shockwave-flash"></p>
+<p><embed src="http://www.htmq.com/html5/images/wave.swf" type="application/x-shockwave-flash"></p>
 <p>
 	外部アプリケーションやインタラクティブなコンテンツ、
 	例えば、Flashなどのプラグインを必要とするデータをHTML文書に埋め込む際に使用する。
@@ -468,7 +468,7 @@ blockquote要素の内容
 
 <hr>
 <p class="tl">■object</p>
-<p><object data="https://c.ap2.content.force.com/servlet/servlet.ImageServer?id=01528000000JpjZ&oid=00D28000000Jkxx&lastMod=1430384256000" width="30%" height="30%">object要素がサポートされていません。</object></p>
+<p><object data="http://www.htmq.com/html5/images/kaeru.gif" width="350" height="300">object要素がサポートされていません。</object></p>
 <p>
 	文書に外部リソースを埋め込む際に使用する。
 	embed要素がプラグインを必要とするデータを埋め込むのに対して、
@@ -478,9 +478,9 @@ blockquote要素の内容
 <hr>
 <p class="tl">■param</p>
 <p>
-	<object>
-		<param name="movie" value="https://c.ap2.content.force.com/servlet/servlet.FileDownload?file=01528000000Jpjj">
-		<param name="bgcolor" value="#ff3333">
+	<object type="application/x-shockwave-flash">
+		<param name="movie" value="http://www.htmq.com/html5/sample/kaeru02.swf">
+		<param name="bgcolor" value="#87ceeb">
 	</object>
 </p>
 <p>object要素の子要素として、object要素で指定されたオブジェクトのパラメータを指定する。</p>
@@ -489,9 +489,15 @@ blockquote要素の内容
 <p class="tl">■video,source</p>
 <p>
 	<video poster="firstframe.jpg" preload="none" controls>
-		<source src="https://c.ap2.content.force.com/servlet/servlet.FileDownload?file=01528000000Jpjt">
-		<source src="https://c.ap2.content.force.com/servlet/servlet.FileDownload?file=01528000000Jpjo">
+		<source src="http://www.htmq.com/html5/sample/sample.ogv">
+		<source src="http://www.htmq.com/html5/sample/sample.mp4">
+		<source src="http://www.htmq.com/html5/sample/sample.webm">
 		<track kind="subtitles" src="http://www.html5rocks.com/ja/tutorials/track/basics/treeOfLife/tracks/developerStories-subtitles-en.vtt">
+	</video>
+</p>
+<p>
+	<video poster="firstframe.jpg" preload="none" controls src="http://www.htmq.com/html5/sample/sample.mp4">
+		<track kind="subtitles" src="http://www.html5rocks.com/ja/tutorials/track/basics/treeOfLife/tracks/developerStories-subtitles-en.vtt" default>
 	</video>
 </p>
 <p>
@@ -513,7 +519,7 @@ blockquote要素の内容
 <hr>
 <p class="tl">■map,area</p>
 <p>
-	<img src="https://c.ap2.content.force.com/servlet/servlet.ImageServer?id=01528000000JpjP&oid=00D28000000Jkxx&lastMod=1430384093000" alt="日本地図" width="400" height="305" usemap="#shape1" id="shape1">
+	<img src="http://honttoni.web.fc2.com/blog_honttoni/samples/sample61set/image/japan1.gif" alt="日本地図" width="400" height="305" usemap="#shape1" id="shape1">
 	<map name="shape1">
 		<area shape="poly" coords="305,11,390,11,390,66,330,66,330,79,305,79" href="javascript:alert('北海道(図)');" alt="北海道">
 		<area shape="poly" coords="302,83,349,83,349,141,343,141,343,169,279,169,279,149,291,150,291,141,302,141" href="javascript:alert('東北(図)');" alt="東北">
@@ -542,6 +548,7 @@ blockquote要素の内容
 	area要素は画像内にリンクを指定する場合にmap要素内に指定する。
 	id属性を指定する場合は、name属性と同値にしなければならない。
 	HTML5ではリンク領域はarea要素でのみ指定が可能となった。また、input要素との関連付けが不可となった。
+</p>
 <pre>
 【ara要素のshape属性について】
 
@@ -567,7 +574,6 @@ blockquote要素の内容
 　※ペイントで座標取得可能
 
 </pre>
-</p>
 
 </body>
 </html>
