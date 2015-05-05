@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="description" content="HTML5のサンプルページです。">
-	<base href="/">
 	<link rel="stylesheet" href="html5.css">
 	<style type="text/css" media="screen">
 		.tl{
@@ -16,8 +15,8 @@
 		.el{
 			color:#0b2bd7;
 		}
-		table.content{
-			border-style:solid 1px;
+		table,th,td{
+			border:solid 1px;
 			border-collapse:collapse;
 		}
 	</style>
@@ -37,6 +36,7 @@
 	<title>HTML5テスト</title>
 </head>
 <body onload="renderCanvas()">
+
 
 <h1>(1)セクション関連の要素</h1>
 <p class="tl">■header</p>
@@ -115,6 +115,7 @@
 	<h2>AsideTitle</h2>
 </aside>
 <p>メインコンテンツ以外の内容を指定する要素。</p>
+
 
 <hr style="border-style:dashed;page-break-after:always;">
 <h1>(2)グルーピング関連の要素</h1>
@@ -205,11 +206,12 @@ blockquote要素の内容
 <p class="tl">■figure,figcaption</p>
 <figure class="el">
 	<figcaption>top figcaption</figcaption>
-	<img src="https://c.ap2.content.force.com/servlet/servlet.ImageServer?id=01528000000Jpjy%26oid=00D28000000Jkxx%26lastMod=1430384605000">
+	<img src="./static/kaeru.gif">
 </figure>
 <p>
 	説明文の付いた図や表などを表す。figure要素はドキュメントの流れに影響を及ぼさない。
 </p>
+
 
 <hr style="border-style:dashed;page-break-after:always;">
 <h1>(3)テキスト関連の要素</h1>
@@ -375,7 +377,6 @@ blockquote要素の内容
 	<ruby class="el">
 		漢字<rp>(</rp><rt>かんじ</rt><rp>)</rp>
 	</ruby>
-	<ruby>あああ<rp>(</rp><rt>test</rt><rtc><rt>ほ</rt><rt>け</rt></rtc><rp>)</rp></ruby>
 </p>
 <p>[ruby]ルビ(ふりがな)を振る場合に使用する。</p>
 <p>[rt]ルビ(ふりがな)を振る。</p>
@@ -416,11 +417,11 @@ blockquote要素の内容
 	テキストが正確でないことを示す場合に使用する。
 </p>
 
+
 <hr style="border-style:dashed;page-break-after:always;">
 <h1>(4)画像・動画関連の要素</h1>
-
 <p class="tl">■img</p>
-<img src="http://www.htmq.com/html5/images/kaeru.gif" alt="カエル">
+<img src="./static/kaeru.gif" alt="カエル">
 <p>画像を埋め込む際に使用する。src属性は必須。alt属性は必須でなくなった。</p>
 
 <hr>
@@ -434,7 +435,7 @@ blockquote要素の内容
 
 sandbox属性は、悪意あるコンテンツから被害を受けるのを避けるために、
 フレーム内コンテンツの表示に制限を加える際に使用する。指定できる値は下記(複数指定可)。
-<table border="1">
+<table>
 <tbody>
 <tr>
 	<th>値</th>
@@ -457,7 +458,7 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 
 <hr>
 <p class="tl">■embed</p>
-<p><embed src="http://www.htmq.com/html5/images/wave.swf" type="application/x-shockwave-flash"></p>
+<p><embed src="./static/wave.swf" type="application/x-shockwave-flash"></p>
 <p>
 	外部アプリケーションやインタラクティブなコンテンツ、
 	例えば、Flashなどのプラグインを必要とするデータをHTML文書に埋め込む際に使用する。
@@ -465,7 +466,7 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 
 <hr>
 <p class="tl">■object</p>
-<p><object data="http://www.htmq.com/html5/images/kaeru.gif" width="350" height="300">object要素がサポートされていません。</object></p>
+<p><object data="./static/kaeru.gif" width="350" height="300">object要素がサポートされていません。</object></p>
 <p>
 	文書に外部リソースを埋め込む際に使用する。
 	embed要素がプラグインを必要とするデータを埋め込むのに対して、
@@ -476,7 +477,7 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 <p class="tl">■param</p>
 <p>
 	<object type="application/x-shockwave-flash">
-		<param name="movie" value="http://www.htmq.com/html5/sample/kaeru02.swf">
+		<param name="movie" value="./static/kaeru02.swf">
 		<param name="bgcolor" value="#87ceeb">
 	</object>
 </p>
@@ -485,16 +486,16 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 <hr>
 <p class="tl">■video,source</p>
 <p>
-	<video poster="firstframe.jpg" preload="none" controls>
-		<source src="http://www.htmq.com/html5/sample/sample.ogv">
-		<source src="http://www.htmq.com/html5/sample/sample.mp4">
-		<source src="http://www.htmq.com/html5/sample/sample.webm">
-		<track kind="subtitles" src="http://www.html5rocks.com/ja/tutorials/track/basics/treeOfLife/tracks/developerStories-subtitles-en.vtt">
+	<video poster="./static/cat.jpg" preload="none" controls>
+		<source src="./static/sample.ogv">
+		<source src="./static/sample.mp4">
+		<source src="./static/sample.webm">
+		<track kind="subtitles" src="./static/developerStories-subtitles-en.vtt">
 	</video>
 </p>
 <p>
-	<video poster="firstframe.jpg" preload="none" controls src="http://www.htmq.com/html5/sample/sample.mp4">
-		<track kind="subtitles" src="http://www.html5rocks.com/ja/tutorials/track/basics/treeOfLife/tracks/developerStories-subtitles-en.vtt" default>
+	<video poster="./static/cat.jpg" preload="none" controls src="./static/sample.mp4">
+		<track kind="subtitles" src="./static/developerStories-subtitles-en.vtt" default>
 	</video>
 </p>
 <p>
@@ -516,7 +517,7 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 <hr>
 <p class="tl">■map,area</p>
 <p>
-	<img src="http://honttoni.web.fc2.com/blog_honttoni/samples/sample61set/image/japan1.gif" alt="日本地図" width="400" height="305" usemap="#shape1" id="shape1">
+	<img src="./static/japan1.gif" alt="日本地図" width="400" height="305" usemap="#shape1" id="shape1">
 	<map name="shape1">
 		<area shape="poly" coords="305,11,390,11,390,66,330,66,330,79,305,79" href="javascript:alert('北海道(図)');" alt="北海道">
 		<area shape="poly" coords="302,83,349,83,349,141,343,141,343,169,279,169,279,149,291,150,291,141,302,141" href="javascript:alert('東北(図)');" alt="東北">
@@ -571,13 +572,258 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 　※ペイントで座標取得可能
 </pre>
 
+
 <hr style="border-style:dashed;page-break-after:always;">
 <h1>(5)テーブル関連の要素</h1>
+<p class="tl">■table,thead,tbody,tfoot,th,td</p>
+<table>
+<thead>
+<tr>
+	<th>No</th>
+	<th>Name</th>
+	<th>Code</th>
+	<th>Col1</th>
+	<th>Col2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>1</td>
+	<td>Name1</td>
+	<td>Code1</td>
+	<td>Col11</td>
+	<td>Col12</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>Name2</td>
+	<td>Code2</td>
+	<td>Col21</td>
+	<td>Col22</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+	<td>footer1</td>
+	<td>footer2</td>
+	<td>footer3</td>
+	<td>footer4</td>
+	<td>footer5</td>
+</tr>
+</tfoot>
+</table>
+<p>
+	table要素は表組みを作成する際に使用する。レイアウトのために使用すべきではない。
+</p>
+<p>
+	thead要素は表のヘッダを定義する。table要素内に1つのみ記述可能。
+</p>
+<p>
+	tbody要素は表の本体を定義する。table要素内に複数記述可能。
+	なお、table要素の直下にtr要素が記述されると、tbody要素が暗黙的に定義される。
+</p>
+<p>
+	tfoot要素は表のフッタを定義する。table要素内に1つのみ記述可能。
+</p>
+<p>
+	th要素は表の見出しを表す。scope属性によって、どのデータの見出しかを指定することができる。
+</p>
+<pre>
+・row　見出しセルは同じ横行の後続のセルに適用
+・col　見出しセルは同じ縦列の後続のセルに適用
+・rowgroup　見出しセルは同じ横行の後続の全セルに適用
+・colgroup　見出しセルは同じ縦列の後続の全セルに適用
+</pre>
+<p>
+	td要素は表のデータセルを表す。header属性によって、ヘッダ(th要素)を指定できる。
+</p>
 
-<p class="tl">■table</p>
-<img src="http://www.htmq.com/html5/images/kaeru.gif" alt="カエル">
-<p>画像を埋め込む際に使用する。src属性は必須。alt属性は必須でなくなった。</p>
+<hr>
+<p class="tl">■caption</p>
+<table>
+<caption>キャプション</caption>
+<thead>
+<tr>
+	<th>No</th>
+	<th>Name</th>
+	<th>Code</th>
+	<th>Col1</th>
+	<th>Col2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>1</td>
+	<td>Name1</td>
+	<td>Code1</td>
+	<td>Col11</td>
+	<td>Col12</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>Name2</td>
+	<td>Code2</td>
+	<td>Col21</td>
+	<td>Col22</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+	<td>footer1</td>
+	<td>footer2</td>
+	<td>footer3</td>
+	<td>footer4</td>
+	<td>footer5</td>
+</tr>
+</tfoot>
+</table>
+<p>
+	表のタイトルを表す。table要素の子要素のため必ずtable要素が親要素として必要となり、
+	1つのtable要素に対して1つのみ指定可能。
+</p>
+<p>
+	table要素がfigure要素内に記述されている場合はcaption要素ではなく、
+	figcaption要素を使用する。
+</p>
 
+<hr>
+<p class="tl">■colgroup</p>
+<table>
+<caption>キャプション</caption>
+<colgroup span="2" style="background-color:#ff3333;">
+<colgroup span="3" style="background-color:#1e90ff;">
+<thead>
+<tr>
+	<th>No</th>
+	<th>Name</th>
+	<th>Code</th>
+	<th>Col1</th>
+	<th>Col2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>1</td>
+	<td>Name1</td>
+	<td>Code1</td>
+	<td>Col11</td>
+	<td>Col12</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>Name2</td>
+	<td>Code2</td>
+	<td>Col21</td>
+	<td>Col22</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+	<td>footer1</td>
+	<td>footer2</td>
+	<td>footer3</td>
+	<td>footer4</td>
+	<td>footer5</td>
+</tr>
+</tfoot>
+</table>
+<p>
+	表の列をグループ化する。グループ化した列には同じ属性やスタイルを適用することができる。
+</p>
+<p>
+	グループ化する列の個数をspan属性で指定する。
+	colgroup要素内にcol要素を配置する場合はspan属性は指定できない(col要素側で指定する)。
+</p>
+
+<hr>
+<p class="tl">■col</p>
+<table>
+<caption>キャプション</caption>
+<colgroup>
+	<col span="3" style="background-color:#ff3333;">
+	<col span="2" style="background-color:#1e90ff;">
+</colgroup>
+<thead>
+<tr>
+	<th>No</th>
+	<th>Name</th>
+	<th>Code</th>
+	<th>Col1</th>
+	<th>Col2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>1</td>
+	<td>Name1</td>
+	<td>Code1</td>
+	<td>Col11</td>
+	<td>Col12</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>Name2</td>
+	<td>Code2</td>
+	<td>Col21</td>
+	<td>Col22</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+	<td>footer1</td>
+	<td>footer2</td>
+	<td>footer3</td>
+	<td>footer4</td>
+	<td>footer5</td>
+</tr>
+</tfoot>
+</table>
+<p>
+	複数の列に同じ属性やスタイルを適用する際に使用する。
+	span属性を指定していないcolgroup要素内に配置する。
+	colgroup要素と異なり、グループ化するという意味は持たない。
+</p>
+
+
+<hr style="border-style:dashed;page-break-after:always;">
+<h1>(6)フォーム関連の要素</h1>
+<p class="tl">■form</p>
+<form id="frm1" name="frm1" method="post" accept-charset="UTF-8" target="_blank" novalidate autocomplete="on">
+<p><input type="text" id="txt1"></p>
+<p><input type="text" id="txt2"></p>
+</form>
+<p>
+	入力フォームをまとめ、入力されたデータをサーバに送信することが可能。
+	<span class="nt"><BR>
+		HTML5よりform要素外に入力フォームを配置することができるようになった
+		(入力フォーム要素のform属性に、form要素のid属性値を指定する)。
+	</span>
+</p>
+
+<hr>
+<p class="tl">■fieldset,legend,label</p>
+<form id="frm2" name="frm1" method="post" accept-charset="UTF-8" target="_blank" novalidate autocomplete="on">
+<fieldset id="fd1" disabled>
+<legend>無効な入力フォーム</legend>
+<p><label for="txt21">テキスト1：<input type="text" id="txt21"></label>
+<p><label for="txt22">テキスト2：<input type="text" id="txt22"></label>
+</fieldset>
+<fieldset id="fd2">
+<legend>有効な入力フォーム</legend>
+<p><label for="txt31">テキスト1：<input type="text" id="txt31"></label>
+<p><label for="txt32">テキスト2：<input type="text" id="txt32"></label>
+</fieldset>
+</form>
+<p>
+	fieldset要素は複数の入力フォームをグループ化する場合に指定する。
+	fieldset要素にdisabled属性を指定するとfieldset要素内のすべての入力フォームが無効になる。
+</p>
+<p>
+	legend要素はfieldset要素内の最初に記述し、グループ化された入力フォームのキャプションを指定する。
+</p>
+<p>
+	label要素は入力フォームに項目名などのラベルを付ける。
+</p>
 
 
 
