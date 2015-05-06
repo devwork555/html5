@@ -840,7 +840,7 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 <p><label for="iurl">url：<input type="url" id="iurl" name="iurl" placeholder="url"></label></p>
 <p><label for="iemail">email：<input type="email" id="iemail" name="iemail" placeholder="email" pattern="正規表現でパターンを指定する"></label></p>
 <p><label for="ipassword">password：<input type="password" id="ipassword" name="ipassword" value="aaaaaaaaaa"></label></p>
-<p><label for="idatetime">datetime：<input type="datetime" id="idatetime" name="idatetime" title="The datetime input type is not supported in all browsers"></label></p>
+<p><label for="idatetime">datetime：<input type="datetime-local" id="idatetime" name="idatetime" title="value属性、min属性、max属性はYYYY-MM-DDThh:mm:ss形式で指定する。The datetime input type is not supported in all browsers"></label></p>
 <p><label for="idate">date：<input type="date" id="idate" name="idate" min="2015-01-01" max="2016-12-31" title="value属性、min属性、max属性はYYYY-MM-DD形式で指定する。The date input type is not supported in all browsers"></label></p>
 <p><label for="imonth">month：<input type="month" id="imonth" name="imonth" min="2015-01" max="2016-12" title="value属性、min属性、max属性はYYYY-MM形式で指定する。The month input type is not supported in all browsers"></label></p>
 <p><label for="iweek">week：<input type="week" id="iweek" name="iweek" min="2015-W01" max="2016-W10" title="value属性、min属性、max属性はYYYY-WNN形式で指定する(NNは01～53)。The week input type is not supported in all browsers"></label></p>
@@ -856,7 +856,10 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 	<label for="iradio3"><input type="radio" id="iradio3" name="iradio">radio3</label>
 </p>
 <p><label for="ifile">file：<input type="file" id="ifile" name="ifile" multiple></label></p>
-<p><label for="isubmit">submit：<input type="submit" id="isubmit" name="isubmit" value="submit" formmethod="post"></label></p>
+<p><label for="isubmit">submit：<input type="submit" id="isubmit" name="isubmit" value="submit" formmethod="post" formtarget="window1"></label></p>
+<p><label for="iimage">image：<input type="image" id="iimage" name="iimage" src="./static/btn.jpg" width="80" height="80" formmethod="post" formtarget="window1" alt="ボタン"></label></p>
+<p><label for="ireset">reset：<input type="reset" id="ireset" name="ireset" value="reset"></label></p>
+<p><label for="ibutton">button：<input type="button" id="ibutton" name="ibutton" value="button"></label></p>
 
 
 <p>入力フォームを作成する。</p>
