@@ -576,7 +576,7 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 <hr style="border-style:dashed;page-break-after:always;">
 <h1>(5)テーブル関連の要素</h1>
 <p class="tl">■table,thead,tbody,tfoot,th,td</p>
-<table>
+<table class="el">
 <thead>
 <tr>
 	<th>No</th>
@@ -641,7 +641,7 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 <hr>
 <p class="tl">■caption</p>
 <table>
-<caption>キャプション</caption>
+<caption class="el">キャプション</caption>
 <thead>
 <tr>
 	<th>No</th>
@@ -794,7 +794,7 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 </form>
 <p>
 	入力フォームをまとめ、入力されたデータをサーバに送信することが可能。
-	<span class="nt"><BR>
+	<span class="nt">
 		HTML5よりform要素外に入力フォームを配置することができるようになった
 		(入力フォーム要素のform属性に、form要素のid属性値を指定する)。
 	</span>
@@ -803,12 +803,12 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 <hr>
 <p class="tl">■fieldset,legend,label</p>
 <form id="frm2" name="frm2" method="post" accept-charset="UTF-8" target="_blank" novalidate autocomplete="on">
-<fieldset id="fd1" disabled>
+<fieldset id="fd1" class="el" disabled>
 <legend>無効な入力フォーム</legend>
 <p><label for="txt21">テキスト1：<input type="text" id="txt21"></label>
 <p><label for="txt22">テキスト2：<input type="text" id="txt22"></label>
 </fieldset>
-<fieldset id="fd2">
+<fieldset id="fd2" class="el">
 <legend>有効な入力フォーム</legend>
 <p><label for="txt31">テキスト1：<input type="text" id="txt31"></label>
 <p><label for="txt32">テキスト2：<input type="text" id="txt32"></label>
@@ -838,9 +838,9 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 <p><label for="isearch">search：<input type="search" id="isearch" name="isearch" placeholder="search"></label></p>
 <p><label for="itel">tel：<input type="tel" id="itel" name="itel" placeholder="tel"></label></p>
 <p><label for="iurl">url：<input type="url" id="iurl" name="iurl" placeholder="url"></label></p>
-<p><label for="iemail">email：<input type="email" id="iemail" name="iemail" placeholder="email" pattern="正規表現でパターンを指定する"></label></p>
+<p><label for="iemail">email：<input type="email" id="iemail" name="iemail" placeholder="email" pattern="正規表現でパターンを指定する" value="email@email.com"></label></p>
 <p><label for="ipassword">password：<input type="password" id="ipassword" name="ipassword" value="aaaaaaaaaa"></label></p>
-<p><label for="idatetime">datetime：<input type="datetime-local" id="idatetime" name="idatetime" title="value属性、min属性、max属性はYYYY-MM-DDThh:mm:ss形式で指定する。The datetime input type is not supported in all browsers"></label></p>
+<p><label for="idatetime">datetime：<input type="datetime" id="idatetime" name="idatetime" title="value属性、min属性、max属性はYYYY-MM-DDThh:mm:ss形式で指定する。The datetime input type is not supported in all browsers"></label></p>
 <p><label for="idate">date：<input type="date" id="idate" name="idate" min="2015-01-01" max="2016-12-31" title="value属性、min属性、max属性はYYYY-MM-DD形式で指定する。The date input type is not supported in all browsers"></label></p>
 <p><label for="imonth">month：<input type="month" id="imonth" name="imonth" min="2015-01" max="2016-12" title="value属性、min属性、max属性はYYYY-MM形式で指定する。The month input type is not supported in all browsers"></label></p>
 <p><label for="iweek">week：<input type="week" id="iweek" name="iweek" min="2015-W01" max="2016-W10" title="value属性、min属性、max属性はYYYY-WNN形式で指定する(NNは01～53)。The week input type is not supported in all browsers"></label></p>
@@ -860,10 +860,16 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 <p><label for="iimage">image：<input type="image" id="iimage" name="iimage" src="./static/btn.jpg" width="80" height="80" formmethod="post" formtarget="window1" alt="ボタン"></label></p>
 <p><label for="ireset">reset：<input type="reset" id="ireset" name="ireset" value="reset"></label></p>
 <p><label for="ibutton">button：<input type="button" id="ibutton" name="ibutton" value="button"></label></p>
-
-
-<p>入力フォームを作成する。</p>
 </form>
+<p>入力フォームを作成する。</p>
+
+<hr>
+<p class="tl">■button</p>
+<p><button type="submit" id="bsub" name="bsub" class="el">submit</button></p>
+<p><button type="reset" id="brst" name="brst" class="el">reset</button></p>
+<p><button type="button" id="bbtn" name="bbtn" class="el">button</button></p>
+<p>ボタンを作成する場合に使用する。</p>
+
 
 </body>
 </html>
