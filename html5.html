@@ -385,7 +385,7 @@ blockquote要素の内容
 
 <hr>
 <p class="tl">■bdi</p>
-<p><bdi class="el">right</bdi>あいうえお</p>
+<p><bdi class="el" title="The bdi element is not supported by browsers yet">right</bdi>あいうえお</p>
 <p>テキストの一部分を異なる文字の表記方向に指定する場合に使用する。</p>
 
 <hr>
@@ -802,7 +802,7 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 
 <hr>
 <p class="tl">■fieldset,legend,label</p>
-<form id="frm2" name="frm1" method="post" accept-charset="UTF-8" target="_blank" novalidate autocomplete="on">
+<form id="frm2" name="frm2" method="post" accept-charset="UTF-8" target="_blank" novalidate autocomplete="on">
 <fieldset id="fd1" disabled>
 <legend>無効な入力フォーム</legend>
 <p><label for="txt21">テキスト1：<input type="text" id="txt21"></label>
@@ -816,17 +816,51 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 </form>
 <p>
 	fieldset要素は複数の入力フォームをグループ化する場合に指定する。
-	fieldset要素にdisabled属性を指定するとfieldset要素内のすべての入力フォームが無効になる。
+	fieldset要素にdisabled属性を指定すると
+	fieldset要素内のすべての入力フォームが無効になる。
 </p>
 <p>
-	legend要素はfieldset要素内の最初に記述し、グループ化された入力フォームのキャプションを指定する。
+	legend要素はfieldset要素内の最初に記述し、
+	グループ化された入力フォームのキャプションを指定する。
 </p>
+<p>label要素は入力フォームに項目名などのラベルを付ける。</p>
+
+<hr>
+<p class="tl">■input</p>
+<form id="inp" name="inp" method="post" accept-charset="UTF-8" novalidate autocomplete="on">
+<p>hidden：<input type="hidden" id="ihidden" name="ihidden" value="ihidden"></p>
+<p><label for="itext">text：<input type="text" id="itext" name="itext" placeholder="text" maxlength="10" form="inp" required list="itextdl"></label></p>
+<datalist id="itextdl">
+<option value="val1">val1</option>
+<option value="val2">val2</option>
+<option value="val3">val3</option>
+</datalist>
+<p><label for="isearch">search：<input type="search" id="isearch" name="isearch" placeholder="search"></label></p>
+<p><label for="itel">tel：<input type="tel" id="itel" name="itel" placeholder="tel"></label></p>
+<p><label for="iurl">url：<input type="url" id="iurl" name="iurl" placeholder="url"></label></p>
+<p><label for="iemail">email：<input type="email" id="iemail" name="iemail" placeholder="email" pattern="正規表現でパターンを指定する"></label></p>
+<p><label for="ipassword">password：<input type="password" id="ipassword" name="ipassword" value="aaaaaaaaaa"></label></p>
+<p><label for="idatetime">datetime：<input type="datetime" id="idatetime" name="idatetime" title="The datetime input type is not supported in all browsers"></label></p>
+<p><label for="idate">date：<input type="date" id="idate" name="idate" min="2015-01-01" max="2016-12-31" title="value属性、min属性、max属性はYYYY-MM-DD形式で指定する。The date input type is not supported in all browsers"></label></p>
+<p><label for="imonth">month：<input type="month" id="imonth" name="imonth" min="2015-01" max="2016-12" title="value属性、min属性、max属性はYYYY-MM形式で指定する。The month input type is not supported in all browsers"></label></p>
+<p><label for="iweek">week：<input type="week" id="iweek" name="iweek" min="2015-W01" max="2016-W10" title="value属性、min属性、max属性はYYYY-WNN形式で指定する(NNは01～53)。The week input type is not supported in all browsers"></label></p>
+<p><label for="itime">time：<input type="time" id="itime" name="itime" min="00:00" max="01:00" title="value属性、min属性、max属性はhh:mm形式で指定する。The time input type is not supported in all browsers"></label></p>
+<p><label for="inumber">number：<input type="number" id="inumber" name="inumber" min="-10" max="20" step="5"></label></p>
+<p><label for="irange">range：<input type="range" id="irange" name="irange" min="-10" max="20" step="5"></label></p>
+<p><label for="icolor">color：<input type="color" id="icolor" name="icolor" title="The color input type is not supported in all browsers"></label></p>
+<p><label for="icheckbox">checkbox：<input type="checkbox" id="icheckbox" name="icheckbox">checkbox</label></p>
 <p>
-	label要素は入力フォームに項目名などのラベルを付ける。
+	radio：
+	<label for="iradio1"><input type="radio" id="iradio1" name="iradio">radio1</label>
+	<label for="iradio2"><input type="radio" id="iradio2" name="iradio">radio2</label>
+	<label for="iradio3"><input type="radio" id="iradio3" name="iradio">radio3</label>
 </p>
+<p><label for="ifile">file：<input type="file" id="ifile" name="ifile" multiple></label></p>
+<p><label for="isubmit">submit：<input type="submit" id="isubmit" name="isubmit" value="submit" formmethod="post"></label></p>
 
 
-
+<p>入力フォームを作成する。</p>
+</form>
 
 </body>
 </html>
