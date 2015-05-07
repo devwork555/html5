@@ -19,6 +19,10 @@
 			border:solid 1px;
 			border-collapse:collapse;
 		}
+		.sline{
+			border-style:dashed;
+			page-break-after:always;
+		}
 	</style>
 	<script type="text/javascript">
 	function renderCanvas(){
@@ -117,7 +121,7 @@
 <p>メインコンテンツ以外の内容を指定する要素。</p>
 
 
-<hr style="border-style:dashed;page-break-after:always;">
+<hr class="sline">
 <h1>(2)グルーピング関連の要素</h1>
 <p class="tl">■main</p>
 <main class="el">
@@ -213,7 +217,7 @@ blockquote要素の内容
 </p>
 
 
-<hr style="border-style:dashed;page-break-after:always;">
+<hr class="sline">
 <h1>(3)テキスト関連の要素</h1>
 <p class="tl">■a</p>
 <a href="http://www.google.co.jp" target="_blank" rel="noreferrer" type="text/html" hreflang="ja">リンク</a>
@@ -418,7 +422,7 @@ blockquote要素の内容
 </p>
 
 
-<hr style="border-style:dashed;page-break-after:always;">
+<hr class="sline">
 <h1>(4)画像・動画関連の要素</h1>
 <p class="tl">■img</p>
 <img src="./static/kaeru.gif" alt="カエル">
@@ -573,7 +577,7 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 </pre>
 
 
-<hr style="border-style:dashed;page-break-after:always;">
+<hr class="sline">
 <h1>(5)テーブル関連の要素</h1>
 <p class="tl">■table,thead,tbody,tfoot,th,td</p>
 <table class="el">
@@ -785,7 +789,7 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 </p>
 
 
-<hr style="border-style:dashed;page-break-after:always;">
+<hr class="sline">
 <h1>(6)フォーム関連の要素</h1>
 <p class="tl">■form</p>
 <form id="frm1" name="frm1" method="post" accept-charset="UTF-8" target="_blank" novalidate autocomplete="on">
@@ -826,7 +830,7 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 <p>label要素は入力フォームに項目名などのラベルを付ける。</p>
 
 <hr>
-<p class="tl">■input</p>
+<p class="tl">■input,datalist</p>
 <form id="inp" name="inp" method="post" accept-charset="UTF-8" novalidate autocomplete="on">
 <p>hidden：<input type="hidden" id="ihidden" name="ihidden" value="ihidden"></p>
 <p><label for="itext">text：<input type="text" id="itext" name="itext" placeholder="text" maxlength="10" form="inp" required list="itextdl"></label></p>
@@ -861,7 +865,12 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 <p><label for="ireset">reset：<input type="reset" id="ireset" name="ireset" value="reset"></label></p>
 <p><label for="ibutton">button：<input type="button" id="ibutton" name="ibutton" value="button"></label></p>
 </form>
-<p>入力フォームを作成する。</p>
+<p>input要素は入力フォームを作成する。</p>
+<p>
+	datalist要素は入力フォームのための入力候補を定義する場合に使用する(本HTMLではtextで使用している)。
+	入力候補はoption要素で指定する。
+	他の入力フォームの選択肢として表示されるため、datalist自体は表示されない。
+</p>
 
 <hr>
 <p class="tl">■button</p>
@@ -870,6 +879,107 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 <p><button type="button" id="bbtn" name="bbtn" class="el">button</button></p>
 <p>ボタンを作成する場合に使用する。</p>
 
+<hr>
+<p class="tl">■select,option</p>
+<p>
+	<select id="sct1" name="sct1" class="el" size="5" multiple>
+	<option value="1">選択肢1</option>
+	<option value="2">選択肢2</option>
+	<option value="3">選択肢3</option>
+	<option value="4">選択肢4</option>
+	<option value="5">選択肢5</option>
+	<option value="6">選択肢6</option>
+	<option value="7">選択肢7</option>
+	<option value="8">選択肢8</option>
+	<option value="9">選択肢9</option>
+	<option value="10">選択肢10</option>
+	</select>
+</p>
+<p>select要素はセレクトボックスを作成する場合に使用する。</p>
+<p>option要素はselect要素内の選択肢を作成する場合に使用する。</p>
+
+<hr>
+<p class="tl">■optgroup</p>
+<p>
+	<select id="sct2" name="sct2" size="5" multiple>
+	<optgroup label="opt1" class="el">
+		<option value="1">選択肢1</option>
+		<option value="2">選択肢2</option>
+		<option value="3">選択肢3</option>
+	</optgroup>
+	<option value="4">選択肢4</option>
+	<option value="5">選択肢5</option>
+	<option value="6">選択肢6</option>
+	<option value="7">選択肢7</option>
+	<option value="8">選択肢8</option>
+	<option value="9">選択肢9</option>
+	<option value="10">選択肢10</option>
+	</select>
+</p>
+<p>option要素をグループ化する場合に使用する。</p>
+
+<hr>
+<p class="tl">■textarea</p>
+<p>
+	<textarea id="txa1" name="txa1" cols="35" rows="5" maxlength="20" placeholder="textarea" wrap="hard" class="el"></textarea>
+</p>
+<p>テキストエリアを作成する場合に使用する。</p>
+
+<hr>
+<p class="tl">■keygen</p>
+<p><keygen id="keg1" name="keg1" challenge="公開鍵と一緒に送信する任意の文字列"></p>
+<p>
+	鍵のペア(公開鍵と秘密鍵)の生成を行う。
+	フォームが送信されると秘密鍵はローカルに格納され、
+	公開鍵はパッケージされたサーバに送信される。
+</p>
+
+<hr>
+<p class="tl">■output</p>
+<p><output id="out1" name="out1" class="el">計算結果</output></p>
+<p>
+	計算結果の出力欄を作成する場合に使用する。
+	出力だけを目的とした要素のため、output要素値が送信されることはない。
+</p>
+
+<hr>
+<p class="tl">■progress</p>
+<p><progress id="pgs1" max="100" value="50" class="el">プログレスバー非対応です</progress></p>
+<p>
+	プログレスバーを作成する場合に使用する。
+	progress要素内には非対応のブラウザの場合に表示するコンテンツを記述する。
+</p>
+
+<hr>
+<p class="tl">■meter</p>
+<p><meter id="mtr1" value="50" min="0" max="100" low="20" high="50" optimum="50">メータ非対応です</meter></p>
+<p>
+	あらかじめわかっている範囲内にある数量や割合を表す場合に使用する。
+	low(最も低い領域の上限値)、high(最も高い領域の上限値)、
+	optimum(最適値)を指定することにより、領域が3つに分けられる。
+</p>
+<pre>
+●バーの色：黄色
+value ＜ low or value ＞ high 
+
+●バーの色：緑
+value ＞＝ low AND value ＝＜ high
+</pre>
+
+
+<hr class="sline">
+<h1>(7)インタラクティブ関連の要素</h1>
+<p class="tl">■details,summary</p>
+<p>
+	<details open class="el">
+		<summary>details要素の内容の要約や凡例</summary>
+		展開される内容
+	</details>
+<p>
+	details要素はユーザ操作により表示、非表示を指定できるディスクロジャーウィジェットを
+	作成する場合に使用する。
+</p>
+<p>summary要素は親要素であるdetails要素の内容の要約や凡例を記述する場合に使用する。</p>
 
 </body>
 </html>
