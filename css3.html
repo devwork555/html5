@@ -8,74 +8,129 @@
 			border-style:dashed;
 			page-break-after:always;
 		}
+		.tl{
+			font-weight:bold;
+			font-size:1.5em;
+		}
+		.nt{
+			color:#ff0000;
+		}
+		.el{
+			color:#0b2bd7;
+		}
+
+
 	</style>
 	<title>CSS3テスト</title>
 </head>
 <body>
 
 
-<h1>(1)セクション関連の要素</h1>
-<p class="tl">■section</p>
-<section class="el">
-	<h2>SectionTitle</h2>
+<h1>(1)色の指定</h1>
+<p>色の指定は英単語(キーワード)、もしくは数値で行う。</p>
+<p class="tl">■英単語(キーワード)での指定</p>
+<ul>
+<li><p style="color:red;">color:red;</p></li>
+<li><p style="color:blue;">color: blue;</p></li>
+</ul>
+<p class="tl">■数値での指定</p>
+<ul>
+<li>
+	RGB指定。各色の1桁目と2桁目が同じであれば省略可
+	<p style="color:#f00;">color:#f00;</p>
+</li>
+<li>
+	RRGGBB指定
+	<p style="color:#ff0000;">color:#ff0000;</p>
+</li>
+<li>
+	RGB指定
+	<p style="color:rgb(255,0,0);">color:rgb(255,0,0);</p>
+</li>
+<li>
+	RGBA指定。Aは透明度(指定可能範囲0～1)
+	<p style="color:rgba(255,0,0,0.5);">color:rgba(255,0,0,0.5);</p>
+</li>
+<li>
+	完全に透明にする場合、transparentを指定する(color:transparent;)
+	<p style="color:transparent;">color:transparent;</p>
+</li>
+<li>
+	HSL指定。
 	<p>
-		セクションを構成する汎用的な要素。
-		通常、各セクションはsection要素の子として見出し(h1～h6)を含めることによって識別される。
+		HSLは「色相」、「彩度」、「明度」で指定する。
+		色相の単位は度で範囲は0～360度。赤は0度、緑は120度、
+		青は240度と定められている(CSS上は度の単位は記載しない)。
 	</p>
-</section>
-
-<hr>
-<p class="tl">■footer</p>
-<footer class="el">
-	<h2>FooterTitle</h2>
-	<p>フッターの内容</p>
-</footer>
-<p>
-	セクションのフッタ構造を定義する。
-	セクションのフッタの場合と、ページ全体のフッタの場合がある。
-	必ずしもセクションの最後に記載する必要はない。
-</p>
+	<p>
+		彩度は色の鮮やかさを表し、低いとくすんだ色になる。
+		彩度の単位は%で範囲は0～100%。
+	</p>
+	<p>
+		明度は色の明るさを表し、高くなるほど明るくなる。
+		明度の単位は%で範囲は0～100%。
+	</p>
+	<p style="color:hsl(0, 100%, 50%)">color:hsl(0, 100%, 50%)</p>
+</li>
+<li>
+	HSLA指定。HSLに透明度を加えたもの。透明度の範囲はRGBAと同様0～1。
+	<p style="color:hsla(0, 100%, 50%, 0.5)">color:hsla(0, 100%, 50%, 0.5)</p>
+</li>
+<li>
+	opacityプロパティに透明度を指定可能。範囲は0～1。
+	<p style="opacity:0.5;">opacity:0.5;</p>
+</li>
+</ul>
 
 
 <hr class="sline">
-<h1>(6)フォーム関連の要素</h1>
-<p class="tl">■form</p>
-<form id="frm1" name="frm1" method="post" accept-charset="UTF-8" target="_blank" novalidate autocomplete="on">
-<p><input type="text" id="txt1"></p>
-<p><input type="text" id="txt2"></p>
-</form>
+<h1>(2)単位の指定</h1>
+<p class="tl">■相対単位</p>
 <p>
-	入力フォームをまとめ、入力されたデータをサーバに送信することが可能。
-	<span class="nt">
-		HTML5よりform要素外に入力フォームを配置することができるようになった
-		(入力フォーム要素のform属性に、form要素のid属性値を指定する)。
-	</span>
+	基準となる値に対して相対的に大きさが決まる。
+	基準となる値が変化すると、相対単位で指定されて値も変化する。
 </p>
+<ul>
+<li>
+	%
+	<p>その要素の親要素のサイズを100%として算出される。</p>
+	<p>
+		<div style="width:400px;border:1px solid;">
+			style="width:400px;"
+			<div style="width: 50%;border: 1px solid;">
+				style="width: 50%;" = 200px
+			</div>
+		</div>
+	</p>
+</li>
+<li>
+	em
+	<p>1文字分の長さを1として算出される。</p>
+		<p style="font-size:1.5em;">style="font-size:1.5em;"</p>
+		<p style="font-size:1em;">style="font-size:1em;"</p>
+		<p style="font-size:0.5em;">style="font-size:0.5em;"</p>
+	</p>
+</li>
+</ul>
 
-<hr>
-<p class="tl">■fieldset,legend,label</p>
-<form id="frm2" name="frm2" method="post" accept-charset="UTF-8" target="_blank" novalidate autocomplete="on">
-<fieldset id="fd1" class="el" disabled>
-<legend>無効な入力フォーム</legend>
-<p><label for="txt21">テキスト1：<input type="text" id="txt21"></label>
-<p><label for="txt22">テキスト2：<input type="text" id="txt22"></label>
-</fieldset>
-<fieldset id="fd2" class="el">
-<legend>有効な入力フォーム</legend>
-<p><label for="txt31">テキスト1：<input type="text" id="txt31"></label>
-<p><label for="txt32">テキスト2：<input type="text" id="txt32"></label>
-</fieldset>
-</form>
-<p>
-	fieldset要素は複数の入力フォームをグループ化する場合に指定する。
-	fieldset要素にdisabled属性を指定すると
-	fieldset要素内のすべての入力フォームが無効になる。
-</p>
-<p>
-	legend要素はfieldset要素内の最初に記述し、
-	グループ化された入力フォームのキャプションを指定する。
-</p>
-<p>label要素は入力フォームに項目名などのラベルを付ける。</p>
+<p class="tl">■絶対単位</p>
+<ul>
+<li>
+	px
+	<p>
+		スクリーンディスプレイではディスプレイの1ドット、
+		高密度ディスプレイなど1ピクセルが倍の密度になっている場合、
+		物理的なピクセル数の横幅が640pxだとしても、
+		CSSでは320pxとして算出するルールとなっている。
+	</p>
+	<p style="font-size:15px;">style="font-size:15px;"</p>
+</li>
+</ul>
+
+
+<hr class="sline">
+<h1>(3)セレクタ</h1>
+
 
 
 </body>
