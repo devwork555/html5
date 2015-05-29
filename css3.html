@@ -4,6 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="CSS3のサンプルページです。">
 	<style type="text/css" media="screen">
+		pre{
+			font-size: 1.2em;
+		}
 		.sline{
 			border-style:dashed;
 			page-break-after:always;
@@ -18,7 +21,6 @@
 		.el{
 			color:#0b2bd7;
 		}
-
 
 	</style>
 	<title>CSS3テスト</title>
@@ -130,7 +132,91 @@
 
 <hr class="sline">
 <h1>(3)セレクタ</h1>
+<pre>
+<b>/* 全ての要素に適用 */</b>
+*{margin: 0;}
 
+
+<b>/* div要素に含まれる全ての要素に適用 */</b>
+div *{margin: 0;}
+
+<span class="nt">
+<b>※複数のセレクタに適用する場合は、,(カンマ)区切りで複数のセレクタを指定する</b>
+h1,h2,h3{margin: 0;}
+</span>
+
+
+<b>/* div要素に含まれるp要素に適用 */</b>
+div p{margin: 0;}
+
+&lt;div&gt;
+  &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;適用されない&lt;/p&gt;
+
+
+<b>/* classnameのクラスが指定された要素に適用 */</b>
+.classname{margin: 0;}
+
+
+<b>/* classnameのクラスが指定されたp要素に適用 */</b>
+p.classname{margin: 0;}
+
+
+<b>/* idnameのidが指定された要素に適用 */</b>
+#idname{margin: 0;}
+
+
+<b>/* idnameのidが指定されたp要素に適用 */</b>
+p#idname{margin: 0;}
+
+
+<b>/* .parentクラスが指定された要素の直属のp要素に適用 */</b>
+.parent > p{margin: 0;}
+
+&lt;div class="parent"&gt;
+  &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
+  &lt;div&gt;
+    &lt;p&gt;適用されない&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
+&lt;/div&gt;
+
+
+<b>/* h2要素の後に隣接しているp要素に適用 */</b>
+h2+p{margin: 0;}
+
+&lt;div class="parent"&gt;
+  &lt;p&gt;適用されない&lt;/p&gt;
+  &lt;div&gt;
+    &lt;p&gt;適用されない&lt;/p&gt;
+    &lt;h2&gt;この要素が基準となる&lt;/h2&gt;
+    &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;p&gt;適用されない&lt;/p&gt;
+  &lt;h2&gt;この要素が基準となる&lt;/h2&gt;
+  &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
+  &lt;p&gt;適用れない&lt;/p&gt;
+&lt;/div&gt;
+
+<b>/* h2要素の後の全てのp要素に適用 */</b>
+h2～p{margin: 0;}
+
+&lt;div class="parent"&gt;
+  &lt;p&gt;適用されない&lt;/p&gt;
+  &lt;div&gt;
+    &lt;p&gt;適用されない&lt;/p&gt;
+    &lt;h2&gt;この要素が基準となる&lt;/h2&gt;
+    &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;p&gt;適用されない&lt;/p&gt;
+  &lt;h2&gt;この要素が基準となる&lt;/h2&gt;
+  &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
+  &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
+&lt;/div&gt;
+
+
+</pre>
 
 
 </body>
