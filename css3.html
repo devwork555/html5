@@ -7,6 +7,14 @@
 		pre{
 			font-size: 1.2em;
 		}
+		strong{
+			color: #ff0000;
+			font-weight: bold;
+		}
+		table,th,td{
+			border:1px solid;
+			border-collapse:collapse;
+		}
 		.sline{
 			border-style:dashed;
 			page-break-after:always;
@@ -21,7 +29,6 @@
 		.el{
 			color:#0b2bd7;
 		}
-
 	</style>
 	<title>CSS3テスト</title>
 </head>
@@ -132,48 +139,51 @@
 
 <hr class="sline">
 <h1>(3)セレクタ</h1>
-<pre>
-<b>/* 全ての要素に適用 */</b>
-*{margin: 0;}
-
-
-<b>/* div要素に含まれる全ての要素に適用 */</b>
-div *{margin: 0;}
-
-<span class="nt">
 <b>※複数のセレクタに適用する場合は、,(カンマ)区切りで複数のセレクタを指定する</b>
-h1,h2,h3{margin: 0;}
-</span>
+<p>h1,h2,h3{margin: 0;}</p>
 
-
-<b>/* div要素に含まれるp要素に適用 */</b>
-div p{margin: 0;}
-
+<ul>
+<li>
+	<strong>全ての要素</strong>に適用される
+	<p>*{margin: 0;}</p>
+</li>
+<li>
+	div要素に含まれる<strong>全ての要素</strong>に適用
+	<p>div *{margin: 0;}</p>
+</li>
+<li>
+	div<strong>要素に含まれる</strong>p要素に適用 */
+	<p>div p{margin: 0;}</p>
+	<p>
+		<pre>
 &lt;div&gt;
   &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;適用されない&lt;/p&gt;
-
-
-<b>/* classnameのクラスが指定された要素に適用 */</b>
-.classname{margin: 0;}
-
-
-<b>/* classnameのクラスが指定されたp要素に適用 */</b>
-p.classname{margin: 0;}
-
-
-<b>/* idnameのidが指定された要素に適用 */</b>
-#idname{margin: 0;}
-
-
-<b>/* idnameのidが指定されたp要素に適用 */</b>
-p#idname{margin: 0;}
-
-
-<b>/* .parentクラスが指定された要素の直属のp要素に適用 */</b>
-.parent > p{margin: 0;}
-
+		</pre>
+	</p>
+</li>
+<li>
+	<strong>classnameのクラスが指定された</strong>要素に適用
+	<p>.classname{margin: 0;}</p>
+</li>
+<li>
+	<strong>classnameのクラスが指定された</strong>p要素に適用
+	<p>p.classname{margin: 0;}</p>
+</li>
+<li>
+	<strong>idnameのidが指定された</strong>要素に適用
+	<p>#idname{margin: 0;}</p>
+</li>
+<li>
+	<strong>idnameのidが指定された</strong>p要素に適用
+	<p>p#idname{margin: 0;}</p>
+</li>
+<li>
+	.parentクラスが指定された<strong>要素の直属</strong>のp要素に適用
+	<p>.parent > p{margin: 0;}</p>
+	<p>
+		<pre>
 &lt;div class="parent"&gt;
   &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
   &lt;div&gt;
@@ -181,11 +191,14 @@ p#idname{margin: 0;}
   &lt;/div&gt;
   &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
 &lt;/div&gt;
-
-
-<b>/* h2要素の後に隣接しているp要素に適用 */</b>
-h2+p{margin: 0;}
-
+		</pre>
+	</p>
+</li>
+<li>
+	h2要素の<strong>後に隣接している</strong>p要素に適用
+	<p>h2+p{margin: 0;}</p>
+	<p>
+		<pre>
 &lt;div class="parent"&gt;
   &lt;p&gt;適用されない&lt;/p&gt;
   &lt;div&gt;
@@ -198,10 +211,14 @@ h2+p{margin: 0;}
   &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
   &lt;p&gt;適用れない&lt;/p&gt;
 &lt;/div&gt;
-
-<b>/* h2要素の後の全てのp要素に適用 */</b>
-h2～p{margin: 0;}
-
+		</pre>
+	</p>
+</li>
+<li>
+	h2要素の<strong>後に隣接している全て</strong>のp要素に適用
+	<p>h2～p{margin: 0;}</p>
+	<p>
+		<pre>
 &lt;div class="parent"&gt;
   &lt;p&gt;適用されない&lt;/p&gt;
   &lt;div&gt;
@@ -214,10 +231,340 @@ h2～p{margin: 0;}
   &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
   &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
 &lt;/div&gt;
+		</pre>
+	</p>
+</li>
+<li>
+	<strong>指定した属性名を持つ</strong>p要素に適用
+	<p>p[title]{margin: 0;}</p>
+	<p>
+		<pre>
+&lt;p title="タイトル"&gt;<span class="nt">適用される</span>&lt;p&gt;
+&lt;p&gt;適用されない&lt;p&gt;
+&lt;p title="タイトル"&gt;<span class="nt">適用される</span>&lt;p&gt;
+		</pre>
+	</p>
+</li>
+<li>
+	<strong>属性の値が一致する</strong>p要素に適用
+	<p>p[title="タイトル"]{margin: 0;}</p>
+	<p>
+		<pre>
+&lt;p title="タイトル"&gt;<span class="nt">適用される</span>&lt;p&gt;
+&lt;p&gt;適用されない&lt;p&gt;
+&lt;p title="あいうえお"&gt;適用されない&lt;p&gt;
+		</pre>
+	</p>
+</li>
+<li>
+	<strong>属性の値が指定文字列で始まる</strong>p要素に適用
+	<p>p[title^="タイトル"]{margin: 0;}</p>
+	<p>
+		<pre>
+&lt;p title="タイトル"&gt;<span class="nt">適用される</span>&lt;p&gt;
+&lt;p title="タイトルあういえお"&gt;<span class="nt">適用される</span>&lt;p&gt;
+&lt;p&gt;適用されない&lt;p&gt;
+&lt;p title="あいうえおタイトル"&gt;適用されない&lt;p&gt;
+		</pre>
+	</p>
+</li>
+<li>
+	<strong>属性の値が指定文字列で終わる</strong>p要素に適用
+	<p>p[title$="タイトル"]{margin: 0;}</p>
+	<p>
+		<pre>
+&lt;p title="タイトル"&gt;<span class="nt">適用される</span>&lt;p&gt;
+&lt;p title="あいうえおタイトル"&gt;<span class="nt">適用される</span>&lt;p&gt;
+&lt;p&gt;適用されない&lt;p&gt;
+&lt;p title="タイトルあいうえお"&gt;適用されない&lt;p&gt;
+		</pre>
+	</p>
+</li>
+<li>
+	<strong>属性の値に指定文字列が含まれる</strong>p要素に適用
+	<p>p[title*="タイトル"]{margin: 0;}</p>
+	<p>
+		<pre>
+&lt;p title="タイトル"&gt;<span class="nt">適用される</span>&lt;p&gt;
+&lt;p title="あいうえおタイトルあいうえお"&gt;<span class="nt">適用される</span>&lt;p&gt;
+&lt;p&gt;適用されない&lt;p&gt;
+&lt;p title="あいうえお"&gt;適用されない&lt;p&gt;
+		</pre>
+	</p>
+</li>
+</ul>
 
 
+<hr class="sline">
+<h1>(4)擬似クラス</h1>
+<p>特定の外的要因や状態を持つ要素に対してスタイルを適用する。</p>
+<ul>
+<li>
+	<p>:link</p>
+	<p>全てのリンクにスタイルを適用</p>
+	<p>a:link{font-weight: bold;}</p>
+</li>
+<li>
+	<p>:visited</p>
+	<p>
+		訪問済リンクにスタイルを適用。
+		<strong>
+			プライバシー上の理由で適用できるスタイルはブラウザが厳しい制限をかけている。
+			color、background-color、border-color、border-bottom-color、border-left-color、
+			border-right-color、border-top-color、outline-color、column-rule-color、
+			fill、strokeのみ適用され、アルファ値は無視される
+		</strong>
+	</p>
+	<p>a:visited{font-weight: bold;}</p>
+</li>
+<li>
+	<p>:active</p>
+	<p>アクティブなリンクにスタイルを適用</p>
+	<p>a:active{font-weight: bold;}</p>
+</li>
+<li>
+	<p>:hover</p>
+	<p>
+		マウスカーソルが要素の上に乗ったときにスタイルを適用。
+		<strong>タッチスクリーンでは :hover には問題があるか、使えない</strong>
+	</p>
+	<p>a:hover{font-weight: bold;}</p>
+</li>
+<li>
+	<p>:focus</p>
+	<p>フォーカスが要素にあたったときにスタイルを適用</p>
+	<p>a:focus{font-weight: bold;}</p>
+</li>
+<li>
+	<p>:first-child</p>
+	<p>指定要素の最初の子要素にスタイルを適用</p>
+	<p>.classname:first-child{font-weight: bold;}</p>
+</li>
+<li>
+	<p>:last-child</p>
+	<p>指定要素の最後の子要素にスタイルを適用</p>
+	<p>.classname:last-child{font-weight: bold;}</p>
+</li>
+<li>
+	<p>:target</p>
+	<p>
+		ページ内リンクのターゲット対象にされた要素にスタイルを適用
+		(ページ内リンクがクリックされた際にスタイルが適用される)
+	</p>
+	<p>p:target{font-weight: bold;}</p>
+</li>
+<li>
+	<p>:enabled</p>
+	<p>指定要素が使用可能な状態のときにスタイルを適用</p>
+	<p>button:enabled{font-weight: bold;}</p>
+</li>
+<li>
+	<p>:disabled</p>
+	<p>指定要素が使用不可能な状態のときにスタイルを適用</p>
+	<p>button:disabled{font-weight: bold;}</p>
+</li>
+<li>
+	<p>:checked</p>
+	<p>ラジオボタン、チェックボックスがチェック状態のときにスタイルを適用</p>
+	<p>input:checked{font-weight: bold;}</p>
+</li>
+<li>
+	<p>:nth-child(n)</p>
+	<p>
+		指定要素の最初からn番目の要素にスタイルを適用。
+		<strong>
+			指定要素以外の要素もカウントされるため、
+			指定要素以外の要素がn番目にあたる場合、
+			スタイルは適用されない
+		</strong>
+	</p>
+	<p>li:nth-child(2){color: red;}</p>
+</li>
+<li>
+	<p>:nth-last-child(n)</p>
+	<p>
+		指定要素の最後からn番目の要素にスタイルを適用。
+		<strong>
+			指定要素以外の要素もカウントされるため、
+			指定要素以外の要素がn番目にあたる場合、
+			スタイルは適用されない
+		</strong>
+	</p>
+	<p>li:nth-last-child(2){color: red;}</p>
+</li>
+<li>
+	<p>:nth-of-type(n)</p>
+	<p>
+		指定要素の最初からn番目の要素にスタイルを適用。
+		<strong>指定要素以外の要素はカウントされない</strong>
+	</p>
+	<p>li:nth-of-type(2){color: red;}</p>
+</li>
+<li>
+	<p>:nth-last-of-type(n)</p>
+	<p>
+		指定要素の最後からn番目の要素にスタイルを適用。
+		<strong>指定要素以外の要素はカウントされない</strong>
+	</p>
+	<p>li:nth-last-of-type(2){color: red;}</p>
+</li>
+<li>
+	<p>:first-of-type</p>
+	<p>
+		指定要素の最初の要素にスタイルを適用。
+		<strong>指定要素以外の要素はカウントされない</strong>
+	</p>
+	<p>li:first-of-type{color: red;}</p>
+</li>
+<li>
+	<p>:last-of-type</p>
+	<p>
+		指定要素の最後の要素にスタイルを適用。
+		<strong>指定要素以外の要素はカウントされない</strong>
+	</p>
+	<p>li:last-of-type{color: red;}</p>
+</li>
+<li>
+	<p>:only-child</p>
+	<p>親要素に他の要素が含まれていない場合に指定要素にスタイルを適用</p>
+	<p>div p:only-child{color: red;}</p>
+</li>
+<li>
+	<p>:only-of-type</p>
+	<p>親要素に指定要素が複数含まれていない場合に指定要素にスタイルを適用</p>
+	<p>div p:only-of-type{color: red;}</p>
+</li>
+<li>
+	<p>:empty</p>
+	<p>子要素がない指定要素にスタイルを適用</p>
+	<p>td:empty{color: red;}</p>
+</li>
+<li>
+	<p>:not(s)</p>
+	<p>sで指定した要素以外にスタイルを適用</p>
+	<p>div:not(.test){color: red;}</p>
+</li>
+</ul>
+
+<p>
+<strong>※カウントの仕方について</strong>
+<pre>
+&lt;div class="test"&gt;
+  &lt;p&gt1番目&lt;/p&gt;
+  &lt;p&gt2番目&lt;/p&gt;
+  &lt;span&gt3番目&lt;/span&gt;
+  &lt;p&gt4番目&lt;/p&gt;
+  &lt;p&gt5番目&lt;/p&gt;
+&lt;/div&gt;
 </pre>
+<p>
+	div.test p:nth-child(3)、
+	div.test p:nth-last-child(3)の場合、
+	span要素が該当要素となるため、スタイルが適用されない。
+</p>
+<p>
+	div.test p:nth-of-type(3)の場合、4番目にスタイルが適用される。
+	div.test p:nth-last-of-type(3)の場合、2番目にスタイルが適用される。
+</p>
+<p>このカウントの考え方は以下のセレクタに共通する。</p>
+<p>
+	<ul>
+		<li>:nth-child(n)と:nth-of-type(n)</li>
+		<li>:nth-last-child(n)と:nth-last-of-type(n)</li>
+		<li>:first-childと:first-of-type</li>
+		<li>:last-childと:last-of-type</li>
+		<li>:only-childと:only-of-type</li>
+	</ul>
+</p>
 
+
+<hr class="sline">
+<h1>(5)擬似要素</h1>
+<p>
+	特定のドキュメントにスタイルを適用する。
+	CSS3から:ではなく、::を使用するように変更された。
+	(:も使用可能だが、::selectionには使用できない)
+</p>
+<ul>
+<li>
+	<p>::before</p>
+	<p>指定要素の前にcontentで指定した内容を付加</p>
+	<p>p::before{content: "★";}</p>
+</li>
+<li>
+	<p>::first-letter</p>
+	<p><strong>指定ブロック要素の最初の文字</strong>にスタイルを適用</p>
+	<p>p::first-letter{color: yellow;}</p>
+</li>
+<li>
+	<p>::selection</p>
+	<p>指定要素が選択がされたときにスタイルを適用</p>
+	<p>div::selection{color: yellow;}</p>
+</li>
+</ul>
+
+
+<hr class="sline">
+<h1>(6)優先度</h1>
+<p>同一条件のセレクタについては、後に記述したスタイルが優先される。</p>
+<p>p{color:red;}</p>
+<p>p{color:blue}</p>
+<p>上記の場合color:blueが適用される。</p>
+
+<p>
+	異なる条件のセレクタの場合、下記優先ルールに従い、値の高いスタイルが優先される。
+	なお、!importantを指定すると最優先となる。
+</p>
+<p>p{color: red!important;}</p>
+<p>p{color: blue}</p>
+<p>color: redが適用される。</p>
+
+<table>
+<caption>■優先ルール</caption>
+<tr>
+<th>項目</th>
+<th>優先ルール</th>
+</tr>
+<tr>
+<td>!important指定</td>
+<td>最優先</td>
+</tr>
+<tr>
+<td>インラインスタイル</td>
+<td>1000の位に加算</td>
+</tr>
+<tr>
+<td>id</td>
+<td>100の位に加算</td>
+</tr>
+<tr>
+<td>クラス、属性セレクタ、擬似クラス</td>
+<td>10の位に加算</td>
+</tr>
+<tr>
+<td>要素、擬似要素</td>
+<td>1の位に加算</td>
+</tr>
+</table>
+
+<table style="margin-top:30px;">
+<caption>■優先ルール例</caption>
+<tr>
+<th>項目</th>
+<th>計算方法</th>
+<th>合計</th>
+</tr>
+<tr>
+<td>ul ol li.red</td>
+<td>10の位に1点、1の位に3点</td>
+<td>0.0.1.3</td>
+</tr>
+<tr>
+<td>#test(id指定)</td>
+<td>100の位に1点</td>
+<td>0.1.0.0</td>
+</tr>
+</table>
 
 </body>
 </html>
