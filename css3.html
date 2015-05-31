@@ -571,5 +571,39 @@
 </tr>
 </table>
 
+<hr class="sline">
+<h1>(7)ボックスモデル</h1>
+<img src="./static/boxmodel.gif" alt="ボックスモデル概念図">
+<p class="tl">■width,height</p>
+<p>要素の幅(width)、高さ(height)を決める。相対単位、もしくは絶対単位で値を指定する。</p>
+<p>
+	<div style="border:1px solid;width:300px;height:300px;">
+		親要素width:300px;height:300px;
+		<div style="border:1px solid;width:50%;height:50%;">
+			width:50%;height:50%(相対単位)<BR>
+		</div>
+		<div style="border:1px solid;width:150px;height:50px;">
+			width:150px;height:50px;(絶対単位)
+		</div>
+	</div>
+</p>
+
+<hr>
+<p class="tl">■max-width,min-width,max-height,min-height</p>
+<p>
+	最大幅(max-width)、最小幅(min-widht)、
+	最大高さ(max-height)、最小高さ(min-height)を決める。
+	相対単位、もしくは絶対単位で値を指定する。
+</p>
+<p>
+	<div style="border:1px solid;width:80%;height:300px;">
+		親要素width:80%;height:300px;
+		<div style="border:1px solid;min-width:10%;max-width:50%;min-height:30%;max-height:50%;">
+			min-width:10%;max-width:50%;
+			min-height:30%;max-height:50%;
+		</div>
+	</div>
+</p>
+
 </body>
 </html>
