@@ -29,6 +29,10 @@
 		.el{
 			color:#0b2bd7;
 		}
+		.extbl{
+			border: none;
+			padding: 10px;
+		}
 	</style>
 	<title>CSS3テスト</title>
 </head>
@@ -596,7 +600,7 @@
 	相対単位、もしくは絶対単位で値を指定する。
 </p>
 <p>
-	<div style="border:1px solid;width:80%;height:300px;">
+	<div style="border:1px solid;width:300px;height:300px;">
 		親要素width:80%;height:300px;
 		<div style="border:1px solid;min-width:10%;max-width:50%;min-height:30%;max-height:50%;">
 			min-width:10%;max-width:50%;
@@ -604,6 +608,108 @@
 		</div>
 	</div>
 </p>
+
+<hr>
+<p class="tl">■border</p>
+<p>
+	枠線の色、スタイル、幅を指定する。
+	borderプロパティにまとめて指定することも、
+	border-color、border-style、border-widthプロパティに
+	個別に指定することも可能。
+	また、CSS3では角を丸くするborder-radiusプロパティも追加された。
+</p>
+<table style="margin-top:30px;border:none;">
+<caption style="white-space:nowrap;">■border-styleプロパティ値</caption>
+<tr>
+<th style="border:none;border-bottom:1px solid;">値</th>
+<th style="border:none;border-bottom:1px solid;">サンプル</th>
+</tr>
+<tr>
+<td class="extbl">none</td>
+<td class="extbl"><span style="border:5px none #ff3333;padding:3px;">枠線なし</span></td>
+</tr>
+<tr>
+<td class="extbl">solid</td>
+<td class="extbl"><span style="border:5px solid #ff3333;padding:3px;">実　線</span></td>
+</tr>
+<tr>
+<td class="extbl">double</td>
+<td class="extbl"><span style="border:5px double #ff3333;padding:3px;">2本線</span></td>
+</tr>
+<tr>
+<td class="extbl">groove</td>
+<td class="extbl"><span style="border:5px groove #ff3333;padding:3px;">くぼんだ立体線</span></td>
+</tr>
+<tr>
+<td class="extbl">ridge</td>
+<td class="extbl"><span style="border:5px ridge #ff3333;padding:3px;">隆起した立体線</span></td>
+</tr>
+<tr>
+<td class="extbl">inset</td>
+<td class="extbl"><span style="border:5px inset #ff3333;padding:3px;">くぼんだ線</span></td>
+</tr>
+<tr>
+<td class="extbl">outset</td>
+<td class="extbl"><span style="border:5px outset #ff3333;padding:3px;">隆起した線</span></td>
+</tr>
+<tr>
+<td class="extbl">dashed</td>
+<td class="extbl"><span style="border:5px dashed #ff3333;padding:3px;">破　線</span></td>
+</tr>
+<tr>
+<td class="extbl">dotted</td>
+<td class="extbl"><span style="border:5px dotted #ff3333;padding:3px;">点　線</span></td>
+</tr>
+</table>
+
+<hr>
+<p class="tl">■padding</p>
+<p>ボックスモデルの内側4辺に対して余白を指定する。</p>
+<p>
+	border:5px solid;width:200px;
+	<div style="border:5px solid;width:200px;">
+		5 + 5 + 200 = 210
+	</div>
+</p>
+<p>
+	border:5px solid;width:200px;padding:10px;
+	<div style="border:5px solid;width:200px;padding:10px;">
+		5 + 5 + 200 + 10 + 10 = 230
+	</div>
+</p>
+<p>
+	上下左右、個別に設定可能。
+	<pre>
+padding-top: 10px;
+padding-right: 20px;
+padding-bottom: 10px;
+padding-left: 20px;
+	</pre>
+	省略して以下のように記述することも可能(上、右、下、左の順に指定)。
+	<pre>
+padding: 10px 20px 10px 20px;
+	</pre>
+	左右が同じ場合、省略して以下のように記述することも可能(上、左右、下の順に指定)。
+	<pre>
+padding: 10px 20px 10px;
+	</pre>
+	上下、左右が同じ場合、省略して以下のように記述することも可能(上下、左右の順に指定)。
+	<pre>
+padding: 10px 20px;
+	</pre>
+</p>
+
+<hr>
+<p class="tl">■margin</p>
+<p>
+	ボックスモデルの外側4辺に対して余白を指定する。
+	指定方法はpaddingと同様。
+</p>
+<div style="border:1px solid;width:300px;">
+	<div style="border:1px solid;width:100px;padding:5px;margin:5px;">
+		padding:5px;margin:5px;
+	</div>
+</div>
 
 </body>
 </html>
