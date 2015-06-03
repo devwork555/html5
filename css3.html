@@ -704,12 +704,47 @@ padding: 10px 20px;
 <p>
 	ボックスモデルの外側4辺に対して余白を指定する。
 	指定方法はpaddingと同様。
+	<strong style="display:block;">
+		なお、互いに向き合う方向にmarginを指定すると、どちらか大きい方が使用される。
+	</strong>
 </p>
 <div style="border:1px solid;width:300px;">
 	<div style="border:1px solid;width:100px;padding:5px;margin:5px;">
 		padding:5px;margin:5px;
 	</div>
 </div>
+
+<hr>
+<p class="tl">■box-sizing</p>
+<p>
+	ボックスモデルの計算方法を変更する。
+	<ul>
+	<li>
+		content-box
+		<p>初期値。width＋border＋paddingが横幅となる。</p>
+	</li>
+	<li>
+		border-box
+		<p>widthが横幅となる(width値に収まるよう調整される)。</p>
+	</li>
+	</ul>
+</p>
+
+<p>
+<div style="width:200px;border:5px solid;padding:5px;box-sizing:content-box;height:80px;">
+width:200px;border:5px;padding:5px;height:80px;
+box-sizing:content-box;(default)
+</div>
+</p>
+
+<p>
+<div style="width:200px;border:5px solid;padding:5px;box-sizing:border-box;height:80px;">
+width:200px;border:5px;padding:5px;height:80px;
+box-sizing:border-box;
+</div>
+</p>
+
+
 
 </body>
 </html>
