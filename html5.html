@@ -47,10 +47,16 @@
 <header>
 	<h2 class="el">HeaderTitle</h2>
 	<p>
+		<pre>
+&lt;header&gt;
+  &lt;h2 class="el">HeaderTitle&lt;/h2&gt;
+&lt;/header&gt;
+		</pre>
 		セクション内でのヘッダ構造として定義する。セクションに対して一度だけ記述できる
 		通常はセクションの見出し(h1～h6)を含むように意図されているが必須ではない。
 		header要素はセクショニング要素ではないため、<span class="nt">アウトラインを生成しない</span>
 	</p>
+
 	<hr>
 	<p class="tl">■nav</p>
 	<nav class="el">
@@ -62,6 +68,16 @@
 		</ul>
 	</nav>
 	<p>
+		<pre>
+&lt;nav class="el"&gt;
+  &lt;h2&gt;NavTitle&lt;/h2&gt;
+  &lt;ul&gt;
+    &lt;li&gt;コンテンツ1&lt;/li&gt;
+    &lt;li&gt;コンテンツ2&lt;/li&gt;
+    &lt;li&gt;コンテンツ3&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+		</pre>
 		ナビゲーションを定義する。
 		ドキュメント内の全てのサイドメニューやリンクをnav要素にするのではなく、
 		主にサイト内のコンテンツを移動する主要なナビゲーションに使用する。
@@ -72,11 +88,16 @@
 <p class="tl">■section</p>
 <section class="el">
 	<h2>SectionTitle</h2>
-	<p>
-		セクションを構成する汎用的な要素。
-		通常、各セクションはsection要素の子として見出し(h1～h6)を含めることによって識別される。
-	</p>
 </section>
+<p>
+	<pre>
+&lt;section class="el"&gt;
+  &lt;h2&gt;SectionTitle&lt;/h2&gt;
+&lt;/section&gt;
+	</pre>
+	セクションを構成する汎用的な要素。
+	通常、各セクションはsection要素の子として見出し(h1～h6)を含めることによって識別される。
+</p>
 
 <hr>
 <p class="tl">■footer</p>
@@ -85,17 +106,29 @@
 	<p>フッターの内容</p>
 </footer>
 <p>
+	<pre>
+&lt;footer class="el"&gt;
+  &lt;h2&gt;FooterTitle&lt;/h2&gt;
+  &lt;p&gt;フッターの内容&lt;/p&gt;
+&lt;/footer&gt;
+	</pre>
 	セクションのフッタ構造を定義する。
 	セクションのフッタの場合と、ページ全体のフッタの場合がある。
 	必ずしもセクションの最後に記載する必要はない。
 </p>
-<hr>
 
+<hr>
 <p class="tl">■address</p>
 <section>
 	<h2>SectionTitle</h2>
 	<address class="el">セクション要素の連絡先や住所</address>
 	<p>
+		<pre>
+&lt;section&gt;
+  &lt;h2&gt;SectionTitle&lt;/h2&gt;
+  &lt;address class="el"&gt;セクション要素の連絡先や住所&lt;/address&gt;
+&lt;/section&gt;
+		</pre>
 		<span class="nt">イタリック体になる。</span>
 		address要素が含まれているセクション要素の住所や連絡先を表す要素。
 		連絡先情報以外は含められない。
@@ -109,6 +142,12 @@
 	<footer>AriticleFooter</footer>
 </article>
 <p>
+	<pre>
+&lt;article class="el"&gt;
+  &lt;header&gt;&lt;h2&gt;ArticleTitle&lt;/h2&gt;&lt;/header&gt;
+  &lt;footer&gt;AriticleFooter&lt;/footer&gt;
+&lt;/article&gt;
+	</pre>
 	独立したコンテンツとして再配布可能、または再利用可能なコンテンツを記述する。
 	article要素が入れ子になる場合、内側の要素の内容は、外側の要素の内容と関連している内容となる。
 </p>
@@ -118,7 +157,14 @@
 <aside class="el">
 	<h2>AsideTitle</h2>
 </aside>
-<p>メインコンテンツ以外の内容を指定する要素。</p>
+<p>
+	<pre>
+&lt;aside class="el"&gt;
+  &lt;h2&gt;AsideTitle&lt;/h2&gt;
+&lt;/aside&gt;
+	</pre>
+	メインコンテンツ以外の内容を指定する要素。
+</p>
 
 
 <hr class="sline">
@@ -126,16 +172,19 @@
 <p class="tl">■main</p>
 <main class="el">
 	<h2>MainTitle</h2>
-	<p>
-		その文書のメインコンテンツであることを表す。
-		main要素はコンテンツを区分するが、文書のアウトラインに影響することも、
-		影響されることもない。
-	</p>
-	<p>
-		文書内でmain要素は1つのみ記述できる。<BR>
-		main要素の中には、header要素、nav要素、footer要素は含まない。
-	</p>
 </main>
+<p>
+	<pre>
+&lt;main class="el"&gt;
+  &lt;h2&gt;MainTitle&lt;/h2&gt;
+&lt;/main&gt;
+	</pre>
+	その文書のメインコンテンツであることを表す。
+	main要素はコンテンツを区分するが、文書のアウトラインに影響することも、
+	影響されることもない。
+	文書内でmain要素は1つのみ記述できる。
+	main要素の中には、header要素、nav要素、footer要素は含まない。
+</p>
 
 <hr>
 <p class="tl">■ol,li</p>
@@ -146,7 +195,18 @@
 	<li>え</li>
 	<li>お</li>
 </ol>
-<p>リストの並び順に意味や意図がある場合に使用する。</p>
+<p>
+	<pre>
+&lt;ol class="el" start="10" reversed&gt;
+  &lt;li&gt;あ&lt;/li&gt;
+  &lt;li&gt;い&lt;/li&gt;
+  &lt;li&gt;う&lt;/li&gt;
+  &lt;li&gt;え&lt;/li&gt;
+  &lt;li&gt;お&lt;/li&gt;
+&lt;/ol&gt;
+	</pre>
+	リストの並び順に意味や意図がある場合に使用する。
+</p>
 
 <hr>
 <p class="tl">■ul,li</p>
@@ -157,7 +217,18 @@
 	<li>え</li>
 	<li>お</li>
 </ul>
-<p>順序が重要ではないリストを記述する場合に使用する。</p>
+<p>
+	<pre>
+&lt;ul class="el"&gt;
+  &lt;li&gt;あ&lt;/li&gt;
+  &lt;li&gt;い&lt;/li&gt;
+  &lt;li&gt;う&lt;/li&gt;
+  &lt;li&gt;え&lt;/li&gt;
+  &lt;li&gt;お&lt;/li&gt;
+&lt;/ul&gt;
+	</pre>
+	順序が重要ではないリストを記述する場合に使用する。
+</p>
 
 <hr>
 <p class="tl">■dl,dt,dd</p>
@@ -176,6 +247,22 @@
 	<dd>データ5</dd>
 </dl>
 <p>
+	<pre>
+&lt;dl class="el"&gt;
+  &lt;dt&gt;データタイトル1&lt;/dt&gt;
+  &lt;dd&gt;データ1&lt;/dd&gt;
+  &lt;dd&gt;データ2&lt;/dd&gt;
+  &lt;dd&gt;データ3&lt;/dd&gt;
+  &lt;dd&gt;データ4&lt;/dd&gt;
+  &lt;dd&gt;データ5&lt;/dd&gt;
+  &lt;dt&gt;データタイトル2&lt;/dt&gt;
+  &lt;dd&gt;データ1&lt;/dd&gt;
+  &lt;dd&gt;データ2&lt;/dd&gt;
+  &lt;dd&gt;データ3&lt;/dd&gt;
+  &lt;dd&gt;データ4&lt;/dd&gt;
+  &lt;dd&gt;データ5&lt;/dd&gt;
+&lt;/dl&gt;
+	</pre>
 	名前と値のグループを持つリストを記述する場合に使用する。
 	名前と値のグループは、用語とその定義、質問と回答などを記述する。
 	dt要素に名前、dd要素に値を記述する。
@@ -186,15 +273,30 @@
 <div class="el">
 	<p>div要素の内容</p>
 </div>
-<p>特別な意味を持たない要素。どうしても他の要素を指定するのが適切出ない場合のみ使用する。</p>
+<p>
+	<pre>
+&lt;div class="el"&gt;
+  &lt;p&gt;div要素の内容&lt;/p&gt;
+&lt;/div&gt;
+	</pre>
+	特別な意味を持たない要素。どうしても他の要素を指定するのが適切出ない場合のみ使用する。
+</p>
 
 <hr>
 <p class="tl">■pre</p>
-<pre >
+<pre>
 	整形済みテキスト。
 	インデント、改行もそのまま表示される。
 </pre>
-<p><span class="nt">フォントサイズが替わる。</span></p>
+<p>
+	<pre>
+&lt;pre&gt;
+  整形済みテキスト。
+  インデント、改行もそのまま表示される。
+&lt;/pre&gt;
+	</pre>
+	<span class="nt">フォントサイズが替わる。</span>
+</p>
 
 <hr>
 <p class="tl">■blockquote</p>
@@ -202,6 +304,11 @@
 blockquote要素の内容
 </blockquote>
 <p>
+	<pre>
+&lt;blockquote class="el" cite="http://www.google.co.jp"&gt;
+  blockquote要素の内容
+&lt;/blockquote&gt;
+	</pre>
 	<span class="nt">インデントされる。</span>
 	他から文書などを引用したセクションであることを表す。
 </p>
@@ -213,6 +320,12 @@ blockquote要素の内容
 	<img src="./static/kaeru.gif">
 </figure>
 <p>
+	<pre>
+&lt;figure class="el"&gt;
+  &lt;figcaption&gt;top figcaption&lt;/figcaption&gt;
+  &lt;img src="./static/kaeru.gif"&gt;
+&lt;/figure&gt;
+	</pre>
 	説明文の付いた図や表などを表す。figure要素はドキュメントの流れに影響を及ぼさない。
 </p>
 
@@ -222,27 +335,37 @@ blockquote要素の内容
 <p class="tl">■a</p>
 <a href="http://www.google.co.jp" target="_blank" rel="noreferrer" type="text/html" hreflang="ja">リンク</a>
 <p>
+	<pre>
+&lt;a href="http://www.google.co.jp" target="_blank" rel="noreferrer" type="text/html" hreflang="ja"&gt;リンク&lt;/a&gt;
+	</pre>
 	href属性が存在しない場合、target属性、download属性、rel属性、hreflang属性、type属性は記述できない。
 	target="_blank"が非推奨ではなくなった。
 </p>
 
 <hr>
 <p class="tl">■strong</p>
+<strong class="el">重要文言
+	<strong>【重要文言入れ子】</strong>
+</strong>
+普通の文言
 <p>
-	<strong class="el">重要文言
-		<strong>【重要文言入れ子】</strong>
-	</strong>
-	普通の文言
-</p>
-<p>
+	<pre>
+&lt;strong class="el"&gt;重要文言
+  &lt;strong&gt;【重要文言入れ子】&lt;/strong&gt;
+&lt;/strong&gt;
+普通の文言
+	</pre>
 	<span class="nt">太字になる。</span>
 	入れ子にすることも可能。入れ子の階層が深いほど、その内容の重要性が増す。
 </p>
 
 <hr>
 <p class="tl">■small</p>
-<p>本文<small class="el">注意事項：注意！</small></p>
+本文<small class="el">注意事項：注意！</small>
 <p>
+	<pre>
+本文&lt;small class="el"&gt;注意事項：注意！&lt;/small&gt;
+	</pre>
 	<span class="nt">フォントサイズが小さくなる。</span>
 	注意事項、免責事項等に使用する。
 	<span class="nt">重要度や強調の意味は無い。</span>
@@ -253,6 +376,10 @@ blockquote要素の内容
 <time class="el">2015-03-03</time><br>
 <time class="el" datetime="2015-01-01">元旦(datetime属性あり)</time>
 <p>
+	<pre>
+&lt;time class="el"&gt;2015-03-03&lt;/time&gt;&lt;br&gt;
+&lt;time class="el" datetime="2015-01-01"&gt;元旦(datetime属性あり)&lt;/time&gt;
+	</pre>
 	正確な日付や日時を記載する場合に使用する。
 	datetime属性を指定した場合、time要素の中に日付、日時以外の内容を記載できるが、
 	<span class="nt">記載内容とdatetime属性で指定した日付、日時が一致する必要がある</span>
@@ -260,9 +387,11 @@ blockquote要素の内容
 
 <hr>
 <p class="tl">■em</p>
-<p>普通の文言<em class="el">強調文言</em></p>
+普通の文言<em class="el">強調文言</em>
 <p>
-	<span class="nt">イタリック体になる。</span>
+	<pre>
+普通の文言&lt;em class="el"&gt;強調文言&lt;/em&gt;
+	</pre>
 	入れ子にすることも可能。入れ子の階層が深いほど、その内容の強調が増す。
 </p>
 
@@ -270,7 +399,9 @@ blockquote要素の内容
 <p class="tl">■cite</p>
 <cite class="el">引用した作品のタイトル</cite>
 <p>
-	<span class="nt">イタリック体になる。</span>
+	<pre>
+&lt;cite class="el"&gt;引用した作品のタイトル&lt;/cite&gt;
+	</pre>
 	作者名などには使用できない。
 </p>
 
@@ -278,6 +409,9 @@ blockquote要素の内容
 <p class="tl">■q</p>
 <q class="el">引用した文書、テキストなど</q>
 <p>
+	<pre>
+&lt;q class="el"&gt;引用した文書、テキストなど&lt;/q&gt;
+	</pre>
 	<span class="nt">引用符で囲まれる。</span>
 	q要素を使用せず、文中で引用符で囲むことも可能。
 	<span class="nt">html要素でlang="ja"を指定していると「」で囲まれる模様。</span>
@@ -287,19 +421,25 @@ blockquote要素の内容
 <hr>
 <p class="tl">■dfn</p>
 <p>
-	<dfn class="el">用語</dfn><br>
-	用語の定義
+	<dfn class="el">用語</dfn>用語の定義
 </p>
 <p>
-	<span class="nt">イタリック体になる。</span>
+	<pre>
+&lt;p&gt;
+  &lt;dfn class="el"&gt;用語&lt;/dfn&gt;用語の定義
+&lt;/p&gt;
+	</pre>
 	用語の定義を記載する。dfn要素の最も近い親要素であるdl要素、
 	p要素などの中にdfn要素によって指定された用語の定義を含んでいる必要がある。
 </p>
 
 <hr>
 <p class="tl">■abbr</p>
-<p><abbr class="el" title="HyperText Markup Language">HTML</abbr></p>
+<abbr class="el" title="HyperText Markup Language">HTML</abbr>
 <p>
+	<pre>
+&lt;abbr class="el" title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;
+	</pre>
 	略語または頭文字を表すために使用する。
 	title属性を指定する場合、正式名称を記載する。
 	title属性の内容がツールチップとして表示される。
@@ -307,14 +447,24 @@ blockquote要素の内容
 
 <hr>
 <p class="tl">■code</p>
-<p><code class="el">var s = 1 + 2;</code>
+<code class="el">var s = 1 + 2;</code>
 </p>
-<p>プログラムなどのコードを記載する。</p>
+<p>
+	<pre>
+&lt;code class="el"&gt;var s = 1 + 2;&lt;/code&gt;
+	</pre>
+	プログラムなどのコードを記載する。
+</p>
 
 <hr>
 <p class="tl">■var</p>
-<p><var class="el">Variable</var></p>
-<p>変数を記載する。数式やプログラムで変数や定数を表す識別子、物理量、関数のパラメータなどに使用する。</p>
+<var class="el">Variable</var>
+<p>
+	<pre>
+&lt;var class="el"&gt;Variable&lt;/var&gt;
+	</pre>
+	変数を記載する。数式やプログラムで変数や定数を表す識別子、物理量、関数のパラメータなどに使用する。
+</p>
 
 <hr>
 <p class="tl">■samp</p>
