@@ -30,7 +30,6 @@
 		if(canvas.getContext){
 			var context = canvas.getContext('2d');
 			context.fillRect(20,40,50,100); 
-
 			context.fillStyle = '#ff3333'; 
 			context.arc(150,75,60,Math.PI*1,Math.PI*2,true);
 			context.fill();
@@ -428,7 +427,8 @@ blockquote要素の内容
 <p>
 	<pre>
 &lt;p&gt;
-  &lt;dfn class="el"&gt;用語&lt;/dfn&gt;用語の定義
+  &lt;dfn class="el"&gt;用語&lt;/dfn&gt;
+  用語の定義
 &lt;/p&gt;
 	</pre>
 	用語の定義を記載する。dfn要素の最も近い親要素であるdl要素、
@@ -465,23 +465,39 @@ blockquote要素の内容
 	<pre>
 &lt;var class="el"&gt;Variable&lt;/var&gt;
 	</pre>
-	変数を記載する。数式やプログラムで変数や定数を表す識別子、物理量、関数のパラメータなどに使用する。
+	変数を記載する。数式やプログラムで変数や定数を表す識別子、
+	物理量、関数のパラメータなどに使用する。
 </p>
 
 <hr>
 <p class="tl">■samp</p>
 <p><samp class="el">出力結果サンプル</samp></p>
-<p>プログラムを実行した際の何らかの出力結果の例や、コンピュータが返す何らかのメッセージの例。</p>
+<p>
+	<pre>
+&lt;samp class="el"&gt;出力結果サンプル&lt;/samp&gt;
+	</pre>
+	プログラムを実行した際の何らかの出力結果の例や、
+	コンピュータが返す何らかのメッセージの例。
+</p>
 
 <hr>
 <p class="tl">■kbd</p>
 <p><kbd class="el">ユーザーが入力する内容</kbd></p>
-<p>ユーザー入力を表す。通常はキーボード入力だが、音声コマンドのような他の入力を表すことも可能。</p>
+<p>
+	<pre>
+&lt;kbd class="el"&gt;ユーザーが入力する内容&lt;/kbd&gt;
+	</pre>
+	ユーザー入力を表す。通常はキーボード入力だが、
+	音声コマンドのような他の入力を表すことも可能。
+</p>
 
 <hr>
 <p class="tl">■sub</p>
 <p>log<sub class="el">10</sub>X</p>
 <p>
+	<pre>
+log&lt;sub class="el"&gt;10&lt;/sub&gt;X
+	</pre>
 	下付き文字を表す。
 	特定の意味を持つ表記方法のために使用する要素で、
 	単に文字が下付きになるという表示の見栄えのために使用してはならない。
@@ -491,6 +507,9 @@ blockquote要素の内容
 <p class="tl">■sup</p>
 <p>100m<sup class="el">2</sup></p>
 <p>
+	<pre>
+100m&lt;sup class="el"&gt;2&lt;/sup&gt;
+	</pre>
 	下付き文字を表す。
 	特定の意味を持つ表記方法のために使用する要素で、
 	単に文字が上付きになるという表示の見栄えのために使用してはならない。
@@ -500,32 +519,49 @@ blockquote要素の内容
 <p class="tl">■i</p>
 <p><i class="el">声や心の中で思ったこと</i></p>
 <p>
-	<span class="nt">イタリック体になる。</span>
+	<pre>
+&lt;i class="el"&gt;声や心の中で思ったこと&lt;/i&gt;
+	</pre>
 	声や心の中で思ったことなど、他と区別したいテキストを表す際に使用する。
-	i要素で異なる言語のテキスト部分をマークアップする場合、lang属性で言語を指定する必要がある。
+	i要素で異なる言語のテキスト部分をマークアップする場合、
+	lang属性で言語を指定する必要がある。
 </p>
 
 <hr>
 <p class="tl">■b</p>
 <p><b class="el">他と区別したいテキスト</b></p>
 <p>
+	<pre>
+&lt;b class="el"&gt;他と区別したいテキスト&lt;/b&gt;
+	</pre>
 	<span class="nt">太字になる。</span>
-	他と区別したいテキストを表す際に使用する。他の要素でマークアップできない場合に使用する。
+	他と区別したいテキストを表す際に使用する。
+	他の要素でマークアップできない場合に使用する。
 </p>
 
 <hr>
 <p class="tl">■u</p>
 <p><u class="el">スペルミスなど</u></p>
 <p>
+	<pre>
+&lt;u class="el"&gt;スペルミスなど&lt;/u&gt;
+	</pre>
 	<span class="nt">下線が付く。</span>
 	ニュアンスなどがはっきりと伝わりにくかったり、
-	あえて本来の意味とは違う意味で使っているテキストや、スペルミスなどを表す際に使用する。
+	あえて本来の意味とは違う意味で使っているテキストや、
+	スペルミスなどを表す際に使用する。
 </p>
 
 <hr>
 <p class="tl">■mark</p>
 <p><mark class="el" style="background-color:lightgreen;">ハイライト</mark></p>
-<p>ハイライトさせることにより注意が向くようにするために使用する。重要性は表さない。</p>
+<p>
+	<pre>
+&lt;mark class="el" style="background-color:lightgreen;"&gt;ハイライト&lt;/mark&gt;
+	</pre>
+	ハイライトさせることにより注意が向くようにするために使用する。
+	重要性は表さない。
+</p>
 
 <hr>
 <p class="tl">■ruby,rt,rp,rtc</p>
@@ -534,25 +570,57 @@ blockquote要素の内容
 		漢字<rp>(</rp><rt>かんじ</rt><rp>)</rp>
 	</ruby>
 </p>
-<p>[ruby]ルビ(ふりがな)を振る場合に使用する。</p>
-<p>[rt]ルビ(ふりがな)を振る。</p>
-<p>[rp]ルビ(ふりがな)をサポートしていないブラウザの場合用の文言を記述する</p>
-<p>[rtc]rtをグループ化する。1つのルビ対象テキストに対して、複数のルビを適用したい場合などに使用する。</p>
+<p>
+<pre>
+&lt;ruby class="el"&gt;
+  漢字&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;かんじ&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;
+&lt;/ruby&gt;
+</pre>
+<ul>
+	<li>ruby
+		<p>ルビ(ふりがな)を振る場合に使用する。</p>
+	</li>
+	<li>rt
+		<p>ルビ(ふりがな)を振る。</p>
+	</li>
+	<li>rp
+		<p>ルビ(ふりがな)をサポートしていないブラウザの場合用の文言を記述する</p>
+	</li>
+	<li>rtc
+		<p>
+			rtをグループ化する。1つのルビ対象テキストに対して、
+			複数のルビを適用したい場合などに使用する。
+		</p>
+	</li>
+</ul>
 
 <hr>
 <p class="tl">■bdi</p>
 <p><bdi class="el" title="The bdi element is not supported by browsers yet">right</bdi>あいうえお</p>
-<p>テキストの一部分を異なる文字の表記方向に指定する場合に使用する。</p>
+<p>
+	<pre>
+&lt;bdi class="el" title="The bdi element is not supported by browsers yet"&gt;right&lt;/bdi&gt;あいうえお
+	</pre>
+	テキストの一部分を異なる文字の表記方向に指定する場合に使用する。
+</p>
 
 <hr>
 <p class="tl">■wbr</p>
-<p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa⇒<wbr class="el">return</p>
-<p>コンテンツの表示領域が小さくなったときに折り返す位置を明示的に指定する場合に使用する。</p>
+<p>aaaaaaaaaaaaaaaaaaaaaa⇒<wbr class="el">return</p>
+<p>
+	<pre>
+aaaaaaaaaaaaaaaaaaaaaa⇒&lt;wbr class="el"&gt;return
+	</pre>
+	コンテンツの表示領域が小さくなったときに折り返す位置を明示的に指定する場合に使用する。
+</p>
 
 <hr>
 <p class="tl">■ins</p>
 <p><ins class="el">追加されたテキストや画像</ins></p>
 <p>
+	<pre>
+&lt;ins class="el"&gt;追加されたテキストや画像&lt;/ins&gt;
+	</pre>
 	<span class="nt">下線が付く。</span>
 	追加された部分であることを示す際に使用する。
 </p>
@@ -561,6 +629,9 @@ blockquote要素の内容
 <p class="tl">■del</p>
 <p><del class="el">削除箇所　削除箇所</del></p>
 <p>
+	<pre>
+&lt;del class="el"&gt;削除箇所　削除箇所&lt;/del&gt;
+	</pre>
 	<span class="nt">取消線が付く。</span>
 	削除された部分であることを示す際に使用する。
 </p>
@@ -569,6 +640,9 @@ blockquote要素の内容
 <p class="tl">■s</p>
 <p><s class="el">正確ではないテキスト</s></p>
 <p>
+	<pre>
+&lt;s class="el"&gt;正確ではないテキスト&lt;/s&gt;
+	</pre>
 	<span class="nt">取消線が付く。</span>
 	テキストが正確でないことを示す場合に使用する。
 </p>
@@ -578,55 +652,74 @@ blockquote要素の内容
 <h1>(4)画像・動画関連の要素</h1>
 <p class="tl">■img</p>
 <img src="./static/kaeru.gif" alt="カエル">
-<p>画像を埋め込む際に使用する。src属性は必須。alt属性は必須でなくなった。</p>
+<p>
+	<pre>
+&lt;img src="./static/kaeru.gif" alt="カエル"&gt;
+	</pre>
+	画像を埋め込む際に使用する。
+	src属性は必須。alt属性は必須でなくなった。
+</p>
 
 <hr>
 <p class="tl">■iframe</p>
 <p><iframe src="http://www.html5.jp/" width="800" height="500" sandbox="allow-same-origin allow-forms allow-scripts"></iframe></p>
-<p>インラインフレームでコンテンツを表示する場合に使用する。</p>
 <p>
-	seamless属性はインラインフレームのコンテンツを親コンテンツの一部のように表示する際に使用するが、
+	<pre>
+&lt;iframe src="http://www.html5.jp/" width="800" height="500" sandbox="allow-same-origin allow-forms allow-scripts"&gt;&lt;/iframe&gt;
+	</pre>
+	インラインフレームでコンテンツを表示する場合に使用する。
+	seamless属性はインラインフレームのコンテンツを
+	親コンテンツの一部のように表示する際に使用するが、
 	現状メジャーなブラウザでもサポートされていない模様。
 </p>
-
-sandbox属性は、悪意あるコンテンツから被害を受けるのを避けるために、
-フレーム内コンテンツの表示に制限を加える際に使用する。指定できる値は下記(複数指定可)。
-<table>
-<tbody>
-<tr>
-	<th>値</th>
-	<th>概要</th>
-</tr>
-<tr>
-	<td>allow-same-origin</td>
-	<td>フレーム内のコンテンツの出処が、親ページと同じものとされる</td>
-</tr>
-<tr>
-	<td>allow-forms</td>
-	<td>フレーム内のコンテンツのフォームを有効にする</td>
-</tr>
-<tr>
-	<td>allow-scripts</td>
-	<td>フレーム内のコンテンツのスクリプトを有効にする。ただし、ポップアップは無効</td>
-</tr>
-</tbody>
-</table>
+<p>
+	sandbox属性は、悪意あるコンテンツから被害を受けるのを避けるために、
+	フレーム内コンテンツの表示に制限を加える際に使用する。
+	指定できる値は下記(スペースで区切って複数指定可)。
+	<table>
+	<tbody>
+	<tr>
+		<th>値</th>
+		<th>概要</th>
+	</tr>
+	<tr>
+		<td>allow-same-origin</td>
+		<td>フレーム内のコンテンツの出処が、親ページと同じものとされる</td>
+	</tr>
+	<tr>
+		<td>allow-forms</td>
+		<td>フレーム内のコンテンツのフォームを有効にする</td>
+	</tr>
+	<tr>
+		<td>allow-scripts</td>
+		<td>フレーム内のコンテンツのスクリプトを有効にする。ただし、ポップアップは無効</td>
+	</tr>
+	</tbody>
+	</table>
+</p>
 
 <hr>
 <p class="tl">■embed</p>
 <p><embed src="./static/wave.swf" type="application/x-shockwave-flash"></p>
 <p>
+	<pre>
+&lt;embed src="./static/wave.swf" type="application/x-shockwave-flash"&gt;
+	</pre>
 	外部アプリケーションやインタラクティブなコンテンツ、
-	例えば、Flashなどのプラグインを必要とするデータをHTML文書に埋め込む際に使用する。
+	例えば、Flashなどの
+	<span class="nt">プラグインを必要とするデータをHTML文書に埋め込む際に使用</span>する。
 </p>
 
 <hr>
 <p class="tl">■object</p>
 <p><object data="./static/kaeru.gif" width="350" height="300">object要素がサポートされていません。</object></p>
 <p>
+	<pre>
+&lt;object data="./static/kaeru.gif" width="350" height="300"&gt;object要素がサポートされていません。&lt;/object&gt;
+	</pre>
 	文書に外部リソースを埋め込む際に使用する。
 	embed要素がプラグインを必要とするデータを埋め込むのに対して、
-	objectには外部リソース全般を指定することができる。
+	<span class="nt">objectには外部リソース全般を指定することができる。</span>
 </p>
 
 <hr>
@@ -637,7 +730,15 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 		<param name="bgcolor" value="#87ceeb">
 	</object>
 </p>
-<p>object要素の子要素として、object要素で指定されたオブジェクトのパラメータを指定する。</p>
+<p>
+	<pre>
+&lt;object type="application/x-shockwave-flash"&gt;
+  &lt;param name="movie" value="./static/kaeru02.swf"&gt;
+  &lt;param name="bgcolor" value="#87ceeb"&gt;
+&lt;/object&gt;
+	</pre>
+	object要素の子要素として、object要素で指定されたオブジェクトのパラメータを指定する。
+</p>
 
 <hr>
 <p class="tl">■video,source</p>
@@ -655,20 +756,57 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 	</video>
 </p>
 <p>
-	video要素は動画を読み込み、再生する際に使用する。
-	現状、ブラウザによってサポートされている動画形式が異なる。
-</p>
-<p>
-	source要素は動画や音声などのメディアファイルのURLや種類を指定する際に、
-	video要素、audio要素などの中で子要素として使用する。
-</p>
+<pre>
+&lt;video poster="./static/cat.jpg" preload="none" controls&gt;
+  &lt;source src="./static/sample.ogv"&gt;
+  &lt;source src="./static/sample.mp4"&gt;
+  &lt;source src="./static/sample.webm"&gt;
+  &lt;track kind="subtitles" src="./static/developerStories-subtitles-en.vtt"&gt;
+&lt;/video&gt;
+
+&lt;video poster="./static/cat.jpg" preload="none" controls src="./static/sample.mp4"&gt;
+  &lt;track kind="subtitles" src="./static/developerStories-subtitles-en.vtt" default&gt;
+&lt;/video&gt;
+</pre>
+<ul>
+	<li>video
+		<p>
+			動画を読み込み、再生する際に使用する。
+			現状、ブラウザによってサポートされている動画形式が異なる。
+		</p>
+	</li>
+	<li>source
+		<p>
+			source要素は動画や音声などのメディアファイルのURLや種類を指定する際に、
+			video要素、audio要素などの中で子要素として使用する。
+		</p>
+	</li>
+</ul>
 
 <hr>
 <p class="tl">■canvas</p>
+<p><canvas id="canvas">Canvas表示不可の場合に表示される文言</canvas></p>
 <p>
-	<canvas id="canvas">Canvas表示不可の場合に表示される文言</canvas>
+	<pre>
+&lt;head&gt;
+&lt;script type="text/javascript"&gt;
+function renderCanvas(){
+  var canvas = document.getElementById('canvas');
+  if(canvas.getContext){
+    var context = canvas.getContext('2d');
+    context.fillRect(20,40,50,100); 
+    context.fillStyle = '#ff3333'; 
+    context.arc(150,75,60,Math.PI*1,Math.PI*2,true);
+    context.fill();
+  }
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body onload="renderCanvas()"&gt;
+  &lt;canvas id="canvas"&gt;Canvas表示不可の場合に表示される文言&lt;/canvas&gt;
+	</pre>
+	グラフィックを描画する際に使用する。
 </p>
-<p>グラフィックを描画する際に使用する。</p>
 
 <hr>
 <p class="tl">■map,area</p>
@@ -695,14 +833,45 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 	</map>
 </p>
 <p>
-	map要素は任意のimg要素のイメージマップを定義する。map要素内に複数のarea要素を配置する。
-	また、map要素の中には、その他のコンテンツも配置することが可能。
-</p>
-<p>
-	area要素は画像内にリンクを指定する場合にmap要素内に指定する。
-	id属性を指定する場合は、name属性と同値にしなければならない。
-	HTML5ではリンク領域はarea要素でのみ指定が可能となった。また、input要素との関連付けが不可となった。
-</p>
+<pre>
+&lt;img src="./static/japan1.gif" alt="日本地図" width="400" height="305" usemap="#shape1" id="shape1"&gt;
+&lt;map name="shape1"&gt;
+  &lt;area shape="poly" coords="305,11,390,11,390,66,330,66,330,79,305,79" href="javascript:alert('北海道(図)');" alt="北海道"&gt;
+  &lt;area shape="poly" coords="302,83,349,83,349,141,343,141,343,169,279,169,279,149,291,150,291,141,302,141" href="javascript:alert('東北(図)');" alt="東北"&gt;
+  &lt;area shape="poly" coords="286,168,342,169,342,177,347,177,348,236,332,235,332,213,319,213,320,227,295,228,297,202,291,202,291,191,285,191" href="javascript:alert('関東(図)');" alt="関東"&gt;
+  &lt;area shape="poly" coords="278,150,279,169,287,169,287,191,291,190,291,202,296,202,296,249,239,248,238,195,208,195,208,180,243,180,242,135,254,135,254,150" href="javascript:alert('中部(図)');" alt="中部"&gt;
+  &lt;area shape="poly" coords="207,180,207,195,238,194,238,252,182,252,181,228,171,229,171,219,159,219,159,180" href="javascript:alert('近畿(図)');" alt="近畿"&gt;
+  &lt;area shape="rect" coords="101,179,159,220" href="javascript:alert('中国(図)');" alt="中国"&gt;
+  &lt;area shape="rect" coords="109,226,169,259" href="javascript:alert('四国(図)');" alt="四国"&gt;
+  &lt;area shape="poly" coords="33,195,87,195,87,217,99,218,98,293,84,293,77,290,65,290,31,280,14,281,14,262,33,226" href="javascript:alert('九州(図)');" alt="九州"&gt;
+  &lt;!--AREA for text--&gt;
+  &lt;area shape="rect" coords="132,30,209,48" href="javascript:alert('北海道(テキスト)');" alt="北海道"&gt;
+  &lt;area shape="rect" coords="132,58,209,76" href="javascript:alert('東北(テキスト)');" alt="東北"&gt;
+  &lt;area shape="rect" coords="132,86,209,104" href="javascript:alert('関東(テキスト)');" alt="関東"&gt;
+  &lt;area shape="rect" coords="132,114,209,132" href="javascript:alert('中部(テキスト)');" alt="中部"&gt;
+  &lt;area shape="rect" coords="31,30,105,48" href="javascript:alert('近畿(テキスト)');" alt="近畿"&gt;
+  &lt;area shape="rect" coords="31,58,105,76" href="javascript:alert('中国(テキスト)');" alt="中国"&gt;
+  &lt;area shape="rect" coords="31,86,105,104" href="javascript:alert('四国(テキスト)');" alt="四国"&gt;
+  &lt;area shape="rect" coords="31,114,105,132" href="javascript:alert('九州(テキスト)');" alt="九州"&gt;
+&lt;/map&gt;
+</pre>
+<ul>
+	<li>map
+		<p>
+			任意のimg要素のイメージマップを定義する。
+			map要素内に複数のarea要素を配置する。
+			また、map要素の中には、その他のコンテンツも配置することが可能。
+		</p>
+	</li>
+	<li>area
+		<p>
+			画像内にリンクを指定する場合にmap要素内に指定する。
+			id属性を指定する場合は、name属性と同値にしなければならない。
+			HTML5ではリンク領域はarea要素でのみ指定が可能となった。
+			また、input要素との関連付けが不可となった。
+		</p>
+	</li>
+</ul>
 <pre>
 【ara要素のshape属性について】
 
@@ -769,30 +938,74 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 </tfoot>
 </table>
 <p>
-	table要素は表組みを作成する際に使用する。レイアウトのために使用すべきではない。
-</p>
-<p>
-	thead要素は表のヘッダを定義する。table要素内に1つのみ記述可能。
-</p>
-<p>
-	tbody要素は表の本体を定義する。table要素内に複数記述可能。
-	なお、table要素の直下にtr要素が記述されると、tbody要素が暗黙的に定義される。
-</p>
-<p>
-	tfoot要素は表のフッタを定義する。table要素内に1つのみ記述可能。
-</p>
-<p>
-	th要素は表の見出しを表す。scope属性によって、どのデータの見出しかを指定することができる。
-</p>
 <pre>
-・row　見出しセルは同じ横行の後続のセルに適用
-・col　見出しセルは同じ縦列の後続のセルに適用
-・rowgroup　見出しセルは同じ横行の後続の全セルに適用
-・colgroup　見出しセルは同じ縦列の後続の全セルに適用
+&lt;table class="el"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+  &lt;th&gt;No&lt;/th&gt;
+  &lt;th&gt;Name&lt;/th&gt;
+  &lt;th&gt;Code&lt;/th&gt;
+  &lt;th&gt;Col1&lt;/th&gt;
+  &lt;th&gt;Col2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+  &lt;td&gt;1&lt;/td&gt;
+  &lt;td&gt;Name1&lt;/td&gt;
+  &lt;td&gt;Code1&lt;/td&gt;
+  &lt;td&gt;Col11&lt;/td&gt;
+  &lt;td&gt;Col12&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;2&lt;/td&gt;
+  &lt;td&gt;Name2&lt;/td&gt;
+  &lt;td&gt;Code2&lt;/td&gt;
+  &lt;td&gt;Col21&lt;/td&gt;
+  &lt;td&gt;Col22&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;tfoot&gt;
+&lt;tr&gt;
+  &lt;td&gt;footer1&lt;/td&gt;
+  &lt;td&gt;footer2&lt;/td&gt;
+  &lt;td&gt;footer3&lt;/td&gt;
+  &lt;td&gt;footer4&lt;/td&gt;
+  &lt;td&gt;footer5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tfoot&gt;
+&lt;/table&gt;
 </pre>
-<p>
-	td要素は表のデータセルを表す。header属性によって、ヘッダ(th要素)を指定できる。
-</p>
+<ul>
+	<li>table
+		<p>表組みを作成する際に使用する。レイアウトのために使用すべきではない。</p>
+	</li>
+	<li>thead
+		<p>表のヘッダを定義する。table要素内に1つのみ記述可能。</p>
+	</li>
+	<li>tbody
+		<p>
+			表の本体を定義する。table要素内に複数記述可能。
+			なお、table要素の直下にtr要素が記述されると、
+			tbody要素が暗黙的に定義される。
+		</p>
+	</li>
+	<li>tfoot
+		<p>表のフッタを定義する。table要素内に1つのみ記述可能。</p>
+	</li>
+	<li>th
+		<p>表の見出しを表す。scope属性によって、どのデータの見出しかを指定することができる。</p>
+		<pre>
+【row】　見出しセルは同じ横行の後続のセルに適用
+【col】　見出しセルは同じ縦列の後続のセルに適用
+【rowgroup】　見出しセルは同じ横行の後続の全セルに適用
+【colgroup】　見出しセルは同じ縦列の後続の全セルに適用
+		</pre>
+	</li>
+	<li>td
+		<p>表のデータセルを表す。header属性によって、ヘッダ(th要素)を指定できる。</p>
+	</li>
+</ul>
 
 <hr>
 <p class="tl">■caption</p>
@@ -834,10 +1047,47 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 </tfoot>
 </table>
 <p>
+	<pre>
+&lt;table&gt;
+&lt;caption class="el"&gt;キャプション&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+  &lt;th&gt;No&lt;/th&gt;
+  &lt;th&gt;Name&lt;/th&gt;
+  &lt;th&gt;Code&lt;/th&gt;
+  &lt;th&gt;Col1&lt;/th&gt;
+  &lt;th&gt;Col2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+  &lt;td&gt;1&lt;/td&gt;
+  &lt;td&gt;Name1&lt;/td&gt;
+  &lt;td&gt;Code1&lt;/td&gt;
+  &lt;td&gt;Col11&lt;/td&gt;
+  &lt;td&gt;Col12&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;2&lt;/td&gt;
+  &lt;td&gt;Name2&lt;/td&gt;
+  &lt;td&gt;Code2&lt;/td&gt;
+  &lt;td&gt;Col21&lt;/td&gt;
+  &lt;td&gt;Col22&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;tfoot&gt;
+&lt;tr&gt;
+  &lt;td&gt;footer1&lt;/td&gt;
+  &lt;td&gt;footer2&lt;/td&gt;
+  &lt;td&gt;footer3&lt;/td&gt;
+  &lt;td&gt;footer4&lt;/td&gt;
+  &lt;td&gt;footer5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tfoot&gt;
+&lt;/table&gt;
+	</pre>
 	表のタイトルを表す。table要素の子要素のため必ずtable要素が親要素として必要となり、
 	1つのtable要素に対して1つのみ指定可能。
-</p>
-<p>
 	table要素がfigure要素内に記述されている場合はcaption要素ではなく、
 	figcaption要素を使用する。
 </p>
@@ -884,11 +1134,51 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 </tfoot>
 </table>
 <p>
-	表の列をグループ化する。グループ化した列には同じ属性やスタイルを適用することができる。
-</p>
-<p>
+	<pre>
+&lt;table&gt;
+&lt;caption&gt;キャプション&lt;/caption&gt;
+&lt;colgroup span="2" style="background-color:#ff3333;"&gt;
+&lt;colgroup span="3" style="background-color:#1e90ff;"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+  &lt;th&gt;No&lt;/th&gt;
+  &lt;th&gt;Name&lt;/th&gt;
+  &lt;th&gt;Code&lt;/th&gt;
+  &lt;th&gt;Col1&lt;/th&gt;
+  &lt;th&gt;Col2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+  &lt;td&gt;1&lt;/td&gt;
+  &lt;td&gt;Name1&lt;/td&gt;
+  &lt;td&gt;Code1&lt;/td&gt;
+  &lt;td&gt;Col11&lt;/td&gt;
+  &lt;td&gt;Col12&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;2&lt;/td&gt;
+  &lt;td&gt;Name2&lt;/td&gt;
+  &lt;td&gt;Code2&lt;/td&gt;
+  &lt;td&gt;Col21&lt;/td&gt;
+  &lt;td&gt;Col22&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;tfoot&gt;
+&lt;tr&gt;
+  &lt;td&gt;footer1&lt;/td&gt;
+  &lt;td&gt;footer2&lt;/td&gt;
+  &lt;td&gt;footer3&lt;/td&gt;
+  &lt;td&gt;footer4&lt;/td&gt;
+  &lt;td&gt;footer5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tfoot&gt;
+&lt;/table&gt;
+	</pre>
+	表の列をグループ化する。グループ化した列には
+	同じ属性やスタイルを適用することができる。
 	グループ化する列の個数をspan属性で指定する。
-	colgroup要素内にcol要素を配置する場合はspan属性は指定できない(col要素側で指定する)。
+	<span class="nt">colgroup要素内にcol要素を配置する場合はspan属性は指定できない(col要素側で指定する)。</span>
 </p>
 
 <hr>
@@ -935,6 +1225,49 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 </tfoot>
 </table>
 <p>
+	<pre>
+&lt;table&gt;
+&lt;caption&gt;キャプション&lt;/caption&gt;
+&lt;colgroup&gt;
+  &lt;col span="3" style="background-color:#ff3333;"&gt;
+  &lt;col span="2" style="background-color:#1e90ff;"&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+  &lt;th&gt;No&lt;/th&gt;
+  &lt;th&gt;Name&lt;/th&gt;
+  &lt;th&gt;Code&lt;/th&gt;
+  &lt;th&gt;Col1&lt;/th&gt;
+  &lt;th&gt;Col2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+  &lt;td&gt;1&lt;/td&gt;
+  &lt;td&gt;Name1&lt;/td&gt;
+  &lt;td&gt;Code1&lt;/td&gt;
+  &lt;td&gt;Col11&lt;/td&gt;
+  &lt;td&gt;Col12&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;2&lt;/td&gt;
+  &lt;td&gt;Name2&lt;/td&gt;
+  &lt;td&gt;Code2&lt;/td&gt;
+  &lt;td&gt;Col21&lt;/td&gt;
+  &lt;td&gt;Col22&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;tfoot&gt;
+&lt;tr&gt;
+  &lt;td&gt;footer1&lt;/td&gt;
+  &lt;td&gt;footer2&lt;/td&gt;
+  &lt;td&gt;footer3&lt;/td&gt;
+  &lt;td&gt;footer4&lt;/td&gt;
+  &lt;td&gt;footer5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tfoot&gt;
+&lt;/table&gt;
+	</pre>
 	複数の列に同じ属性やスタイルを適用する際に使用する。
 	span属性を指定していないcolgroup要素内に配置する。
 	colgroup要素と異なり、グループ化するという意味は持たない。
@@ -949,6 +1282,12 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 <p><input type="text" id="txt2"></p>
 </form>
 <p>
+	<pre>
+&lt;form id="frm1" name="frm1" method="post" accept-charset="UTF-8" target="_blank" novalidate autocomplete="on"&gt;
+  &lt;input type="text" id="txt1"&gt;
+  &lt;input type="text" id="txt2"&gt;
+&lt;/form&gt;
+	</pre>
 	入力フォームをまとめ、入力されたデータをサーバに送信することが可能。
 	<span class="nt">
 		HTML5よりform要素外に入力フォームを配置することができるようになった
@@ -959,27 +1298,55 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 <hr>
 <p class="tl">■fieldset,legend,label</p>
 <form id="frm2" name="frm2" method="post" accept-charset="UTF-8" target="_blank" novalidate autocomplete="on">
+<p>
 <fieldset id="fd1" class="el" disabled>
-<legend>無効な入力フォーム</legend>
-<p><label for="txt21">テキスト1：<input type="text" id="txt21"></label>
-<p><label for="txt22">テキスト2：<input type="text" id="txt22"></label>
+	<legend>無効な入力フォーム</legend>
+	<p><label for="txt21">テキスト1：<input type="text" id="txt21"></label>
+	<p><label for="txt22">テキスト2：<input type="text" id="txt22"></label>
 </fieldset>
+</p>
+<p>
 <fieldset id="fd2" class="el">
-<legend>有効な入力フォーム</legend>
-<p><label for="txt31">テキスト1：<input type="text" id="txt31"></label>
-<p><label for="txt32">テキスト2：<input type="text" id="txt32"></label>
+	<legend>有効な入力フォーム</legend>
+	<p><label for="txt31">テキスト1：<input type="text" id="txt31"></label>
+	<p><label for="txt32">テキスト2：<input type="text" id="txt32"></label>
 </fieldset>
+</p>
 </form>
 <p>
-	fieldset要素は複数の入力フォームをグループ化する場合に指定する。
-	fieldset要素にdisabled属性を指定すると
-	fieldset要素内のすべての入力フォームが無効になる。
-</p>
-<p>
-	legend要素はfieldset要素内の最初に記述し、
-	グループ化された入力フォームのキャプションを指定する。
-</p>
-<p>label要素は入力フォームに項目名などのラベルを付ける。</p>
+<pre>
+&lt;form id="frm2" name="frm2" method="post" accept-charset="UTF-8" target="_blank" novalidate autocomplete="on"&gt;
+&lt;fieldset id="fd1" class="el" disabled&gt;
+  &lt;legend&gt;無効な入力フォーム&lt;/legend&gt;
+  &lt;p&gt;&lt;label for="txt21"&gt;テキスト1：&lt;input type="text" id="txt21"&gt;&lt;/label&gt;
+  &lt;p&gt;&lt;label for="txt22"&gt;テキスト2：&lt;input type="text" id="txt22"&gt;&lt;/label&gt;
+&lt;/fieldset&gt;
+
+&lt;fieldset id="fd2" class="el"&gt;
+  &lt;legend&gt;有効な入力フォーム&lt;/legend&gt;
+  &lt;p&gt;&lt;label for="txt31"&gt;テキスト1：&lt;input type="text" id="txt31"&gt;&lt;/label&gt;
+  &lt;p&gt;&lt;label for="txt32"&gt;テキスト2：&lt;input type="text" id="txt32"&gt;&lt;/label&gt;
+&lt;/fieldset&gt;
+&lt;/form&gt;
+</pre>
+<ul>
+	<li>fieldset
+		<p>
+			複数の入力フォームをグループ化する場合に指定する。
+			fieldset要素にdisabled属性を指定すると
+			fieldset要素内のすべての入力フォームが無効になる。
+		</p>
+	</li>
+	<li>legend
+		<p>
+			fieldset要素内の最初に記述し、
+			グループ化された入力フォームのキャプションを指定する。
+		</p>
+	</li>
+	<li>label
+		<p>入力フォームに項目名などのラベルを付ける。</p>
+	</li>
+</ul>
 
 <hr>
 <p class="tl">■input,datalist</p>
@@ -1017,19 +1384,67 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 <p><label for="ireset">reset：<input type="reset" id="ireset" name="ireset" value="reset"></label></p>
 <p><label for="ibutton">button：<input type="button" id="ibutton" name="ibutton" value="button"></label></p>
 </form>
-<p>input要素は入力フォームを作成する。</p>
 <p>
-	datalist要素は入力フォームのための入力候補を定義する場合に使用する(本HTMLではtextで使用している)。
-	入力候補はoption要素で指定する。
-	他の入力フォームの選択肢として表示されるため、datalist自体は表示されない。
-</p>
+<pre>
+&lt;form id="inp" name="inp" method="post" accept-charset="UTF-8" novalidate autocomplete="on"&gt;
+  hidden：&lt;input type="hidden" id="ihidden" name="ihidden" value="ihidden"&gt;
+  label for="itext"&gt;text：&lt;input type="text" id="itext" name="itext" placeholder="text" maxlength="10" form="inp" required list="itextdl" accesskey="t"&gt;&lt;/label&gt;
+  &lt;datalist id="itextdl"&gt;
+    &lt;option value="val1"&gt;val1&lt;/option&gt;
+    &lt;option value="val2"&gt;val2&lt;/option&gt;
+    &lt;option value="val3"&gt;val3&lt;/option&gt;
+  &lt;/datalist&gt;
+  &lt;label for="isearch"&gt;search：&lt;input type="search" id="isearch" name="isearch" placeholder="search"&gt;&lt;/label&gt;
+  &lt;label for="itel"&gt;tel：&lt;input type="tel" id="itel" name="itel" placeholder="tel"&gt;&lt;/label&gt;
+  &lt;label for="iurl"&gt;url：&lt;input type="url" id="iurl" name="iurl" placeholder="url"&gt;&lt;/label&gt;
+  &lt;label for="iemail"&gt;email：&lt;input type="email" id="iemail" name="iemail" placeholder="email" pattern="正規表現でパターンを指定する" value="email@email.com"&gt;&lt;/label&gt;
+  &lt;label for="ipassword"&gt;password：&lt;input type="password" id="ipassword" name="ipassword" value="aaaaaaaaaa"&gt;&lt;/label&gt;
+  &lt;label for="idatetime"&gt;datetime：&lt;input type="datetime" id="idatetime" name="idatetime" title="value属性、min属性、max属性はYYYY-MM-DDThh:mm:ss形式で指定する。The datetime input type is not supported in all browsers"&gt;&lt;/label&gt;
+  &lt;label for="idate"&gt;date：&lt;input type="date" id="idate" name="idate" min="2015-01-01" max="2016-12-31" title="value属性、min属性、max属性はYYYY-MM-DD形式で指定する。The date input type is not supported in all browsers"&gt;&lt;/label&gt;
+  &lt;label for="imonth"&gt;month：&lt;input type="month" id="imonth" name="imonth" min="2015-01" max="2016-12" title="value属性、min属性、max属性はYYYY-MM形式で指定する。The month input type is not supported in all browsers"&gt;&lt;/label&gt;
+  &lt;label for="iweek"&gt;week：&lt;input type="week" id="iweek" name="iweek" min="2015-W01" max="2016-W10" title="value属性、min属性、max属性はYYYY-WNN形式で指定する(NNは01～53)。The week input type is not supported in all browsers"&gt;&lt;/label&gt;
+  &lt;label for="itime"&gt;time：&lt;input type="time" id="itime" name="itime" min="00:00" max="01:00" title="value属性、min属性、max属性はhh:mm形式で指定する。The time input type is not supported in all browsers"&gt;&lt;/label&gt;
+  &lt;label for="inumber"&gt;number：&lt;input type="number" id="inumber" name="inumber" min="-10" max="20" step="5"&gt;&lt;/label&gt;
+  &lt;label for="irange"&gt;range：&lt;input type="range" id="irange" name="irange" min="-10" max="20" step="5"&gt;&lt;/label&gt;
+  &lt;label for="icolor"&gt;color：&lt;input type="color" id="icolor" name="icolor" title="The color input type is not supported in all browsers"&gt;&lt;/label&gt;
+  &lt;label for="icheckbox"&gt;checkbox：&lt;input type="checkbox" id="icheckbox" name="icheckbox"&gt;checkbox&lt;/label&gt;
+  radio：
+  &lt;label for="iradio1"&gt;&lt;input type="radio" id="iradio1" name="iradio"&gt;radio1&lt;/label&gt;
+  &lt;label for="iradio2"&gt;&lt;input type="radio" id="iradio2" name="iradio"&gt;radio2&lt;/label&gt;
+  &lt;label for="iradio3"&gt;&lt;input type="radio" id="iradio3" name="iradio"&gt;radio3&lt;/label&gt;
+  &lt;label for="ifile"&gt;file：&lt;input type="file" id="ifile" name="ifile" multiple&gt;&lt;/label&gt;
+  &lt;label for="isubmit"&gt;submit：&lt;input type="submit" id="isubmit" name="isubmit" value="submit" formmethod="post" formtarget="window1"&gt;&lt;/label&gt;
+  &lt;label for="iimage"&gt;image：&lt;input type="image" id="iimage" name="iimage" src="./static/btn.jpg" width="80" height="80" formmethod="post" formtarget="window1" alt="ボタン"&gt;&lt;/label&gt;
+  &lt;label for="ireset"&gt;reset：&lt;input type="reset" id="ireset" name="ireset" value="reset"&gt;&lt;/label&gt;
+  &lt;label for="ibutton"&gt;button：&lt;input type="button" id="ibutton" name="ibutton" value="button"&gt;&lt;/label&gt;
+&lt;/form&gt;
+</pre>
+<ul>
+	<li>input
+		<p>入力フォームを作成する。</p>
+	</li>
+	<li>datalist
+		<p>
+			入力フォームのための入力候補を定義する場合に使用する(本HTMLではtextで使用している)。
+			入力候補はoption要素で指定する。
+			他の入力フォームの選択肢として表示されるため、datalist自体は表示されない。
+		</p>
+	</li>
+</ul>
 
 <hr>
 <p class="tl">■button</p>
 <p><button type="submit" id="bsub" name="bsub" class="el">submit</button></p>
 <p><button type="reset" id="brst" name="brst" class="el">reset</button></p>
 <p><button type="button" id="bbtn" name="bbtn" class="el">button</button></p>
-<p>ボタンを作成する場合に使用する。</p>
+<p>
+	<pre>
+&lt;button type="submit" id="bsub" name="bsub" class="el"&gt;submit&lt;/button&gt;
+&lt;button type="reset" id="brst" name="brst" class="el"&gt;reset&lt;/button&gt;
+&lt;button type="button" id="bbtn" name="bbtn" class="el"&gt;button&lt;/button&gt;
+	</pre>
+	ボタンを作成する場合に使用する。<BR>
+</p>
 
 <hr>
 <p class="tl">■select,option</p>
@@ -1047,8 +1462,29 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 	<option value="10">選択肢10</option>
 	</select>
 </p>
-<p>select要素はセレクトボックスを作成する場合に使用する。</p>
-<p>option要素はselect要素内の選択肢を作成する場合に使用する。</p>
+<p>
+<pre>
+&lt;select id="sct1" name="sct1" class="el" size="5" multiple&gt;
+&lt;option value="1"&gt;選択肢1&lt;/option&gt;
+&lt;option value="2"&gt;選択肢2&lt;/option&gt;
+&lt;option value="3"&gt;選択肢3&lt;/option&gt;
+&lt;option value="4"&gt;選択肢4&lt;/option&gt;
+&lt;option value="5"&gt;選択肢5&lt;/option&gt;
+&lt;option value="6"&gt;選択肢6&lt;/option&gt;
+&lt;option value="7"&gt;選択肢7&lt;/option&gt;
+&lt;option value="8"&gt;選択肢8&lt;/option&gt;
+&lt;option value="9"&gt;選択肢9&lt;/option&gt;
+&lt;option value="10"&gt;選択肢10&lt;/option&gt;
+&lt;/select&gt;
+</pre>
+<ul>
+	<li>select
+		<p>セレクトボックスを作成する場合に使用する。</p>
+	</li>
+	<li>option
+		<p>select要素内の選択肢を作成する場合に使用する。</p>
+	</li>
+</ul>
 
 <hr>
 <p class="tl">■optgroup</p>
@@ -1068,19 +1504,45 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 	<option value="10">選択肢10</option>
 	</select>
 </p>
-<p>option要素をグループ化する場合に使用する。</p>
+<p>
+	<pre>
+&lt;select id="sct2" name="sct2" size="5" multiple&gt;
+&lt;optgroup label="opt1" class="el"&gt;
+  &lt;option value="1"&gt;選択肢1&lt;/option&gt;
+  &lt;option value="2"&gt;選択肢2&lt;/option&gt;
+  &lt;option value="3"&gt;選択肢3&lt;/option&gt;
+&lt;/optgroup&gt;
+&lt;option value="4"&gt;選択肢4&lt;/option&gt;
+&lt;option value="5"&gt;選択肢5&lt;/option&gt;
+&lt;option value="6"&gt;選択肢6&lt;/option&gt;
+&lt;option value="7"&gt;選択肢7&lt;/option&gt;
+&lt;option value="8"&gt;選択肢8&lt;/option&gt;
+&lt;option value="9"&gt;選択肢9&lt;/option&gt;
+&lt;option value="10"&gt;選択肢10&lt;/option&gt;
+&lt;/select&gt;
+	</pre>
+	option要素をグループ化する場合に使用する。
+</p>
 
 <hr>
 <p class="tl">■textarea</p>
 <p>
 	<textarea id="txa1" name="txa1" cols="35" rows="5" maxlength="20" placeholder="textarea rows:5 cols:35" wrap="hard" class="el"></textarea>
 </p>
-<p>テキストエリアを作成する場合に使用する。</p>
+<p>
+	<pre>
+&lt;textarea id="txa1" name="txa1" cols="35" rows="5" maxlength="20" placeholder="textarea rows:5 cols:35" wrap="hard" class="el"&gt;&lt;/textarea&gt;
+	</pre>
+	テキストエリアを作成する場合に使用する。
+</p>
 
 <hr>
 <p class="tl">■keygen</p>
 <p><keygen id="keg1" name="keg1" challenge="公開鍵と一緒に送信する任意の文字列"></p>
 <p>
+	<pre>
+&lt;keygen id="keg1" name="keg1" challenge="公開鍵と一緒に送信する任意の文字列"&gt;
+	</pre>
 	鍵のペア(公開鍵と秘密鍵)の生成を行う。
 	フォームが送信されると秘密鍵はローカルに格納され、
 	公開鍵はパッケージされたサーバに送信される。
@@ -1090,6 +1552,9 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 <p class="tl">■output</p>
 <p><output id="out1" name="out1" class="el">計算結果</output></p>
 <p>
+	<pre>
+&lt;output id="out1" name="out1" class="el"&gt;計算結果&lt;/output&gt;
+	</pre>
 	計算結果の出力欄を作成する場合に使用する。
 	出力だけを目的とした要素のため、output要素値が送信されることはない。
 </p>
@@ -1098,6 +1563,9 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 <p class="tl">■progress</p>
 <p><progress id="pgs1" max="100" value="50" class="el">プログレスバー非対応です</progress></p>
 <p>
+	<pre>
+&lt;progress id="pgs1" max="100" value="50" class="el"&gt;プログレスバー非対応です&lt;/progress&gt;
+	</pre>
 	プログレスバーを作成する場合に使用する。
 	progress要素内には非対応のブラウザの場合に表示するコンテンツを記述する。
 </p>
@@ -1106,15 +1574,18 @@ sandbox属性は、悪意あるコンテンツから被害を受けるのを避�
 <p class="tl">■meter</p>
 <p><meter id="mtr1" value="50" min="0" max="100" low="20" high="50" optimum="50">メータ非対応です</meter></p>
 <p>
+	<pre>
+&lt;meter id="mtr1" value="50" min="0" max="100" low="20" high="50" optimum="50"&gt;メータ非対応です&lt;/meter&gt;
+	</pre>
 	あらかじめわかっている範囲内にある数量や割合を表す場合に使用する。
 	low(最も低い領域の上限値)、high(最も高い領域の上限値)、
 	optimum(最適値)を指定することにより、領域が3つに分けられる。
 </p>
 <pre>
-●バーの色：黄色
+●バーの色：黄色(lowとhighの値外)
 value ＜ low or value ＞ high 
 
-●バーの色：緑
+●バーの色：緑(lowとhighの値内)
 value ＞＝ low AND value ＝＜ high
 </pre>
 
@@ -1128,10 +1599,16 @@ value ＞＝ low AND value ＝＜ high
 		展開される内容
 	</details>
 <p>
+	<pre>
+&lt;details open class="el"&gt;
+  &lt;summary&gt;details要素の内容の要約や凡例&lt;/summary&gt;
+  展開される内容
+&lt;/details&gt;
+	</pre>
 	details要素はユーザ操作により表示、非表示を指定できるディスクロジャーウィジェットを
 	作成する場合に使用する。
+	summary要素は親要素であるdetails要素の内容の要約や凡例を記述する場合に使用する。
 </p>
-<p>summary要素は親要素であるdetails要素の内容の要約や凡例を記述する場合に使用する。</p>
 
 </body>
 </html>
