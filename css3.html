@@ -807,5 +807,340 @@ box-sizing:border-box;
 </li>
 </ul>
 
+<hr>
+<p class="tl">■flex,flex-direction,justify-content,flex-wrap,align-items</p>
+<p>
+	CSSフレキシブルボックスレイアウトを使用すると、
+	親の領域に対して複数の子要素をまとめて「右揃え」や
+	「均等配置」などが可能となる。
+	原則として親要素の直下にある子要素のみに適用される。
+	<ul>
+		<li>display: flex
+			<p>親要素にdixplay: flexを指定すると子要素の並びを制御できる。</p>
+		</li>
+		<li>flex-direction
+			<p>
+				子要素の並びを指定する。デフォルトは横方向のため、
+				親要素にdisplay: flexのみ指定すれば子要素は横並びになる。
+				<ul>
+					<li>flex-direction: column
+						<p>縦方向に並べる。</p>
+					</li>
+					<li>flex-direction: row
+						<p>横方向に並べる。</p>
+					</li>
+				</ul>
+			</p>
+		</li>
+		<li>justify-content
+			<p>
+				水平方向のボックスの配置方法を指定する。
+				<ul>
+					<li>flex-start
+						<p>全てのボックスを開始位置側に寄せる。</p>
+					</li>
+					<li>flex-end
+						<p>全てのボックスを終了位置側に寄せる。</p>
+					</li>
+					<li>center
+						<p>全てのボックスを中央に寄せる。</p>
+					</li>
+					<li>space-between
+						<p>ボックスを均等に配置する。</p>
+					</li>
+					<li>space-around
+						<p>
+							ボックス間の余白が均等になるように配置する。
+							最初と最後の余白はボックス間の余白の半分になる。
+						</p>
+					</li>
+					<li>inherit
+						<p>親要素から継承する。</p>
+					</li>
+				</ul>
+			</p>
+		</li>
+		<li>flex-warp
+			<p>
+				親領域のサイズを超える場合の表示方法を指定する。
+				<ul>
+					<li>nworap
+						<p>1行に収める(デフォルト)。</p>
+					</li>
+					<li>warp
+						<p>下段に改行する。</p>
+					</li>
+					<li>wrap-reverse
+						<p>wrapから順番を逆にする。</p>
+					</li>
+				</ul>
+			</p>
+		</li>
+		<li>align-items
+			<p>
+				垂直方向のボックスの配置方法を指定する。
+				<ul>
+					<li>flex-start
+						<p>全てのボックスを上部に寄せる。</p>
+					</li>
+					<li>flex-end
+						<p>全てのボックスを下部に寄せる。</p>
+					</li>
+					<li>center
+						<p>全てのボックスを中央に寄せる。</p>
+					</li>
+					<li>baseline
+						<p>全てのボックスをテキストのベースライン位置に寄せる。</p>
+					</li>
+					<li>stretch
+						<p>全てのボックスを親要素の高さまで広げる(デフォルト)。</p>
+					</li>
+				</ul>
+			</p>
+		</li>
+	</ul>
+</p>
+<p>通常のdiv(親)とp(子)
+	<div style="width:250px;border:1px solid;">
+		<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
+		<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
+		<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
+		<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
+		<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
+	</div>
+</p>
+<p>div(親)に<strong>display:flex</strong>を指定
+	<div style="width:250px;border:1px solid;display:flex;">
+		<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
+		<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
+		<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
+		<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
+		<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
+	</div>
+</p>
+<p>div(親)にdisplay:flexを指定、<strong>justify-content:flex-start</strong>を指定。
+	<div style="width:250px;border:1px solid;display:flex;justify-content:flex-start;">
+		<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
+		<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
+		<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
+		<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
+		<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
+	</div>
+</p>
+<p>div(親)にdisplay:flexを指定、<strong>justify-content:flex-end</strong>を指定。
+	<div style="width:250px;border:1px solid;display:flex;justify-content:flex-end;">
+		<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
+		<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
+		<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
+		<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
+		<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
+	</div>
+</p>
+<p>div(親)にdisplay:flexを指定、<strong>justify-content:center</strong>を指定。
+	<div style="width:250px;border:1px solid;display:flex;justify-content:center;">
+		<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
+		<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
+		<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
+		<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
+		<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
+	</div>
+</p>
+<p>div(親)にdisplay:flexを指定、<strong>justify-content:space-between</strong>を指定。
+	<div style="width:250px;border:1px solid;display:flex;justify-content:space-between;">
+		<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
+		<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
+		<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
+		<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
+		<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
+	</div>
+</p>
+<p>div(親)にdisplay:flexを指定、<strong>justify-content:space-around</strong>を指定。
+	<div style="width:250px;border:1px solid;display:flex;justify-content:space-around;">
+		<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
+		<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
+		<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
+		<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
+		<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
+	</div>
+</p>
+<p>div(親)にdisplay:flexを指定、width:100px、<strong>flex-wrapを未指定(デフォルトのnowrap)</strong>。
+	<div style="width:150px;border:1px solid;display:flex;">
+		<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
+		<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
+		<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
+		<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
+		<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
+	</div>
+</p>
+<p>div(親)にdisplay:flexを指定、width:100px、<strong>flex-wrap:wrap</strong>を指定。
+	<div style="width:150px;border:1px solid;display:flex;flex-wrap:wrap;">
+		<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
+		<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
+		<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
+		<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
+		<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
+	</div>
+</p>
+<p>div(親)にdisplay:flexを指定、width:100px、<strong>flex-wrap:wrap-reverse</strong>を指定。
+	<div style="width:150px;border:1px solid;display:flex;flex-wrap:wrap-reverse;">
+		<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
+		<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
+		<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
+		<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
+		<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
+	</div>
+</p>
+<p>div(親)にdisplay:flexを指定、<strong>align-items:stretch</strong>を指定。
+	<div style="\width:250px;height:250px;padding:0;margin:0;border:1px solid;display:flex;align-items:stretch;">
+		<p style="width:30px;background-color:#f5f5f5;border:1px solid;padding:0;margin:0;">
+			1
+		</p>
+		<p style="width:30px;background-color:#f0e68c;border:1px solid;padding:0;margin:0;">
+			<span style="display:block;">2</span>
+			<span style="display:block;">2</span>
+		</p>
+		<p style="width:30px;background-color:#dda0dd;border:1px solid;padding:0;margin:0;">
+			<span style="display:block;">3</span>
+			<span style="display:block;">3</span>
+			<span style="display:block;">3</span>
+		</p>
+		<p style="width:30px;background-color:#fff8dc;border:1px solid;padding:0;margin:0;">
+			<span style="display:block;">4</span>
+			<span style="display:block;">4</span>
+			<span style="display:block;">4</span>
+			<span style="display:block;">4</span>
+		</p>
+		<p style="width:30px;background-color:#ffa07a;border:1px solid;padding:0;margin:0;">
+			<span style="display:block;">5</span>
+			<span style="display:block;">5</span>
+			<span style="display:block;">5</span>
+			<span style="display:block;">5</span>
+			<span style="display:block;">5</span>
+		</p>
+	</div>
+</p>
+<p>div(親)にdisplay:flexを指定、<strong>align-items:flex-start</strong>を指定。
+	<div style="\width:250px;height:250px;padding:0;margin:0;border:1px solid;display:flex;align-items:flex-start;">
+		<p style="width:30px;background-color:#f5f5f5;border:1px solid;padding:0;margin:0;">
+			1
+		</p>
+		<p style="width:30px;background-color:#f0e68c;border:1px solid;padding:0;margin:0;">
+			<span style="display:block;">2</span>
+			<span style="display:block;">2</span>
+		</p>
+		<p style="width:30px;background-color:#dda0dd;border:1px solid;padding:0;margin:0;">
+			<span style="display:block;">3</span>
+			<span style="display:block;">3</span>
+			<span style="display:block;">3</span>
+		</p>
+		<p style="width:30px;background-color:#fff8dc;border:1px solid;padding:0;margin:0;">
+			<span style="display:block;">4</span>
+			<span style="display:block;">4</span>
+			<span style="display:block;">4</span>
+			<span style="display:block;">4</span>
+		</p>
+		<p style="width:30px;background-color:#ffa07a;border:1px solid;padding:0;margin:0;">
+			<span style="display:block;">5</span>
+			<span style="display:block;">5</span>
+			<span style="display:block;">5</span>
+			<span style="display:block;">5</span>
+			<span style="display:block;">5</span>
+		</p>
+	</div>
+</p>
+<p>div(親)にdisplay:flexを指定、<strong>align-items:flex-end</strong>を指定。
+	<div style="\width:250px;height:250px;padding:0;margin:0;border:1px solid;display:flex;align-items:flex-end;">
+		<p style="width:30px;background-color:#f5f5f5;border:1px solid;padding:0;margin:0;">
+			1
+		</p>
+		<p style="width:30px;background-color:#f0e68c;border:1px solid;padding:0;margin:0;">
+			<span style="display:block;">2</span>
+			<span style="display:block;">2</span>
+		</p>
+		<p style="width:30px;background-color:#dda0dd;border:1px solid;padding:0;margin:0;">
+			<span style="display:block;">3</span>
+			<span style="display:block;">3</span>
+			<span style="display:block;">3</span>
+		</p>
+		<p style="width:30px;background-color:#fff8dc;border:1px solid;padding:0;margin:0;">
+			<span style="display:block;">4</span>
+			<span style="display:block;">4</span>
+			<span style="display:block;">4</span>
+			<span style="display:block;">4</span>
+		</p>
+		<p style="width:30px;background-color:#ffa07a;border:1px solid;padding:0;margin:0;">
+			<span style="display:block;">5</span>
+			<span style="display:block;">5</span>
+			<span style="display:block;">5</span>
+			<span style="display:block;">5</span>
+			<span style="display:block;">5</span>
+		</p>
+	</div>
+</p>
+<p>div(親)にdisplay:flexを指定、<strong>align-items:center</strong>を指定。
+	<div style="\width:250px;height:250px;padding:0;margin:0;border:1px solid;display:flex;align-items:center;">
+		<p style="width:30px;background-color:#f5f5f5;border:1px solid;padding:0;margin:0;">
+			1
+		</p>
+		<p style="width:30px;background-color:#f0e68c;border:1px solid;padding:0;margin:0;">
+			<span style="display:block;">2</span>
+			<span style="display:block;">2</span>
+		</p>
+		<p style="width:30px;background-color:#dda0dd;border:1px solid;padding:0;margin:0;">
+			<span style="display:block;">3</span>
+			<span style="display:block;">3</span>
+			<span style="display:block;">3</span>
+		</p>
+		<p style="width:30px;background-color:#fff8dc;border:1px solid;padding:0;margin:0;">
+			<span style="display:block;">4</span>
+			<span style="display:block;">4</span>
+			<span style="display:block;">4</span>
+			<span style="display:block;">4</span>
+		</p>
+		<p style="width:30px;background-color:#ffa07a;border:1px solid;padding:0;margin:0;">
+			<span style="display:block;">5</span>
+			<span style="display:block;">5</span>
+			<span style="display:block;">5</span>
+			<span style="display:block;">5</span>
+			<span style="display:block;">5</span>
+		</p>
+	</div>
+</p>
+<p>div(親)にdisplay:flexを指定、<strong>align-items:baseline</strong>を指定(わかりやすくするために子要素のフォントサイズを変更)。
+	<div style="\width:250px;height:250px;padding:0;margin:0;border:1px solid;display:flex;align-items:baseline;">
+		<p style="width:30px;background-color:#f5f5f5;border:1px solid;padding:0;margin:0;">
+			1
+		</p>
+		<p style="width:30px;background-color:#f0e68c;border:1px solid;padding:0;margin:0;">
+			<span style="display:block;font-size:3em;">2</span>
+			<span style="display:block;font-size:3em;">2</span>
+		</p>
+		<p style="width:30px;background-color:#dda0dd;border:1px solid;padding:0;margin:0;">
+			<span style="display:block;font-size:2em;">3</span>
+			<span style="display:block;font-size:2em;">3</span>
+			<span style="display:block;font-size:2em;">3</span>
+		</p>
+		<p style="width:30px;background-color:#fff8dc;border:1px solid;padding:0;margin:0;">
+			<span style="display:block;font-size:1.5em;">4</span>
+			<span style="display:block;font-size:1.5em;">4</span>
+			<span style="display:block;font-size:1.5em;">4</span>
+			<span style="display:block;font-size:1.5em;">4</span>
+		</p>
+		<p style="width:30px;background-color:#ffa07a;border:1px solid;padding:0;margin:0;">
+			<span style="display:block;">5</span>
+			<span style="display:block;">5</span>
+			<span style="display:block;">5</span>
+			<span style="display:block;">5</span>
+			<span style="display:block;">5</span>
+		</p>
+	</div>
+</p>
+
+
+
+
+
+
+
 </body>
 </html>
