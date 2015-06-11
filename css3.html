@@ -1321,7 +1321,157 @@ box-sizing:border-box;
 	水平方向の位置を指定する。
 	vertical-alignが適用されるのは、インラインスタイル、
 	もしくはtable-cellスタイルのみ。
+	<ul>
+		<li>baseline
+			<p>親要素のテキストのベースラインに揃えられる。</p>
+			<p>
+				<div style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
+					親の文字
+					<span style="font-size:1rem;vertical-align:baseline;">vertical-align:baseline;</span>
+				</div>
+			</p>
+		</li>
+		<li>top
+			<p>親要素のボックス領域の上端に揃えられる。</p>
+			<p>
+				<div style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
+					親の文字
+					<span style="font-size:1rem;vertical-align:top;">vertical-align:top;</span>
+				</div>
+			</p>
+		</li>
+		<li>middle
+			<p>親要素のボックス領域の垂直方向中央に揃えられる。</p>
+			<p>
+				<div style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
+					親の文字
+					<span style="font-size:1rem;vertical-align:middle;">vertical-align:middle;</span>
+				</div>
+			</p>
+		</li>
+		<li>bottom
+			<p>親要素のボックス領域の下端に揃えられる。</p>
+			<p>
+				<div style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
+					親の文字
+					<span style="font-size:1rem;vertical-align:bottom;">vertical-align:bottom;</span>
+				</div>
+			</p>
+		</li>
+		<li>super
+			<p>親要素テキストの上付き文字に定められた位置に揃えられる。</p>
+			<p>
+				<div style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
+					親の文字
+					<span style="font-size:1rem;vertical-align:super;">vertical-align:super;</span>
+				</div>
+			</p>
+		</li>
+		<li>sub
+			<p>親要素テキストの下付き文字に定められた位置に揃えられる。</p>
+			<p>
+				<div style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
+					親の文字
+					<span style="font-size:1rem;vertical-align:sub;">vertical-align:sub;</span>
+				</div>
+			</p>
+		</li>
+		<li>text-top
+			<p>親要素テキストの上端に揃えられる。</p>
+			<p>
+				<div style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
+					親の文字
+					<span style="font-size:1rem;vertical-align:text-top;">vertical-align:text-top;</span>
+				</div>
+			</p>
+		</li>
+		<li>text-bottom
+			<p>親要素テキストの下端に揃えられる。</p>
+			<p>
+				<div style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
+					親の文字
+					<span style="font-size:1rem;vertical-align:text-bottom;">vertical-align:text-bottom;</span>
+				</div>
+			</p>
+		</li>
+		<li>数値指定(10px等)
+			<p>要素のbaselineを親要素のbaselineの指定数値分上に揃えられる。</p>
+			<p>
+				<div style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
+					親の文字
+					<span style="font-size:1rem;vertical-align:10px;">vertical-align:30px;</span>
+				</div>
+			</p>
+		</li>
+		<li>%指定(10%等)
+			<p>
+				要素のbaselineを基準として、親要素のline-heightの指定%分移動した位置に揃えられる。
+				正の値であれば上へ、負の値であれば下へ移動する。
+			</p>
+			<p>
+				<div style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
+					親の文字
+					<span style="font-size:1rem;vertical-align:-300%;">vertical-align:-300%;</span>
+				</div>
+			</p>
+		</li>
+	</ul>
 </p>
+
+<hr>
+<p class="tl">■direction,unicode-bidi</p>
+<p>
+	文書の記述方向を指定する。directionとunicode-bidiを合わせて使用する。
+<ul>
+	<li>direction
+		<p>文書の記述方向を指定する。</p>
+	</li>
+	<li>
+		<p>Unicodeの文字表記ルールを上書きする。</p>
+	</li>
+</ul>
+<div style="border:1px solid;width:350px;direction:ltr;unicode-bidi:bidi-override;">
+	direction:ltr;unicode-bidi:bidi-override;
+</div>
+<div style="border:1px solid;width:350px;direction:rtl;unicode-bidi:bidi-override;margin-right:0;">
+	direction:rtl;unicode-bidi:bidi-override;
+</div>
+
+<hr>
+<p class="tl">■quotes</p>
+<p>引用符を付加する。</p>
+<style>
+q{quotes: "「" "」" "【" "】";}
+q::before{content: open-quote;}
+q::after{content: close-quote;}
+</style>
+<q>あいうえお<q>かきくけこ</q>さしすせそ</q>
+<pre>
+&lt;style&gt;
+q{
+  quotes: "「" "」" "【" "】";
+}
+
+q::before{
+  content: open-quote;
+}
+
+q::after{
+  content: close-quote;
+}
+&lt;/style&gt;
+&lt;q>あいうえお&lt;q&gt;かきくけこ&lt;/q&gt;さしすせそ&lt;/q&gt;
+</pre>
+
+
+
+
+
+
+
+
+
+
 
 
 </body>
