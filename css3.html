@@ -304,13 +304,11 @@
 <h1>(4)擬似クラス</h1>
 <p>特定の外的要因や状態を持つ要素に対してスタイルを適用する。</p>
 <ul>
-<li>
-	<p>:link</p>
+<li>:link
 	<p>全てのリンクにスタイルを適用</p>
 	<p>a:link{font-weight: bold;}</p>
 </li>
-<li>
-	<p>:visited</p>
+<li>:visited
 	<p>
 		訪問済リンクにスタイルを適用。
 		<strong>
@@ -322,59 +320,49 @@
 	</p>
 	<p>a:visited{font-weight: bold;}</p>
 </li>
-<li>
-	<p>:active</p>
+<li>:active
 	<p>アクティブなリンクにスタイルを適用</p>
 	<p>a:active{font-weight: bold;}</p>
 </li>
-<li>
-	<p>:hover</p>
+<li>:hover
 	<p>
 		マウスカーソルが要素の上に乗ったときにスタイルを適用。
 		<strong>タッチスクリーンでは :hover には問題があるか、使えない</strong>
 	</p>
 	<p>a:hover{font-weight: bold;}</p>
 </li>
-<li>
-	<p>:focus</p>
+<li>:focus
 	<p>フォーカスが要素にあたったときにスタイルを適用</p>
 	<p>a:focus{font-weight: bold;}</p>
 </li>
-<li>
-	<p>:first-child</p>
+<li>:first-child
 	<p>指定要素の最初の子要素にスタイルを適用</p>
 	<p>.classname:first-child{font-weight: bold;}</p>
 </li>
-<li>
-	<p>:last-child</p>
+<li>:last-child
 	<p>指定要素の最後の子要素にスタイルを適用</p>
 	<p>.classname:last-child{font-weight: bold;}</p>
 </li>
-<li>
-	<p>:target</p>
+<li>:target
 	<p>
 		ページ内リンクのターゲット対象にされた要素にスタイルを適用
 		(ページ内リンクがクリックされた際にスタイルが適用される)
 	</p>
 	<p>p:target{font-weight: bold;}</p>
 </li>
-<li>
-	<p>:enabled</p>
+<li>:enabled
 	<p>指定要素が使用可能な状態のときにスタイルを適用</p>
 	<p>button:enabled{font-weight: bold;}</p>
 </li>
-<li>
-	<p>:disabled</p>
+<li>:disabled
 	<p>指定要素が使用不可能な状態のときにスタイルを適用</p>
 	<p>button:disabled{font-weight: bold;}</p>
 </li>
-<li>
-	<p>:checked</p>
+<li>:checked
 	<p>ラジオボタン、チェックボックスがチェック状態のときにスタイルを適用</p>
 	<p>input:checked{font-weight: bold;}</p>
 </li>
-<li>
-	<p>:nth-child(n)</p>
+<li>:nth-child(n)
 	<p>
 		指定要素の最初からn番目の要素にスタイルを適用。
 		<strong>
@@ -385,8 +373,7 @@
 	</p>
 	<p>li:nth-child(2){color: red;}</p>
 </li>
-<li>
-	<p>:nth-last-child(n)</p>
+<li>:nth-last-child(n)
 	<p>
 		指定要素の最後からn番目の要素にスタイルを適用。
 		<strong>
@@ -397,55 +384,47 @@
 	</p>
 	<p>li:nth-last-child(2){color: red;}</p>
 </li>
-<li>
-	<p>:nth-of-type(n)</p>
+<li>:nth-of-type(n)
 	<p>
 		指定要素の最初からn番目の要素にスタイルを適用。
 		<strong>指定要素以外の要素はカウントされない</strong>
 	</p>
 	<p>li:nth-of-type(2){color: red;}</p>
 </li>
-<li>
-	<p>:nth-last-of-type(n)</p>
+<li>:nth-last-of-type(n)
 	<p>
 		指定要素の最後からn番目の要素にスタイルを適用。
 		<strong>指定要素以外の要素はカウントされない</strong>
 	</p>
 	<p>li:nth-last-of-type(2){color: red;}</p>
 </li>
-<li>
-	<p>:first-of-type</p>
+<li>:first-of-type
 	<p>
 		指定要素の最初の要素にスタイルを適用。
 		<strong>指定要素以外の要素はカウントされない</strong>
 	</p>
 	<p>li:first-of-type{color: red;}</p>
 </li>
-<li>
-	<p>:last-of-type</p>
+<li>:last-of-type
 	<p>
 		指定要素の最後の要素にスタイルを適用。
 		<strong>指定要素以外の要素はカウントされない</strong>
 	</p>
 	<p>li:last-of-type{color: red;}</p>
 </li>
-<li>
-	<p>:only-child</p>
+<li>:only-child
 	<p>親要素に他の要素が含まれていない場合に指定要素にスタイルを適用</p>
 	<p>div p:only-child{color: red;}</p>
 </li>
-<li>
-	<p>:only-of-type</p>
+<li>:only-of-type
 	<p>親要素に指定要素が複数含まれていない場合に指定要素にスタイルを適用</p>
 	<p>div p:only-of-type{color: red;}</p>
 </li>
-<li>
-	<p>:empty</p>
+<li>:empty
 	<p>子要素がない指定要素にスタイルを適用</p>
 	<p>td:empty{color: red;}</p>
 </li>
-<li>
-	<p>:not(s)</p>
+<li>:not(s)
 	<p>sで指定した要素以外にスタイルを適用</p>
 	<p>div:not(.test){color: red;}</p>
 </li>
@@ -491,23 +470,19 @@
 	(:も使用可能だが、::selectionには使用できない)
 </p>
 <ul>
-<li>
-	<p>::before</p>
+<li>::before
 	<p>指定要素の前にcontentで指定した内容を付加</p>
 	<p>p::before{content: "★";}</p>
 </li>
-<li>
-	<p>::after</p>
+<li>::after
 	<p>指定要素の後ろにcontentで指定した内容を付加</p>
 	<p>p::after{content: "★";}</p>
 </li>
-<li>
-	<p>::first-letter</p>
+<li>::first-letter
 	<p><strong>指定ブロック要素の最初の文字</strong>にスタイルを適用</p>
 	<p>p::first-letter{color: yellow;}</p>
 </li>
-<li>
-	<p>::selection</p>
+<li>::selection
 	<p>指定要素が選択がされたときにスタイルを適用</p>
 	<p>div::selection{color: yellow;}</p>
 </li>
@@ -748,20 +723,16 @@ box-sizing:border-box;
 <hr>
 <p class="tl">■display</p>
 <ul>
-<li>
-	<p>display:block</p>
+<li>display:block
 	<p>縦に積み重なるように配置される。</p>
 </li>
-<li>
-	<p>display:inline</p>
+<li>display:inline
 	<p>1行に配置される。</p>
 </li>
-<li>
-	<p>display:inline-block</p>
+<li>display:inline-block
 	<p>1行に配置されつつ、固定の幅や高さが指定できる。</p>
 </li>
-<li>
-	<p>display:list-item</p>
+<li>display:list-item
 	<p>
 		li要素のように、先頭に「・」などのリスト記号がついた状態になる。
 		<strong>
@@ -770,40 +741,31 @@ box-sizing:border-box;
 		</strong>
 	</p>
 </li>
-<li>
-	<p>display:table</p>
+<li>display:table
 	<p>table要素と同じように振舞う。</p>
 </li>
-<li>
-	<p>display:table-caption</p>
+<li>display:table-caption
 	<p>caption要素と同じように振舞う。</p>
 </li>
-<li>
-	<p>display:table-cell</p>
+<li>display:table-cell
 	<p>td要素と同じように振舞う。</p>
 </li>
-<li>
-	<p>display:table-column</p>
+<li>display:table-column
 	<p>col要素と同じように振舞う。</p>
 </li>
-<li>
-	<p>display:table-column-group</p>
+<li>display:table-column-group
 	<p>colgroup要素と同じように振舞う。</p>
 </li>
-<li>
-	<p>display:table-header-group</p>
+<li>display:table-header-group
 	<p>thead要素と同じように振舞う。</p>
 </li>
-<li>
-	<p>display:table-footer-group</p>
+<li>display:table-footer-group
 	<p>tfoot要素と同じように振舞う。</p>
 </li>
-<li>
-	<p>display:table-row</p>
+<li>display:table-row
 	<p>tr要素と同じように振舞う。</p>
 </li>
-<li>
-	<p>display:table-row-group</p>
+<li>display:table-row-group
 	<p>tbody要素と同じように振舞う。</p>
 </li>
 </ul>
@@ -1138,9 +1100,228 @@ box-sizing:border-box;
 </p>
 
 
+<hr class="sline">
+<h1>(8)テキスト装飾</h1>
+<p class="tl">■color</p>
+<p>文字の色を指定する。</p>
+<p><div style="color:#ff3333;">color:#ff3333;</div></p>
 
+<hr>
+<p class="tl">■font-size</p>
+<p>文字サイズを指定する。</p>
+<p>
+	<div style="font-size:12px;">font-size:12px;</div>
+	<div style="font-size:1.5em;">font-size:1.5em;</div>
+</p>
 
+<hr>
+<p class="tl">■font-weight</p>
+<p>文字の太さを指定する。</p>
+<p><div style="font-weight:bold;">font-weight:bold;</div></p>
 
+<hr>
+<p class="tl">■font-style</p>
+<p>文字の表示スタイルを指定する。</p>
+<p><div style="font-style:italic;">font-style:italic;</div></p>
+
+<hr>
+<p class="tl">■font-family</p>
+<p>
+	文字のフォントの種類を指定する。
+	フォントはカンマで区切って複数指定することができ、
+	先頭から順番に環境にインストールされているフォントをさがし、
+	見つかればそのフォントで表示される。
+</p>
+<p>
+	<div style="font-family:'sans-serif';">font-family:'sans-serif';</div>
+	<div style="font-family:'arial black';">font-family:'arial black';</div>
+	<div style="font-family:'ＭＳ ゴシック';">font-family:'ＭＳ ゴシック';</div>
+	<div style="font-family:'Meiryo';">font-family:'Meiryo';</div>
+	<div style="font-family:'HGP行書体';">font-family:'HGP行書体';</div>
+</p>
+
+<hr>
+<p class="tl">■font-variant</p>
+<p>スモールキャピタル(フォントサイズはそのままで小文字を大文字にする)で表示する。</p>
+<p>
+	<div>font-variant:small-caps;</div>
+	<div style="font-variant:small-caps;">font-variant:small-caps;</div>
+</p>
+
+<hr>
+<p class="tl">■text-align</p>
+<p>水平方向に対する文字の行揃え、均等割付などを指定する。</p>
+<p>
+	<div style="width:250px;border:1px solid;text-align:left;">
+		text-align:left;
+	</div>
+	<div style="width:250px;border:1px solid;text-align:center;">
+		text-align:center;
+	</div>
+	<div style="width:250px;border:1px solid;text-align:right;">
+		text-align:right;
+	</div>
+</p>
+
+<hr>
+<p class="tl">■text-decoration</p>
+<p>
+	文字の装飾を指定する。
+	text-decoration-line(線の位置)、text-decoration-color(線の色)、
+	text-decoration-style(線の種類)をまとめて指定できるが、
+	<strong>現状、線の位置以外は多くのブラウザが対応していない。</strong>
+	<ul>
+		<li>text-decoration:underline
+			<p style="text-decoration:underline;">文字に下線が付く。</p>
+		</li>
+		<li>text-decoration:overline
+			<p style="text-decoration:overline;">文字に上線が付く。</p>
+		</li>
+		<li>text-decoration:line-through
+			<p style="text-decoration:line-through;">文字に打ち消し線が付く。</p>
+		</li>
+		<li>text-decoration:blink
+			<p style="text-decoration:blink;">
+				文字が点滅する。
+				<strong>ブラウザによっては実装していないものもある。</strong>
+			</p>
+		</li>
+	</ul>
+</p>
+
+<hr>
+<p class="tl">■text-transform</p>
+<p>
+	文字の大文字、小文字を切り替えて表示する。
+	<ul>
+		<li>text-transform:capitalize
+			<p >指定なし：text-transform:capitalize</p>
+			<p style="text-transform:capitalize;">指定あり：text-transform:capitalize</p>
+		</li>
+		<li>text-transform:lowercase
+			<p >指定なし：TEXT-TRANSFORM:lowercase</p>
+			<p style="text-transform:lowercase;">指定あり：TEXT-TRANSFORM:lowercase</p>
+		</li>
+		<li>text-transform:uppercase
+			<p >指定なし：text-transform:uppercase</p>
+			<p style="text-transform:uppercase;">指定あり：text-transform:uppercase</p>
+		</li>
+	</ul>
+</p>
+
+<hr>
+<p class="tl">■white-space</p>
+<p>
+	タブ、スペース、改行、折り返しをどのように表示するか指定する。
+	<ul>
+		<li>white-space:pre-wrap
+			<p>【有効】タブ、スペース、改行、折り返し</p>
+			<p>【無効】</p>
+			<p>
+				<div style="width:300px;border:1px solid;white-space:pre-wrap;">
+タブ開始	タブ終了改行
+スペース開始(5半角スペース)     スペース終了改行
+ああああああああああああああああああああああ
+				</div>
+			</p>
+		</li>
+		<li>white-space:pre-line
+			<p>【有効】改行、折り返し</p>
+			<p>【無効】タブ、スペース</p>
+			<p>
+				<div style="width:300px;border:1px solid;white-space:pre-line;">
+タブ開始	タブ終了改行
+スペース開始(5半角スペース)     スペース終了改行
+ああああああああああああああああああああああ
+				</div>
+			</p>
+		</li>
+		<li>white-space:pre
+			<p>【有効】タブ、スペース、改行</p>
+			<p>【無効】折り返し</p>
+			<p>
+				<div style="width:300px;border:1px solid;white-space:pre;">
+タブ開始	タブ終了改行
+スペース開始(5半角スペース)     スペース終了改行
+ああああああああああああああああああああああ
+				</div>
+			</p>
+		</li>
+		<li>white-space:nowrap
+			<p>【有効】</p>
+			<p>【無効】タブ、スペース、改行、折り返し</p>
+			<p>
+				<div style="width:300px;border:1px solid;white-space:nowrap;">
+タブ開始	タブ終了改行
+スペース開始(5半角スペース)     スペース終了改行
+ああああああああああああああああああああああ
+				</div>
+			</p>
+		</li>
+		<li>white-space:normal(white-space未指定も同様)
+			<p>【有効】折り返し</p>
+			<p>【無効】タブ、スペース、改行</p>
+			<p>
+				<div style="width:300px;border:1px solid;">
+タブ開始	タブ終了改行
+スペース開始(5半角スペース)     スペース終了改行
+ああああああああああああああああああああああ
+				</div>
+			</p>
+		</li>
+	</ul>
+</p>
+
+<hr>
+<p class="tl">■word-spacing</p>
+<p><strong>単語と単語のスペース間隔</strong>を指定する。マイナス値も指定可能。</p>
+<p>
+	<div>word-spacing:1.2em です(未指定の場合)</div>
+	<div style="word-spacing:1.2em;">word-spacing:1.2em です</div>
+</p>
+
+<hr>
+<p class="tl">■letter-spacing</p>
+<p><strong>文字のスペース間隔</strong>を指定する。マイナス値も指定可能。</p>
+<p>
+	<div>word-spacing:1.2emです(未指定の場合)</div>
+	<div style="letter-spacing:1.2em;">word-spacing:1.2emです</div>
+</p>
+
+<hr>
+<p class="tl">■text-indent</p>
+<p>テキストの1行目のインデントを指定する。マイナス値も指定可能。</p>
+<p>
+	<div>text-indent:1em(未指定の場合)</div>
+	<div style="text-indent:1em;">text-indent:1em</div>
+</p>
+
+<hr>
+<p class="tl">■text-shadow</p>
+<p>
+	文字に影を付ける。指定の仕方はbox-shadowと同様だが、insetはtext-shadowにはない。
+	指定内容は下記。
+	<p>水平方向のオフセット距離 垂直方向のオフセット距離 ぼかし距離 影の色</p>
+</p>
+<p>
+	<div style="text-shadow:5px 6px 7px #ff3333;">text-shadow:5px 6px 7px #ff3333;</div>
+</p>
+
+<hr>
+<p class="tl">■line-height</p>
+<p>行の高さを指定する。</p>
+<p>
+	<div style="border:1px solid;">line-height:1.5em(未指定の場合)</div>
+	<div style="border:1px solid;line-height:5em;">line-height:5em</div>
+</p>
+
+<hr>
+<p class="tl">■line-height</p>
+<p>行の高さを指定する。</p>
+<p>
+	<div style="border:1px solid;">line-height:1.5em(未指定の場合)</div>
+	<div style="border:1px solid;line-height:5em;">line-height:5em</div>
+</p>
 
 
 </body>
