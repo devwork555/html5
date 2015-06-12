@@ -1617,7 +1617,7 @@ q::after{
 </ul>
 
 <hr>
-<p class="tl">■positino</p>
+<p class="tl">■position</p>
 <p>ボックスの配置位置を指定する。</p>
 <ul>
 	<li>static
@@ -1625,13 +1625,13 @@ q::after{
 			配置方法は指定されず、top、bottom、left、rightは無視される。
 			<div style="border:1px solid;width:150px;height:80px;overflow:scroll;">
 				<div style="width:100px;height:100px;border:1px dotted;position:relative;top:10px;left:10px;">
-					<div style="width:50px;height:50px;border:1px dotted #ff3333;position:static;top:10px;left:10px;">position:static;</div>
+					<div style="position:static;top:10px;left:10px;width:50px;height:50px;border:1px dotted #ff3333;">position:static;</div>
 				</div>
 			</div>
 			<pre>
 &lt;div style="border:1px solid;width:150px;height:80px;overflow:scroll;"&gt;
   &lt;div style="width:100px;height:100px;border:1px dotted;position:relative;top:10px;left:10px;"&gt;
-    &lt;div style="width:50px;height:50px;border:1px dotted #ff3333;<strong>position:static;top:10px;left:10px;</strong>"&gt;position:static;&lt;/div&gt;
+    &lt;div style="<strong>position:static;top:10px;left:10px;</strong>width:50px;height:50px;border:1px dotted #ff3333;"&gt;position:static;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 			</pre>
@@ -1641,14 +1641,14 @@ q::after{
 		<p>
 			本来の表示位置を基準し、top、left、right、bottomで位置をずらす。
 			<div style="border:1px solid;width:150px;height:80px;overflow:scroll;">
-				<div style="width:100px;height:100px;border:1px dotted;position:relative;top:10px;left:10px;">
-					<div style="width:50px;height:50px;border:1px dotted #ff3333;position:relative;top:10px;left:10px;">position:relative;</div>
+				<div style="position:relative;top:10px;left:10px;width:100px;height:100px;border:1px dotted;">
+					<div style="position:relative;top:10px;left:10px;width:50px;height:50px;border:1px dotted #ff3333;">position:relative;</div>
 				</div>
 			</div>
 			<pre>
 &lt;div style="border:1px solid;width:150px;height:80px;overflow:scroll;"&gt;
-  &lt;div style="width:100px;height:100px;border:1px dotted;position:relative;top:10px;left:10px;"&gt;
-    &lt;div style="width:50px;height:50px;border:1px dotted #ff3333;<strong>position:relative;top:10px;left:10px;</strong>"&gt;position:relative;&lt;/div&gt;
+  &lt;div style="position:relative;top:10px;left:10px;width:100px;height:100px;border:1px dotted;"&gt;
+    &lt;div style="<strong>position:relative;top:10px;left:10px;</strong>width:50px;height:50px;border:1px dotted #ff3333;"&gt;position:relative;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 			</pre>
@@ -1659,14 +1659,14 @@ q::after{
 			position:static以外の指定がある直近の親要素を絶対位置として配置する。
 			複数の要素を重ねあうことが可能で、重なり順はz-indexで指定する。
 			<div style="border:1px solid;width:150px;height:80px;overflow:scroll;">
-				<div style="width:100px;height:100px;border:1px dotted;position:relative;top:10px;left:10px;">
-					<div style="width:50px;height:50px;border:1px dotted #ff3333;position:absolute;top:10px;left:10px;">position:absolute;</div>
+				<div style="position:relative;top:10px;left:10px;width:100px;height:100px;border:1px dotted;">
+					<div style="position:absolute;top:10px;left:10px;width:50px;height:50px;border:1px dotted #ff3333;">position:absolute;</div>
 				</div>
 			</div>
 			<pre>
 &lt;div style="border:1px solid;width:150px;height:80px;overflow:scroll;"&gt;
-  &lt;div style="width:100px;height:100px;border:1px dotted;position:relative;top:10px;left:10px;"&gt;
-    &lt;div style="width:50px;height:50px;border:1px dotted #ff3333;<strong>position:absolute;top:10px;left:10px;</strong>"&gt;position:absolute;&lt;/div&gt;
+  &lt;div style="position:relative;top:10px;left:10px;width:100px;height:100px;border:1px dotted;"&gt;
+    &lt;div style="<strong>position:absolute;top:10px;left:10px;</strong>width:50px;height:50px;border:1px dotted #ff3333;"&gt;position:absolute;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 			</pre>
@@ -1761,6 +1761,166 @@ q::after{
 	</ul>
 	※あくまで上辺、もしくは左辺からの長さ
 </p>
+
+
+<hr class="sline">
+<h1>(10)背景関連のプロパティ</h1>
+<p class="tl">■background-color</p>
+<p>背景色を指定する。</p>
+
+<hr>
+<p class="tl">■background-image</p>
+<p>背景画像のURLを指定する。</p>
+<div style="background-image:url('./static/sample.png');width:300px;height:300px;border:1px solid;"></div>
+<pre>
+&lt;div style="<strong>background-image:url('./static/sample.png');</strong>width:200px;height:150px;border:1px solid;"&gt;&lt;/div&gt;
+</pre>
+
+<hr>
+<p class="tl">■background-repeat</p>
+<p>背景画像の繰り返しを指定する。</p>
+<ul>
+	<li>repeat
+		<p>
+			初期値。背景画像を繰り返して表示する。
+			<div style="background-repeat:repeat;background-image:url('./static/sample.png');width:300px;height:300px;border:1px solid;"></div>
+			<pre>
+&lt;div style="<strong>background-repeat:repeat;</strong>background-image:url('./static/sample.png');width:300px;height:300px;border:1px solid;"&gt;&lt;/div&gt;
+			</pre>
+		</p>
+	</li>
+	<li>repeat-x
+		<p>
+			水平方向に背景画像を繰り返して表示する。
+			<div style="background-repeat:repeat-x;background-image:url('./static/sample.png');width:300px;height:300px;border:1px solid;"></div>
+			<pre>
+&lt;div style="<strong>background-repeat:repeat-x;</strong>background-image:url('./static/sample.png');width:300px;height:300px;border:1px solid;"&gt;&lt;/div&gt;
+			</pre>
+		</p>
+	</li>
+	<li>repeat-y
+		<p>
+			垂直方向に背景画像を繰り返して表示する。
+			<div style="background-repeat:repeat-y;background-image:url('./static/sample.png');width:300px;height:300px;border:1px solid;"></div>
+			<pre>
+&lt;div style="<strong>background-repeat:repeat-y;</strong>background-image:url('./static/sample.png');width:300px;height:300px;border:1px solid;"&gt;&lt;/div&gt;
+			</pre>
+		</p>
+	</li>
+	<li>no-repeat
+		<p>背景画像を繰り返えさず、1度のみ表示する。</p>
+			<div style="background-repeat:no-repeat;background-image:url('./static/sample.png');width:300px;height:300px;border:1px solid;"></div>
+			<pre>
+&lt;div style="<strong>background-repeat:no-repeat;</strong>background-image:url('./static/sample.png');width:300px;height:300px;border:1px solid;"&gt;&lt;/div&gt;
+			</pre>
+	</li>
+</ul>
+
+<hr>
+<p class="tl">■background-position</p>
+<p>背景画像の位置を指定する。横方向と縦方向の指定が可能。</p>
+<p>
+	%指定の場合は、
+	<strong>左上から何%ではなく、100%で右につく、あるいは下につく割合で計算される。</strong>
+</p>
+<p>background-position:left top;は、background-position:0% 0%;と同意。</p>
+<p>background-position:right bottom;は、background-position:100% 100%;と同意。
+	CSS3ではbackground-position:right 20px bottom 20px;といった指定も可能
+	(右から20px、下から20pxの位置に表示される)。
+</p>
+<p>
+	<div style="background-position:50px 50px;background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"></div>
+	<pre>
+&lt;div style="<strong>background-position:50px 50px;</strong>background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"&gt;&lt;/div&gt;
+	</pre>
+</p>
+<p>
+	<div style="background-position:center center;background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"></div>
+	<pre>
+&lt;div style="<strong>background-position:center center;</strong>background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"&gt;&lt;/div&gt;
+	</pre>
+</p>
+<p>
+	<div style="background-position:30% 80%;background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"></div>
+	<pre>
+&lt;div style="<strong>background-position:30% 80%;</strong>background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"&gt;&lt;/div&gt;
+	</pre>
+</p>
+<p>
+	<div style="background-position:right bottom;background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"></div>
+	<pre>
+&lt;div style="<strong>background-position:right bottom;</strong>background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"&gt;&lt;/div&gt;
+	</pre>
+</p>
+<p>
+	<div style="background-position:right 30px bottom 80px;background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"></div>
+	<pre>
+&lt;div style="<strong>background-position:right 30px bottom 80px;</strong>background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"&gt;&lt;/div&gt;
+	</pre>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
