@@ -553,7 +553,7 @@
 
 <hr class="sline">
 <h1>(7)ボックスモデル</h1>
-<img src="./static/boxmodel.gif" alt="ボックスモデル概念図">
+<img src="./static/boxmodel.gif" alt="ボックスモデル概念図" width="40%">
 <p class="tl">■width,height</p>
 <p>要素の幅(width)、高さ(height)を決める。相対単位、もしくは絶対単位で値を指定する。</p>
 <p>
@@ -1464,13 +1464,303 @@ q::after{
 </pre>
 
 
+<hr class="sline">
+<h1>(9)レイアウト関連のプロパティ</h1>
+<p class="tl">■float</p>
+<p>
+	回り込み配置を行う際に使用する。値にはleft、right、noneがある。
+	<strong>
+		回り込み配置をした際、親要素の横幅に入りきらない場合は
+		次段に配置される。
+	</strong>
+	floatでleftかrightが指定された要素はフローティングエレメント(浮動要素)と呼ばれ、
+	浮動要素を囲っている親要素は浮動要素の高さを認識できず、
+	背景色やborderは浮動要素を囲ってくれない。
+</p>
+<ul>
+	<li>float指定なし
+		<p>
+			<div style="width:250px;border:1px solid;">
+				<div style="background-color:#e0ffff;width:30%;">30%</div>
+				<div style="background-color:#90ee90;width:70%;">70%</div>
+			</div>
+			<pre>
+&lt;div style="width:250px;border:1px solid;"&gt;
+  &lt;div style="background-color:#e0ffff;width:30%;"&gt;30%&lt;/div&gt;
+  &lt;div style="background-color:#90ee90;width:70%;"&gt;70%&lt;/div&gt;
+&lt;/div&gt;
+			</pre>
+		</p>
+	</li>
+	<li>floatあり leftのみ指定
+		<p>
+			<div style="width:250px;border:1px solid;">
+				<div style="background-color:#e0ffff;width:30%;float:left;">30%</div>
+				<div style="background-color:#90ee90;width:70%;">70%</div>
+			</div>
+			<pre>
+&lt;div style="width:250px;border:1px solid;"&gt;
+  &lt;div style="background-color:#e0ffff;width:30%;<strong>float:left;</strong>"&gt;30%&lt;/div&gt;
+  &lt;div style="background-color:#90ee90;width:70%;"&gt;70%&lt;/div&gt;
+&lt;/div&gt;
+			</pre>
+		</p>
+	</li>
+	<li>floatあり rightのみ指定
+		<p>
+			<div style="width:250px;border:1px solid;">
+				<div style="background-color:#e0ffff;width:30%;">30%</div>
+				<div style="background-color:#90ee90;width:70%;float:right;">70%</div>
+			</div>
+			<pre style="clear:both;margin-top:40px;">
+&lt;div style="width:250px;border:1px solid;"&gt;
+  &lt;div style="background-color:#e0ffff;width:30%;"&gt;30%&lt;/div&gt;
+  &lt;div style="background-color:#90ee90;width:70%;<strong>float:right;</strong>"&gt;70%&lt;/div&gt;
+&lt;/div&gt;
+			</pre>
+		</p>
+	</li>
+	<li>floatあり left、right指定
+		<p>
+			<div style="width:250px;border:1px solid;">
+				<div style="background-color:#e0ffff;width:30%;float:left;">30%</div>
+				<div style="background-color:#90ee90;width:70%;float:right;">70%</div>
+			</div>
+			<pre style="clear:both;margin-top:40px;">
+&lt;div style="width:250px;border:1px solid;"&gt;
+  &lt;div style="background-color:#e0ffff;width:30%;<strong>float:left;</strong>"&gt;30%&lt;/div&gt;
+  &lt;div style="background-color:#90ee90;width:70%;<strong>float:right;</strong>"&gt;70%&lt;/div&gt;
+&lt;/div&gt;
+			</pre>
+		</p>
+	</li>
+</ul>
+<p>
+	※clearを指定することで、浮動要素の後の要素についても回り込みを指定できる。
+	なお、親要素の::after擬似要素にclear:bothを指定することが多い。
+	<ul>
+		<li>none
+			<p>左右にある浮動要素との関係を維持し、回り込み表示される。</p>
+		</li>
+		<li>left
+			<p>左側にある浮動要素との関係を切り離し、下の段に表示される。</p>
+		</li>
+		<li>right
+			<p>右側にある浮動要素との関係を切り離し、下の段に表示される。</p>
+		</li>
+		<li>both
+			<p>左右にある浮動要素との関係を切り離し、下の段に表示される。</p>
+		</li>
+	</ul>
+</p>
 
+<hr>
+<p class="tl">■overflow</p>
+<p>
+	ボックス領域に入りきらなかった場合の表示方法を指定する。
+	overflow-x(水平方向)、overflow-y(垂直方向)を使用すれば、
+	水平方向、垂直方向の表示方法を個別に指定できる。
+</p>
+<ul>
+	<li>visible
+		<p>
+			初期値。ボックスからはみ出して表示される。
+			<div style="border:1px solid;width:150px;height:100px;overflow:visible;">
+				<div style="width:200px;height:150px;border:1px dotted;">overflow:visible;</div>
+			</div>
+			<pre style="margin-top:70px;">
+&lt;div style="border:1px solid;width:150px;height:100px;<strong>overflow:visible;</strong>"&gt;
+  &lt;div style="width:200px;height:150px;border:1px dotted;"&gt;overflow:visible;&lt;/div&gt;
+&lt;/div&gt;
+			</pre>
+		</p>
+	</li>
+	<li>scroll
+		<p>
+			スクロールバーが表示される。
+			<div style="border:1px solid;width:150px;height:100px;overflow:scroll;">
+				<div style="width:200px;height:150px;border:1px dotted;">overflow:scroll;</div>
+			</div>
+			<pre>
+&lt;div style="border:1px solid;width:150px;height:100px;<strong>overflow:scroll;</strong>"&gt;
+  &lt;div style="width:200px;height:150px;border:1px dotted;"&gt;overflow:scroll;&lt;/div&gt;
+&lt;/div&gt;
+			</pre>
+		</p>
+	</li>
+	<li>hidden
+		<p>
+			はみ出した部分は表示されない。
+			<div style="border:1px solid;width:150px;height:100px;overflow:hidden;">
+				<div style="width:200px;height:150px;border:1px dotted;">overflow:hidden;</div>
+			</div>
+			<pre>
+&lt;div style="border:1px solid;width:150px;height:100px;<strong>overflow:hidden;</strong>"&gt;
+  &lt;div style="width:200px;height:150px;border:1px dotted;"&gt;overflow:hidden;&lt;/div&gt;
+&lt;/div&gt;
+			</pre>
+		</p>
+	</li>
+	<li>auto
+		<p>
+			ブラウザに依存。大抵のブラウザはスクロールバーを表示する。
+			<div style="border:1px solid;width:150px;height:100px;overflow:auto;">
+				<div style="width:200px;height:150px;border:1px dotted;">overflow:auto;</div>
+			</div>
+			<pre>
+&lt;div style="border:1px solid;width:150px;height:100px;<strong>overflow:auto;</strong>"&gt;
+  &lt;div style="width:200px;height:150px;border:1px dotted;"&gt;overflow:auto;&lt;/div&gt;
+&lt;/div&gt;
+			</pre>
+		</p>
+	</li>
+</ul>
 
+<hr>
+<p class="tl">■positino</p>
+<p>ボックスの配置位置を指定する。</p>
+<ul>
+	<li>static
+		<p>
+			配置方法は指定されず、top、bottom、left、rightは無視される。
+			<div style="border:1px solid;width:150px;height:80px;overflow:scroll;">
+				<div style="width:100px;height:100px;border:1px dotted;position:relative;top:10px;left:10px;">
+					<div style="width:50px;height:50px;border:1px dotted #ff3333;position:static;top:10px;left:10px;">position:static;</div>
+				</div>
+			</div>
+			<pre>
+&lt;div style="border:1px solid;width:150px;height:80px;overflow:scroll;"&gt;
+  &lt;div style="width:100px;height:100px;border:1px dotted;position:relative;top:10px;left:10px;"&gt;
+    &lt;div style="width:50px;height:50px;border:1px dotted #ff3333;<strong>position:static;top:10px;left:10px;</strong>"&gt;position:static;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+			</pre>
+		</p>
+	</li>
+	<li>relative
+		<p>
+			本来の表示位置を基準し、top、left、right、bottomで位置をずらす。
+			<div style="border:1px solid;width:150px;height:80px;overflow:scroll;">
+				<div style="width:100px;height:100px;border:1px dotted;position:relative;top:10px;left:10px;">
+					<div style="width:50px;height:50px;border:1px dotted #ff3333;position:relative;top:10px;left:10px;">position:relative;</div>
+				</div>
+			</div>
+			<pre>
+&lt;div style="border:1px solid;width:150px;height:80px;overflow:scroll;"&gt;
+  &lt;div style="width:100px;height:100px;border:1px dotted;position:relative;top:10px;left:10px;"&gt;
+    &lt;div style="width:50px;height:50px;border:1px dotted #ff3333;<strong>position:relative;top:10px;left:10px;</strong>"&gt;position:relative;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+			</pre>
+		</p>
+	</li>
+	<li>absolute
+		<p>
+			position:static以外の指定がある直近の親要素を絶対位置として配置する。
+			複数の要素を重ねあうことが可能で、重なり順はz-indexで指定する。
+			<div style="border:1px solid;width:150px;height:80px;overflow:scroll;">
+				<div style="width:100px;height:100px;border:1px dotted;position:relative;top:10px;left:10px;">
+					<div style="width:50px;height:50px;border:1px dotted #ff3333;position:absolute;top:10px;left:10px;">position:absolute;</div>
+				</div>
+			</div>
+			<pre>
+&lt;div style="border:1px solid;width:150px;height:80px;overflow:scroll;"&gt;
+  &lt;div style="width:100px;height:100px;border:1px dotted;position:relative;top:10px;left:10px;"&gt;
+    &lt;div style="width:50px;height:50px;border:1px dotted #ff3333;<strong>position:absolute;top:10px;left:10px;</strong>"&gt;position:absolute;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+			</pre>
+		</p>
+	</li>
+	<li>fixed
+		<p>
+			スクロールしても動かず固定される。
+		</p>
+	</li>
+</ul>
 
+<hr>
+<p class="tl">■top,left,right,bottom</p>
+<p>配置位置を指定する。</p>
+<ul>
+	<li>top
+		<p>
+			基準の上部から指定値の分だけ下方向に移動する。
+			マイナス値を指定すると上方向に移動する。
+		</p>
+	</li>
+	<li>left
+		<p>
+			基準の上部から指定値の分だけ右方向に移動する。
+			マイナス値を指定すると左方向に移動する。
+		</p>
+	</li>
+	<li>right
+		<p>
+			基準の上部から指定値の分だけ左方向に移動する。
+			マイナス値を指定すると右方向に移動する。
+		</p>
+	</li>
+	<li>bottom
+		<p>
+			基準の上部から指定値の分だけ上方向に移動する。
+			マイナス値を指定すると下方向に移動する。
+		</p>
+	</li>
+</ul>
 
+<hr>
+<p class="tl">■column-count,column-width,column-gap,column-rule,column-span</p>
+<ul>
+	<li>column-count
+		<p>1つのボックス内を指定数で分割して表示する。</p>
+	</li>
+	<li>column-width
+		<p>分割したカラムの幅を指定する。</p>
+	</li>
+	<li>column-gap
+		<p>分割したカラムとカラムの間隔を指定する。</p>
+	</li>
+	<li>column-rule
+		<p>分割したカラムの区切り線を指定する。</p>
+	</li>
+	<li>column-span
+		<p>分割したカラムをまたがって表示する際に指定する。</p>
+	</li>
+</ul>
 
+<hr>
+<p class="tl">■z-index</p>
+<p>
+	ボックスの重なりを指定する。
+	position:static以外が指定されている場合に指定できる。
+</p>
 
-
+<hr>
+<p class="tl">■clip</p>
+<p>座標を指定して要素を切り抜く。</p>
+<p>
+	clip:rect(上, 右, 下, 左)と指定し、
+	<strong>
+		切り抜く要素はposition:absolute、
+		もしくはposition:fixedを指定する必要がある。
+	</strong>
+	<ul>
+		<li>上
+			<p>ボックス<strong>上辺から切り抜く上辺まで</strong>の長さ</p>
+		</li>
+		<li>右
+			<p>ボックス<strong>左辺から切り抜く右辺まで</strong>の長さ</p>
+		</li>
+		<li>下
+			<p>ボックス<strong>上辺から切り抜く下辺まで</strong>の長さ</p>
+		</li>
+		<li>左
+			<p>ボックス<strong>左辺から切り抜く左辺まで</strong>の長さ</p>
+		</li>
+	</ul>
+	※あくまで上辺、もしくは左辺からの長さ
+</p>
 
 
 
