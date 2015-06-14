@@ -24,6 +24,12 @@
 			border-style:dashed;
 			page-break-after:always;
 		}
+		.sep{
+			margin-bottom:15px;
+		}
+		.sepb{
+			margin-bottom:35px;
+		}
 	</style>
 	<script type="text/javascript">
 	function renderCanvas(){
@@ -46,12 +52,12 @@
 <p class="tl">■header</p>
 <header>
 	<h2 class="el">HeaderTitle</h2>
-	<p>
-		<pre>
+	<pre>
 &lt;header&gt;
   &lt;h2 class="el">HeaderTitle&lt;/h2&gt;
 &lt;/header&gt;
-		</pre>
+	</pre>
+	<p>
 		セクション内でのヘッダ構造として定義する。セクションに対して一度だけ記述できる
 		通常はセクションの見出し(h1～h6)を含むように意図されているが必須ではない。
 		header要素はセクショニング要素ではないため、<span class="nt">アウトラインを生成しない</span>
@@ -67,8 +73,7 @@
 			<li>コンテンツ3</li>
 		</ul>
 	</nav>
-	<p>
-		<pre>
+	<pre>
 &lt;nav class="el"&gt;
   &lt;h2&gt;NavTitle&lt;/h2&gt;
   &lt;ul&gt;
@@ -77,7 +82,8 @@
     &lt;li&gt;コンテンツ3&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
-		</pre>
+	</pre>
+	<p>
 		ナビゲーションを定義する。
 		ドキュメント内の全てのサイドメニューやリンクをnav要素にするのではなく、
 		主にサイト内のコンテンツを移動する主要なナビゲーションに使用する。
@@ -89,12 +95,12 @@
 <section class="el">
 	<h2>SectionTitle</h2>
 </section>
-<p>
-	<pre>
+<pre>
 &lt;section class="el"&gt;
   &lt;h2&gt;SectionTitle&lt;/h2&gt;
 &lt;/section&gt;
-	</pre>
+</pre>
+<p>
 	セクションを構成する汎用的な要素。
 	通常、各セクションはsection要素の子として見出し(h1～h6)を含めることによって識別される。
 </p>
@@ -105,13 +111,13 @@
 	<h2>FooterTitle</h2>
 	<p>フッターの内容</p>
 </footer>
-<p>
-	<pre>
+<pre>
 &lt;footer class="el"&gt;
   &lt;h2&gt;FooterTitle&lt;/h2&gt;
   &lt;p&gt;フッターの内容&lt;/p&gt;
 &lt;/footer&gt;
-	</pre>
+</pre>
+<p>
 	セクションのフッタ構造を定義する。
 	セクションのフッタの場合と、ページ全体のフッタの場合がある。
 	必ずしもセクションの最後に記載する必要はない。
@@ -122,13 +128,13 @@
 <section>
 	<h2>SectionTitle</h2>
 	<address class="el">セクション要素の連絡先や住所</address>
-	<p>
-		<pre>
+	<pre>
 &lt;section&gt;
   &lt;h2&gt;SectionTitle&lt;/h2&gt;
   &lt;address class="el"&gt;セクション要素の連絡先や住所&lt;/address&gt;
 &lt;/section&gt;
-		</pre>
+	</pre>
+	<p>
 		address要素が含まれているセクション要素の住所や連絡先を表す要素。
 		連絡先情報以外は含められない。
 	</p>
@@ -140,13 +146,13 @@
 	<header><h2>ArticleTitle</h2></header>
 	<footer>AriticleFooter</footer>
 </article>
-<p>
-	<pre>
+<pre>
 &lt;article class="el"&gt;
   &lt;header&gt;&lt;h2&gt;ArticleTitle&lt;/h2&gt;&lt;/header&gt;
   &lt;footer&gt;AriticleFooter&lt;/footer&gt;
 &lt;/article&gt;
-	</pre>
+</pre>
+<p>
 	独立したコンテンツとして再配布可能、または再利用可能なコンテンツを記述する。
 	article要素が入れ子になる場合、内側の要素の内容は、外側の要素の内容と関連している内容となる。
 </p>
@@ -156,14 +162,12 @@
 <aside class="el">
 	<h2>AsideTitle</h2>
 </aside>
-<p>
-	<pre>
+<pre>
 &lt;aside class="el"&gt;
   &lt;h2&gt;AsideTitle&lt;/h2&gt;
 &lt;/aside&gt;
-	</pre>
-	メインコンテンツ以外の内容を指定する要素。
-</p>
+</pre>
+<p>メインコンテンツ以外の内容を指定する要素。</p>
 
 
 <hr class="sline">
@@ -172,12 +176,12 @@
 <main class="el">
 	<h2>MainTitle</h2>
 </main>
-<p>
-	<pre>
+<pre>
 &lt;main class="el"&gt;
   &lt;h2&gt;MainTitle&lt;/h2&gt;
 &lt;/main&gt;
-	</pre>
+</pre>
+<p>
 	その文書のメインコンテンツであることを表す。
 	main要素はコンテンツを区分するが、文書のアウトラインに影響することも、
 	影響されることもない。
@@ -194,8 +198,7 @@
 	<li>え</li>
 	<li>お</li>
 </ol>
-<p>
-	<pre>
+<pre>
 &lt;ol class="el" start="10" reversed&gt;
   &lt;li&gt;あ&lt;/li&gt;
   &lt;li&gt;い&lt;/li&gt;
@@ -203,9 +206,8 @@
   &lt;li&gt;え&lt;/li&gt;
   &lt;li&gt;お&lt;/li&gt;
 &lt;/ol&gt;
-	</pre>
-	リストの並び順に意味や意図がある場合に使用する。
-</p>
+</pre>
+<p>リストの並び順に意味や意図がある場合に使用する。</p>
 
 <hr>
 <p class="tl">■ul,li</p>
@@ -216,8 +218,7 @@
 	<li>え</li>
 	<li>お</li>
 </ul>
-<p>
-	<pre>
+<pre>
 &lt;ul class="el"&gt;
   &lt;li&gt;あ&lt;/li&gt;
   &lt;li&gt;い&lt;/li&gt;
@@ -225,9 +226,8 @@
   &lt;li&gt;え&lt;/li&gt;
   &lt;li&gt;お&lt;/li&gt;
 &lt;/ul&gt;
-	</pre>
-	順序が重要ではないリストを記述する場合に使用する。
-</p>
+</pre>
+<p>順序が重要ではないリストを記述する場合に使用する。</p>
 
 <hr>
 <p class="tl">■dl,dt,dd</p>
@@ -245,8 +245,7 @@
 	<dd>データ4</dd>
 	<dd>データ5</dd>
 </dl>
-<p>
-	<pre>
+<pre>
 &lt;dl class="el"&gt;
   &lt;dt&gt;データタイトル1&lt;/dt&gt;
   &lt;dd&gt;データ1&lt;/dd&gt;
@@ -261,7 +260,8 @@
   &lt;dd&gt;データ4&lt;/dd&gt;
   &lt;dd&gt;データ5&lt;/dd&gt;
 &lt;/dl&gt;
-	</pre>
+</pre>
+<p>
 	名前と値のグループを持つリストを記述する場合に使用する。
 	名前と値のグループは、用語とその定義、質問と回答などを記述する。
 	dt要素に名前、dd要素に値を記述する。
@@ -272,29 +272,25 @@
 <div class="el">
 	<p>div要素の内容</p>
 </div>
-<p>
-	<pre>
+<pre>
 &lt;div class="el"&gt;
   &lt;p&gt;div要素の内容&lt;/p&gt;
 &lt;/div&gt;
-	</pre>
-	特別な意味を持たない要素。どうしても他の要素を指定するのが適切出ない場合のみ使用する。
-</p>
+</pre>
+<p>特別な意味を持たない要素。どうしても他の要素を指定するのが適切出ない場合のみ使用する。</p>
 
 <hr>
 <p class="tl">■pre</p>
 <pre class="el">
-  先頭スペース2つ。改行。
-  インデント、改行もそのまま表示される。
+先頭スペース2つ。改行。
+  	インデント、改行もそのまま表示される(文書の先頭に半角スペースとタブがある)。
 </pre>
-<p>
-	<pre>
+<pre>
 &lt;pre&gt;
   先頭スペース2つ。改行。
   インデント、改行もそのまま表示される。
 &lt;/pre&gt;
-	</pre>
-</p>
+</pre>
 <p>
 	整形済みテキスト。インデント、改行もそのまま表示される。
 	<span class="nt">フォントサイズが替わる。</span>
@@ -305,12 +301,12 @@
 <blockquote class="el" cite="http://www.google.co.jp">
 blockquote要素の内容
 </blockquote>
-<p>
-	<pre>
+<pre>
 &lt;blockquote class="el" cite="http://www.google.co.jp"&gt;
   blockquote要素の内容
 &lt;/blockquote&gt;
-	</pre>
+</pre>
+<p>
 	<span class="nt">インデントされる。</span>
 	他から文書などを引用したセクションであることを表す。
 </p>
@@ -321,25 +317,23 @@ blockquote要素の内容
 	<figcaption>top figcaption</figcaption>
 	<img src="./static/kaeru.gif">
 </figure>
-<p>
-	<pre>
+<pre>
 &lt;figure class="el"&gt;
   &lt;figcaption&gt;top figcaption&lt;/figcaption&gt;
   &lt;img src="./static/kaeru.gif"&gt;
 &lt;/figure&gt;
-	</pre>
-	説明文の付いた図や表などを表す。figure要素はドキュメントの流れに影響を及ぼさない。
-</p>
+</pre>
+<p>説明文の付いた図や表などを表す。figure要素はドキュメントの流れに影響を及ぼさない。</p>
 
 
 <hr class="sline">
 <h1>(3)テキスト関連の要素</h1>
 <p class="tl">■a</p>
 <a href="http://www.google.co.jp" target="_blank" rel="noreferrer" type="text/html" hreflang="ja">リンク</a>
-<p>
-	<pre>
+<pre>
 &lt;a href="http://www.google.co.jp" target="_blank" rel="noreferrer" type="text/html" hreflang="ja"&gt;リンク&lt;/a&gt;
-	</pre>
+</pre>
+<p>
 	href属性が存在しない場合、target属性、download属性、rel属性、hreflang属性、type属性は記述できない。
 	target="_blank"が非推奨ではなくなった。
 </p>
@@ -350,13 +344,13 @@ blockquote要素の内容
 	<strong>【重要文言入れ子】</strong>
 </strong>
 普通の文言
-<p>
-	<pre>
+<pre>
 &lt;strong class="el"&gt;重要文言
   &lt;strong&gt;【重要文言入れ子】&lt;/strong&gt;
 &lt;/strong&gt;
 普通の文言
-	</pre>
+</pre>
+<p>
 	<span class="nt">太字になる。</span>
 	入れ子にすることも可能。入れ子の階層が深いほど、その内容の重要性が増す。
 </p>
@@ -364,10 +358,10 @@ blockquote要素の内容
 <hr>
 <p class="tl">■small</p>
 本文<small class="el">注意事項：注意！</small>
-<p>
-	<pre>
+<pre>
 本文&lt;small class="el"&gt;注意事項：注意！&lt;/small&gt;
-	</pre>
+</pre>
+<p>
 	<span class="nt">フォントサイズが小さくなる。</span>
 	注意事項、免責事項等に使用する。
 	<span class="nt">重要度や強調の意味は無い。</span>
@@ -377,11 +371,11 @@ blockquote要素の内容
 <p class="tl">■time</p>
 <time class="el">2015-03-03</time><br>
 <time class="el" datetime="2015-01-01">元旦(datetime属性あり)</time>
-<p>
-	<pre>
+<pre>
 &lt;time class="el"&gt;2015-03-03&lt;/time&gt;&lt;br&gt;
 &lt;time class="el" datetime="2015-01-01"&gt;元旦(datetime属性あり)&lt;/time&gt;
-	</pre>
+</pre>
+<p>
 	正確な日付や日時を記載する場合に使用する。
 	datetime属性を指定した場合、time要素の中に日付、日時以外の内容を記載できるが、
 	<span class="nt">記載内容とdatetime属性で指定した日付、日時が一致する必要がある</span>
@@ -390,30 +384,26 @@ blockquote要素の内容
 <hr>
 <p class="tl">■em</p>
 普通の文言<em class="el">強調文言</em>
-<p>
-	<pre>
+<pre>
 普通の文言&lt;em class="el"&gt;強調文言&lt;/em&gt;
-	</pre>
-	入れ子にすることも可能。入れ子の階層が深いほど、その内容の強調が増す。
-</p>
+</pre>
+<p>入れ子にすることも可能。入れ子の階層が深いほど、その内容の強調が増す。</p>
 
 <hr>
 <p class="tl">■cite</p>
 <cite class="el">引用した作品のタイトル</cite>
-<p>
-	<pre>
+<pre>
 &lt;cite class="el"&gt;引用した作品のタイトル&lt;/cite&gt;
-	</pre>
-	作者名などには使用できない。
-</p>
+</pre>
+<p>作者名などには使用できない。</p>
 
 <hr>
 <p class="tl">■q</p>
 <q class="el">引用した文書、テキストなど</q>
-<p>
-	<pre>
+<pre>
 &lt;q class="el"&gt;引用した文書、テキストなど&lt;/q&gt;
-	</pre>
+</pre>
+<p>
 	<span class="nt">引用符で囲まれる。</span>
 	q要素を使用せず、文中で引用符で囲むことも可能。
 	<span class="nt">html要素でlang="ja"を指定していると「」で囲まれる模様。</span>
@@ -425,13 +415,13 @@ blockquote要素の内容
 <p>
 	<dfn class="el">用語</dfn>用語の定義
 </p>
-<p>
-	<pre>
+<pre>
 &lt;p&gt;
   &lt;dfn class="el"&gt;用語&lt;/dfn&gt;
   用語の定義
 &lt;/p&gt;
-	</pre>
+</pre>
+<p>
 	用語の定義を記載する。dfn要素の最も近い親要素であるdl要素、
 	p要素などの中にdfn要素によって指定された用語の定義を含んでいる必要がある。
 </p>
@@ -439,10 +429,10 @@ blockquote要素の内容
 <hr>
 <p class="tl">■abbr</p>
 <abbr class="el" title="HyperText Markup Language">HTML</abbr>
-<p>
-	<pre>
+<pre>
 &lt;abbr class="el" title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;
-	</pre>
+</pre>
+<p>
 	略語または頭文字を表すために使用する。
 	title属性を指定する場合、正式名称を記載する。
 	title属性の内容がツールチップとして表示される。
@@ -451,21 +441,18 @@ blockquote要素の内容
 <hr>
 <p class="tl">■code</p>
 <code class="el">var s = 1 + 2;</code>
-</p>
-<p>
-	<pre>
+<pre>
 &lt;code class="el"&gt;var s = 1 + 2;&lt;/code&gt;
-	</pre>
-	プログラムなどのコードを記載する。
-</p>
+</pre>
+<p>プログラムなどのコードを記載する。</p>
 
 <hr>
 <p class="tl">■var</p>
 <var class="el">Variable</var>
-<p>
-	<pre>
+<pre>
 &lt;var class="el"&gt;Variable&lt;/var&gt;
-	</pre>
+</pre>
+<p>
 	変数を記載する。数式やプログラムで変数や定数を表す識別子、
 	物理量、関数のパラメータなどに使用する。
 </p>
@@ -473,10 +460,10 @@ blockquote要素の内容
 <hr>
 <p class="tl">■samp</p>
 <p><samp class="el">出力結果サンプル</samp></p>
-<p>
-	<pre>
+<pre>
 &lt;samp class="el"&gt;出力結果サンプル&lt;/samp&gt;
-	</pre>
+</pre>
+<p>
 	プログラムを実行した際の何らかの出力結果の例や、
 	コンピュータが返す何らかのメッセージの例。
 </p>
@@ -484,10 +471,10 @@ blockquote要素の内容
 <hr>
 <p class="tl">■kbd</p>
 <p><kbd class="el">ユーザーが入力する内容</kbd></p>
-<p>
-	<pre>
+<pre>
 &lt;kbd class="el"&gt;ユーザーが入力する内容&lt;/kbd&gt;
-	</pre>
+</pre>
+<p>
 	ユーザー入力を表す。通常はキーボード入力だが、
 	音声コマンドのような他の入力を表すことも可能。
 </p>
@@ -495,10 +482,10 @@ blockquote要素の内容
 <hr>
 <p class="tl">■sub</p>
 <p>log<sub class="el">10</sub>X</p>
-<p>
-	<pre>
+<pre>
 log&lt;sub class="el"&gt;10&lt;/sub&gt;X
-	</pre>
+</pre>
+<p>
 	下付き文字を表す。
 	特定の意味を持つ表記方法のために使用する要素で、
 	単に文字が下付きになるという表示の見栄えのために使用してはならない。
@@ -507,10 +494,10 @@ log&lt;sub class="el"&gt;10&lt;/sub&gt;X
 <hr>
 <p class="tl">■sup</p>
 <p>100m<sup class="el">2</sup></p>
-<p>
-	<pre>
+<pre>
 100m&lt;sup class="el"&gt;2&lt;/sup&gt;
-	</pre>
+</pre>
+<p>
 	下付き文字を表す。
 	特定の意味を持つ表記方法のために使用する要素で、
 	単に文字が上付きになるという表示の見栄えのために使用してはならない。
@@ -519,10 +506,10 @@ log&lt;sub class="el"&gt;10&lt;/sub&gt;X
 <hr>
 <p class="tl">■i</p>
 <p><i class="el">声や心の中で思ったこと</i></p>
-<p>
-	<pre>
+<pre>
 &lt;i class="el"&gt;声や心の中で思ったこと&lt;/i&gt;
-	</pre>
+</pre>
+<p>
 	声や心の中で思ったことなど、他と区別したいテキストを表す際に使用する。
 	i要素で異なる言語のテキスト部分をマークアップする場合、
 	lang属性で言語を指定する必要がある。
@@ -531,10 +518,10 @@ log&lt;sub class="el"&gt;10&lt;/sub&gt;X
 <hr>
 <p class="tl">■b</p>
 <p><b class="el">他と区別したいテキスト</b></p>
-<p>
-	<pre>
+<pre>
 &lt;b class="el"&gt;他と区別したいテキスト&lt;/b&gt;
-	</pre>
+</pre>
+<p>
 	<span class="nt">太字になる。</span>
 	他と区別したいテキストを表す際に使用する。
 	他の要素でマークアップできない場合に使用する。
@@ -543,10 +530,10 @@ log&lt;sub class="el"&gt;10&lt;/sub&gt;X
 <hr>
 <p class="tl">■u</p>
 <p><u class="el">スペルミスなど</u></p>
-<p>
-	<pre>
+<pre>
 &lt;u class="el"&gt;スペルミスなど&lt;/u&gt;
-	</pre>
+</pre>
+<p>
 	<span class="nt">下線が付く。</span>
 	ニュアンスなどがはっきりと伝わりにくかったり、
 	あえて本来の意味とは違う意味で使っているテキストや、
@@ -556,10 +543,10 @@ log&lt;sub class="el"&gt;10&lt;/sub&gt;X
 <hr>
 <p class="tl">■mark</p>
 <p><mark class="el" style="background-color:lightgreen;">ハイライト</mark></p>
-<p>
-	<pre>
+<pre>
 &lt;mark class="el" style="background-color:lightgreen;"&gt;ハイライト&lt;/mark&gt;
-	</pre>
+</pre>
+<p>
 	ハイライトさせることにより注意が向くようにするために使用する。
 	重要性は表さない。
 </p>
@@ -598,30 +585,26 @@ log&lt;sub class="el"&gt;10&lt;/sub&gt;X
 <hr>
 <p class="tl">■bdi</p>
 <p><bdi class="el" title="The bdi element is not supported by browsers yet">right</bdi>あいうえお</p>
-<p>
-	<pre>
+<pre>
 &lt;bdi class="el" title="The bdi element is not supported by browsers yet"&gt;right&lt;/bdi&gt;あいうえお
-	</pre>
-	テキストの一部分を異なる文字の表記方向に指定する場合に使用する。
-</p>
+</pre>
+<p>テキストの一部分を異なる文字の表記方向に指定する場合に使用する。</p>
 
 <hr>
 <p class="tl">■wbr</p>
 <p>aaaaaaaaaaaaaaaaaaaaaa⇒<wbr class="el">return</p>
-<p>
-	<pre>
+<pre>
 aaaaaaaaaaaaaaaaaaaaaa⇒&lt;wbr class="el"&gt;return
-	</pre>
-	コンテンツの表示領域が小さくなったときに折り返す位置を明示的に指定する場合に使用する。
-</p>
+</pre>
+<p>コンテンツの表示領域が小さくなったときに折り返す位置を明示的に指定する場合に使用する。</p>
 
 <hr>
 <p class="tl">■ins</p>
 <p><ins class="el">追加されたテキストや画像</ins></p>
-<p>
-	<pre>
+<pre>
 &lt;ins class="el"&gt;追加されたテキストや画像&lt;/ins&gt;
-	</pre>
+</pre>
+<p>
 	<span class="nt">下線が付く。</span>
 	追加された部分であることを示す際に使用する。
 </p>
@@ -629,10 +612,10 @@ aaaaaaaaaaaaaaaaaaaaaa⇒&lt;wbr class="el"&gt;return
 <hr>
 <p class="tl">■del</p>
 <p><del class="el">削除箇所　削除箇所</del></p>
-<p>
-	<pre>
+<pre>
 &lt;del class="el"&gt;削除箇所　削除箇所&lt;/del&gt;
-	</pre>
+</pre>
+<p>
 	<span class="nt">取消線が付く。</span>
 	削除された部分であることを示す際に使用する。
 </p>
@@ -640,10 +623,10 @@ aaaaaaaaaaaaaaaaaaaaaa⇒&lt;wbr class="el"&gt;return
 <hr>
 <p class="tl">■s</p>
 <p><s class="el">正確ではないテキスト</s></p>
-<p>
-	<pre>
+<pre>
 &lt;s class="el"&gt;正確ではないテキスト&lt;/s&gt;
-	</pre>
+</pre>
+<p>
 	<span class="nt">取消線が付く。</span>
 	テキストが正確でないことを示す場合に使用する。
 </p>
@@ -653,21 +636,21 @@ aaaaaaaaaaaaaaaaaaaaaa⇒&lt;wbr class="el"&gt;return
 <h1>(4)画像・動画関連の要素</h1>
 <p class="tl">■img</p>
 <img src="./static/kaeru.gif" alt="カエル">
-<p>
-	<pre>
+<pre>
 &lt;img src="./static/kaeru.gif" alt="カエル"&gt;
-	</pre>
+</pre>
+<p>
 	画像を埋め込む際に使用する。
 	src属性は必須。alt属性は必須でなくなった。
 </p>
 
 <hr>
 <p class="tl">■iframe</p>
-<p><iframe src="http://www.html5.jp/" width="800" height="500" sandbox="allow-same-origin allow-forms allow-scripts"></iframe></p>
-<p>
-	<pre>
+<iframe src="http://www.html5.jp/" width="800" height="500" sandbox="allow-same-origin allow-forms allow-scripts"></iframe>
+<pre>
 &lt;iframe src="http://www.html5.jp/" width="800" height="500" sandbox="allow-same-origin allow-forms allow-scripts"&gt;&lt;/iframe&gt;
-	</pre>
+</pre>
+<p>
 	インラインフレームでコンテンツを表示する場合に使用する。
 	seamless属性はインラインフレームのコンテンツを
 	親コンテンツの一部のように表示する際に使用するが、
@@ -677,35 +660,35 @@ aaaaaaaaaaaaaaaaaaaaaa⇒&lt;wbr class="el"&gt;return
 	sandbox属性は、悪意あるコンテンツから被害を受けるのを避けるために、
 	フレーム内コンテンツの表示に制限を加える際に使用する。
 	指定できる値は下記(スペースで区切って複数指定可)。
-	<table>
-	<tbody>
-	<tr>
-		<th>値</th>
-		<th>概要</th>
-	</tr>
-	<tr>
-		<td>allow-same-origin</td>
-		<td>フレーム内のコンテンツの出処が、親ページと同じものとされる</td>
-	</tr>
-	<tr>
-		<td>allow-forms</td>
-		<td>フレーム内のコンテンツのフォームを有効にする</td>
-	</tr>
-	<tr>
-		<td>allow-scripts</td>
-		<td>フレーム内のコンテンツのスクリプトを有効にする。ただし、ポップアップは無効</td>
-	</tr>
-	</tbody>
-	</table>
 </p>
+<table class="sep">
+<tbody>
+<tr>
+	<th>値</th>
+	<th>概要</th>
+</tr>
+<tr>
+	<td>allow-same-origin</td>
+	<td>フレーム内のコンテンツの出処が、親ページと同じものとされる</td>
+</tr>
+<tr>
+	<td>allow-forms</td>
+	<td>フレーム内のコンテンツのフォームを有効にする</td>
+</tr>
+<tr>
+	<td>allow-scripts</td>
+	<td>フレーム内のコンテンツのスクリプトを有効にする。ただし、ポップアップは無効</td>
+</tr>
+</tbody>
+</table>
 
 <hr>
 <p class="tl">■embed</p>
 <p><embed src="./static/wave.swf" type="application/x-shockwave-flash"></p>
-<p>
-	<pre>
+<pre>
 &lt;embed src="./static/wave.swf" type="application/x-shockwave-flash"&gt;
-	</pre>
+</pre>
+<p>
 	外部アプリケーションやインタラクティブなコンテンツ、
 	例えば、Flashなどの
 	<span class="nt">プラグインを必要とするデータをHTML文書に埋め込む際に使用</span>する。
@@ -714,10 +697,10 @@ aaaaaaaaaaaaaaaaaaaaaa⇒&lt;wbr class="el"&gt;return
 <hr>
 <p class="tl">■object</p>
 <p><object data="./static/kaeru.gif" width="350" height="300">object要素がサポートされていません。</object></p>
-<p>
-	<pre>
+<pre>
 &lt;object data="./static/kaeru.gif" width="350" height="300"&gt;object要素がサポートされていません。&lt;/object&gt;
-	</pre>
+</pre>
+<p>
 	文書に外部リソースを埋め込む際に使用する。
 	embed要素がプラグインを必要とするデータを埋め込むのに対して、
 	<span class="nt">objectには外部リソース全般を指定することができる。</span>
@@ -725,21 +708,17 @@ aaaaaaaaaaaaaaaaaaaaaa⇒&lt;wbr class="el"&gt;return
 
 <hr>
 <p class="tl">■param</p>
-<p>
-	<object type="application/x-shockwave-flash">
-		<param name="movie" value="./static/kaeru02.swf">
-		<param name="bgcolor" value="#87ceeb">
-	</object>
-</p>
-<p>
-	<pre>
+<object type="application/x-shockwave-flash">
+	<param name="movie" value="./static/kaeru02.swf">
+	<param name="bgcolor" value="#87ceeb">
+</object>
+<pre>
 &lt;object type="application/x-shockwave-flash"&gt;
   &lt;param name="movie" value="./static/kaeru02.swf"&gt;
   &lt;param name="bgcolor" value="#87ceeb"&gt;
 &lt;/object&gt;
-	</pre>
-	object要素の子要素として、object要素で指定されたオブジェクトのパラメータを指定する。
-</p>
+</pre>
+<p>object要素の子要素として、object要素で指定されたオブジェクトのパラメータを指定する。</p>
 
 <hr>
 <p class="tl">■video,source</p>
@@ -786,9 +765,8 @@ aaaaaaaaaaaaaaaaaaaaaa⇒&lt;wbr class="el"&gt;return
 
 <hr>
 <p class="tl">■canvas</p>
-<p><canvas id="canvas">Canvas表示不可の場合に表示される文言</canvas></p>
-<p>
-	<pre>
+<canvas id="canvas">Canvas表示不可の場合に表示される文言</canvas>
+<pre>
 &lt;head&gt;
 &lt;script type="text/javascript"&gt;
 function renderCanvas(){
@@ -805,35 +783,31 @@ function renderCanvas(){
 &lt;/head&gt;
 &lt;body onload="renderCanvas()"&gt;
   &lt;canvas id="canvas"&gt;Canvas表示不可の場合に表示される文言&lt;/canvas&gt;
-	</pre>
-	グラフィックを描画する際に使用する。
-</p>
+</pre>
+<p>グラフィックを描画する際に使用する。</p>
 
 <hr>
 <p class="tl">■map,area</p>
-<p>
-	<img src="./static/japan1.gif" alt="日本地図" width="400" height="305" usemap="#shape1" id="shape1">
-	<map name="shape1">
-		<area shape="poly" coords="305,11,390,11,390,66,330,66,330,79,305,79" href="javascript:alert('北海道(図)');" alt="北海道">
-		<area shape="poly" coords="302,83,349,83,349,141,343,141,343,169,279,169,279,149,291,150,291,141,302,141" href="javascript:alert('東北(図)');" alt="東北">
-		<area shape="poly" coords="286,168,342,169,342,177,347,177,348,236,332,235,332,213,319,213,320,227,295,228,297,202,291,202,291,191,285,191" href="javascript:alert('関東(図)');" alt="関東">
-		<area shape="poly" coords="278,150,279,169,287,169,287,191,291,190,291,202,296,202,296,249,239,248,238,195,208,195,208,180,243,180,242,135,254,135,254,150" href="javascript:alert('中部(図)');" alt="中部">
-		<area shape="poly" coords="207,180,207,195,238,194,238,252,182,252,181,228,171,229,171,219,159,219,159,180" href="javascript:alert('近畿(図)');" alt="近畿">
-		<area shape="rect" coords="101,179,159,220" href="javascript:alert('中国(図)');" alt="中国">
-		<area shape="rect" coords="109,226,169,259" href="javascript:alert('四国(図)');" alt="四国">
-		<area shape="poly" coords="33,195,87,195,87,217,99,218,98,293,84,293,77,290,65,290,31,280,14,281,14,262,33,226" href="javascript:alert('九州(図)');" alt="九州">
-		<!--AREA for text-->
-		<area shape="rect" coords="132,30,209,48" href="javascript:alert('北海道(テキスト)');" alt="北海道">
-		<area shape="rect" coords="132,58,209,76" href="javascript:alert('東北(テキスト)');" alt="東北">
-		<area shape="rect" coords="132,86,209,104" href="javascript:alert('関東(テキスト)');" alt="関東">
-		<area shape="rect" coords="132,114,209,132" href="javascript:alert('中部(テキスト)');" alt="中部">
-		<area shape="rect" coords="31,30,105,48" href="javascript:alert('近畿(テキスト)');" alt="近畿">
-		<area shape="rect" coords="31,58,105,76" href="javascript:alert('中国(テキスト)');" alt="中国">
-		<area shape="rect" coords="31,86,105,104" href="javascript:alert('四国(テキスト)');" alt="四国">
-		<area shape="rect" coords="31,114,105,132" href="javascript:alert('九州(テキスト)');" alt="九州">
-	</map>
-</p>
-<p>
+<img src="./static/japan1.gif" alt="日本地図" width="400" height="305" usemap="#shape1" id="shape1">
+<map name="shape1">
+	<area shape="poly" coords="305,11,390,11,390,66,330,66,330,79,305,79" href="javascript:alert('北海道(図)');" alt="北海道">
+	<area shape="poly" coords="302,83,349,83,349,141,343,141,343,169,279,169,279,149,291,150,291,141,302,141" href="javascript:alert('東北(図)');" alt="東北">
+	<area shape="poly" coords="286,168,342,169,342,177,347,177,348,236,332,235,332,213,319,213,320,227,295,228,297,202,291,202,291,191,285,191" href="javascript:alert('関東(図)');" alt="関東">
+	<area shape="poly" coords="278,150,279,169,287,169,287,191,291,190,291,202,296,202,296,249,239,248,238,195,208,195,208,180,243,180,242,135,254,135,254,150" href="javascript:alert('中部(図)');" alt="中部">
+	<area shape="poly" coords="207,180,207,195,238,194,238,252,182,252,181,228,171,229,171,219,159,219,159,180" href="javascript:alert('近畿(図)');" alt="近畿">
+	<area shape="rect" coords="101,179,159,220" href="javascript:alert('中国(図)');" alt="中国">
+	<area shape="rect" coords="109,226,169,259" href="javascript:alert('四国(図)');" alt="四国">
+	<area shape="poly" coords="33,195,87,195,87,217,99,218,98,293,84,293,77,290,65,290,31,280,14,281,14,262,33,226" href="javascript:alert('九州(図)');" alt="九州">
+	<!--AREA for text-->
+	<area shape="rect" coords="132,30,209,48" href="javascript:alert('北海道(テキスト)');" alt="北海道">
+	<area shape="rect" coords="132,58,209,76" href="javascript:alert('東北(テキスト)');" alt="東北">
+	<area shape="rect" coords="132,86,209,104" href="javascript:alert('関東(テキスト)');" alt="関東">
+	<area shape="rect" coords="132,114,209,132" href="javascript:alert('中部(テキスト)');" alt="中部">
+	<area shape="rect" coords="31,30,105,48" href="javascript:alert('近畿(テキスト)');" alt="近畿">
+	<area shape="rect" coords="31,58,105,76" href="javascript:alert('中国(テキスト)');" alt="中国">
+	<area shape="rect" coords="31,86,105,104" href="javascript:alert('四国(テキスト)');" alt="四国">
+	<area shape="rect" coords="31,114,105,132" href="javascript:alert('九州(テキスト)');" alt="九州">
+</map>
 <pre>
 &lt;img src="./static/japan1.gif" alt="日本地図" width="400" height="305" usemap="#shape1" id="shape1"&gt;
 &lt;map name="shape1"&gt;
@@ -1047,8 +1021,7 @@ function renderCanvas(){
 </tr>
 </tfoot>
 </table>
-<p>
-	<pre>
+<pre>
 &lt;table&gt;
 &lt;caption class="el"&gt;キャプション&lt;/caption&gt;
 &lt;thead&gt;
@@ -1086,7 +1059,8 @@ function renderCanvas(){
 &lt;/tr&gt;
 &lt;/tfoot&gt;
 &lt;/table&gt;
-	</pre>
+</pre>
+<p>
 	表のタイトルを表す。table要素の子要素のため必ずtable要素が親要素として必要となり、
 	1つのtable要素に対して1つのみ指定可能。
 	table要素がfigure要素内に記述されている場合はcaption要素ではなく、
@@ -1134,8 +1108,7 @@ function renderCanvas(){
 </tr>
 </tfoot>
 </table>
-<p>
-	<pre>
+<pre>
 &lt;table&gt;
 &lt;caption&gt;キャプション&lt;/caption&gt;
 &lt;colgroup span="2" style="background-color:#ff3333;"&gt;
@@ -1175,7 +1148,8 @@ function renderCanvas(){
 &lt;/tr&gt;
 &lt;/tfoot&gt;
 &lt;/table&gt;
-	</pre>
+</pre>
+<p>
 	表の列をグループ化する。グループ化した列には
 	同じ属性やスタイルを適用することができる。
 	グループ化する列の個数をspan属性で指定する。
@@ -1225,8 +1199,7 @@ function renderCanvas(){
 </tr>
 </tfoot>
 </table>
-<p>
-	<pre>
+<pre>
 &lt;table&gt;
 &lt;caption&gt;キャプション&lt;/caption&gt;
 &lt;colgroup&gt;
@@ -1268,7 +1241,8 @@ function renderCanvas(){
 &lt;/tr&gt;
 &lt;/tfoot&gt;
 &lt;/table&gt;
-	</pre>
+</pre>
+<p>
 	複数の列に同じ属性やスタイルを適用する際に使用する。
 	span属性を指定していないcolgroup要素内に配置する。
 	colgroup要素と異なり、グループ化するという意味は持たない。
@@ -1282,13 +1256,13 @@ function renderCanvas(){
 <p><input type="text" id="txt1"></p>
 <p><input type="text" id="txt2"></p>
 </form>
-<p>
-	<pre>
+<pre>
 &lt;form id="frm1" name="frm1" method="post" accept-charset="UTF-8" target="_blank" novalidate autocomplete="on"&gt;
   &lt;input type="text" id="txt1"&gt;
   &lt;input type="text" id="txt2"&gt;
 &lt;/form&gt;
-	</pre>
+</pre>
+<p>
 	入力フォームをまとめ、入力されたデータをサーバに送信することが可能。
 	<span class="nt">
 		HTML5よりform要素外に入力フォームを配置することができるようになった
@@ -1299,22 +1273,17 @@ function renderCanvas(){
 <hr>
 <p class="tl">■fieldset,legend,label</p>
 <form id="frm2" name="frm2" method="post" accept-charset="UTF-8" target="_blank" novalidate autocomplete="on">
-<p>
-<fieldset id="fd1" class="el" disabled>
+<fieldset id="fd1" class="el sep" disabled>
 	<legend>無効な入力フォーム</legend>
 	<p><label for="txt21">テキスト1：<input type="text" id="txt21"></label>
 	<p><label for="txt22">テキスト2：<input type="text" id="txt22"></label>
 </fieldset>
-</p>
-<p>
 <fieldset id="fd2" class="el">
 	<legend>有効な入力フォーム</legend>
 	<p><label for="txt31">テキスト1：<input type="text" id="txt31"></label>
 	<p><label for="txt32">テキスト2：<input type="text" id="txt32"></label>
 </fieldset>
-</p>
 </form>
-<p>
 <pre>
 &lt;form id="frm2" name="frm2" method="post" accept-charset="UTF-8" target="_blank" novalidate autocomplete="on"&gt;
 &lt;fieldset id="fd1" class="el" disabled&gt;
@@ -1385,7 +1354,6 @@ function renderCanvas(){
 <p><label for="ireset">reset：<input type="reset" id="ireset" name="ireset" value="reset"></label></p>
 <p><label for="ibutton">button：<input type="button" id="ibutton" name="ibutton" value="button"></label></p>
 </form>
-<p>
 <pre>
 &lt;form id="inp" name="inp" method="post" accept-charset="UTF-8" novalidate autocomplete="on"&gt;
   hidden：&lt;input type="hidden" id="ihidden" name="ihidden" value="ihidden"&gt;
@@ -1438,32 +1406,27 @@ function renderCanvas(){
 <p><button type="submit" id="bsub" name="bsub" class="el">submit</button></p>
 <p><button type="reset" id="brst" name="brst" class="el">reset</button></p>
 <p><button type="button" id="bbtn" name="bbtn" class="el">button</button></p>
-<p>
-	<pre>
+<pre>
 &lt;button type="submit" id="bsub" name="bsub" class="el"&gt;submit&lt;/button&gt;
 &lt;button type="reset" id="brst" name="brst" class="el"&gt;reset&lt;/button&gt;
 &lt;button type="button" id="bbtn" name="bbtn" class="el"&gt;button&lt;/button&gt;
-	</pre>
-	ボタンを作成する場合に使用する。<BR>
-</p>
+</pre>
+<p>ボタンを作成する場合に使用する。</p>
 
 <hr>
 <p class="tl">■select,option</p>
-<p>
-	<select id="sct1" name="sct1" class="el" size="5" multiple>
-	<option value="1">選択肢1</option>
-	<option value="2">選択肢2</option>
-	<option value="3">選択肢3</option>
-	<option value="4">選択肢4</option>
-	<option value="5">選択肢5</option>
-	<option value="6">選択肢6</option>
-	<option value="7">選択肢7</option>
-	<option value="8">選択肢8</option>
-	<option value="9">選択肢9</option>
-	<option value="10">選択肢10</option>
-	</select>
-</p>
-<p>
+<select id="sct1" name="sct1" class="el" size="5" multiple>
+<option value="1">選択肢1</option>
+<option value="2">選択肢2</option>
+<option value="3">選択肢3</option>
+<option value="4">選択肢4</option>
+<option value="5">選択肢5</option>
+<option value="6">選択肢6</option>
+<option value="7">選択肢7</option>
+<option value="8">選択肢8</option>
+<option value="9">選択肢9</option>
+<option value="10">選択肢10</option>
+</select>
 <pre>
 &lt;select id="sct1" name="sct1" class="el" size="5" multiple&gt;
 &lt;option value="1"&gt;選択肢1&lt;/option&gt;
@@ -1489,24 +1452,21 @@ function renderCanvas(){
 
 <hr>
 <p class="tl">■optgroup</p>
-<p>
-	<select id="sct2" name="sct2" size="5" multiple>
-	<optgroup label="opt1" class="el">
-		<option value="1">選択肢1</option>
-		<option value="2">選択肢2</option>
-		<option value="3">選択肢3</option>
-	</optgroup>
-	<option value="4">選択肢4</option>
-	<option value="5">選択肢5</option>
-	<option value="6">選択肢6</option>
-	<option value="7">選択肢7</option>
-	<option value="8">選択肢8</option>
-	<option value="9">選択肢9</option>
-	<option value="10">選択肢10</option>
-	</select>
-</p>
-<p>
-	<pre>
+<select id="sct2" name="sct2" size="5" multiple>
+<optgroup label="opt1" class="el">
+	<option value="1">選択肢1</option>
+	<option value="2">選択肢2</option>
+	<option value="3">選択肢3</option>
+</optgroup>
+<option value="4">選択肢4</option>
+<option value="5">選択肢5</option>
+<option value="6">選択肢6</option>
+<option value="7">選択肢7</option>
+<option value="8">選択肢8</option>
+<option value="9">選択肢9</option>
+<option value="10">選択肢10</option>
+</select>
+<pre>
 &lt;select id="sct2" name="sct2" size="5" multiple&gt;
 &lt;optgroup label="opt1" class="el"&gt;
   &lt;option value="1"&gt;選択肢1&lt;/option&gt;
@@ -1521,29 +1481,24 @@ function renderCanvas(){
 &lt;option value="9"&gt;選択肢9&lt;/option&gt;
 &lt;option value="10"&gt;選択肢10&lt;/option&gt;
 &lt;/select&gt;
-	</pre>
-	option要素をグループ化する場合に使用する。
-</p>
+</pre>
+<p>option要素をグループ化する場合に使用する。</p>
 
 <hr>
 <p class="tl">■textarea</p>
-<p>
-	<textarea id="txa1" name="txa1" cols="35" rows="5" maxlength="20" placeholder="textarea rows:5 cols:35" wrap="hard" class="el"></textarea>
-</p>
-<p>
-	<pre>
+<textarea id="txa1" name="txa1" cols="35" rows="5" maxlength="20" placeholder="textarea rows:5 cols:35" wrap="hard" class="el"></textarea>
+<pre>
 &lt;textarea id="txa1" name="txa1" cols="35" rows="5" maxlength="20" placeholder="textarea rows:5 cols:35" wrap="hard" class="el"&gt;&lt;/textarea&gt;
-	</pre>
-	テキストエリアを作成する場合に使用する。
-</p>
+</pre>
+<p>テキストエリアを作成する場合に使用する。</p>
 
 <hr>
 <p class="tl">■keygen</p>
-<p><keygen id="keg1" name="keg1" challenge="公開鍵と一緒に送信する任意の文字列"></p>
-<p>
-	<pre>
+<keygen id="keg1" name="keg1" challenge="公開鍵と一緒に送信する任意の文字列">
+<pre>
 &lt;keygen id="keg1" name="keg1" challenge="公開鍵と一緒に送信する任意の文字列"&gt;
-	</pre>
+</pre>
+<p>
 	鍵のペア(公開鍵と秘密鍵)の生成を行う。
 	フォームが送信されると秘密鍵はローカルに格納され、
 	公開鍵はパッケージされたサーバに送信される。
@@ -1551,33 +1506,33 @@ function renderCanvas(){
 
 <hr>
 <p class="tl">■output</p>
-<p><output id="out1" name="out1" class="el">計算結果</output></p>
-<p>
-	<pre>
+<output id="out1" name="out1" class="el">計算結果</output>
+<pre>
 &lt;output id="out1" name="out1" class="el"&gt;計算結果&lt;/output&gt;
-	</pre>
+</pre>
+<p>
 	計算結果の出力欄を作成する場合に使用する。
 	出力だけを目的とした要素のため、output要素値が送信されることはない。
 </p>
 
 <hr>
 <p class="tl">■progress</p>
-<p><progress id="pgs1" max="100" value="50" class="el">プログレスバー非対応です</progress></p>
-<p>
-	<pre>
+<progress id="pgs1" max="100" value="50" class="el">プログレスバー非対応です</progress>
+<pre>
 &lt;progress id="pgs1" max="100" value="50" class="el"&gt;プログレスバー非対応です&lt;/progress&gt;
-	</pre>
+</pre>
+<p>
 	プログレスバーを作成する場合に使用する。
 	progress要素内には非対応のブラウザの場合に表示するコンテンツを記述する。
 </p>
 
 <hr>
 <p class="tl">■meter</p>
-<p><meter id="mtr1" value="50" min="0" max="100" low="20" high="50" optimum="50">メータ非対応です</meter></p>
-<p>
-	<pre>
+<meter id="mtr1" value="50" min="0" max="100" low="20" high="50" optimum="50">メータ非対応です</meter>
+<pre>
 &lt;meter id="mtr1" value="50" min="0" max="100" low="20" high="50" optimum="50"&gt;メータ非対応です&lt;/meter&gt;
-	</pre>
+</pre>
+<p>
 	あらかじめわかっている範囲内にある数量や割合を表す場合に使用する。
 	low(最も低い領域の上限値)、high(最も高い領域の上限値)、
 	optimum(最適値)を指定することにより、領域が3つに分けられる。
@@ -1594,18 +1549,17 @@ value ＞＝ low AND value ＝＜ high
 <hr class="sline">
 <h1>(7)インタラクティブ関連の要素</h1>
 <p class="tl">■details,summary</p>
-<p>
-	<details open class="el">
-		<summary>details要素の内容の要約や凡例</summary>
-		展開される内容
-	</details>
-<p>
-	<pre>
+<details open class="el">
+	<summary>details要素の内容の要約や凡例</summary>
+	展開される内容
+</details>
+<pre>
 &lt;details open class="el"&gt;
   &lt;summary&gt;details要素の内容の要約や凡例&lt;/summary&gt;
   展開される内容
 &lt;/details&gt;
-	</pre>
+</pre>
+<p>
 	details要素はユーザ操作により表示、非表示を指定できるディスクロジャーウィジェットを
 	作成する場合に使用する。
 	summary要素は親要素であるdetails要素の内容の要約や凡例を記述する場合に使用する。

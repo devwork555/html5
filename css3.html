@@ -5,9 +5,6 @@
 	<meta name=viewport content="width=device-width, initial-scale=1">
 	<meta name="description" content="CSS3のサンプルページです。">
 	<style type="text/css">
-		pre{
-			font-size: 1.2em;
-		}
 		strong{
 			color: #ff0000;
 			font-weight: bold;
@@ -33,6 +30,28 @@
 		.extbl{
 			border: none;
 			padding: 10px;
+		}
+		.sep{
+			margin-bottom:15px;
+		}
+		.sepb{
+			margin-bottom:35px;
+		}
+
+		/* 説明で使用 */
+		q{quotes: "「" "」" "【" "】";}
+		q::before{content: open-quote;}
+		q::after{content: close-quote;}
+
+		.counter p{
+			counter-increment: mc 2;
+		}
+		.counter p::before{
+			content: counter(mc) "番目";
+			margin-right: 1em;
+		}
+		.counter p:nth-child(3){
+			counter-reset: mc;
 		}
 	</style>
 	<title>CSS3テスト</title>
@@ -108,29 +127,25 @@
 <li>
 	%
 	<p>その要素の親要素のサイズを100%として算出される。</p>
-	<p>
-		<div style="width:400px;border:1px solid;">
-			style="width:400px;"
-			<div style="width: 50%;border: 1px solid;">
-				style="width: 50%;" = 200px
-			</div>
+	<div class="sep" style="width:400px;border:1px solid;">
+		style="width:400px;"
+		<div style="width: 50%;border: 1px solid;">
+			style="width: 50%;" = 200px
 		</div>
-	</p>
+	</div>
 </li>
 <li>
 	em
 	<p>1文字分の長さを1として算出される。</p>
-		<p style="font-size:1.5em;">style="font-size:1.5em;"</p>
-		<p style="font-size:1em;">style="font-size:1em;"</p>
-		<p style="font-size:0.5em;">style="font-size:0.5em;"</p>
-	</p>
+	<p style="font-size:1.5em;">style="font-size:1.5em;"</p>
+	<p style="font-size:1em;">style="font-size:1em;"</p>
+	<p style="font-size:0.5em;">style="font-size:0.5em;"</p>
 </li>
 </ul>
 
 <p class="tl">■絶対単位</p>
 <ul>
-<li>
-	px
+<li>px
 	<p>
 		スクリーンディスプレイではディスプレイの1ドット、
 		高密度ディスプレイなど1ピクセルが倍の密度になっている場合、
@@ -159,14 +174,12 @@
 <li>
 	div<strong>要素に含まれる</strong>p要素に適用 */
 	<p>div p{margin: 0;}</p>
-	<p>
-		<pre>
+	<pre>
 &lt;div&gt;
   &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;適用されない&lt;/p&gt;
-		</pre>
-	</p>
+	</pre>
 </li>
 <li>
 	<strong>classnameのクラスが指定された</strong>要素に適用
@@ -187,8 +200,7 @@
 <li>
 	.parentクラスが指定された<strong>要素の直属</strong>のp要素に適用
 	<p>.parent > p{margin: 0;}</p>
-	<p>
-		<pre>
+	<pre>
 &lt;div class="parent"&gt;
   &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
   &lt;div&gt;
@@ -196,14 +208,12 @@
   &lt;/div&gt;
   &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
 &lt;/div&gt;
-		</pre>
-	</p>
+	</pre>
 </li>
 <li>
 	h2要素の<strong>後に隣接している</strong>p要素に適用
 	<p>h2+p{margin: 0;}</p>
-	<p>
-		<pre>
+	<pre>
 &lt;div class="parent"&gt;
   &lt;p&gt;適用されない&lt;/p&gt;
   &lt;div&gt;
@@ -216,14 +226,12 @@
   &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
   &lt;p&gt;適用れない&lt;/p&gt;
 &lt;/div&gt;
-		</pre>
-	</p>
+	</pre>
 </li>
 <li>
 	h2要素の<strong>後に隣接している全て</strong>のp要素に適用
 	<p>h2～p{margin: 0;}</p>
-	<p>
-		<pre>
+	<pre>
 &lt;div class="parent"&gt;
   &lt;p&gt;適用されない&lt;/p&gt;
   &lt;div&gt;
@@ -236,66 +244,55 @@
   &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
   &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
 &lt;/div&gt;
-		</pre>
-	</p>
+	</pre>
 </li>
 <li>
 	<strong>指定した属性名を持つ</strong>p要素に適用
 	<p>p[title]{margin: 0;}</p>
-	<p>
-		<pre>
+	<pre>
 &lt;p title="タイトル"&gt;<span class="nt">適用される</span>&lt;p&gt;
 &lt;p&gt;適用されない&lt;p&gt;
 &lt;p title="タイトル"&gt;<span class="nt">適用される</span>&lt;p&gt;
-		</pre>
-	</p>
+	</pre>
 </li>
 <li>
 	<strong>属性の値が一致する</strong>p要素に適用
 	<p>p[title="タイトル"]{margin: 0;}</p>
-	<p>
-		<pre>
+	<pre>
 &lt;p title="タイトル"&gt;<span class="nt">適用される</span>&lt;p&gt;
 &lt;p&gt;適用されない&lt;p&gt;
 &lt;p title="あいうえお"&gt;適用されない&lt;p&gt;
-		</pre>
-	</p>
+	</pre>
 </li>
 <li>
 	<strong>属性の値が指定文字列で始まる</strong>p要素に適用
 	<p>p[title^="タイトル"]{margin: 0;}</p>
-	<p>
-		<pre>
+	<pre>
 &lt;p title="タイトル"&gt;<span class="nt">適用される</span>&lt;p&gt;
 &lt;p title="タイトルあういえお"&gt;<span class="nt">適用される</span>&lt;p&gt;
 &lt;p&gt;適用されない&lt;p&gt;
 &lt;p title="あいうえおタイトル"&gt;適用されない&lt;p&gt;
-		</pre>
-	</p>
+	</pre>
 </li>
 <li>
 	<strong>属性の値が指定文字列で終わる</strong>p要素に適用
 	<p>p[title$="タイトル"]{margin: 0;}</p>
-	<p>
-		<pre>
+	<pre>
 &lt;p title="タイトル"&gt;<span class="nt">適用される</span>&lt;p&gt;
 &lt;p title="あいうえおタイトル"&gt;<span class="nt">適用される</span>&lt;p&gt;
 &lt;p&gt;適用されない&lt;p&gt;
 &lt;p title="タイトルあいうえお"&gt;適用されない&lt;p&gt;
-		</pre>
-	</p>
+	</pre>
 </li>
 <li>
 	<strong>属性の値に指定文字列が含まれる</strong>p要素に適用
 	<p>p[title*="タイトル"]{margin: 0;}</p>
-	<p>
-		<pre>
+	<pre>
 &lt;p title="タイトル"&gt;<span class="nt">適用される</span>&lt;p&gt;
 &lt;p title="あいうえおタイトルあいうえお"&gt;<span class="nt">適用される</span>&lt;p&gt;
 &lt;p&gt;適用されない&lt;p&gt;
 &lt;p title="あいうえお"&gt;適用されない&lt;p&gt;
-		</pre>
-	</p>
+	</pre>
 </li>
 </ul>
 
@@ -434,11 +431,11 @@
 <strong>※カウントの仕方について</strong>
 <pre>
 &lt;div class="test"&gt;
-  &lt;p&gt1番目&lt;/p&gt;
-  &lt;p&gt2番目&lt;/p&gt;
-  &lt;span&gt3番目&lt;/span&gt;
-  &lt;p&gt4番目&lt;/p&gt;
-  &lt;p&gt5番目&lt;/p&gt;
+  &lt;p&gt;1番目&lt;/p&gt;
+  &lt;p&gt;2番目&lt;/p&gt;
+  &lt;span&gt;3番目&lt;/span&gt;
+  &lt;p&gt;4番目&lt;/p&gt;
+  &lt;p&gt;5番目&lt;/p&gt;
 &lt;/div&gt;
 </pre>
 <p>
@@ -451,15 +448,13 @@
 	div.test p:nth-last-of-type(3)の場合、2番目にスタイルが適用される。
 </p>
 <p>このカウントの考え方は以下のセレクタに共通する。</p>
-<p>
-	<ul>
-		<li>:nth-child(n)と:nth-of-type(n)</li>
-		<li>:nth-last-child(n)と:nth-last-of-type(n)</li>
-		<li>:first-childと:first-of-type</li>
-		<li>:last-childと:last-of-type</li>
-		<li>:only-childと:only-of-type</li>
-	</ul>
-</p>
+<ul>
+	<li>:nth-child(n)と:nth-of-type(n)</li>
+	<li>:nth-last-child(n)と:nth-last-of-type(n)</li>
+	<li>:first-childと:first-of-type</li>
+	<li>:last-childと:last-of-type</li>
+	<li>:only-childと:only-of-type</li>
+</ul>
 
 
 <hr class="sline">
@@ -553,20 +548,18 @@
 
 <hr class="sline">
 <h1>(7)ボックスモデル</h1>
-<img src="./static/boxmodel.gif" alt="ボックスモデル概念図" width="40%">
+<div style="background-image:url('./static/boxmodel.gif');background-repeat:no-repeat;background-size:contain;width:60%;height:250px;"></div>
 <p class="tl">■width,height</p>
 <p>要素の幅(width)、高さ(height)を決める。相対単位、もしくは絶対単位で値を指定する。</p>
-<p>
-	<div style="border:1px solid;width:300px;height:300px;">
-		親要素width:300px;height:300px;
-		<div style="border:1px solid;width:50%;height:50%;">
-			width:50%;height:50%(相対単位)<BR>
-		</div>
-		<div style="border:1px solid;width:150px;height:50px;">
-			width:150px;height:50px;(絶対単位)
-		</div>
+<div style="border:1px solid;width:300px;height:300px;">
+	親要素width:300px;height:300px;
+	<div style="border:1px solid;width:50%;height:50%;">
+		width:50%;height:50%(相対単位)<BR>
 	</div>
-</p>
+	<div style="border:1px solid;width:150px;height:50px;">
+		width:150px;height:50px;(絶対単位)
+	</div>
+</div>
 
 <hr>
 <p class="tl">■max-width,min-width,max-height,min-height</p>
@@ -575,15 +568,13 @@
 	最大高さ(max-height)、最小高さ(min-height)を決める。
 	相対単位、もしくは絶対単位で値を指定する。
 </p>
-<p>
-	<div style="border:1px solid;width:300px;height:300px;">
-		親要素width:80%;height:300px;
-		<div style="border:1px solid;min-width:10%;max-width:50%;min-height:30%;max-height:50%;">
-			min-width:10%;max-width:50%;
-			min-height:30%;max-height:50%;
-		</div>
+<div style="border:1px solid;width:300px;height:300px;">
+	親要素width:80%;height:300px;
+	<div style="border:1px solid;min-width:10%;max-width:50%;min-height:30%;max-height:50%;">
+		min-width:10%;max-width:50%;
+		min-height:30%;max-height:50%;
 	</div>
-</p>
+</div>
 
 <hr>
 <p class="tl">■border</p>
@@ -641,39 +632,42 @@
 <hr>
 <p class="tl">■padding</p>
 <p>ボックスモデルの内側4辺に対して余白を指定する。</p>
-<p>
-	border:5px solid;width:200px;
-	<div style="border:5px solid;width:200px;">
-		5 + 5 + 200 = 210
-	</div>
-</p>
-<p>
-	border:5px solid;width:200px;padding:10px;
-	<div style="border:5px solid;width:200px;padding:10px;">
-		5 + 5 + 200 + 10 + 10 = 230
-	</div>
-</p>
-<p>
-	上下左右、個別に設定可能。
-	<pre>
+
+border:5px solid;width:200px;
+<div class="sep" style="border:5px solid;width:200px;">
+	5 + 5 + 200 = 210
+</div>
+
+border:5px solid;width:200px;<strong>padding:10px;</strong>
+<div class="sep" style="border:5px solid;width:200px;padding:10px;">
+	5 + 5 + 200 + 10 + 10 = 230
+</div>
+
+<ul>
+	<li>上下左右、個別に設定可能。
+		<pre>
 padding-top: 10px;
 padding-right: 20px;
 padding-bottom: 10px;
 padding-left: 20px;
-	</pre>
-	省略して以下のように記述することも可能(上、右、下、左の順に指定)。
-	<pre>
+		</pre>
+	</li>
+	<li>省略して以下のように記述することも可能(上、右、下、左の順に指定)。
+		<pre>
 padding: 10px 20px 10px 20px;
-	</pre>
-	左右が同じ場合、省略して以下のように記述することも可能(上、左右、下の順に指定)。
-	<pre>
+		</pre>
+	</li>
+	<li>左右が同じ場合、省略して以下のように記述することも可能(上、左右、下の順に指定)。
+		<pre>
 padding: 10px 20px 10px;
-	</pre>
-	上下、左右が同じ場合、省略して以下のように記述することも可能(上下、左右の順に指定)。
-	<pre>
+		</pre>
+	</li>
+	<li>上下、左右が同じ場合、省略して以下のように記述することも可能(上下、左右の順に指定)。
+		<pre>
 padding: 10px 20px;
-	</pre>
-</p>
+		</pre>
+	</li>
+</ul>
 
 <hr>
 <p class="tl">■margin</p>
@@ -692,9 +686,8 @@ padding: 10px 20px;
 
 <hr>
 <p class="tl">■box-sizing</p>
-<p>
-	ボックスモデルの計算方法を変更する。
-	<ul>
+<p>ボックスモデルの計算方法を変更する。</p>
+<ul>
 	<li>
 		content-box
 		<p>初期値。width＋border＋paddingが横幅となる。</p>
@@ -703,22 +696,17 @@ padding: 10px 20px;
 		border-box
 		<p>widthが横幅となる(width値に収まるよう調整される)。</p>
 	</li>
-	</ul>
-</p>
+</ul>
 
-<p>
-<div style="width:200px;border:5px solid;padding:5px;box-sizing:content-box;height:80px;">
+<div class="sep" style="width:200px;border:5px solid;padding:5px;box-sizing:content-box;height:80px;">
 width:200px;border:5px;padding:5px;height:80px;
 box-sizing:content-box;(default)
 </div>
-</p>
 
-<p>
 <div style="width:200px;border:5px solid;padding:5px;box-sizing:border-box;height:80px;">
 width:200px;border:5px;padding:5px;height:80px;
 box-sizing:border-box;
 </div>
-</p>
 
 <hr>
 <p class="tl">■display</p>
@@ -777,352 +765,330 @@ box-sizing:border-box;
 	親の領域に対して複数の子要素をまとめて「右揃え」や
 	「均等配置」などが可能となる。
 	原則として親要素の直下にある子要素のみに適用される。
-	<ul>
-		<li>display: flex
-			<p>親要素にdixplay: flexを指定すると子要素の並びを制御できる。</p>
-		</li>
-		<li>flex-direction
-			<p>
-				子要素の並びを指定する。デフォルトは横方向のため、
-				親要素にdisplay: flexのみ指定すれば子要素は横並びになる。
-				<ul>
-					<li>flex-direction: column
-						<p>縦方向に並べる。</p>
-					</li>
-					<li>flex-direction: row
-						<p>横方向に並べる。</p>
-					</li>
-				</ul>
-			</p>
-		</li>
-		<li>justify-content
-			<p>
-				水平方向のボックスの配置方法を指定する。
-				<ul>
-					<li>flex-start
-						<p>全てのボックスを開始位置側に寄せる。</p>
-					</li>
-					<li>flex-end
-						<p>全てのボックスを終了位置側に寄せる。</p>
-					</li>
-					<li>center
-						<p>全てのボックスを中央に寄せる。</p>
-					</li>
-					<li>space-between
-						<p>ボックスを均等に配置する。</p>
-					</li>
-					<li>space-around
-						<p>
-							ボックス間の余白が均等になるように配置する。
-							最初と最後の余白はボックス間の余白の半分になる。
-						</p>
-					</li>
-					<li>inherit
-						<p>親要素から継承する。</p>
-					</li>
-				</ul>
-			</p>
-		</li>
-		<li>flex-warp
-			<p>
-				親領域のサイズを超える場合の表示方法を指定する。
-				<ul>
-					<li>nworap
-						<p>1行に収める(デフォルト)。</p>
-					</li>
-					<li>warp
-						<p>下段に改行する。</p>
-					</li>
-					<li>wrap-reverse
-						<p>wrapから順番を逆にする。</p>
-					</li>
-				</ul>
-			</p>
-		</li>
-		<li>align-items
-			<p>
-				垂直方向のボックスの配置方法を指定する。
-				<ul>
-					<li>flex-start
-						<p>全てのボックスを上部に寄せる。</p>
-					</li>
-					<li>flex-end
-						<p>全てのボックスを下部に寄せる。</p>
-					</li>
-					<li>center
-						<p>全てのボックスを中央に寄せる。</p>
-					</li>
-					<li>baseline
-						<p>全てのボックスをテキストのベースライン位置に寄せる。</p>
-					</li>
-					<li>stretch
-						<p>全てのボックスを親要素の高さまで広げる(デフォルト)。</p>
-					</li>
-				</ul>
-			</p>
-		</li>
-	</ul>
 </p>
-<p>通常のdiv(親)とp(子)
-	<div style="width:250px;border:1px solid;">
-		<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
-		<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
-		<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
-		<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
-		<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
-	</div>
-</p>
-<p>div(親)に<strong>display:flex</strong>を指定
-	<div style="width:250px;border:1px solid;display:flex;">
-		<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
-		<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
-		<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
-		<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
-		<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
-	</div>
-</p>
-<p>div(親)にdisplay:flexを指定、<strong>justify-content:flex-start</strong>を指定。
-	<div style="width:250px;border:1px solid;display:flex;justify-content:flex-start;">
-		<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
-		<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
-		<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
-		<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
-		<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
-	</div>
-</p>
-<p>div(親)にdisplay:flexを指定、<strong>justify-content:flex-end</strong>を指定。
-	<div style="width:250px;border:1px solid;display:flex;justify-content:flex-end;">
-		<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
-		<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
-		<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
-		<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
-		<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
-	</div>
-</p>
-<p>div(親)にdisplay:flexを指定、<strong>justify-content:center</strong>を指定。
-	<div style="width:250px;border:1px solid;display:flex;justify-content:center;">
-		<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
-		<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
-		<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
-		<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
-		<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
-	</div>
-</p>
-<p>div(親)にdisplay:flexを指定、<strong>justify-content:space-between</strong>を指定。
-	<div style="width:250px;border:1px solid;display:flex;justify-content:space-between;">
-		<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
-		<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
-		<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
-		<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
-		<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
-	</div>
-</p>
-<p>div(親)にdisplay:flexを指定、<strong>justify-content:space-around</strong>を指定。
-	<div style="width:250px;border:1px solid;display:flex;justify-content:space-around;">
-		<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
-		<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
-		<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
-		<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
-		<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
-	</div>
-</p>
-<p>div(親)にdisplay:flexを指定、width:100px、<strong>flex-wrapを未指定(デフォルトのnowrap)</strong>。
-	<div style="width:150px;border:1px solid;display:flex;">
-		<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
-		<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
-		<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
-		<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
-		<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
-	</div>
-</p>
-<p>div(親)にdisplay:flexを指定、width:100px、<strong>flex-wrap:wrap</strong>を指定。
-	<div style="width:150px;border:1px solid;display:flex;flex-wrap:wrap;">
-		<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
-		<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
-		<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
-		<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
-		<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
-	</div>
-</p>
-<p>div(親)にdisplay:flexを指定、width:100px、<strong>flex-wrap:wrap-reverse</strong>を指定。
-	<div style="width:150px;border:1px solid;display:flex;flex-wrap:wrap-reverse;">
-		<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
-		<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
-		<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
-		<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
-		<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
-	</div>
-</p>
-<p>div(親)にdisplay:flexを指定、<strong>align-items:stretch</strong>を指定。
-	<div style="\width:250px;height:250px;padding:0;margin:0;border:1px solid;display:flex;align-items:stretch;">
-		<p style="width:30px;background-color:#f5f5f5;border:1px solid;padding:0;margin:0;">
-			1
+<ul>
+	<li>display: flex
+		<p>親要素にdixplay: flexを指定すると子要素の並びを制御できる。</p>
+		通常のdiv(親)とp(子)
+		<div class="sep" style="width:250px;border:1px solid;">
+			<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
+			<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
+			<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
+			<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
+			<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
+		</div>
+
+		div(親)に<strong>display:flex</strong>を指定
+		<div class="sep" style="width:250px;border:1px solid;display:flex;">
+			<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
+			<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
+			<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
+			<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
+			<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
+		</div>
+	</li>
+	<li>flex-direction
+		<p>
+			子要素の並びを指定する。デフォルトは横方向のため、
+			親要素にdisplay: flexのみ指定すれば子要素は横並びになる。
 		</p>
-		<p style="width:30px;background-color:#f0e68c;border:1px solid;padding:0;margin:0;">
-			<span style="display:block;">2</span>
-			<span style="display:block;">2</span>
-		</p>
-		<p style="width:30px;background-color:#dda0dd;border:1px solid;padding:0;margin:0;">
-			<span style="display:block;">3</span>
-			<span style="display:block;">3</span>
-			<span style="display:block;">3</span>
-		</p>
-		<p style="width:30px;background-color:#fff8dc;border:1px solid;padding:0;margin:0;">
-			<span style="display:block;">4</span>
-			<span style="display:block;">4</span>
-			<span style="display:block;">4</span>
-			<span style="display:block;">4</span>
-		</p>
-		<p style="width:30px;background-color:#ffa07a;border:1px solid;padding:0;margin:0;">
-			<span style="display:block;">5</span>
-			<span style="display:block;">5</span>
-			<span style="display:block;">5</span>
-			<span style="display:block;">5</span>
-			<span style="display:block;">5</span>
-		</p>
-	</div>
-</p>
-<p>div(親)にdisplay:flexを指定、<strong>align-items:flex-start</strong>を指定。
-	<div style="\width:250px;height:250px;padding:0;margin:0;border:1px solid;display:flex;align-items:flex-start;">
-		<p style="width:30px;background-color:#f5f5f5;border:1px solid;padding:0;margin:0;">
-			1
-		</p>
-		<p style="width:30px;background-color:#f0e68c;border:1px solid;padding:0;margin:0;">
-			<span style="display:block;">2</span>
-			<span style="display:block;">2</span>
-		</p>
-		<p style="width:30px;background-color:#dda0dd;border:1px solid;padding:0;margin:0;">
-			<span style="display:block;">3</span>
-			<span style="display:block;">3</span>
-			<span style="display:block;">3</span>
-		</p>
-		<p style="width:30px;background-color:#fff8dc;border:1px solid;padding:0;margin:0;">
-			<span style="display:block;">4</span>
-			<span style="display:block;">4</span>
-			<span style="display:block;">4</span>
-			<span style="display:block;">4</span>
-		</p>
-		<p style="width:30px;background-color:#ffa07a;border:1px solid;padding:0;margin:0;">
-			<span style="display:block;">5</span>
-			<span style="display:block;">5</span>
-			<span style="display:block;">5</span>
-			<span style="display:block;">5</span>
-			<span style="display:block;">5</span>
-		</p>
-	</div>
-</p>
-<p>div(親)にdisplay:flexを指定、<strong>align-items:flex-end</strong>を指定。
-	<div style="\width:250px;height:250px;padding:0;margin:0;border:1px solid;display:flex;align-items:flex-end;">
-		<p style="width:30px;background-color:#f5f5f5;border:1px solid;padding:0;margin:0;">
-			1
-		</p>
-		<p style="width:30px;background-color:#f0e68c;border:1px solid;padding:0;margin:0;">
-			<span style="display:block;">2</span>
-			<span style="display:block;">2</span>
-		</p>
-		<p style="width:30px;background-color:#dda0dd;border:1px solid;padding:0;margin:0;">
-			<span style="display:block;">3</span>
-			<span style="display:block;">3</span>
-			<span style="display:block;">3</span>
-		</p>
-		<p style="width:30px;background-color:#fff8dc;border:1px solid;padding:0;margin:0;">
-			<span style="display:block;">4</span>
-			<span style="display:block;">4</span>
-			<span style="display:block;">4</span>
-			<span style="display:block;">4</span>
-		</p>
-		<p style="width:30px;background-color:#ffa07a;border:1px solid;padding:0;margin:0;">
-			<span style="display:block;">5</span>
-			<span style="display:block;">5</span>
-			<span style="display:block;">5</span>
-			<span style="display:block;">5</span>
-			<span style="display:block;">5</span>
-		</p>
-	</div>
-</p>
-<p>div(親)にdisplay:flexを指定、<strong>align-items:center</strong>を指定。
-	<div style="\width:250px;height:250px;padding:0;margin:0;border:1px solid;display:flex;align-items:center;">
-		<p style="width:30px;background-color:#f5f5f5;border:1px solid;padding:0;margin:0;">
-			1
-		</p>
-		<p style="width:30px;background-color:#f0e68c;border:1px solid;padding:0;margin:0;">
-			<span style="display:block;">2</span>
-			<span style="display:block;">2</span>
-		</p>
-		<p style="width:30px;background-color:#dda0dd;border:1px solid;padding:0;margin:0;">
-			<span style="display:block;">3</span>
-			<span style="display:block;">3</span>
-			<span style="display:block;">3</span>
-		</p>
-		<p style="width:30px;background-color:#fff8dc;border:1px solid;padding:0;margin:0;">
-			<span style="display:block;">4</span>
-			<span style="display:block;">4</span>
-			<span style="display:block;">4</span>
-			<span style="display:block;">4</span>
-		</p>
-		<p style="width:30px;background-color:#ffa07a;border:1px solid;padding:0;margin:0;">
-			<span style="display:block;">5</span>
-			<span style="display:block;">5</span>
-			<span style="display:block;">5</span>
-			<span style="display:block;">5</span>
-			<span style="display:block;">5</span>
-		</p>
-	</div>
-</p>
-<p>div(親)にdisplay:flexを指定、<strong>align-items:baseline</strong>を指定(わかりやすくするために子要素のフォントサイズを変更)。
-	<div style="\width:250px;height:250px;padding:0;margin:0;border:1px solid;display:flex;align-items:baseline;">
-		<p style="width:30px;background-color:#f5f5f5;border:1px solid;padding:0;margin:0;">
-			1
-		</p>
-		<p style="width:30px;background-color:#f0e68c;border:1px solid;padding:0;margin:0;">
-			<span style="display:block;font-size:3em;">2</span>
-			<span style="display:block;font-size:3em;">2</span>
-		</p>
-		<p style="width:30px;background-color:#dda0dd;border:1px solid;padding:0;margin:0;">
-			<span style="display:block;font-size:2em;">3</span>
-			<span style="display:block;font-size:2em;">3</span>
-			<span style="display:block;font-size:2em;">3</span>
-		</p>
-		<p style="width:30px;background-color:#fff8dc;border:1px solid;padding:0;margin:0;">
-			<span style="display:block;font-size:1.5em;">4</span>
-			<span style="display:block;font-size:1.5em;">4</span>
-			<span style="display:block;font-size:1.5em;">4</span>
-			<span style="display:block;font-size:1.5em;">4</span>
-		</p>
-		<p style="width:30px;background-color:#ffa07a;border:1px solid;padding:0;margin:0;">
-			<span style="display:block;">5</span>
-			<span style="display:block;">5</span>
-			<span style="display:block;">5</span>
-			<span style="display:block;">5</span>
-			<span style="display:block;">5</span>
-		</p>
-	</div>
-</p>
+		<ul>
+			<li>flex-direction: column
+				<p>縦方向に並べる。</p>
+			</li>
+			<li>flex-direction: row
+				<p>横方向に並べる。</p>
+			</li>
+		</ul>
+	</li>
+	<li>justify-content
+		<p>水平方向のボックスの配置方法を指定する。</p>
+		<ul>
+			<li>flex-start
+				<p>全てのボックスを開始位置側に寄せる。</p>
+				div(親)にdisplay:flexを指定、<strong>justify-content:flex-start</strong>を指定。
+				<div class="sep" style="width:250px;border:1px solid;display:flex;justify-content:flex-start;">
+					<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
+					<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
+					<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
+					<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
+					<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
+				</div>
+			</li>
+			<li>flex-end
+				<p>全てのボックスを終了位置側に寄せる。</p>
+				div(親)にdisplay:flexを指定、<strong>justify-content:flex-end</strong>を指定。
+				<div class="sep" style="width:250px;border:1px solid;display:flex;justify-content:flex-end;">
+					<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
+					<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
+					<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
+					<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
+					<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
+				</div>
+			</li>
+			<li>center
+				<p>全てのボックスを中央に寄せる。</p>
+				div(親)にdisplay:flexを指定、<strong>justify-content:center</strong>を指定。
+				<div class="sep" style="width:250px;border:1px solid;display:flex;justify-content:center;">
+					<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
+					<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
+					<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
+					<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
+					<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
+				</div>
+			</li>
+			<li>space-between
+				<p>ボックスを均等に配置する。</p>
+				div(親)にdisplay:flexを指定、<strong>justify-content:space-between</strong>を指定。
+				<div class="sep" style="width:250px;border:1px solid;display:flex;justify-content:space-between;">
+					<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
+					<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
+					<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
+					<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
+					<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
+				</div>
+			</li>
+			<li>space-around
+				<p>
+					ボックス間の余白が均等になるように配置する。
+					最初と最後の余白はボックス間の余白の半分になる。
+				</p>
+				div(親)にdisplay:flexを指定、<strong>justify-content:space-around</strong>を指定。
+				<div class="sep" style="width:250px;border:1px solid;display:flex;justify-content:space-around;">
+					<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
+					<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
+					<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
+					<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
+					<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
+				</div>
+			</li>
+			<li>inherit
+				<p>親要素から継承する。</p>
+			</li>
+		</ul>
+	</li>
+	<li>flex-warp
+		<p>親領域のサイズを超える場合の表示方法を指定する。</p>
+		<ul>
+			<li>nworap
+				<p>1行に収める(デフォルト)。</p>
+				div(親)にdisplay:flexを指定、width:100px、<strong>flex-wrapを未指定(デフォルトのnowrap)</strong>。
+				<div class="sep" style="width:150px;border:1px solid;display:flex;">
+					<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
+					<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
+					<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
+					<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
+					<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
+				</div>
+			</li>
+			<li>warp
+				<p>下段に改行する。</p>
+				div(親)にdisplay:flexを指定、width:100px、<strong>flex-wrap:wrap</strong>を指定。
+				<div class="sep" style="width:150px;border:1px solid;display:flex;flex-wrap:wrap;">
+					<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
+					<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
+					<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
+					<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
+					<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
+				</div>
+			</li>
+			<li>wrap-reverse
+				<p>wrapから順番を逆にする。</p>
+				div(親)にdisplay:flexを指定、width:100px、<strong>flex-wrap:wrap-reverse</strong>を指定。
+				<div class="sep" style="width:150px;border:1px solid;display:flex;flex-wrap:wrap-reverse;">
+					<p style="width:30px;background-color:#f5f5f5;border:1px solid;">1</p>
+					<p style="width:30px;background-color:#f0e68c;border:1px solid;">2</p>
+					<p style="width:30px;background-color:#dda0dd;border:1px solid;">3</p>
+					<p style="width:30px;background-color:#fff8dc;border:1px solid;">4</p>
+					<p style="width:30px;background-color:#ffa07a;border:1px solid;">5</p>
+				</div>
+			</li>
+		</ul>
+	</li>
+	<li>align-items
+		<p>垂直方向のボックスの配置方法を指定する。</p>
+		<ul>
+			<li>flex-start
+				<p>全てのボックスを上部に寄せる。</p>
+				div(親)にdisplay:flexを指定、<strong>align-items:flex-start</strong>を指定。
+				<div class="sep" style="\width:250px;height:250px;border:1px solid;display:flex;align-items:flex-start;">
+					<p style="width:30px;background-color:#f5f5f5;border:1px solid;padding:0;margin:0;">
+						1
+					</p>
+					<p style="width:30px;background-color:#f0e68c;border:1px solid;padding:0;margin:0;">
+						<span style="display:block;">2</span>
+						<span style="display:block;">2</span>
+					</p>
+					<p style="width:30px;background-color:#dda0dd;border:1px solid;padding:0;margin:0;">
+						<span style="display:block;">3</span>
+						<span style="display:block;">3</span>
+						<span style="display:block;">3</span>
+					</p>
+					<p style="width:30px;background-color:#fff8dc;border:1px solid;padding:0;margin:0;">
+						<span style="display:block;">4</span>
+						<span style="display:block;">4</span>
+						<span style="display:block;">4</span>
+						<span style="display:block;">4</span>
+					</p>
+					<p style="width:30px;background-color:#ffa07a;border:1px solid;padding:0;margin:0;">
+						<span style="display:block;">5</span>
+						<span style="display:block;">5</span>
+						<span style="display:block;">5</span>
+						<span style="display:block;">5</span>
+						<span style="display:block;">5</span>
+					</p>
+				</div>
+			</li>
+			<li>flex-end
+				<p>全てのボックスを下部に寄せる。</p>
+				div(親)にdisplay:flexを指定、<strong>align-items:flex-end</strong>を指定。
+				<div class="sep" style="\width:250px;height:250px;border:1px solid;display:flex;align-items:flex-end;">
+					<p style="width:30px;background-color:#f5f5f5;border:1px solid;padding:0;margin:0;">
+						1
+					</p>
+					<p style="width:30px;background-color:#f0e68c;border:1px solid;padding:0;margin:0;">
+						<span style="display:block;">2</span>
+						<span style="display:block;">2</span>
+					</p>
+					<p style="width:30px;background-color:#dda0dd;border:1px solid;padding:0;margin:0;">
+						<span style="display:block;">3</span>
+						<span style="display:block;">3</span>
+						<span style="display:block;">3</span>
+					</p>
+					<p style="width:30px;background-color:#fff8dc;border:1px solid;padding:0;margin:0;">
+						<span style="display:block;">4</span>
+						<span style="display:block;">4</span>
+						<span style="display:block;">4</span>
+						<span style="display:block;">4</span>
+					</p>
+					<p style="width:30px;background-color:#ffa07a;border:1px solid;padding:0;margin:0;">
+						<span style="display:block;">5</span>
+						<span style="display:block;">5</span>
+						<span style="display:block;">5</span>
+						<span style="display:block;">5</span>
+						<span style="display:block;">5</span>
+					</p>
+				</div>
+			</li>
+			<li>center
+				<p>全てのボックスを中央に寄せる。</p>
+				div(親)にdisplay:flexを指定、<strong>align-items:center</strong>を指定。
+				<div class="sep" style="\width:250px;height:250px;border:1px solid;display:flex;align-items:center;">
+					<p style="width:30px;background-color:#f5f5f5;border:1px solid;padding:0;margin:0;">
+						1
+					</p>
+					<p style="width:30px;background-color:#f0e68c;border:1px solid;padding:0;margin:0;">
+						<span style="display:block;">2</span>
+						<span style="display:block;">2</span>
+					</p>
+					<p style="width:30px;background-color:#dda0dd;border:1px solid;padding:0;margin:0;">
+						<span style="display:block;">3</span>
+						<span style="display:block;">3</span>
+						<span style="display:block;">3</span>
+					</p>
+					<p style="width:30px;background-color:#fff8dc;border:1px solid;padding:0;margin:0;">
+						<span style="display:block;">4</span>
+						<span style="display:block;">4</span>
+						<span style="display:block;">4</span>
+						<span style="display:block;">4</span>
+					</p>
+					<p style="width:30px;background-color:#ffa07a;border:1px solid;padding:0;margin:0;">
+						<span style="display:block;">5</span>
+						<span style="display:block;">5</span>
+						<span style="display:block;">5</span>
+						<span style="display:block;">5</span>
+						<span style="display:block;">5</span>
+					</p>
+				</div>
+			</li>
+			<li>baseline
+				<p>全てのボックスをテキストのベースライン位置に寄せる。</p>
+				div(親)にdisplay:flexを指定、<strong>align-items:baseline</strong>を指定(わかりやすくするために子要素のフォントサイズを変更)。
+				<div class="sep" style="\width:250px;height:250px;border:1px solid;display:flex;align-items:baseline;">
+					<p style="width:30px;background-color:#f5f5f5;border:1px solid;padding:0;margin:0;">
+						1
+					</p>
+					<p style="width:30px;background-color:#f0e68c;border:1px solid;padding:0;margin:0;">
+						<span style="display:block;font-size:3em;">2</span>
+						<span style="display:block;font-size:3em;">2</span>
+					</p>
+					<p style="width:30px;background-color:#dda0dd;border:1px solid;padding:0;margin:0;">
+						<span style="display:block;font-size:2em;">3</span>
+						<span style="display:block;font-size:2em;">3</span>
+						<span style="display:block;font-size:2em;">3</span>
+					</p>
+					<p style="width:30px;background-color:#fff8dc;border:1px solid;padding:0;margin:0;">
+						<span style="display:block;font-size:1.5em;">4</span>
+						<span style="display:block;font-size:1.5em;">4</span>
+						<span style="display:block;font-size:1.5em;">4</span>
+						<span style="display:block;font-size:1.5em;">4</span>
+					</p>
+					<p style="width:30px;background-color:#ffa07a;border:1px solid;padding:0;margin:0;">
+						<span style="display:block;">5</span>
+						<span style="display:block;">5</span>
+						<span style="display:block;">5</span>
+						<span style="display:block;">5</span>
+						<span style="display:block;">5</span>
+					</p>
+				</div>
+			</li>
+			<li>stretch
+				<p>全てのボックスを親要素の高さまで広げる(デフォルト)。</p>
+				div(親)にdisplay:flexを指定、<strong>align-items:stretch</strong>を指定。
+				<div class="sep" style="\width:250px;height:250px;border:1px solid;display:flex;align-items:stretch;">
+					<p style="width:30px;background-color:#f5f5f5;border:1px solid;padding:0;margin:0;">
+						1
+					</p>
+					<p style="width:30px;background-color:#f0e68c;border:1px solid;padding:0;margin:0;">
+						<span style="display:block;">2</span>
+						<span style="display:block;">2</span>
+					</p>
+					<p style="width:30px;background-color:#dda0dd;border:1px solid;padding:0;margin:0;">
+						<span style="display:block;">3</span>
+						<span style="display:block;">3</span>
+						<span style="display:block;">3</span>
+					</p>
+					<p style="width:30px;background-color:#fff8dc;border:1px solid;padding:0;margin:0;">
+						<span style="display:block;">4</span>
+						<span style="display:block;">4</span>
+						<span style="display:block;">4</span>
+						<span style="display:block;">4</span>
+					</p>
+					<p style="width:30px;background-color:#ffa07a;border:1px solid;padding:0;margin:0;">
+						<span style="display:block;">5</span>
+						<span style="display:block;">5</span>
+						<span style="display:block;">5</span>
+						<span style="display:block;">5</span>
+						<span style="display:block;">5</span>
+					</p>
+				</div>
+			</li>
+		</ul>
+	</li>
+</ul>
 
 
 <hr class="sline">
 <h1>(8)テキスト装飾</h1>
 <p class="tl">■color</p>
 <p>文字の色を指定する。</p>
-<p><div style="color:#ff3333;">color:#ff3333;</div></p>
+<div style="color:#ff3333;">color:#ff3333;</div>
 
 <hr>
 <p class="tl">■font-size</p>
 <p>文字サイズを指定する。</p>
-<p>
-	<div style="font-size:12px;">font-size:12px;</div>
-	<div style="font-size:1.5em;">font-size:1.5em;</div>
-</p>
+<div style="font-size:12px;">font-size:12px;</div>
+<div style="font-size:1.5em;">font-size:1.5em;</div>
 
 <hr>
 <p class="tl">■font-weight</p>
 <p>文字の太さを指定する。</p>
-<p><div style="font-weight:bold;">font-weight:bold;</div></p>
+<div style="font-weight:bold;">font-weight:bold;</div>
 
 <hr>
 <p class="tl">■font-style</p>
 <p>文字の表示スタイルを指定する。</p>
-<p><div style="font-style:italic;">font-style:italic;</div></p>
+<div style="font-style:italic;">font-style:italic;</div>
 
 <hr>
 <p class="tl">■font-family</p>
@@ -1132,36 +1098,30 @@ box-sizing:border-box;
 	先頭から順番に環境にインストールされているフォントをさがし、
 	見つかればそのフォントで表示される。
 </p>
-<p>
-	<div style="font-family:'sans-serif';">font-family:'sans-serif';</div>
-	<div style="font-family:'arial black';">font-family:'arial black';</div>
-	<div style="font-family:'ＭＳ ゴシック';">font-family:'ＭＳ ゴシック';</div>
-	<div style="font-family:'Meiryo';">font-family:'Meiryo';</div>
-	<div style="font-family:'HGP行書体';">font-family:'HGP行書体';</div>
-</p>
+<div style="font-family:'sans-serif';">font-family:'sans-serif';</div>
+<div style="font-family:'arial black';">font-family:'arial black';</div>
+<div style="font-family:'ＭＳ ゴシック';">font-family:'ＭＳ ゴシック';</div>
+<div style="font-family:'Meiryo';">font-family:'Meiryo';</div>
+<div style="font-family:'HGP行書体';">font-family:'HGP行書体';</div>
 
 <hr>
 <p class="tl">■font-variant</p>
 <p>スモールキャピタル(フォントサイズはそのままで小文字を大文字にする)で表示する。</p>
-<p>
-	<div>font-variant:small-caps;</div>
-	<div style="font-variant:small-caps;">font-variant:small-caps;</div>
-</p>
+<div>font-variant:small-caps;</div>
+<div style="font-variant:small-caps;">font-variant:small-caps;</div>
 
 <hr>
 <p class="tl">■text-align</p>
 <p>水平方向に対する文字の行揃え、均等割付などを指定する。</p>
-<p>
-	<div style="width:250px;border:1px solid;text-align:left;">
-		text-align:left;
-	</div>
-	<div style="width:250px;border:1px solid;text-align:center;">
-		text-align:center;
-	</div>
-	<div style="width:250px;border:1px solid;text-align:right;">
-		text-align:right;
-	</div>
-</p>
+<div style="width:250px;border:1px solid;text-align:left;">
+	text-align:left;
+</div>
+<div style="width:250px;border:1px solid;text-align:center;">
+	text-align:center;
+</div>
+<div style="width:250px;border:1px solid;text-align:right;">
+	text-align:right;
+</div>
 
 <hr>
 <p class="tl">■text-decoration</p>
@@ -1170,150 +1130,126 @@ box-sizing:border-box;
 	text-decoration-line(線の位置)、text-decoration-color(線の色)、
 	text-decoration-style(線の種類)をまとめて指定できるが、
 	<strong>現状、線の位置以外は多くのブラウザが対応していない。</strong>
-	<ul>
-		<li>text-decoration:underline
-			<p style="text-decoration:underline;">文字に下線が付く。</p>
-		</li>
-		<li>text-decoration:overline
-			<p style="text-decoration:overline;">文字に上線が付く。</p>
-		</li>
-		<li>text-decoration:line-through
-			<p style="text-decoration:line-through;">文字に打ち消し線が付く。</p>
-		</li>
-		<li>text-decoration:blink
-			<p style="text-decoration:blink;">
-				文字が点滅する。
-				<strong>ブラウザによっては実装していないものもある。</strong>
-			</p>
-		</li>
-	</ul>
 </p>
+<ul>
+	<li>text-decoration:underline
+		<p style="text-decoration:underline;">文字に下線が付く。</p>
+	</li>
+	<li>text-decoration:overline
+		<p style="text-decoration:overline;">文字に上線が付く。</p>
+	</li>
+	<li>text-decoration:line-through
+		<p style="text-decoration:line-through;">文字に打ち消し線が付く。</p>
+	</li>
+	<li>text-decoration:blink
+		<p style="text-decoration:blink;">
+			文字が点滅する。
+			<strong>ブラウザによっては実装していないものもある。</strong>
+		</p>
+	</li>
+</ul>
 
 <hr>
 <p class="tl">■text-transform</p>
-<p>
-	文字の大文字、小文字を切り替えて表示する。
-	<ul>
-		<li>text-transform:capitalize
-			<p >指定なし：text-transform:capitalize</p>
-			<p style="text-transform:capitalize;">指定あり：text-transform:capitalize</p>
-		</li>
-		<li>text-transform:lowercase
-			<p >指定なし：TEXT-TRANSFORM:lowercase</p>
-			<p style="text-transform:lowercase;">指定あり：TEXT-TRANSFORM:lowercase</p>
-		</li>
-		<li>text-transform:uppercase
-			<p >指定なし：text-transform:uppercase</p>
-			<p style="text-transform:uppercase;">指定あり：text-transform:uppercase</p>
-		</li>
-	</ul>
-</p>
+<p>文字の大文字、小文字を切り替えて表示する。</p>
+<ul>
+	<li>text-transform:capitalize
+		<p >指定なし：text-transform:capitalize</p>
+		<p style="text-transform:capitalize;">指定あり：text-transform:capitalize</p>
+	</li>
+	<li>text-transform:lowercase
+		<p >指定なし：TEXT-TRANSFORM:lowercase</p>
+		<p style="text-transform:lowercase;">指定あり：TEXT-TRANSFORM:lowercase</p>
+	</li>
+	<li>text-transform:uppercase
+		<p >指定なし：text-transform:uppercase</p>
+		<p style="text-transform:uppercase;">指定あり：text-transform:uppercase</p>
+	</li>
+</ul>
 
 <hr>
 <p class="tl">■white-space</p>
-<p>
-	タブ、スペース、改行、折り返しをどのように表示するか指定する。
-	<ul>
-		<li>white-space:pre-wrap
-			<p>【有効】タブ、スペース、改行、折り返し</p>
-			<p>【無効】</p>
-			<p>
-				<div style="width:300px;border:1px solid;white-space:pre-wrap;">
+<p>タブ、スペース、改行、折り返しをどのように表示するか指定する。</p>
+<ul>
+	<li>white-space:pre-wrap
+		<p>【有効】タブ、スペース、改行、折り返し</p>
+		<p>【無効】</p>
+		<div class="sep" style="width:300px;border:1px solid;white-space:pre-wrap;">
 タブ開始	タブ終了改行
 スペース開始(5半角スペース)     スペース終了改行
 ああああああああああああああああああああああ
-				</div>
-			</p>
-		</li>
-		<li>white-space:pre-line
-			<p>【有効】改行、折り返し</p>
-			<p>【無効】タブ、スペース</p>
-			<p>
-				<div style="width:300px;border:1px solid;white-space:pre-line;">
+		</div>
+	</li>
+	<li>white-space:pre-line
+		<p>【有効】改行、折り返し</p>
+		<p>【無効】タブ、スペース</p>
+		<div class="sep" style="width:300px;border:1px solid;white-space:pre-line;">
 タブ開始	タブ終了改行
 スペース開始(5半角スペース)     スペース終了改行
 ああああああああああああああああああああああ
-				</div>
-			</p>
-		</li>
-		<li>white-space:pre
-			<p>【有効】タブ、スペース、改行</p>
-			<p>【無効】折り返し</p>
-			<p>
-				<div style="width:300px;border:1px solid;white-space:pre;">
+		</div>
+	</li>
+	<li>white-space:pre
+		<p>【有効】タブ、スペース、改行</p>
+		<p>【無効】折り返し</p>
+		<div class="sep" style="width:300px;border:1px solid;white-space:pre;">
 タブ開始	タブ終了改行
 スペース開始(5半角スペース)     スペース終了改行
 ああああああああああああああああああああああ
-				</div>
-			</p>
-		</li>
-		<li>white-space:nowrap
-			<p>【有効】</p>
-			<p>【無効】タブ、スペース、改行、折り返し</p>
-			<p>
-				<div style="width:300px;border:1px solid;white-space:nowrap;">
+		</div>
+	</li>
+	<li>white-space:nowrap
+		<p>【有効】</p>
+		<p>【無効】タブ、スペース、改行、折り返し</p>
+		<div class="sep" style="width:300px;border:1px solid;white-space:nowrap;">
 タブ開始	タブ終了改行
 スペース開始(5半角スペース)     スペース終了改行
 ああああああああああああああああああああああ
-				</div>
-			</p>
-		</li>
-		<li>white-space:normal(white-space未指定も同様)
-			<p>【有効】折り返し</p>
-			<p>【無効】タブ、スペース、改行</p>
-			<p>
-				<div style="width:300px;border:1px solid;">
+		</div>
+	</li>
+	<li>white-space:normal(white-space未指定も同様)
+		<p>【有効】折り返し</p>
+		<p>【無効】タブ、スペース、改行</p>
+		<div style="width:300px;border:1px solid;">
 タブ開始	タブ終了改行
 スペース開始(5半角スペース)     スペース終了改行
 ああああああああああああああああああああああ
-				</div>
-			</p>
-		</li>
-	</ul>
-</p>
+		</div>
+	</li>
+</ul>
 
 <hr>
 <p class="tl">■word-spacing</p>
 <p><strong>単語と単語のスペース間隔</strong>を指定する。マイナス値も指定可能。</p>
-<p>
-	<div>word-spacing:1.2em です(未指定の場合)</div>
-	<div style="word-spacing:1.2em;">word-spacing:1.2em です</div>
-</p>
+<div>word-spacing:1.2em です(未指定の場合)</div>
+<div style="word-spacing:1.2em;">word-spacing:1.2em です</div>
 
 <hr>
 <p class="tl">■letter-spacing</p>
 <p><strong>文字のスペース間隔</strong>を指定する。マイナス値も指定可能。</p>
-<p>
-	<div>word-spacing:1.2emです(未指定の場合)</div>
-	<div style="letter-spacing:1.2em;">word-spacing:1.2emです</div>
-</p>
+<div>word-spacing:1.2emです(未指定の場合)</div>
+<div style="letter-spacing:1.2em;">word-spacing:1.2emです</div>
 
 <hr>
 <p class="tl">■text-indent</p>
 <p>テキストの1行目のインデントを指定する。マイナス値も指定可能。</p>
-<p>
-	<div>text-indent:1em(未指定の場合)</div>
-	<div style="text-indent:1em;">text-indent:1em</div>
-</p>
+<div>text-indent:1em(未指定の場合)</div>
+<div style="text-indent:1em;">text-indent:1em</div>
 
 <hr>
 <p class="tl">■text-shadow</p>
 <p>
 	文字に影を付ける。指定の仕方はbox-shadowと同様だが、insetはtext-shadowにはない。
 	指定内容は下記。
-	<p>水平方向のオフセット距離 垂直方向のオフセット距離 ぼかし距離 影の色</p>
 </p>
-<p>
-	<div style="text-shadow:5px 6px 7px #ff3333;">text-shadow:5px 6px 7px #ff3333;</div>
-</p>
+<p>水平方向のオフセット距離 垂直方向のオフセット距離 ぼかし距離 影の色</p>
+<div style="text-shadow:5px 6px 7px #ff3333;">text-shadow:5px 6px 7px #ff3333;</div>
 
 <hr>
 <p class="tl">■line-height</p>
 <p>行の高さを指定する。</p>
-<p>
-	<div style="border:1px solid;">line-height:1.5em(未指定の場合)</div>
-	<div style="border:1px solid;line-height:5em;">line-height:5em</div>
-</p>
+<div style="border:1px solid;">line-height:1.5em(未指定の場合)</div>
+<div style="border:1px solid;line-height:5em;">line-height:5em</div>
 
 <hr>
 <p class="tl">■vertical-align</p>
@@ -1321,102 +1257,85 @@ box-sizing:border-box;
 	水平方向の位置を指定する。
 	vertical-alignが適用されるのは、インラインスタイル、
 	もしくはtable-cellスタイルのみ。
-	<ul>
-		<li>baseline
-			<p>親要素のテキストのベースラインに揃えられる。</p>
-			<p>
-				<div style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
-					親の文字
-					<span style="font-size:1rem;vertical-align:baseline;">vertical-align:baseline;</span>
-				</div>
-			</p>
-		</li>
-		<li>top
-			<p>親要素のボックス領域の上端に揃えられる。</p>
-			<p>
-				<div style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
-					親の文字
-					<span style="font-size:1rem;vertical-align:top;">vertical-align:top;</span>
-				</div>
-			</p>
-		</li>
-		<li>middle
-			<p>親要素のボックス領域の垂直方向中央に揃えられる。</p>
-			<p>
-				<div style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
-					親の文字
-					<span style="font-size:1rem;vertical-align:middle;">vertical-align:middle;</span>
-				</div>
-			</p>
-		</li>
-		<li>bottom
-			<p>親要素のボックス領域の下端に揃えられる。</p>
-			<p>
-				<div style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
-					親の文字
-					<span style="font-size:1rem;vertical-align:bottom;">vertical-align:bottom;</span>
-				</div>
-			</p>
-		</li>
-		<li>super
-			<p>親要素テキストの上付き文字に定められた位置に揃えられる。</p>
-			<p>
-				<div style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
-					親の文字
-					<span style="font-size:1rem;vertical-align:super;">vertical-align:super;</span>
-				</div>
-			</p>
-		</li>
-		<li>sub
-			<p>親要素テキストの下付き文字に定められた位置に揃えられる。</p>
-			<p>
-				<div style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
-					親の文字
-					<span style="font-size:1rem;vertical-align:sub;">vertical-align:sub;</span>
-				</div>
-			</p>
-		</li>
-		<li>text-top
-			<p>親要素テキストの上端に揃えられる。</p>
-			<p>
-				<div style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
-					親の文字
-					<span style="font-size:1rem;vertical-align:text-top;">vertical-align:text-top;</span>
-				</div>
-			</p>
-		</li>
-		<li>text-bottom
-			<p>親要素テキストの下端に揃えられる。</p>
-			<p>
-				<div style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
-					親の文字
-					<span style="font-size:1rem;vertical-align:text-bottom;">vertical-align:text-bottom;</span>
-				</div>
-			</p>
-		</li>
-		<li>数値指定(10px等)
-			<p>要素のbaselineを親要素のbaselineの指定数値分上に揃えられる。</p>
-			<p>
-				<div style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
-					親の文字
-					<span style="font-size:1rem;vertical-align:10px;">vertical-align:30px;</span>
-				</div>
-			</p>
-		</li>
-		<li>%指定(10%等)
-			<p>
-				要素のbaselineを基準として、親要素のline-heightの指定%分移動した位置に揃えられる。
-				正の値であれば上へ、負の値であれば下へ移動する。
-			</p>
-			<p>
-				<div style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
-					親の文字
-					<span style="font-size:1rem;vertical-align:-300%;">vertical-align:-300%;</span>
-				</div>
-			</p>
-		</li>
-	</ul>
 </p>
+<ul>
+	<li>baseline
+		<p>親要素のテキストのベースラインに揃えられる。</p>
+		<div class="sep" style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
+			親の文字
+			<span style="font-size:1rem;vertical-align:baseline;">vertical-align:baseline;</span>
+		</div>
+	</li>
+	<li>top
+		<p>親要素のボックス領域の上端に揃えられる。</p>
+		<div class="sep" style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
+			親の文字
+			<span style="font-size:1rem;vertical-align:top;">vertical-align:top;</span>
+		</div>
+	</li>
+	<li>middle
+		<p>親要素のボックス領域の垂直方向中央に揃えられる。</p>
+		<div class="sep" style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
+			親の文字
+			<span style="font-size:1rem;vertical-align:middle;">vertical-align:middle;</span>
+		</div>
+	</li>
+	<li>bottom
+		<p>親要素のボックス領域の下端に揃えられる。</p>
+		<div class="sep" style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
+			親の文字
+			<span style="font-size:1rem;vertical-align:bottom;">vertical-align:bottom;</span>
+		</div>
+	</li>
+	<li>super
+		<p>親要素テキストの上付き文字に定められた位置に揃えられる。</p>
+		<div class="sep" style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
+			親の文字
+			<span style="font-size:1rem;vertical-align:super;">vertical-align:super;</span>
+		</div>
+	</li>
+	<li>sub
+		<p>親要素テキストの下付き文字に定められた位置に揃えられる。</p>
+		<div class="sep" style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
+			親の文字
+			<span style="font-size:1rem;vertical-align:sub;">vertical-align:sub;</span>
+		</div>
+	</li>
+	<li>text-top
+		<p>親要素テキストの上端に揃えられる。</p>
+		<div class="sep" style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
+			親の文字
+			<span style="font-size:1rem;vertical-align:text-top;">vertical-align:text-top;</span>
+		</div>
+	</li>
+	<li>text-bottom
+		<p>親要素テキストの下端に揃えられる。</p>
+		<div class="sep" style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
+			親の文字
+			<span style="font-size:1rem;vertical-align:text-bottom;">vertical-align:text-bottom;</span>
+		</div>
+	</li>
+	<li>数値指定(10px等)
+		<p>
+			要素のbaselineを親要素のbaselineの指定数値分上に揃えられる。
+			正の値であれば上へ、負の値であれば下へ移動する。
+		</p>
+		<div class="sep" style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
+			親の文字
+			<span style="font-size:1rem;vertical-align:30px;">vertical-align:30px;</span>
+		</div>
+	</li>
+	<li>%指定(10%等)
+		<p>
+			要素のbaselineを基準として、親要素のline-heightの指定%分移動した位置に揃えられる。
+			正の値であれば上へ、負の値であれば下へ移動する。
+		</p>
+		<div class="sep" style="border:1px solid;font-size:3em;height:100px;white-space:nowrap;">
+			親の文字
+			<span style="font-size:1rem;vertical-align:-300%;">vertical-align:-300%;</span>
+		</div>
+	</li>
+</ul>
 
 <hr style="margin-top:50px;">
 <p class="tl">■direction,unicode-bidi</p>
@@ -1440,11 +1359,6 @@ box-sizing:border-box;
 <hr>
 <p class="tl">■quotes</p>
 <p>引用符を付加する。</p>
-<style>
-q{quotes: "「" "」" "【" "】";}
-q::before{content: open-quote;}
-q::after{content: close-quote;}
-</style>
 <q>あいうえお<q>かきくけこ</q>さしすせそ</q>
 <pre>
 &lt;style&gt;
@@ -1479,80 +1393,72 @@ q::after{
 </p>
 <ul>
 	<li>float指定なし
-		<p>
-			<div style="width:250px;border:1px solid;">
-				<div style="background-color:#e0ffff;width:30%;">30%</div>
-				<div style="background-color:#90ee90;width:70%;">70%</div>
-			</div>
-			<pre>
+		<div style="width:250px;border:1px solid;">
+			<div style="background-color:#e0ffff;width:30%;">30%</div>
+			<div style="background-color:#90ee90;width:70%;">70%</div>
+		</div>
+		<pre>
 &lt;div style="width:250px;border:1px solid;"&gt;
   &lt;div style="background-color:#e0ffff;width:30%;"&gt;30%&lt;/div&gt;
   &lt;div style="background-color:#90ee90;width:70%;"&gt;70%&lt;/div&gt;
 &lt;/div&gt;
-			</pre>
-		</p>
+		</pre>
 	</li>
 	<li>floatあり leftのみ指定
-		<p>
-			<div style="width:250px;border:1px solid;">
-				<div style="background-color:#e0ffff;width:30%;float:left;">30%</div>
-				<div style="background-color:#90ee90;width:70%;">70%</div>
-			</div>
-			<pre>
+		<div style="width:250px;border:1px solid;">
+			<div style="background-color:#e0ffff;width:30%;float:left;">30%</div>
+			<div style="background-color:#90ee90;width:70%;">70%</div>
+		</div>
+		<pre>
 &lt;div style="width:250px;border:1px solid;"&gt;
   &lt;div style="background-color:#e0ffff;width:30%;<strong>float:left;</strong>"&gt;30%&lt;/div&gt;
   &lt;div style="background-color:#90ee90;width:70%;"&gt;70%&lt;/div&gt;
 &lt;/div&gt;
-			</pre>
-		</p>
+		</pre>
 	</li>
 	<li>floatあり rightのみ指定
-		<p>
-			<div style="width:250px;border:1px solid;">
-				<div style="background-color:#e0ffff;width:30%;">30%</div>
-				<div style="background-color:#90ee90;width:70%;float:right;">70%</div>
-			</div>
-			<pre style="clear:both;margin-top:40px;">
+		<div style="width:250px;border:1px solid;">
+			<div style="background-color:#e0ffff;width:30%;">30%</div>
+			<div style="background-color:#90ee90;width:70%;float:right;">70%</div>
+		</div>
+		<pre style="clear:both;margin-top:40px;">
 &lt;div style="width:250px;border:1px solid;"&gt;
   &lt;div style="background-color:#e0ffff;width:30%;"&gt;30%&lt;/div&gt;
   &lt;div style="background-color:#90ee90;width:70%;<strong>float:right;</strong>"&gt;70%&lt;/div&gt;
 &lt;/div&gt;
-			</pre>
-		</p>
+		</pre>
 	</li>
 	<li>floatあり left、right指定
-		<p>
-			<div style="width:250px;border:1px solid;">
-				<div style="background-color:#e0ffff;width:30%;float:left;">30%</div>
-				<div style="background-color:#90ee90;width:70%;float:right;">70%</div>
-			</div>
-			<pre style="clear:both;margin-top:40px;">
+		<div style="width:250px;border:1px solid;">
+			<div style="background-color:#e0ffff;width:30%;float:left;">30%</div>
+			<div style="background-color:#90ee90;width:70%;float:right;">70%</div>
+		</div>
+		<pre style="clear:both;margin-top:40px;">
 &lt;div style="width:250px;border:1px solid;"&gt;
   &lt;div style="background-color:#e0ffff;width:30%;<strong>float:left;</strong>"&gt;30%&lt;/div&gt;
   &lt;div style="background-color:#90ee90;width:70%;<strong>float:right;</strong>"&gt;70%&lt;/div&gt;
 &lt;/div&gt;
-			</pre>
-		</p>
+		</pre>
 	</li>
 </ul>
 <p>
 	※clearを指定することで、浮動要素の後の要素についても回り込みを指定できる。
 	なお、親要素の::after擬似要素にclear:bothを指定することが多い。
-	<ul>
-		<li>none
-			<p>左右にある浮動要素との関係を維持し、回り込み表示される。</p>
-		</li>
-		<li>left
-			<p>左側にある浮動要素との関係を切り離し、下の段に表示される。</p>
-		</li>
-		<li>right
-			<p>右側にある浮動要素との関係を切り離し、下の段に表示される。</p>
-		</li>
-		<li>both
-			<p>左右にある浮動要素との関係を切り離し、下の段に表示される。</p>
-		</li>
-	</ul>
 </p>
+<ul>
+	<li>none
+		<p>左右にある浮動要素との関係を維持し、回り込み表示される。</p>
+	</li>
+	<li>left
+		<p>左側にある浮動要素との関係を切り離し、下の段に表示される。</p>
+	</li>
+	<li>right
+		<p>右側にある浮動要素との関係を切り離し、下の段に表示される。</p>
+	</li>
+	<li>both
+		<p>左右にある浮動要素との関係を切り離し、下の段に表示される。</p>
+	</li>
+</ul>
 
 <hr>
 <p class="tl">■overflow</p>
@@ -1563,56 +1469,48 @@ q::after{
 </p>
 <ul>
 	<li>visible
-		<p>
-			初期値。ボックスからはみ出して表示される。
-			<div style="border:1px solid;width:150px;height:100px;overflow:visible;">
-				<div style="width:200px;height:150px;border:1px dotted;">overflow:visible;</div>
-			</div>
-			<pre style="margin-top:70px;">
+		<p>初期値。ボックスからはみ出して表示される。</p>
+		<div style="border:1px solid;width:150px;height:100px;overflow:visible;">
+			<div style="width:200px;height:150px;border:1px dotted;">overflow:visible;</div>
+		</div>
+		<pre style="margin-top:70px;">
 &lt;div style="<strong>overflow:visible;</strong>border:1px solid;width:150px;height:100px;"&gt;
   &lt;div style="width:200px;height:150px;border:1px dotted;"&gt;overflow:visible;&lt;/div&gt;
 &lt;/div&gt;
-			</pre>
-		</p>
+		</pre>
 	</li>
 	<li>scroll
-		<p>
-			スクロールバーが表示される。
-			<div style="border:1px solid;width:150px;height:100px;overflow:scroll;">
-				<div style="width:200px;height:150px;border:1px dotted;">overflow:scroll;</div>
-			</div>
-			<pre>
+		<p>スクロールバーが表示される。</p>
+		<div style="border:1px solid;width:150px;height:100px;overflow:scroll;">
+			<div style="width:200px;height:150px;border:1px dotted;">overflow:scroll;</div>
+		</div>
+		<pre>
 &lt;div style="<strong>overflow:scroll;</strong>border:1px solid;width:150px;height:100px;"&gt;
   &lt;div style="width:200px;height:150px;border:1px dotted;"&gt;overflow:scroll;&lt;/div&gt;
 &lt;/div&gt;
-			</pre>
-		</p>
+		</pre>
 	</li>
 	<li>hidden
-		<p>
-			はみ出した部分は表示されない。
-			<div style="border:1px solid;width:150px;height:100px;overflow:hidden;">
-				<div style="width:200px;height:150px;border:1px dotted;">overflow:hidden;</div>
-			</div>
-			<pre>
+		<p>はみ出した部分は表示されない。</p>
+		<div style="border:1px solid;width:150px;height:100px;overflow:hidden;">
+			<div style="width:200px;height:150px;border:1px dotted;">overflow:hidden;</div>
+		</div>
+		<pre>
 &lt;div style="<strong>overflow:hidden;</strong>border:1px solid;width:150px;height:100px;"&gt;
   &lt;div style="width:200px;height:150px;border:1px dotted;"&gt;overflow:hidden;&lt;/div&gt;
 &lt;/div&gt;
-			</pre>
-		</p>
+		</pre>
 	</li>
 	<li>auto
-		<p>
-			ブラウザに依存。大抵のブラウザはスクロールバーを表示する。
-			<div style="border:1px solid;width:150px;height:100px;overflow:auto;">
-				<div style="width:200px;height:150px;border:1px dotted;">overflow:auto;</div>
-			</div>
-			<pre>
+		<p>ブラウザに依存。大抵のブラウザはスクロールバーを表示する。</p>
+		<div style="border:1px solid;width:150px;height:100px;overflow:auto;">
+			<div style="width:200px;height:150px;border:1px dotted;">overflow:auto;</div>
+		</div>
+		<pre>
 &lt;div style="<strong>overflow:auto;</strong>border:1px solid;width:150px;height:100px;"&gt;
   &lt;div style="width:200px;height:150px;border:1px dotted;"&gt;overflow:auto;&lt;/div&gt;
 &lt;/div&gt;
-			</pre>
-		</p>
+		</pre>
 	</li>
 </ul>
 
@@ -1621,61 +1519,55 @@ q::after{
 <p>ボックスの配置位置を指定する。</p>
 <ul>
 	<li>static
-		<p>
-			配置方法は指定されず、top、bottom、left、rightは無視される。
-			<div style="border:1px solid;width:150px;height:80px;overflow:scroll;">
-				<div style="width:100px;height:100px;border:1px dotted;position:relative;top:10px;left:10px;">
-					<div style="position:static;top:10px;left:10px;width:50px;height:50px;border:1px dotted #ff3333;">position:static;</div>
-				</div>
+		<p>配置方法は指定されず、top、bottom、left、rightは無視される。</p>
+		<div style="border:1px solid;width:150px;height:80px;overflow:scroll;">
+			<div style="width:100px;height:100px;border:1px dotted;position:relative;top:10px;left:10px;">
+				<div style="position:static;top:10px;left:10px;width:50px;height:50px;border:1px dotted #ff3333;">position:static;</div>
 			</div>
-			<pre>
+		</div>
+		<pre>
 &lt;div style="border:1px solid;width:150px;height:80px;overflow:scroll;"&gt;
   &lt;div style="width:100px;height:100px;border:1px dotted;position:relative;top:10px;left:10px;"&gt;
     &lt;div style="<strong>position:static;top:10px;left:10px;</strong>width:50px;height:50px;border:1px dotted #ff3333;"&gt;position:static;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-			</pre>
-		</p>
+		</pre>
 	</li>
 	<li>relative
-		<p>
-			本来の表示位置を基準し、top、left、right、bottomで位置をずらす。
-			<div style="border:1px solid;width:150px;height:80px;overflow:scroll;">
-				<div style="position:relative;top:10px;left:10px;width:100px;height:100px;border:1px dotted;">
-					<div style="position:relative;top:10px;left:10px;width:50px;height:50px;border:1px dotted #ff3333;">position:relative;</div>
-				</div>
+		<p>本来の表示位置を基準し、top、left、right、bottomで位置をずらす。</p>
+		<div style="border:1px solid;width:150px;height:80px;overflow:scroll;">
+			<div style="position:relative;top:10px;left:10px;width:100px;height:100px;border:1px dotted;">
+				<div style="position:relative;top:10px;left:10px;width:50px;height:50px;border:1px dotted #ff3333;">position:relative;</div>
 			</div>
-			<pre>
+		</div>
+		<pre>
 &lt;div style="border:1px solid;width:150px;height:80px;overflow:scroll;"&gt;
   &lt;div style="position:relative;top:10px;left:10px;width:100px;height:100px;border:1px dotted;"&gt;
     &lt;div style="<strong>position:relative;top:10px;left:10px;</strong>width:50px;height:50px;border:1px dotted #ff3333;"&gt;position:relative;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-			</pre>
-		</p>
+		</pre>
 	</li>
 	<li>absolute
 		<p>
 			position:static以外の指定がある直近の親要素を絶対位置として配置する。
 			複数の要素を重ねあうことが可能で、重なり順はz-indexで指定する。
-			<div style="border:1px solid;width:150px;height:80px;overflow:scroll;">
-				<div style="position:relative;top:10px;left:10px;width:100px;height:100px;border:1px dotted;">
-					<div style="position:absolute;top:10px;left:10px;width:50px;height:50px;border:1px dotted #ff3333;">position:absolute;</div>
-				</div>
+		</p>
+		<div style="border:1px solid;width:150px;height:80px;overflow:scroll;">
+			<div style="position:relative;top:10px;left:10px;width:100px;height:100px;border:1px dotted;">
+				<div style="position:absolute;top:10px;left:10px;width:50px;height:50px;border:1px dotted #ff3333;">position:absolute;</div>
 			</div>
-			<pre>
+		</div>
+		<pre>
 &lt;div style="border:1px solid;width:150px;height:80px;overflow:scroll;"&gt;
   &lt;div style="position:relative;top:10px;left:10px;width:100px;height:100px;border:1px dotted;"&gt;
     &lt;div style="<strong>position:absolute;top:10px;left:10px;</strong>width:50px;height:50px;border:1px dotted #ff3333;"&gt;position:absolute;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-			</pre>
-		</p>
+		</pre>
 	</li>
 	<li>fixed
-		<p>
-			スクロールしても動かず固定される。
-		</p>
+		<p>スクロールしても動かず固定される。</p>
 	</li>
 </ul>
 
@@ -1745,26 +1637,30 @@ q::after{
 		切り抜く要素はposition:absolute、
 		もしくはposition:fixedを指定する必要がある。
 	</strong>
-	<ul>
-		<li>上
-			<p>ボックス<strong>上辺から切り抜く上辺まで</strong>の長さ</p>
-		</li>
-		<li>右
-			<p>ボックス<strong>左辺から切り抜く右辺まで</strong>の長さ</p>
-		</li>
-		<li>下
-			<p>ボックス<strong>上辺から切り抜く下辺まで</strong>の長さ</p>
-		</li>
-		<li>左
-			<p>ボックス<strong>左辺から切り抜く左辺まで</strong>の長さ</p>
-		</li>
-	</ul>
-	※あくまで上辺、もしくは左辺からの長さ
 </p>
-<p>■clipなし</p>
-<img src="./static/japan1.gif">
-<p>■clip:rect(10px 200px 150px 20px); position:absolute;</p>
-<img src="./static/japan1.gif" style="clip:rect(10px 200px 150px 20px); position:absolute;">
+<ul>
+	<li>上
+		<p>ボックス<strong>上辺から切り抜く上辺まで</strong>の長さ</p>
+	</li>
+	<li>右
+		<p>ボックス<strong>左辺から切り抜く右辺まで</strong>の長さ</p>
+	</li>
+	<li>下
+		<p>ボックス<strong>上辺から切り抜く下辺まで</strong>の長さ</p>
+	</li>
+	<li>左
+		<p>ボックス<strong>左辺から切り抜く左辺まで</strong>の長さ</p>
+	</li>
+</ul>
+<p>※あくまで上辺、もしくは左辺からの長さ</p>
+<figure>
+	<figcaption>■clipなし</figcaption>
+	<img src="./static/japan1.gif">
+</figure>
+<figure>
+	<figcaption>■clip:rect(10px 200px 150px 20px); position:absolute;</figcaption>
+	<img src="./static/japan1.gif" style="clip:rect(10px 200px 150px 20px); position:absolute;">
+</figure>
 
 <hr class="sline" style="margin-top:200px;">
 <h1>(10)背景関連のプロパティ</h1>
@@ -1784,38 +1680,32 @@ q::after{
 <p>背景画像の繰り返しを指定する。</p>
 <ul>
 	<li>repeat
-		<p>
-			初期値。背景画像を繰り返して表示する。
-			<div style="background-repeat:repeat;background-image:url('./static/sample.png');width:300px;height:300px;border:1px solid;"></div>
-			<pre>
+		<p>初期値。背景画像を繰り返して表示する。</p>
+		<div style="background-repeat:repeat;background-image:url('./static/sample.png');width:300px;height:300px;border:1px solid;"></div>
+		<pre>
 &lt;div style="<strong>background-repeat:repeat;</strong>background-image:url('./static/sample.png');width:300px;height:300px;border:1px solid;"&gt;&lt;/div&gt;
-			</pre>
-		</p>
+		</pre>
 	</li>
 	<li>repeat-x
-		<p>
-			水平方向に背景画像を繰り返して表示する。
-			<div style="background-repeat:repeat-x;background-image:url('./static/sample.png');width:300px;height:300px;border:1px solid;"></div>
-			<pre>
+		<p>水平方向に背景画像を繰り返して表示する。</p>
+		<div style="background-repeat:repeat-x;background-image:url('./static/sample.png');width:300px;height:300px;border:1px solid;"></div>
+		<pre>
 &lt;div style="<strong>background-repeat:repeat-x;</strong>background-image:url('./static/sample.png');width:300px;height:300px;border:1px solid;"&gt;&lt;/div&gt;
-			</pre>
-		</p>
+		</pre>
 	</li>
 	<li>repeat-y
-		<p>
-			垂直方向に背景画像を繰り返して表示する。
-			<div style="background-repeat:repeat-y;background-image:url('./static/sample.png');width:300px;height:300px;border:1px solid;"></div>
-			<pre>
+		<p>垂直方向に背景画像を繰り返して表示する。</p>
+		<div style="background-repeat:repeat-y;background-image:url('./static/sample.png');width:300px;height:300px;border:1px solid;"></div>
+		<pre>
 &lt;div style="<strong>background-repeat:repeat-y;</strong>background-image:url('./static/sample.png');width:300px;height:300px;border:1px solid;"&gt;&lt;/div&gt;
-			</pre>
-		</p>
+		</pre>
 	</li>
 	<li>no-repeat
 		<p>背景画像を繰り返えさず、1度のみ表示する。</p>
-			<div style="background-repeat:no-repeat;background-image:url('./static/sample.png');width:300px;height:300px;border:1px solid;"></div>
-			<pre>
+		<div style="background-repeat:no-repeat;background-image:url('./static/sample.png');width:300px;height:300px;border:1px solid;"></div>
+		<pre>
 &lt;div style="<strong>background-repeat:no-repeat;</strong>background-image:url('./static/sample.png');width:300px;height:300px;border:1px solid;"&gt;&lt;/div&gt;
-			</pre>
+		</pre>
 	</li>
 </ul>
 
@@ -1831,58 +1721,46 @@ q::after{
 	CSS3ではbackground-position:right 20px bottom 20px;といった指定も可能
 	(右から20px、下から20pxの位置に表示される)。
 </p>
-<p>
-	<div style="background-position:50px 50px;background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"></div>
-	<pre>
+<pre>
 &lt;div style="<strong>background-position:50px 50px;</strong>background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"&gt;&lt;/div&gt;
-	</pre>
-</p>
-<p>
-	<div style="background-position:center center;background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"></div>
-	<pre>
+</pre>
+<div class="sepb" style="background-position:50px 50px;background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"></div>
+
+<pre>
 &lt;div style="<strong>background-position:center center;</strong>background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"&gt;&lt;/div&gt;
-	</pre>
-</p>
-<p>
-	<div style="background-position:30% 80%;background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"></div>
-	<pre>
+</pre>
+<div class="sepb" style="background-position:center center;background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"></div>
+
+<pre>
 &lt;div style="<strong>background-position:30% 80%;</strong>background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"&gt;&lt;/div&gt;
-	</pre>
-</p>
-<p>
-	<div style="background-position:right bottom;background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"></div>
-	<pre>
+</pre>
+<div class="sepb" style="background-position:30% 80%;background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"></div>
+
+<pre>
 &lt;div style="<strong>background-position:right bottom;</strong>background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"&gt;&lt;/div&gt;
-	</pre>
-</p>
-<p>
-	<div style="background-position:right 30px bottom 80px;background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"></div>
-	<pre>
+</pre>
+<div class="sepb" style="background-position:right bottom;background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"></div>
+
+<pre>
 &lt;div style="<strong>background-position:right 30px bottom 80px;</strong>background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"&gt;&lt;/div&gt;
-	</pre>
-</p>
+</pre>
+<div class="sepb" style="background-position:right 30px bottom 80px;background-image:url('./static/sample.png');background-repeat:no-repeat;width:300px;height:300px;border:1px solid;"></div>
 
 <hr>
 <p class="tl">■background-origin</p>
 <p>border領域、padding領域への画像表示方法を指定する。</p>
 <ul>
 	<li>border-box
-		<p>
-			背景画像はborder領域に表示される。
-			<div style="background-origin:border-box;border:10px dashed;padding:10px;background-image:url('./static/kaeru.gif');background-repeat:no-repeat;width:250px;height:200px;"></div>
-		</p>
+		<p>背景画像はborder領域に表示される。</p>
+		<div class="sep" style="background-origin:border-box;border:10px dashed;padding:10px;background-image:url('./static/kaeru.gif');background-repeat:no-repeat;width:250px;height:200px;"></div>
 	</li>
 	<li>paddin-box
-		<p>
-			背景画像はborder領域の内側から表示される。
-			<div style="background-origin:paddin-box;border:10px dashed;padding:10px;background-image:url('./static/kaeru.gif');background-repeat:no-repeat;width:250px;height:200px;"></div>
-		</p>
+		<p>背景画像はborder領域の内側から表示される。</p>
+		<div class="sep" style="background-origin:paddin-box;border:10px dashed;padding:10px;background-image:url('./static/kaeru.gif');background-repeat:no-repeat;width:250px;height:200px;"></div>
 	</li>
 	<li>content-box
-		<p>
-			背景画像はpadding領域の内側から表示される。
-			<div style="background-origin:content-box;border:10px dashed;padding:10px;background-image:url('./static/kaeru.gif');background-repeat:no-repeat;width:250px;height:200px;"></div>
-		</p>
+		<p>背景画像はpadding領域の内側から表示される。</p>
+		<div class="sep" style="background-origin:content-box;border:10px dashed;padding:10px;background-image:url('./static/kaeru.gif');background-repeat:no-repeat;width:250px;height:200px;"></div>
 	</li>
 </ul>
 
@@ -1891,22 +1769,16 @@ q::after{
 <p>背景画像の大きさを指定する。数値もしくは下記値を指定する。</p>
 <ul>
 	<li>auto
-		<p>
-			自動的に算出される。
-			<div style="background-size:auto;border:1px solid;background-image:url('./static/kaeru.gif');background-repeat:no-repeat;width:100px;height:100px;"></div>
-		</p>
+		<p>自動的に算出される。</p>
+		<div class="sep" style="background-size:auto;border:1px solid;background-image:url('./static/kaeru.gif');background-repeat:no-repeat;width:100px;height:100px;"></div>
 	</li>
 	<li>contain
-		<p>
-			縦横比は保持して領域に収まる最大サイズになるよう拡大縮小される。
-			<div style="background-size:contain;border:1px solid;background-image:url('./static/kaeru.gif');background-repeat:no-repeat;width:100px;height:100px;"></div>
-		</p>
+		<p>縦横比は保持して領域に収まる最大サイズになるよう拡大縮小される。</p>
+		<div class="sep" style="background-size:contain;border:1px solid;background-image:url('./static/kaeru.gif');background-repeat:no-repeat;width:100px;height:100px;"></div>
 	</li>
 	<li>cover
-		<p>
-			縦横比は保持して領域を完全に覆う最小サイズになるように背景画像を拡大縮小する。
-			<div style="background-size:cover;border:1px solid;background-image:url('./static/kaeru.gif');background-repeat:no-repeat;width:100px;height:100px;"></div>
-		</p>
+		<p>縦横比は保持して領域を完全に覆う最小サイズになるように背景画像を拡大縮小する。</p>
+		<div class="sep" style="background-size:cover;border:1px solid;background-image:url('./static/kaeru.gif');background-repeat:no-repeat;width:100px;height:100px;"></div>
 	</li>
 </ul>
 <p>
@@ -1919,7 +1791,6 @@ q::after{
 <hr>
 <p class="tl">■複数背景画像</p>
 <p>CSS3より背景画像を複数指定できるようになった。</p>
-<div style="border:1px solid;background-image:url('./static/No1.png'),url('./static/No3.png'),url('./static/No2.png');background-repeat:no-repeat,no-repeat,repeat-y;background-position:top,bottom,top;width:150px;height:250px;"></div>
 <pre>
 &lt;div style="
   <strong>background-image:url('./static/No1.png'),url('./static/No3.png'),url('./static/No2.png');
@@ -1928,6 +1799,7 @@ q::after{
   border:1px solid;width:150px;height:250px;"&gt;
 &lt;/div&gt;
 </pre>
+<div style="border:1px solid;background-image:url('./static/No1.png'),url('./static/No3.png'),url('./static/No2.png');background-repeat:no-repeat,no-repeat,repeat-y;background-position:top,bottom,top;width:150px;height:250px;"></div>
 
 <hr>
 <p class="tl">■background-attachment</p>
@@ -1964,53 +1836,47 @@ q::after{
 		<p>
 			linear-gradient()関数を使用してグラデーションを指定する。
 			linear-gradient()関数で指定した順番に色が適用される。
-			<div style="background-image:linear-gradient(blue,red);width:100px;height:150px;"></div><BR>
-			<pre>
-&lt;div style="<strong>background-image:linear-gradient(blue,red);</strong>width:100px;height:150px;"&gt;&lt;/div&gt;&lt;BR&gt;
-			</pre>
 		</p>
-		<p>色の分岐点(カラーストップ)を複数指定した場合
-			<div style="background-image:linear-gradient(blue,yellow,red);width:100px;height:150px;"></div><BR>
-			<pre>
-&lt;div style="<strong>background-image:linear-gradient(blue,yellow,red);</strong>width:100px;height:150px;"&gt;&lt;/div&gt;&lt;BR&gt;
-			</pre>
-		</p>
-		<p>%で色の分岐点(カラーストップ)を位置を指定した場合
-			<div style="background-image:linear-gradient(blue,yellow 25%,red);width:100px;height:150px;"></div><BR>
-			<pre>
-&lt;div style="<strong>background-image:linear-gradient(blue,yellow 25%,red);</strong>width:100px;height:150px;"&gt;&lt;/div&gt;&lt;BR&gt;
-			</pre>
-		</p>
-		<p>向きを(to left OR to right)指定した場合
-			<div style="background-image:linear-gradient(to right,blue,yellow,red);width:100px;height:150px;"></div><BR>
-			<pre>
-&lt;div style="<strong>background-image:linear-gradient(to right,blue,yellow,red);</strong>width:100px;height:150px;"&gt;&lt;/div&gt;&lt;BR&gt;
-			</pre>
-		</p>
-		<p>角度(deg)を指定した場合
-			<div style="background-image:linear-gradient(45deg,blue,yellow,red);width:100px;height:150px;"></div><BR>
-			<pre>
-&lt;div style="<strong>background-image:linear-gradient(45deg,blue,yellow,red);</strong>width:100px;height:150px;"&gt;&lt;/div&gt;&lt;BR&gt;
-			</pre>
-		</p>
+		<pre>
+&lt;div style="<strong>background-image:linear-gradient(blue,red);</strong>width:100px;height:150px;"&gt;&lt;/div&gt;
+		</pre>
+		<div class="sepb" style="background-image:linear-gradient(blue,red);width:100px;height:150px;"></div>
+		<p>色の分岐点(カラーストップ)を複数指定した場合</p>
+		<pre>
+&lt;div style="<strong>background-image:linear-gradient(blue,yellow,red);</strong>width:100px;height:150px;"&gt;&lt;/div&gt;
+		</pre>
+		<div class="sepb" style="background-image:linear-gradient(blue,yellow,red);width:100px;height:150px;"></div>
+		<p>%で色の分岐点(カラーストップ)を位置を指定した場合</p>
+		<pre>
+&lt;div style="<strong>background-image:linear-gradient(blue,yellow 25%,red);</strong>width:100px;height:150px;"&gt;&lt;/div&gt;
+		</pre>
+		<div class="sepb" style="background-image:linear-gradient(blue,yellow 25%,red);width:100px;height:150px;"></div>
+		<p>向きを(to left OR to right)指定した場合</p>
+		<pre>
+&lt;div style="<strong>background-image:linear-gradient(to right,blue,yellow,red);</strong>width:100px;height:150px;"&gt;&lt;/div&gt;
+		</pre>
+		<div class="sepb" style="background-image:linear-gradient(to right,blue,yellow,red);width:100px;height:150px;"></div>
+		<p>角度(deg)を指定した場合</p>
+		<pre>
+&lt;div style="<strong>background-image:linear-gradient(45deg,blue,yellow,red);</strong>width:100px;height:150px;"&gt;&lt;/div&gt;
+		</pre>
+		<div class="sepb" style="background-image:linear-gradient(45deg,blue,yellow,red);width:100px;height:150px;"></div>
 	</li>
 	<li>円形グラデーション
 		<p>
 			radial-gradient()関数を使用してグラデーションを指定する。
 			色やカラーストップの指定方法は直線グラデーションと同様。
 		</p>
-		<p>ボックス領域全体に対して楕円状に描画
-			<div style="background-image:radial-gradient(blue,red);width:100px;height:150px;"></div><BR>
-			<pre>
-&lt;div style="<strong>background-image:radial-gradient(blue,red);</strong>width:100px;height:150px;"&gt;&lt;/div&gt;&lt;BR&gt;
-			</pre>
-		</p>
-		<p>ボックス領域全体に対して正円(circle)に描画
-			<div style="background-image:radial-gradient(circle,blue,red);width:100px;height:150px;"></div><BR>
-			<pre>
-&lt;div style="<strong>background-image:radial-gradient(circle,blue,red);</strong>width:100px;height:150px;"&gt;&lt;/div&gt;&lt;BR&gt;
-			</pre>
-		</p>
+		<p>ボックス領域全体に対して楕円状に描画</p>
+		<pre>
+&lt;div style="<strong>background-image:radial-gradient(blue,red);</strong>width:100px;height:150px;"&gt;&lt;/div&gt;
+		</pre>
+		<div class="sepb" style="background-image:radial-gradient(blue,red);width:100px;height:150px;"></div>
+		<p>ボックス領域全体に対して正円(circle)に描画</p>
+		<pre>
+&lt;div style="<strong>background-image:radial-gradient(circle,blue,red);</strong>width:100px;height:150px;"&gt;&lt;/div&gt;
+		</pre>
+		<div class="sepb" style="background-image:radial-gradient(circle,blue,red);width:100px;height:150px;"></div>
 	</li>
 </ul>
 
@@ -2024,20 +1890,24 @@ q::after{
 	値の基本的な指定方法は下記。insetを指定すると広がり方向が内側になる。
 </p>
 <p>
-	box-shadow: 水平方向のオフセット値 垂直方向のオフセット値 ぼかし距離 広がり距離 カラー値(inset)
+	<strong>
+		box-shadow: 
+			水平方向のオフセット値 
+			垂直方向のオフセット値 
+			ぼかし距離 
+			広がり距離 
+			カラー値(inset)
+	</strong>
 </p>
-<p>
-	<div style="box-shadow:10px 10px 5px #000;width:100px;height:100px;background-color:blue;"></div>
-	<pre style="margin-top:20px;">
+<pre style="margin-top:20px;">
 &lt;div style="<strong>box-shadow:10px 10px 5px #000;</strong>width:100px;height:100px;background-color:blue;"&gt;&lt;/div&gt;
-	</pre>
-</p>
-<p>
-	<div style="box-shadow:10px 10px 5px #000,10px 10px 5px gray inset;width:100px;height:100px;background-color:blue;"></div>
-	<pre style="margin-top:20px;">
+</pre>
+<div class="sepb" style="box-shadow:10px 10px 5px #000;width:100px;height:100px;background-color:blue;"></div>
+
+<pre style="margin-top:20px;">
 &lt;div style="<strong>box-shadow:10px 10px 5px #000,10px 10px 5px gray inset;</strong>width:100px;height:100px;background-color:blue;"&gt;&lt;/div&gt;
-	</pre>
-</p>
+</pre>
+<div class="sepb" style="box-shadow:10px 10px 5px #000,10px 10px 5px gray inset;width:100px;height:100px;background-color:blue;"></div>
 
 
 <hr class="sline">
@@ -2085,224 +1955,184 @@ q::after{
 </p>
 <ul>
 	<li>list-style-type:disc
-		<p>
-			<ul style="list-style-type:disc;">
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-			</ul>
-		</p>
+		<ul class="sep" style="list-style-type:disc;">
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+		</ul>
 	</li>
 	<li>list-style-type:circle
-		<p>
-			<ul style="list-style-type:circle;">
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-			</ul>
-		</p>
+		<ul class="sep" style="list-style-type:circle;">
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+		</ul>
 	</li>
 	<li>list-style-type:square
-		<p>
-			<ul style="list-style-type:square;">
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-			</ul>
-		</p>
+		<ul class="sep" style="list-style-type:square;">
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+		</ul>
 	</li>
 	<li>list-style-type:decimal
-		<p>
-			<ul style="list-style-type:decimal;">
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-			</ul>
-		</p>
+		<ul class="sep" style="list-style-type:decimal;">
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+		</ul>
 	</li>
 	<li>list-style-type:upper-latin
-		<p>
-			<ul style="list-style-type:upper-latin;">
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-			</ul>
-		</p>
+		<ul class="sep" style="list-style-type:upper-latin;">
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+		</ul>
 	</li>
 	<li>list-style-type:lower-latin
-		<p>
-			<ul style="list-style-type:lower-latin;">
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-			</ul>
-		</p>
+		<ul class="sep" style="list-style-type:lower-latin;">
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+		</ul>
 	</li>
 	<li>list-style-type:upper-greek
-		<p>
-			<ul style="list-style-type:upper-greek;">
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-			</ul>
-		</p>
+		<ul class="sep" style="list-style-type:upper-greek;">
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+		</ul>
 	</li>
 	<li>list-style-type:lower-greek
-		<p>
-			<ul style="list-style-type:lower-greek;">
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-			</ul>
-		</p>
+		<ul class="sep" style="list-style-type:lower-greek;">
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+		</ul>
 	</li>
 	<li>list-style-type:upper-alpha
-		<p>
-			<ul style="list-style-type:upper-alpha;">
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-			</ul>
-		</p>
+		<ul class="sep" style="list-style-type:upper-alpha;">
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+		</ul>
 	</li>
 	<li>list-style-type:lower-alpha
-		<p>
-			<ul style="list-style-type:lower-alpha;">
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-			</ul>
-		</p>
+		<ul class="sep" style="list-style-type:lower-alpha;">
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+		</ul>
 	</li>
 	<li>list-style-type:armenian
-		<p>
-			<ul style="list-style-type:armenian;">
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-			</ul>
-		</p>
+		<ul class="sep" style="list-style-type:armenian;">
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+		</ul>
 	</li>
 	<li>list-style-type:georgian
-		<p>
-			<ul style="list-style-type:georgian;">
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-			</ul>
-		</p>
+		<ul class="sep" style="list-style-type:georgian;">
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+		</ul>
 	</li>
 	<li>list-style-type:decimal-leading-zero
-		<p>
-			<ul style="list-style-type:decimal-leading-zero;">
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-			</ul>
-		</p>
+		<ul class="sep" style="list-style-type:decimal-leading-zero;">
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+		</ul>
 	</li>
 	<li>list-style-type:upper-roman
-		<p>
-			<ul style="list-style-type:upper-roman;">
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-			</ul>
-		</p>
+		<ul class="sep" style="list-style-type:upper-roman;">
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+		</ul>
 	</li>
 	<li>list-style-type:lower-roman
-		<p>
-			<ul style="list-style-type:lower-roman;">
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-			</ul>
-		</p>
+		<ul class="sep" style="list-style-type:lower-roman;">
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+		</ul>
 	</li>
 	<li>list-style-type:hebrew
-		<p>
-			<ul style="list-style-type:hebrew;">
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-			</ul>
-		</p>
+		<ul class="sep" style="list-style-type:hebrew;">
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+		</ul>
 	</li>
 	<li>list-style-type:hiragana
-		<p>
-			<ul style="list-style-type:hiragana;">
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-			</ul>
-		</p>
+		<ul class="sep" style="list-style-type:hiragana;">
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+		</ul>
 	</li>
 	<li>list-style-type:katakana
-		<p>
-			<ul style="list-style-type:katakana;">
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-			</ul>
-		</p>
+		<ul class="sep" style="list-style-type:katakana;">
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+		</ul>
 	</li>
 	<li>list-style-type:hiragana-iroha
-		<p>
-			<ul style="list-style-type:hiragana-iroha;">
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-			</ul>
-		</p>
+		<ul class="sep" style="list-style-type:hiragana-iroha;">
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+		</ul>
 	</li>
 	<li>list-style-type:katakana-iroha
-		<p>
-			<ul style="list-style-type:katakana-iroha;">
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
-			</ul>
-		</p>
+		<ul class="sep" style="list-style-type:katakana-iroha;">
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+			<li>test</li>
+		</ul>
 	</li>
 </ul>
 
@@ -2310,28 +2140,10 @@ q::after{
 <p class="tl">■counter-increment</p>
 <p>
 	要素に連番を振ったり、カウント数を指定する。
-	下記例ではカウンタにmcという名前を指定している。
+	下記例ではカウンタにmcという名前を指定し、
+	2を指定しているため2ずつ加算されていく。
 	counter-resetを指定することでカウントをリセットできる。
 </p>
-<style>
-.counter p{
-	counter-increment: mc 2;
-}
-.counter p::before{
-	content: counter(mc) "番目";
-	margin-right: 1em;
-}
-.counter p:nth-child(3){
-	counter-reset: mc;
-}
-</style>
-<div class="counter">
-	<p>test</p>
-	<p>test</p>
-	<p>test</p>
-	<p>test</p>
-	<p>test</p>
-</div>
 <pre>
 &lt;style&gt;
 .counter p{
@@ -2353,6 +2165,13 @@ q::after{
   &lt;p&gt;test&lt;/p&gt;
 &lt;/div&gt;
 </pre>
+<div class="counter">
+	<p>test</p>
+	<p>test</p>
+	<p>test</p>
+	<p>test</p>
+	<p>test</p>
+</div>
 
 
 <hr class="sline">
@@ -2393,36 +2212,32 @@ q::after{
 </p>
 <ul>
 	<li>table-layout:auto(毎行計算。talbe-layout未指定と同様)
-		<p>
-			<table style="table-layout:auto;width:150px;">
-			<tr>
-				<td>aaa</td>
-				<td>aaa</td>
-				<td>aaa</td>
-			</tr>
-			<tr>
-				<td>bbbbbbbbbb</td>
-				<td>aaa</td>
-				<td>aaa</td>
-			</tr>
-			</table>
-		</p>
+		<table class="sep" style="table-layout:auto;width:150px;">
+		<tr>
+			<td>aaa</td>
+			<td>aaa</td>
+			<td>aaa</td>
+		</tr>
+		<tr>
+			<td>bbbbbbbbbb</td>
+			<td>aaa</td>
+			<td>aaa</td>
+		</tr>
+		</table>
 	</li>
 	<li>table-layout:fixed(1行目の幅で後続行も表示)
-		<p>
-			<table style="table-layout:fixed;width:150px;">
-			<tr>
-				<td>aaa</td>
-				<td>aaa</td>
-				<td>aaa</td>
-			</tr>
-			<tr>
-				<td>aaa</td>
-				<td>aaa</td>
-				<td>bbbbbbbbbb</td>
-			</tr>
-			</table>
-		</p>
+		<table style="table-layout:fixed;width:150px;">
+		<tr>
+			<td>aaa</td>
+			<td>aaa</td>
+			<td>aaa</td>
+		</tr>
+		<tr>
+			<td>aaa</td>
+			<td>aaa</td>
+			<td>bbbbbbbbbb</td>
+		</tr>
+		</table>
 	</li>
 </ul>
 
@@ -2436,39 +2251,36 @@ q::after{
 	separateを指定した際は、border-spacingで
 	横方向、縦方向の間隔を指定できる。
 </p>
-<p>
-	<table style="border-collapse:separate;border-spacing:10px 10px;">
-	<caption style="white-space:nowrap;">
-		border-collapse:separate;<br>
-		border-spacing:10px 10px;
-	</caption>
-	<tr>
-		<td>aaa</td>
-		<td>aaa</td>
-		<td>aaa</td>
-	</tr>
-	<tr>
-		<td>aaa</td>
-		<td>aaa</td>
-		<td>aaa</td>
-	</tr>
-	</table>
-</p>
-<p>
-	<table style="border-collapse:collapse;">
-	<caption style="white-space:nowrap;">border-collapse:collapse;</caption>
-	<tr>
-		<td>aaa</td>
-		<td>aaa</td>
-		<td>aaa</td>
-	</tr>
-	<tr>
-		<td>aaa</td>
-		<td>aaa</td>
-		<td>aaa</td>
-	</tr>
-	</table>
-</p>
+<table class="sep" style="border-collapse:separate;border-spacing:10px 10px;">
+<caption style="white-space:nowrap;">
+	border-collapse:separate;<br>
+	border-spacing:10px 10px;
+</caption>
+<tr>
+	<td>aaa</td>
+	<td>aaa</td>
+	<td>aaa</td>
+</tr>
+<tr>
+	<td>aaa</td>
+	<td>aaa</td>
+	<td>aaa</td>
+</tr>
+</table>
+
+<table style="border-collapse:collapse;">
+<caption style="white-space:nowrap;">border-collapse:collapse;</caption>
+<tr>
+	<td>aaa</td>
+	<td>aaa</td>
+	<td>aaa</td>
+</tr>
+<tr>
+	<td>aaa</td>
+	<td>aaa</td>
+	<td>aaa</td>
+</tr>
+</table>
 
 <hr>
 <p class="tl">■empty-cells</p>
@@ -2477,36 +2289,32 @@ q::after{
 	内容が空の場合にセルそのものを非表示(hide)にするか、
 	表示(show)するかを指定する。
 </p>
-<p>
-	<table style="border-collapse:separate;empty-cells:hide;">
-	<caption style="white-space:nowrap;">empty-cells:hide;</caption>
-	<tr>
-		<td>aaa</td>
-		<td>aaa</td>
-		<td>aaa</td>
-	</tr>
-	<tr>
-		<td>aaa</td>
-		<td>aaa</td>
-		<td></td>
-	</tr>
-	</table>
-</p>
-<p>
-	<table style="border-collapse:separate;empty-cells:show;">
-	<caption style="white-space:nowrap;">empty-cells:show;</caption>
-	<tr>
-		<td>aaa</td>
-		<td>aaa</td>
-		<td>aaa</td>
-	</tr>
-	<tr>
-		<td>aaa</td>
-		<td>aaa</td>
-		<td></td>
-	</tr>
-	</table>
-</p>
+<table class="sep" style="border-collapse:separate;empty-cells:hide;">
+<caption style="white-space:nowrap;">empty-cells:hide;</caption>
+<tr>
+	<td>aaa</td>
+	<td>aaa</td>
+	<td>aaa</td>
+</tr>
+<tr>
+	<td>aaa</td>
+	<td>aaa</td>
+	<td></td>
+</tr>
+</table>
+<table style="border-collapse:separate;empty-cells:show;">
+<caption style="white-space:nowrap;">empty-cells:show;</caption>
+<tr>
+	<td>aaa</td>
+	<td>aaa</td>
+	<td>aaa</td>
+</tr>
+<tr>
+	<td>aaa</td>
+	<td>aaa</td>
+	<td></td>
+</tr>
+</table>
 
 
 
