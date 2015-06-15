@@ -37,6 +37,9 @@
 		.sepb{
 			margin-bottom:35px;
 		}
+		.sepbb{
+			margin-bottom:50px;
+		}
 
 		/* 説明で使用 */
 		q{quotes: "「" "」" "【" "】";}
@@ -53,13 +56,85 @@
 		.counter p:nth-child(3){
 			counter-reset: mc;
 		}
+		div.ani{
+			width: 100px;
+			height: 50px;
+			transition-property: width,height,background-color;
+			transition-duration: 1s;
+			transition-delay: 1s;
+			transition-timing-function: ease-in;
+		}
+		div.ani:hover{
+			width: 200px;
+			height: 100px;
+			background-color: #ff3333;
+		}
+		div.ani2{
+			width: 100px;
+			height: 100px;
+			background-color: #ff3333;
+			position: absolute;
+			animation-name: ani2;
+			animation-duration: 3s;
+			animation-delay: 1s;
+			animation-timing-function: ease-in;
+			animation-iteration-count: 3;
+			animation-direction: alternate;
+		}
+		@keyframes ani2{
+			0%{
+				left: 0;
+				top: 0;
+			}
+			25%{
+				left: 100px;
+				top: 0px;
+			}
+			50%{
+				left: 100px;
+				top: 50px;
+			}
+			75%{
+				left: 0px;
+				top: 50px;
+			}
+			100%{
+				left: 0;
+				top: 0;
+			}
+		}
+		div.ani3{
+			width: 100px;
+			height: 100px;
+			background-color: #ff3333;
+			position: absolute;
+			transform: rotate(60deg);
+			animation-name: ani3;
+			animation-duration: 5s;
+			animation-delay: 1s;
+			animation-timing-function: liner;
+			animation-iteration-count: 3;
+			animation-direction: normal;
+			animation-fill-mode: both;
+		}
+		@keyframes ani3{
+			0%{
+				transform: rotate(20deg);
+			}
+			100%{
+				transform: rotate(180deg);
+			}
+		}
 	</style>
 	<title>CSS3テスト</title>
 </head>
 <body>
 
 
-<h1>(1)色の指定</h1>
+<h1 id="no1">(1)色の指定</h1>
+<a href="#no2">Next</a>
+<a href="#last">Last</a>
+
 <p>色の指定は英単語(キーワード)、もしくは数値で行う。</p>
 <p class="tl">■英単語(キーワード)での指定</p>
 <ul>
@@ -117,7 +192,11 @@
 
 
 <hr class="sline">
-<h1>(2)単位の指定</h1>
+<h1 id="no2">(2)単位の指定</h1>
+<a href="#no1">Before</a>
+<a href="#no3">Next</a>
+<a href="#no1">Top</a>
+<a href="#last">Last</a>
 <p class="tl">■相対単位</p>
 <p>
 	基準となる値に対して相対的に大きさが決まる。
@@ -158,7 +237,11 @@
 
 
 <hr class="sline">
-<h1>(3)セレクタ</h1>
+<h1 id="no3">(3)セレクタ</h1>
+<a href="#no2">Before</a>
+<a href="#no4">Next</a>
+<a href="#no1">Top</a>
+<a href="#last">Last</a>
 <b>※複数のセレクタに適用する場合は、,(カンマ)区切りで複数のセレクタを指定する</b>
 <p>h1,h2,h3{margin: 0;}</p>
 
@@ -298,7 +381,11 @@
 
 
 <hr class="sline">
-<h1>(4)擬似クラス</h1>
+<h1 id="no4">(4)擬似クラス</h1>
+<a href="#no3">Before</a>
+<a href="#no5">Next</a>
+<a href="#no1">Top</a>
+<a href="#last">Last</a>
 <p>特定の外的要因や状態を持つ要素に対してスタイルを適用する。</p>
 <ul>
 <li>:link
@@ -458,7 +545,11 @@
 
 
 <hr class="sline">
-<h1>(5)擬似要素</h1>
+<h1 id="no5">(5)擬似要素</h1>
+<a href="#no4">Before</a>
+<a href="#no6">Next</a>
+<a href="#no1">Top</a>
+<a href="#last">Last</a>
 <p>
 	特定のドキュメントにスタイルを適用する。
 	CSS3から:ではなく、::を使用するように変更された。
@@ -485,7 +576,11 @@
 
 
 <hr class="sline">
-<h1>(6)優先度</h1>
+<h1 id="no6">(6)優先度</h1>
+<a href="#no5">Before</a>
+<a href="#no7">Next</a>
+<a href="#no1">Top</a>
+<a href="#last">Last</a>
 <p>同一条件のセレクタについては、後に記述したスタイルが優先される。</p>
 <p>p{color:red;}</p>
 <p>p{color:blue}</p>
@@ -547,8 +642,12 @@
 </table>
 
 <hr class="sline">
-<h1>(7)ボックスモデル</h1>
-<div style="background-image:url('./static/boxmodel.gif');background-repeat:no-repeat;background-size:contain;width:60%;height:250px;"></div>
+<h1 id="no7">(7)ボックスモデル</h1>
+<a href="#no6">Before</a>
+<a href="#no8">Next</a>
+<a href="#no1">Top</a>
+<a href="#last">Last</a>
+<img src="./static/boxmodel.gif" width="450" alt="ボックスモデル" style="display:block;margin-top:20px;">
 <p class="tl">■width,height</p>
 <p>要素の幅(width)、高さ(height)を決める。相対単位、もしくは絶対単位で値を指定する。</p>
 <div style="border:1px solid;width:300px;height:300px;">
@@ -1069,7 +1168,11 @@ box-sizing:border-box;
 
 
 <hr class="sline">
-<h1>(8)テキスト装飾</h1>
+<h1 id="no8">(8)テキスト装飾</h1>
+<a href="#no7">Before</a>
+<a href="#no9">Next</a>
+<a href="#no1">Top</a>
+<a href="#last">Last</a>
 <p class="tl">■color</p>
 <p>文字の色を指定する。</p>
 <div style="color:#ff3333;">color:#ff3333;</div>
@@ -1379,7 +1482,11 @@ q::after{
 
 
 <hr class="sline">
-<h1>(9)レイアウト関連のプロパティ</h1>
+<h1 id="no9">(9)レイアウト関連のプロパティ</h1>
+<a href="#no8">Before</a>
+<a href="#no10">Next</a>
+<a href="#no1">Top</a>
+<a href="#last">Last</a>
 <p class="tl">■float</p>
 <p>
 	回り込み配置を行う際に使用する。値にはleft、right、noneがある。
@@ -1663,7 +1770,11 @@ q::after{
 </figure>
 
 <hr class="sline" style="margin-top:200px;">
-<h1>(10)背景関連のプロパティ</h1>
+<h1 id="no10">(10)背景関連のプロパティ</h1>
+<a href="#no9">Before</a>
+<a href="#no11">Next</a>
+<a href="#no1">Top</a>
+<a href="#last">Last</a>
 <p class="tl">■background-color</p>
 <p>背景色を指定する。</p>
 
@@ -1882,7 +1993,11 @@ q::after{
 
 
 <hr class="sline">
-<h1>(11)影を付けるのプロパティ</h1>
+<h1 id="no11">(11)影を付けるのプロパティ</h1>
+<a href="#no10">Before</a>
+<a href="#no12">Next</a>
+<a href="#no1">Top</a>
+<a href="#last">Last</a>
 <p class="tl">■box-shadow</p>
 <p>
 	ボックスに影を付ける。
@@ -1911,7 +2026,11 @@ q::after{
 
 
 <hr class="sline">
-<h1>(12)リスト関連のプロパティ</h1>
+<h1 id="no12">(12)リスト関連のプロパティ</h1>
+<a href="#no11">Before</a>
+<a href="#no13">Next</a>
+<a href="#no1">Top</a>
+<a href="#last">Last</a>
 <p class="tl">■list-style-image</p>
 <p>マーカーに画像を使用する際、画像のURLを指定する。</p>
 <ul style="list-style-image:url('./static/file.jpg');">
@@ -2175,7 +2294,11 @@ q::after{
 
 
 <hr class="sline">
-<h1>(13)テーブル関連のプロパティ</h1>
+<h1 id="no13">(13)テーブル関連のプロパティ</h1>
+<a href="#no12">Before</a>
+<a href="#no14">Next</a>
+<a href="#no1">Top</a>
+<a href="#last">Last</a>
 <p class="tl">■caption-side</p>
 <p>
 	table要素内で使用されるcaption要素の位置を指定する。
@@ -2317,9 +2440,283 @@ q::after{
 </table>
 
 
+<hr class="sline">
+<h1 id="no14">(14)変形関連のプロパティ</h1>
+<a href="#no13">Before</a>
+<a href="#no15">Next</a>
+<a href="#no1">Top</a>
+<a href="#last">Last</a>
+<p class="tl">■transform</p>
+<p>
+	要素を変形させる。以下の関数をtransformに指定する。
+	なお3Dの変形の場合、2D変形にZ軸が加わる。
+	スペース区切りで複数の関数を指定できる。
+</p>
+<ul>
+	<li>translateX
+		<p>横方向に移動する。単位は相対単位(%, em等)、絶対単位(px等)で指定する。</p>
+		<div class="sep" style="transform:translateX(20px);width:100px;height:100px;background-color:gray;">transform:translateX(20px)</div>
+	</li>
+	<li>translateY
+		<p>縦方向に移動する。単位は相対単位(%, em等)、絶対単位(px等)で指定する。</p>
+		<div class="sepb" style="transform:translateY(20px);width:100px;height:100px;background-color:gray;">transform:translateY(20px)</div>
+	</li>
+	<li>translate
+		<p>(横方向,縦方向)と指定し縦横方向に移動する。単位は相対単位(%, em等)、絶対単位(px等)で指定する。</p>
+		<div class="sepb" style="transform:translate(20px, 20px);width:100px;height:100px;background-color:gray;">transform:translateY(20px, 20px)</div>
+	</li>
+	<li>scaleX
+		<p>横方向に指定倍率で拡大・縮小する。</p>
+		<div class="sep" style="transform:scaleX(1.2);width:100px;height:100px;background-color:gray;">transform:scaleX(1.2)</div>
+		<div class="sep" style="transform:scaleX(0.8);width:100px;height:100px;background-color:gray;">transform:scaleX(0.8)</div>
+	</li>
+	<li>scaleY
+		<p>縦方向に指定倍率で拡大・縮小する。</p>
+		<div class="sep" style="transform:scaleY(1.2);width:100px;height:100px;background-color:gray;">transform:scaleY(1.2)</div>
+		<div class="sep" style="transform:scaleY(0.8);width:100px;height:100px;background-color:gray;">transform:scaleY(0.8)</div>
+	</li>
+	<li>scale
+		<p class="sepb">(横報告,縦方向)、もしくは(縦横方向)と指定し、指定倍率で拡大・縮小する。</p>
+		<div class="sepbb" style="transform:scale(1.2,1.5);width:100px;height:100px;background-color:gray;">transform:scaleY(1.2,1.5)</div>
+		<div class="sepb" style="transform:scale(1.2);width:100px;height:100px;background-color:gray;">transform:scale(1.2)</div>
+	</li>
+	<li>rotate
+		<p class="sepb">回転する。単位はrad(ラジアン角)、もしくはdeg(度)で指定する。</p>
+		<div class="sepb" style="transform:rotate(45deg);width:100px;height:100px;background-color:gray;">transform:rotate(45deg)</div>
+	</li>
+	<li>skewX
+		<p>横方向にゆがませる。単位はrad(ラジアン角)、もしくはdeg(度)で指定する。</p>
+		<div class="sepb" style="transform:skewX(20deg);width:100px;height:100px;background-color:gray;">transform:skewX(20deg)</div>
+	</li>
+	<li>skewY
+		<p>縦方向にゆがませる。単位はrad(ラジアン角)、もしくはdeg(度)で指定する。</p>
+		<div class="sepb" style="transform:skewY(20deg);width:100px;height:100px;background-color:gray;">transform:skewY(20deg)</div>
+	</li>
+	<li>matrix
+		<p>3×3の行列計算により、変形させる。指定値は6個。</p>
+	</li>
+</ul>
 
 
+<hr class="sline">
+<h1 id="no15">(15)アニメーション関連のプロパティ</h1>
+<a href="#no14">Before</a>
+<a href="#no1">Top</a>
+<a href="#last">Last</a>
+<p class="tl">■transition</p>
+<p>
+	イベント等を基にアニメーション効果を出す際に指定する。
+	時間の指定がされている場合、1つめの時間はアニメーション時間、
+	2つ目の時間は開始遅延時間となる。
+</p>
+<div class="ani" style="border:1px solid #000000;overflow:hidden;white-space:nowrap;">hover時にサイズ変更</div>
+<pre>
+div.ani{
+  width: 100px;
+  height: 50px;
+  transition-property: width,height,background-color;
+  transition-duration: 1s;
+  transition-delay: 1s;
+  transition-timing-function: ease-in;
+}
 
+div:hover{
+  width: 200px;
+  height: 100px;
+  background-color:#ff3333;
+}
 
+&lt;div class="ani" style="border:1px solid #000000;overflow:hidden;white-space:nowrap;"&gt;hover時にサイズ変更&lt;/div&gt;
+</pre>
+<p>
+	上記ではwidthをアニメーションさせているが、left、margin、background-colorなど
+	数値を持つプロパティも指定可能。
+	transitionはtransition-duration、transition-property、transition-timing-function、
+	transition-delayをまとめて指定できるショートカット。時間の指定がされている場合、
+	1つめの時間はアニメーション時間、2つ目の時間は開始遅延時間となる。
+</p>
+<ul>
+	<li>transition-property
+		<p>
+			アニメーションさせるプロパティ(width、marginなど)を指定する。
+			省略、もしくはallを指定すると、すべてのプロパティがアニメーションの対象となる。
+		</p>
+	</li>
+	<li>transition-duration
+		<p>アニメーション時間を指定する。s(秒)、ms(ミリ秒)で指定する。</p>
+	</li>
+	<li>transition-delay
+		<p>開始遅延時間を指定する。s(秒)、ms(ミリ秒)で指定する。</p>
+	</li>
+	<li>transition-timing-function
+		<p>アニメーションの動作を指定する。</p>
+		<ul style="list-style-type:decimal">
+			<li>ease
+				<p>自然な動作。</p>
+			</li>
+			<li>liner
+				<p>等速動作。</p>
+			</li>
+			<li>ease-in
+				<p>ゆっくり始まる。</p>
+			</li>
+			<li>ease-out
+				<p>ゆっくり終わる。</p>
+			</li>
+			<li>ease-in-out
+				<p>ゆっくり始まり、ゆっくり終わる。</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+<hr>
+<p class="tl">■animation</p>
+<p>
+	アニメーション回数、繰り返しなど、transitionよりもより細かい指定が可能。
+	@keyframesで開始から終了までの動きを細かく指定し、amimation-nameでそれを参照する。
+	animationはanimation-name、animation-duration、animation-timing-function、
+	animation-delay、animation-iteration-count、animation-directionをまとめて指定できる
+	ショートカット。時間の指定がされている場合、1つめの時間はアニメーション時間、
+	2つ目の時間は開始遅延時間となる。
+</p>
+<div style="border:1px solid #000000;position: relative;width:200px;height:150px;">
+	<div class="ani2">アニメ</div>
+</div>
+<pre>
+div.ani2{
+  width: 100px;
+  height: 100px;
+  background-color: #ff3333;
+  <strong>position: absolute;</strong>
+  animation-name: ani2;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes ani2{
+  0%{
+    left: 0;
+    top: 0;
+  }
+  25%{
+    left: 100px;
+    top: 0px;
+  }
+  50%{
+    left: 100px;
+    top: 50px;
+  }
+  75%{
+    left: 0px;
+    top: 50px;
+  }
+  100%{
+    left: 0;
+    top: 0;
+  }
+}
+
+&lt;div style="border:1px solid #000000;position: relative;width:200px;height:150px;"&gt;
+  &lt;div class="ani2"&gt;アニメ&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<ul>
+	<li>animation-name
+		<p>実行する@keyframesの名前を指定する。</p>
+	</li>
+	<li>animation-duration
+		<p>1サイクルのアニメーションの時間を指定する。s(秒)、ms(ミリ秒)で指定する。</p>
+	</li>
+	<li>animation-delay
+		<p>開始遅延時間を指定する。s(秒)、ms(ミリ秒)で指定する。</p>
+	</li>
+	<li>animation-iteration-count
+		<p>再生回数を指定する。infiniteを指定すると無限再生となる。</p>
+	</li>
+	<li>animation-timing-function
+		<p>アニメーションの動作を指定する。</p>
+		<ul style="list-style-type:decimal">
+			<li>ease
+				<p>自然な動作。</p>
+			</li>
+			<li>liner
+				<p>等速動作。</p>
+			</li>
+			<li>ease-in
+				<p>ゆっくり始まる。</p>
+			</li>
+			<li>ease-out
+				<p>ゆっくり終わる。</p>
+			</li>
+			<li>ease-in-out
+				<p>ゆっくり始まり、ゆっくり終わる。</p>
+			</li>
+		</ul>
+	</li>
+	<li>animation-direction
+		<p>往復再生を行うかを指定する。往復再生を行う場合、alternateを指定する。</p>
+	</li>
+	<li>animation-fill-mode
+		<p>アニメーションが再生中でない場合の状態を指定する。</p>
+		<ul style="list-style-type:decimal">
+			<li>none
+				<p>再生中以外は、元々指定されいてる状態となる。</p>
+			</li>
+			<li>forwards
+				<p>
+					@keyframesの0%位置で始まり、100%位置で終了する。
+				</p>
+			</li>
+			<li>backwards
+				<p>
+					開始時点の位置で始まり、開始時点の位置で終了する。
+				</p>
+			</li>
+			<li>both
+				<p>@keyframesの0%の位置で始まり、@keyframesの100%の位置で終了する。</p>
+			</li>
+		</ul>
+	</li>
+</ul>
+<div style="border:1px solid #000000;position: relative;width:200px;height:150px;">
+	<div class="ani3">アニメ</div>
+</div>
+<pre>
+div.ani3{
+  width: 100px;
+  height: 100px;
+  background-color: #ff3333;
+  position: absolute;
+  transform: rotate(60deg);
+  animation-name: ani3;
+  animation-duration: 5s;
+  animation-delay: 1s;
+  animation-timing-function: liner;
+  animation-iteration-count: 3;
+  animation-direction: normal;
+  animation-fill-mode: both;
+}
+
+@keyframes ani3{
+  0%{
+    transform: rotate(20deg);
+  }
+  100%{
+    transform: rotate(180deg);
+  }
+}
+
+&lt;div style="border:1px solid #000000;position: relative;width:200px;height:150px;"&gt;
+  &lt;div class="ani3"&gt;アニメ&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<span id="last"></span>
+<a href="#no15">Before</a>
+<a href="#no1">Top</a>
 </body>
 </html>

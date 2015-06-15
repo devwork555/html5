@@ -48,7 +48,9 @@
 <body onload="renderCanvas()">
 
 
-<h1>(1)セクション関連の要素</h1>
+<h1 id="no1">(1)セクション関連の要素</h1>
+<a href="#no2">Next</a>
+<a href="#last">Last</a>
 <p class="tl">■header</p>
 <header>
 	<h2 class="el">HeaderTitle</h2>
@@ -171,7 +173,11 @@
 
 
 <hr class="sline">
-<h1>(2)グルーピング関連の要素</h1>
+<h1 id="no2">(2)グルーピング関連の要素</h1>
+<a href="#no1">Before</a>
+<a href="#no3">Next</a>
+<a href="#no1">Top</a>
+<a href="#last">Last</a>
 <p class="tl">■main</p>
 <main class="el">
 	<h2>MainTitle</h2>
@@ -327,7 +333,11 @@ blockquote要素の内容
 
 
 <hr class="sline">
-<h1>(3)テキスト関連の要素</h1>
+<h1 id="no3">(3)テキスト関連の要素</h1>
+<a href="#no2">Before</a>
+<a href="#no4">Next</a>
+<a href="#no1">Top</a>
+<a href="#last">Last</a>
 <p class="tl">■a</p>
 <a href="http://www.google.co.jp" target="_blank" rel="noreferrer" type="text/html" hreflang="ja">リンク</a>
 <pre>
@@ -633,7 +643,11 @@ aaaaaaaaaaaaaaaaaaaaaa⇒&lt;wbr class="el"&gt;return
 
 
 <hr class="sline">
-<h1>(4)画像・動画関連の要素</h1>
+<h1 id="no4">(4)画像・動画関連の要素</h1>
+<a href="#no3">Before</a>
+<a href="#no5">Next</a>
+<a href="#no1">Top</a>
+<a href="#last">Last</a>
 <p class="tl">■img</p>
 <img src="./static/kaeru.gif" alt="カエル">
 <pre>
@@ -874,7 +888,11 @@ function renderCanvas(){
 
 
 <hr class="sline">
-<h1>(5)テーブル関連の要素</h1>
+<h1 id="no5">(5)テーブル関連の要素</h1>
+<a href="#no4">Before</a>
+<a href="#no6">Next</a>
+<a href="#no1">Top</a>
+<a href="#last">Last</a>
 <p class="tl">■table,thead,tbody,tfoot,th,td</p>
 <table class="el">
 <thead>
@@ -1250,7 +1268,11 @@ function renderCanvas(){
 
 
 <hr class="sline">
-<h1>(6)フォーム関連の要素</h1>
+<h1 id="no6">(6)フォーム関連の要素</h1>
+<a href="#no5">Before</a>
+<a href="#no7">Next</a>
+<a href="#no1">Top</a>
+<a href="#last">Last</a>
 <p class="tl">■form</p>
 <form id="frm1" name="frm1" method="post" accept-charset="UTF-8" target="_blank" novalidate autocomplete="on">
 <p><input type="text" id="txt1"></p>
@@ -1547,7 +1569,10 @@ value ＞＝ low AND value ＝＜ high
 
 
 <hr class="sline">
-<h1>(7)インタラクティブ関連の要素</h1>
+<h1 id="no7">(7)インタラクティブ関連の要素</h1>
+<a href="#no6">Before</a>
+<a href="#no1">Top</a>
+<a href="#last">Last</a>
 <p class="tl">■details,summary</p>
 <details open class="el">
 	<summary>details要素の内容の要約や凡例</summary>
@@ -1565,5 +1590,8 @@ value ＞＝ low AND value ＝＜ high
 	summary要素は親要素であるdetails要素の内容の要約や凡例を記述する場合に使用する。
 </p>
 
+<span id="last"></span>
+<a href="#no7">Before</a>
+<a href="#no1">Top</a>
 </body>
 </html>
