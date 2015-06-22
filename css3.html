@@ -21,9 +21,6 @@
 			font-weight:bold;
 			font-size:1.5em;
 		}
-		.nt{
-			color:#ff0000;
-		}
 		.el{
 			color:#0b2bd7;
 		}
@@ -261,7 +258,7 @@
 	<p>div p{margin: 0;}</p>
 	<pre>
 &lt;div&gt;
-  &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
+  &lt;p&gt;<strong>適用される</strong>&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;適用されない&lt;/p&gt;
 	</pre>
@@ -287,11 +284,11 @@
 	<p>.parent > p{margin: 0;}</p>
 	<pre>
 &lt;div class="parent"&gt;
-  &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
+  &lt;p&gt;<strong>適用される</strong>&lt;/p&gt;
   &lt;div&gt;
     &lt;p&gt;適用されない&lt;/p&gt;
   &lt;/div&gt;
-  &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
+  &lt;p&gt;<strong>適用される</strong>&lt;/p&gt;
 &lt;/div&gt;
 	</pre>
 </li>
@@ -304,11 +301,11 @@
   &lt;div&gt;
     &lt;p&gt;適用されない&lt;/p&gt;
     &lt;h2&gt;この要素が基準となる&lt;/h2&gt;
-    &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
+    &lt;p&gt;<strong>適用される</strong>&lt;/p&gt;
   &lt;/div&gt;
   &lt;p&gt;適用されない&lt;/p&gt;
   &lt;h2&gt;この要素が基準となる&lt;/h2&gt;
-  &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
+  &lt;p&gt;<strong>適用される</strong>&lt;/p&gt;
   &lt;p&gt;適用れない&lt;/p&gt;
 &lt;/div&gt;
 	</pre>
@@ -322,12 +319,12 @@
   &lt;div&gt;
     &lt;p&gt;適用されない&lt;/p&gt;
     &lt;h2&gt;この要素が基準となる&lt;/h2&gt;
-    &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
+    &lt;p&gt;<strong>適用される</strong>&lt;/p&gt;
   &lt;/div&gt;
   &lt;p&gt;適用されない&lt;/p&gt;
   &lt;h2&gt;この要素が基準となる&lt;/h2&gt;
-  &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
-  &lt;p&gt;<span class="nt">適用される</span>&lt;/p&gt;
+  &lt;p&gt;<strong>適用される</strong>&lt;/p&gt;
+  &lt;p&gt;<strong>適用される</strong>&lt;/p&gt;
 &lt;/div&gt;
 	</pre>
 </li>
@@ -335,16 +332,16 @@
 	<strong>指定した属性名を持つ</strong>p要素に適用
 	<p>p[title]{margin: 0;}</p>
 	<pre>
-&lt;p title="タイトル"&gt;<span class="nt">適用される</span>&lt;p&gt;
+&lt;p title="タイトル"&gt;<strong>適用される</strong>&lt;p&gt;
 &lt;p&gt;適用されない&lt;p&gt;
-&lt;p title="タイトル"&gt;<span class="nt">適用される</span>&lt;p&gt;
+&lt;p title="タイトル"&gt;<strong>適用される</strong>&lt;p&gt;
 	</pre>
 </li>
 <li>
 	<strong>属性の値が一致する</strong>p要素に適用
 	<p>p[title="タイトル"]{margin: 0;}</p>
 	<pre>
-&lt;p title="タイトル"&gt;<span class="nt">適用される</span>&lt;p&gt;
+&lt;p title="タイトル"&gt;<strong>適用される</strong>&lt;p&gt;
 &lt;p&gt;適用されない&lt;p&gt;
 &lt;p title="あいうえお"&gt;適用されない&lt;p&gt;
 	</pre>
@@ -353,8 +350,8 @@
 	<strong>属性の値が指定文字列で始まる</strong>p要素に適用
 	<p>p[title^="タイトル"]{margin: 0;}</p>
 	<pre>
-&lt;p title="タイトル"&gt;<span class="nt">適用される</span>&lt;p&gt;
-&lt;p title="タイトルあういえお"&gt;<span class="nt">適用される</span>&lt;p&gt;
+&lt;p title="タイトル"&gt;<strong>適用される</strong>&lt;p&gt;
+&lt;p title="タイトルあういえお"&gt;<strong>適用される</strong>&lt;p&gt;
 &lt;p&gt;適用されない&lt;p&gt;
 &lt;p title="あいうえおタイトル"&gt;適用されない&lt;p&gt;
 	</pre>
@@ -363,8 +360,8 @@
 	<strong>属性の値が指定文字列で終わる</strong>p要素に適用
 	<p>p[title$="タイトル"]{margin: 0;}</p>
 	<pre>
-&lt;p title="タイトル"&gt;<span class="nt">適用される</span>&lt;p&gt;
-&lt;p title="あいうえおタイトル"&gt;<span class="nt">適用される</span>&lt;p&gt;
+&lt;p title="タイトル"&gt;<strong>適用される</strong>&lt;p&gt;
+&lt;p title="あいうえおタイトル"&gt;<strong>適用される</strong>&lt;p&gt;
 &lt;p&gt;適用されない&lt;p&gt;
 &lt;p title="タイトルあいうえお"&gt;適用されない&lt;p&gt;
 	</pre>
@@ -373,8 +370,8 @@
 	<strong>属性の値に指定文字列が含まれる</strong>p要素に適用
 	<p>p[title*="タイトル"]{margin: 0;}</p>
 	<pre>
-&lt;p title="タイトル"&gt;<span class="nt">適用される</span>&lt;p&gt;
-&lt;p title="あいうえおタイトルあいうえお"&gt;<span class="nt">適用される</span>&lt;p&gt;
+&lt;p title="タイトル"&gt;<strong>適用される</strong>&lt;p&gt;
+&lt;p title="あいうえおタイトルあいうえお"&gt;<strong>適用される</strong>&lt;p&gt;
 &lt;p&gt;適用されない&lt;p&gt;
 &lt;p title="あいうえお"&gt;適用されない&lt;p&gt;
 	</pre>

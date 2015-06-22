@@ -6,12 +6,13 @@
 	<meta name="description" content="HTML5のサンプルページです。">
 	<link rel="stylesheet" href="html5.css">
 	<style type="text/css">
+		strong{
+			color: #ff0000;
+			font-weight: bold;
+		}
 		.tl{
 			font-weight:bold;
 			font-size:1.5em;
-		}
-		.nt{
-			color:#ff0000;
 		}
 		.el{
 			color:#0b2bd7;
@@ -29,6 +30,9 @@
 		}
 		.sepb{
 			margin-bottom:35px;
+		}
+		.rowTitle{
+			background-color: #f5fffa;
 		}
 	</style>
 	<script type="text/javascript">
@@ -64,7 +68,7 @@
 	<p>
 		セクション内でのヘッダ構造として定義する。セクションに対して一度だけ記述できる
 		通常はセクションの見出し(h1～h6)を含むように意図されているが必須ではない。
-		header要素はセクショニング要素ではないため、<span class="nt">アウトラインを生成しない</span>
+		header要素はセクショニング要素ではないため、<strong>アウトラインを生成しない</strong>
 	</p>
 
 	<hr>
@@ -301,7 +305,7 @@
 </pre>
 <p>
 	整形済みテキスト。インデント、改行もそのまま表示される。
-	<span class="nt">フォントサイズが替わる。</span>
+	フォントサイズが替わる。
 </p>
 
 <hr>
@@ -315,7 +319,7 @@ blockquote要素の内容
 &lt;/blockquote&gt;
 </pre>
 <p>
-	<span class="nt">インデントされる。</span>
+	インデントされる。
 	他から文書などを引用したセクションであることを表す。
 </p>
 
@@ -363,7 +367,7 @@ blockquote要素の内容
 普通の文言
 </pre>
 <p>
-	<span class="nt">太字になる。</span>
+	太字になる。
 	入れ子にすることも可能。入れ子の階層が深いほど、その内容の重要性が増す。
 </p>
 
@@ -374,9 +378,9 @@ blockquote要素の内容
 本文&lt;small class="el"&gt;注意事項：注意！&lt;/small&gt;
 </pre>
 <p>
-	<span class="nt">フォントサイズが小さくなる。</span>
+	フォントサイズが小さくなる。
 	注意事項、免責事項等に使用する。
-	<span class="nt">重要度や強調の意味は無い。</span>
+	<strong>重要度や強調の意味は無い。</strong>
 </p>
 
 <hr>
@@ -390,7 +394,7 @@ blockquote要素の内容
 <p>
 	正確な日付や日時を記載する場合に使用する。
 	datetime属性を指定した場合、time要素の中に日付、日時以外の内容を記載できるが、
-	<span class="nt">記載内容とdatetime属性で指定した日付、日時が一致する必要がある</span>
+	<strong>記載内容とdatetime属性で指定した日付、日時が一致する必要がある</strong>
 </p>
 
 <hr>
@@ -416,9 +420,9 @@ blockquote要素の内容
 &lt;q class="el"&gt;引用した文書、テキストなど&lt;/q&gt;
 </pre>
 <p>
-	<span class="nt">引用符で囲まれる。</span>
+	引用符で囲まれる。
 	q要素を使用せず、文中で引用符で囲むことも可能。
-	<span class="nt">html要素でlang="ja"を指定していると「」で囲まれる模様。</span>
+	html要素でlang="ja"を指定していると「」で囲まれる模様。
 	cssで言語と引用符を指定可能。
 </p>
 
@@ -534,7 +538,7 @@ log&lt;sub class="el"&gt;10&lt;/sub&gt;X
 &lt;b class="el"&gt;他と区別したいテキスト&lt;/b&gt;
 </pre>
 <p>
-	<span class="nt">太字になる。</span>
+	太字になる。
 	他と区別したいテキストを表す際に使用する。
 	他の要素でマークアップできない場合に使用する。
 </p>
@@ -546,7 +550,7 @@ log&lt;sub class="el"&gt;10&lt;/sub&gt;X
 &lt;u class="el"&gt;スペルミスなど&lt;/u&gt;
 </pre>
 <p>
-	<span class="nt">下線が付く。</span>
+	下線が付く。
 	ニュアンスなどがはっきりと伝わりにくかったり、
 	あえて本来の意味とは違う意味で使っているテキストや、
 	スペルミスなどを表す際に使用する。
@@ -617,7 +621,7 @@ aaaaaaaaaaaaaaaaaaaaaa⇒&lt;wbr class="el"&gt;return
 &lt;ins class="el"&gt;追加されたテキストや画像&lt;/ins&gt;
 </pre>
 <p>
-	<span class="nt">下線が付く。</span>
+	下線が付く。
 	追加された部分であることを示す際に使用する。
 </p>
 
@@ -628,7 +632,7 @@ aaaaaaaaaaaaaaaaaaaaaa⇒&lt;wbr class="el"&gt;return
 &lt;del class="el"&gt;削除箇所　削除箇所&lt;/del&gt;
 </pre>
 <p>
-	<span class="nt">取消線が付く。</span>
+	取消線が付く。
 	削除された部分であることを示す際に使用する。
 </p>
 
@@ -639,7 +643,7 @@ aaaaaaaaaaaaaaaaaaaaaa⇒&lt;wbr class="el"&gt;return
 &lt;s class="el"&gt;正確ではないテキスト&lt;/s&gt;
 </pre>
 <p>
-	<span class="nt">取消線が付く。</span>
+	取消線が付く。
 	テキストが正確でないことを示す場合に使用する。
 </p>
 
@@ -707,7 +711,7 @@ aaaaaaaaaaaaaaaaaaaaaa⇒&lt;wbr class="el"&gt;return
 <p>
 	外部アプリケーションやインタラクティブなコンテンツ、
 	例えば、Flashなどの
-	<span class="nt">プラグインを必要とするデータをHTML文書に埋め込む際に使用</span>する。
+	<strong>プラグインを必要とするデータをHTML文書に埋め込む際に使用</strong>する。
 </p>
 
 <hr>
@@ -719,7 +723,7 @@ aaaaaaaaaaaaaaaaaaaaaa⇒&lt;wbr class="el"&gt;return
 <p>
 	文書に外部リソースを埋め込む際に使用する。
 	embed要素がプラグインを必要とするデータを埋め込むのに対して、
-	<span class="nt">objectには外部リソース全般を指定することができる。</span>
+	<strong>objectには外部リソース全般を指定することができる。</strong>
 </p>
 
 <hr>
@@ -1173,7 +1177,7 @@ function renderCanvas(){
 	表の列をグループ化する。グループ化した列には
 	同じ属性やスタイルを適用することができる。
 	グループ化する列の個数をspan属性で指定する。
-	<span class="nt">colgroup要素内にcol要素を配置する場合はspan属性は指定できない(col要素側で指定する)。</span>
+	<strong>colgroup要素内にcol要素を配置する場合はspan属性は指定できない(col要素側で指定する)。</strong>
 </p>
 
 <hr>
@@ -1288,10 +1292,10 @@ function renderCanvas(){
 </pre>
 <p>
 	入力フォームをまとめ、入力されたデータをサーバに送信することが可能。
-	<span class="nt">
+	<strong>
 		HTML5よりform要素外に入力フォームを配置することができるようになった
 		(入力フォーム要素のform属性に、form要素のid属性値を指定する)。
-	</span>
+	</strong>
 </p>
 
 <hr>
@@ -1574,7 +1578,7 @@ value ＞＝ low AND value ＝＜ high
 <h1 id="sct07">(7)インタラクティブ関連の要素</h1>
 <a href="#sct01">Top</a>
 <a href="#sct06">Before</a>
-<a href="#last">Next</a>
+<a href="#sct08">Next</a>
 <a href="#last">Last</a>
 <p class="tl">■details,summary</p>
 <details open class="el">
@@ -1593,9 +1597,1344 @@ value ＞＝ low AND value ＝＜ high
 	summary要素は親要素であるdetails要素の内容の要約や凡例を記述する場合に使用する。
 </p>
 
-<span id="last"></span>
+
+<hr class="sline">
+<h1 id="sct08">(8)グローバル属性</h1>
 <a href="#sct01">Top</a>
 <a href="#sct07">Before</a>
+<a href="#sct09">Next</a>
+<a href="#last">Last</a>
+<p>
+	グローバル属性とは、どの要素にも使用できる属性のこと。
+	主要なグローバル属性は下記。
+</p>
+<table class="sep">
+<caption>グローバル属性</caption>
+<tr>
+	<th>No</th>
+	<th>属性名</th>
+	<th>概要</th>
+</tr>
+<tr>
+	<td>1</td>
+	<td>accesskey</td>
+	<td>要素にアクセスキーを割り当てる属性。</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>class</td>
+	<td>要素にクラスを割り当てる属性。</td>
+</tr>
+<tr>
+	<td>3</td>
+	<td>contenteditable</td>
+	<td>要素の内容を編集可能かどうかを指定する属性。</td>
+</tr>
+<tr>
+	<td>4</td>
+	<td>contextmenu</td>
+	<td>
+		要素のコンテキストメニューを指定する属性。<br>
+		(menu要素のid値をcontextmenu属性に指定する)
+	</td>
+</tr>
+<tr>
+	<td>5</td>
+	<td>data-*</td>
+	<td>要素にカスタム（独自、オリジナル）・データを格納する属性。</td>
+</tr>
+<tr>
+	<td>6</td>
+	<td>datetime</td>
+	<td>ins要素、del要素での日付、日時を指定する属性。</td>
+</tr>
+<tr>
+	<td>7</td>
+	<td>dir</td>
+	<td>
+		要素内のテキストの方向を指定する属性。<br>
+		dir="ltr"　⇒　左から右<br>
+		dir="rtl"　⇒　右から左
+	</td>
+</tr>
+<tr>
+	<td>8</td>
+	<td>drragable</td>
+	<td>要素をドラッグ可能かどうかを指定する属性。</td>
+</tr>
+<tr>
+	<td>9</td>
+	<td>hidden</td>
+	<td>関連性がある要素かどうかを指定する属性。</td>
+</tr>
+<tr>
+	<td>10</td>
+	<td>id</td>
+	<td>要素に固有のidを指定する属性。</td>
+</tr>
+<tr>
+	<td>11</td>
+	<td>lang</td>
+	<td>要素内の言語コードを指定する属性。</td>
+</tr>
+<tr>
+	<td>12</td>
+	<td>spellcheck</td>
+	<td>要素内のテキストのスペルチェックをするかしないかを指定する属性。</td>
+</tr>
+<tr>
+	<td>13</td>
+	<td>style</td>
+	<td>スタイルシートを要素に直接指定するための属性。</td>
+</tr>
+<tr>
+	<td>14</td>
+	<td>tabindex</td>
+	<td>要素のタブインデックスを指定する属性。</td>
+</tr>
+<tr>
+	<td>15</td>
+	<td>title</td>
+	<td>要素に関する補足情報を指定する属性。</td>
+</tr>
+</table>
+
+
+<hr class="sline">
+<h1 id="sct09">(9)廃止された要素･属性</h1>
+<a href="#sct01">Top</a>
+<a href="#sct08">Before</a>
+<a href="#sct10">Next</a>
+<a href="#last">Last</a>
+<p>HTML5で廃止された要素と属性は下記。</p>
+
+<table class="sepb">
+<caption>廃止された要素</caption>
+<tr>
+	<th>No</th>
+	<th>廃止された要素</th>
+	<th>概要・代替</th>
+</tr>
+<tr>
+	<td>1</td>
+	<td>acronym</td>
+	<td>頭文字をとった略語をあらわす要素。abbr要素で代替する。</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>applet</td>
+	<td>Javaアプレットを埋め込みための要素。object要素で代替する。</td>
+</tr>
+<tr>
+	<td>3</td>
+	<td>basefont</td>
+	<td>基本となるフォントサイズなどを指定する要素。CSSで代替する。</td>
+</tr>
+<tr>
+	<td>4</td>
+	<td>big</td>
+	<td>文字サイズを拡大する要素。CSSで代替する。</td>
+</tr>
+<tr>
+	<td>5</td>
+	<td>center</td>
+	<td>文字の配置を中央にする要素。CSSで代替する。</td>
+</tr>
+<tr>
+	<td>6</td>
+	<td>dir</td>
+	<td>ディレクトリ型リストを指定する要素。ul要素で代替する。</td>
+</tr>
+<tr>
+	<td>7</td>
+	<td>font</td>
+	<td>フォント関連を指定する要素。CSSで代替する。</td>
+</tr>
+<tr>
+	<td>8</td>
+	<td>frame</td>
+	<td>フレームに分割して表示する要素。iframe要素等で代替する。</td>
+</tr>
+<tr>
+	<td>9</td>
+	<td>frameset</td>
+	<td>frame要素廃止に伴い廃止。代替なし。</td>
+</tr>
+<tr>
+	<td>10</td>
+	<td>noframes</td>
+	<td>frame要素廃止に伴い廃止。代替なし。</td>
+</tr>
+<tr>
+	<td>11</td>
+	<td>isindex</td>
+	<td>テキスト入力欄を作成する要素。form要素で代替する。</td>
+</tr>
+<tr>
+	<td>12</td>
+	<td>strike</td>
+	<td>テキストに取消線を引く要素。del要素で代替する。</td>
+</tr>
+<tr>
+	<td>13</td>
+	<td>tt</td>
+	<td>等倍フォントで表示する要素。CSSで代替する。</td>
+</tr>
+<tr>
+	<td>14</td>
+	<td>blink</td>
+	<td>フォントを点滅させる要素。代替なし(text-decoration:blinkはブラウザによっては実装していない)。</td>
+</tr>
+<tr>
+	<td>15</td>
+	<td>noembd</td>
+	<td>embedタグに対応していない場合に表示する内容を記載する要素。廃止。代替なし</td>
+</tr>
+<tr>
+	<td>16</td>
+	<td>nobr</td>
+	<td>途中改行を無効にする要素。代替なし。</td>
+</tr>
+</table>
+
+<table class="sep">
+<caption>廃止された属性</caption>
+<tr>
+	<th>No</th>
+	<th>要素</th>
+	<th>廃止された属性</th>
+</tr>
+<tr>
+	<td>1</td>
+	<td rowspan="4">a</td>
+	<td>charset</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>rev</td>
+</tr>
+<tr>
+	<td>3</td>
+	<td>shape</td>
+</tr>
+<tr>
+	<td>4</td>
+	<td>coords</td>
+</tr>
+<tr>
+	<td>5</td>
+	<td>area</td>
+	<td>nohref</td>
+</tr>
+<tr>
+	<td>6</td>
+	<td rowspan="6">body</td>
+	<td>background</td>
+</tr>
+<tr>
+	<td>7</td>
+	<td>bgcolor</td>
+</tr>
+<tr>
+	<td>8</td>
+	<td>text</td>
+</tr>
+<tr>
+	<td>9</td>
+	<td>link</td>
+</tr>
+<tr>
+	<td>10</td>
+	<td>vlink</td>
+</tr>
+<tr>
+	<td>11</td>
+	<td>alink</td>
+</tr>
+<tr>
+	<td>12</td>
+	<td>br</td>
+	<td>clear</td>
+</tr>
+<tr>
+	<td>13</td>
+	<td>caption</td>
+	<td>align</td>
+</tr>
+<tr>
+	<td>14</td>
+	<td rowspan="5">col</td>
+	<td>width</td>
+</tr>
+<tr>
+	<td>15</td>
+	<td>align</td>
+</tr>
+<tr>
+	<td>16</td>
+	<td>valign</td>
+</tr>
+<tr>
+	<td>17</td>
+	<td>charset</td>
+</tr>
+<tr>
+	<td>18</td>
+	<td>charoff</td>
+</tr>
+<tr>
+	<td>19</td>
+	<td rowspan="5">colgroup</td>
+	<td>width</td>
+</tr>
+<tr>
+	<td>20</td>
+	<td>align</td>
+</tr>
+<tr>
+	<td>21</td>
+	<td>valign</td>
+</tr>
+<tr>
+	<td>22</td>
+	<td>charset</td>
+</tr>
+<tr>
+	<td>23</td>
+	<td>charoff</td>
+</tr>
+<tr>
+	<td>24</td>
+	<td>div</td>
+	<td>align</td>
+</tr>
+<tr>
+	<td>25</td>
+	<td>dl</td>
+	<td>compact</td>
+</tr>
+<tr>
+	<td>26</td>
+	<td>form</td>
+	<td>accept</td>
+</tr>
+<tr>
+	<td>27</td>
+	<td>h1～h6</td>
+	<td>align</td>
+</tr>
+<tr>
+	<td>28</td>
+	<td>head</td>
+	<td>profile</td>
+</tr>
+<tr>
+	<td>29</td>
+	<td rowspan="4">hr</td>
+	<td>size</td>
+</tr>
+<tr>
+	<td>30</td>
+	<td>width</td>
+</tr>
+<tr>
+	<td>31</td>
+	<td>align</td>
+</tr>
+<tr>
+	<td>32</td>
+	<td>noshade</td>
+</tr>
+<tr>
+	<td>33</td>
+	<td>html</td>
+	<td>version</td>
+</tr>
+<tr>
+	<td>34</td>
+	<td rowspan="6">iframe</td>
+	<td>longdesc</td>
+</tr>
+<tr>
+	<td>35</td>
+	<td>scrolling</td>
+</tr>
+<tr>
+	<td>36</td>
+	<td>frameborder</td>
+</tr>
+<tr>
+	<td>37</td>
+	<td>marginwidth</td>
+</tr>
+<tr>
+	<td>38</td>
+	<td>marginheight</td>
+</tr>
+<tr>
+	<td>39</td>
+	<td>align</td>
+</tr>
+<tr>
+	<td>40</td>
+	<td rowspan="5">img</td>
+	<td>longdesc</td>
+</tr>
+<tr>
+	<td>41</td>
+	<td>name</td>
+</tr>
+<tr>
+	<td>42</td>
+	<td>align</td>
+</tr>
+<tr>
+	<td>43</td>
+	<td>hspace</td>
+</tr>
+<tr>
+	<td>44</td>
+	<td>vspace</td>
+</tr>
+<tr>
+	<td>45</td>
+	<td rowspan="3">input</td>
+	<td>align</td>
+</tr>
+<tr>
+	<td>46</td>
+	<td>usemap</td>
+</tr>
+<tr>
+	<td>47</td>
+	<td>ismap</td>
+</tr>
+<tr>
+	<td>48</td>
+	<td>legend</td>
+	<td>align</td>
+</tr>
+<tr>
+	<td>49</td>
+	<td>li</td>
+	<td>type</td>
+</tr>
+<tr>
+	<td>50</td>
+	<td rowspan="3">link</td>
+	<td>rev</td>
+</tr>
+<tr>
+	<td>51</td>
+	<td>charset</td>
+</tr>
+<tr>
+	<td>52</td>
+	<td>target</td>
+</tr>
+<tr>
+	<td>53</td>
+	<td>menu</td>
+	<td>compact</td>
+</tr>
+<tr>
+	<td>54</td>
+	<td>meta</td>
+	<td>scheme</td>
+</tr>
+<tr>
+	<td>55</td>
+	<td rowspan="10">object</td>
+	<td>classid</td>
+</tr>
+<tr>
+	<td>56</td>
+	<td>codetype</td>
+</tr>
+<tr>
+	<td>57</td>
+	<td>archive</td>
+</tr>
+<tr>
+	<td>58</td>
+	<td>codebase</td>
+</tr>
+<tr>
+	<td>59</td>
+	<td>standby</td>
+</tr>
+<tr>
+	<td>60</td>
+	<td>declare</td>
+</tr>
+<tr>
+	<td>61</td>
+	<td>align</td>
+</tr>
+<tr>
+	<td>62</td>
+	<td>border</td>
+</tr>
+<tr>
+	<td>63</td>
+	<td>hspacce</td>
+</tr>
+<tr>
+	<td>64</td>
+	<td>vspace</td>
+</tr>
+<tr>
+	<td>65</td>
+	<td>ol</td>
+	<td>compact</td>
+</tr>
+<tr>
+	<td>66</td>
+	<td>p</td>
+	<td>align</td>
+</tr>
+<tr>
+	<td>67</td>
+	<td rowspan="2">param</td>
+	<td>valuetype</td>
+</tr>
+<tr>
+	<td>68</td>
+	<td>type</td>
+</tr>
+<tr>
+	<td>69</td>
+	<td>pre</td>
+	<td>width</td>
+</tr>
+<tr>
+	<td>70</td>
+	<td rowspan="11">table</td>
+	<td>width</td>
+</tr>
+<tr>
+	<td>71</td>
+	<td>frame</td>
+</tr>
+<tr>
+	<td>72</td>
+	<td>rules</td>
+</tr>
+<tr>
+	<td>73</td>
+	<td>cellspacing</td>
+</tr>
+<tr>
+	<td>74</td>
+	<td>cellpadding</td>
+</tr>
+<tr>
+	<td>75</td>
+	<td>align</td>
+</tr>
+<tr>
+	<td>76</td>
+	<td>bgcolor</td>
+</tr>
+<tr>
+	<td>77</td>
+	<td>align</td>
+</tr>
+<tr>
+	<td>78</td>
+	<td>valign</td>
+</tr>
+<tr>
+	<td>79</td>
+	<td>char</td>
+</tr>
+<tr>
+	<td>80</td>
+	<td>charoff</td>
+</tr>
+<tr>
+	<td>81</td>
+	<td rowspan="11">td</td>
+	<td>align</td>
+</tr>
+<tr>
+	<td>82</td>
+	<td>valign</td>
+</tr>
+<tr>
+	<td>83</td>
+	<td>char</td>
+</tr>
+<tr>
+	<td>84</td>
+	<td>charoff</td>
+</tr>
+<tr>
+	<td>85</td>
+	<td>abbr</td>
+</tr>
+<tr>
+	<td>86</td>
+	<td>scope</td>
+</tr>
+<tr>
+	<td>87</td>
+	<td>axis</td>
+</tr>
+<tr>
+	<td>88</td>
+	<td>width</td>
+</tr>
+<tr>
+	<td>89</td>
+	<td>height</td>
+</tr>
+<tr>
+	<td>90</td>
+	<td>bgcolor</td>
+</tr>
+<tr>
+	<td>91</td>
+	<td>nowrap</td>
+</tr>
+<tr>
+	<td>92</td>
+	<td rowspan="4">tfoot</td>
+	<td>align</td>
+</tr>
+<tr>
+	<td>93</td>
+	<td>valign</td>
+</tr>
+<tr>
+	<td>94</td>
+	<td>char</td>
+</tr>
+<tr>
+	<td>95</td>
+	<td>charoff</td>
+</tr>
+<tr>
+	<td>96</td>
+	<td rowspan="10">th</td>
+	<td>align</td>
+</tr>
+<tr>
+	<td>97</td>
+	<td>valign</td>
+</tr>
+<tr>
+	<td>98</td>
+	<td>char</td>
+</tr>
+<tr>
+	<td>99</td>
+	<td>charoff</td>
+</tr>
+<tr>
+	<td>100</td>
+	<td>abbr</td>
+</tr>
+<tr>
+	<td>101</td>
+	<td>axis</td>
+</tr>
+<tr>
+	<td>102</td>
+	<td>width</td>
+</tr>
+<tr>
+	<td>103</td>
+	<td>height</td>
+</tr>
+<tr>
+	<td>104</td>
+	<td>bgcolor</td>
+</tr>
+<tr>
+	<td>105</td>
+	<td>nowrap</td>
+</tr>
+<tr>
+	<td>106</td>
+	<td rowspan="4">thead</td>
+	<td>align</td>
+</tr>
+<tr>
+	<td>107</td>
+	<td>valign</td>
+</tr>
+<tr>
+	<td>108</td>
+	<td>char</td>
+</tr>
+<tr>
+	<td>109</td>
+	<td>charoff</td>
+</tr>
+<tr>
+	<td>110</td>
+	<td rowspan="5">tr</td>
+	<td>align</td>
+</tr>
+<tr>
+	<td>111</td>
+	<td>valign</td>
+</tr>
+<tr>
+	<td>112</td>
+	<td>char</td>
+</tr>
+<tr>
+	<td>113</td>
+	<td>charoff</td>
+</tr>
+<tr>
+	<td>114</td>
+	<td>bgcolor</td>
+</tr>
+<tr>
+	<td>115</td>
+	<td rowspan="2">ul</td>
+	<td>type</td>
+</tr>
+<tr>
+	<td>116</td>
+	<td>compact</td>
+</tr>
+</table>
+
+
+<hr class="sline">
+<h1 id="sct10">(10)セマンティックWeb</h1>
+<a href="#sct01">Top</a>
+<a href="#sct09">Before</a>
+<a href="#sct11">Next</a>
+<a href="#last">Last</a>
+<p>
+	HTMLにメタデータを埋め込むことにより、プログラムによって自動的に情報を
+	収集・分析することができるプラットホームにしていく構想を
+	<strong>セマンティックWeb</strong>と呼ぶ。
+	HTMLにメタデータを埋め込む技術としては、HTML　Microdata、RDFa、RDFa Liteなどがある。
+</p>
+<p>■HTML Microdata</p>
+<p>
+	HTML5と同時に策定されたため、JavaScriptによるAPIが整備されていたり、
+	JSONへの変換方法があらかじめ規定されていたりと、
+	JavaScriptアプリから使いやすい仕様になっている。
+	GoogleやMicrosoftの検索エンジンもHTML Microdataに対応しており、
+	HTMLにメタデータを埋め込む技術としてはデファクトスタンダードになっている。
+	HTML Microdataを用いてメタデータをHTMLに埋め込むには、
+	任意のHTMLに対して以下のような属性を付与する。
+</p>
+<table class="sep">
+<caption>HTML Microdata</caption>
+<tr>
+	<th>No</th>
+	<th>属性</th>
+	<th>概要</th>
+</tr>
+<tr>
+	<td>1</td>
+	<td>itemscope</td>
+	<td>アイテムを定義する範囲を表す。</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>itemtype</td>
+	<td>アイテムのデータ型を表す。</td>
+</tr>
+<tr>
+	<td>3</td>
+	<td>itemprop</td>
+	<td>アイテムのプロパティを表す。</td>
+</tr>
+<tr>
+	<td>4</td>
+	<td>itemid</td>
+	<td>アイテムのグローバルなIDを表す。</td>
+</tr>
+<tr>
+	<td>5</td>
+	<td>itemref</td>
+	<td>他のアイテムのIDを参照する。</td>
+</tr>
+</table>
+<pre>
+&lt;p itemscope itemtype="http://schema.org/Person" itemid="http://example.com/pepple#test"&gt;
+  名前は&lt;span itemprop="name"&gt;テスト&lt;/span&gt;です。
+  TELは&lt;span itemprope="telephone"&gt;090-0000-0000&lt;/span&gt;です。
+&lt;/p&gt;
+</pre>
+
+<hr>
+<p>■RDFa、RDFa Lite</p>
+<p>
+	HTML、XHTMLに属性を付与する事でメタデータを指定できる仕様。
+	RDFa、RDFa Liteで表される情報はアイテムと呼ばれ、
+	アイテムが持つ属性はプロパティと呼ばれる。
+	アイテムを定義するには任意のHTML要素に対して以下のような属性を付与する。
+</p>
+<table class="sep">
+<caption>RDFa、RDFa Lite</caption>
+<tr>
+	<th>No</th>
+	<th>属性</th>
+	<th>概要</th>
+</tr>
+<tr>
+	<td>1</td>
+	<td>vocab</td>
+	<td>メタデータの語彙(ボキャブラリ)を表す識別子。</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>typeof</td>
+	<td>アイテムのデータ型を表す。</td>
+</tr>
+<tr>
+	<td>3</td>
+	<td>property</td>
+	<td>アイテムのプロパティを表す。</td>
+</tr>
+<tr>
+	<td>4</td>
+	<td>resource</td>
+	<td>Webページ内でアイテムに任意のIDを付与する。</td>
+</tr>
+<tr>
+	<td>5</td>
+	<td>prefix</td>
+	<td>
+		1つのアイテム内で、vocab属性で指定した以外の
+		語彙(ボキャブラリ)を使用したい場合に、
+		その語彙(ボキャブラリ)を指定する。
+	</td>
+</tr>
+</table>
+<pre>
+&lt;p vocab="http://schema.org" typeof="Person" prefix="ov:http://open.vocab.org/terms/" resource="#test"&gt;
+  名前は&lt;span property="name"&gt;テスト&lt;/span&gt;です。
+  TELは&lt;span property="telephone"&gt;090-0000-0000&lt;/span&gt;です。
+  好きな動物は&lt;span property="ov:preferredAnimal"&gt;犬&lt;/span&gt;です。
+&lt;/p&gt;
+</pre>
+
+
+<hr class="sline">
+<h1 id="sct11">(11)カスタムデータ属性、data URI</h1>
+<a href="#sct01">Top</a>
+<a href="#sct10">Before</a>
+<a href="#sct12">Next</a>
+<a href="#last">Last</a>
+<p>■カスタムデータ属性</p>
+<p>
+	属性名の接頭辞として<strong>「data-」</strong>を付与することにより
+	カスタムデータ属性を利用することができる。
+	HTMLの属性として使用できる文字であれば、どんな属性名でもよい。
+</p>
+<pre>
+&lt;p data-ppp="ppp"&gt;テスト&lt;/p&gt;
+</pre>
+
+<hr>
+<p>■data URI</p>
+<p>
+	「data:」で始まるURIで、データの内容そのものをURI文字列内に埋め込むことができる。
+	通常はsrcに画像のURLを指定するが、その場合、画像ファイル用のHTTPリクエストが発行される。
+	data URIを使用すればHTTPリクエストを減らすことができる。
+	デメリットとしては以下のようなものがある。
+	<ul>
+		<li>データ量が増加する。</li>
+		<li>ブラウザのキャッシュを利用できない。</li>
+		<li>元の画像が変更になるたびにHTMLやCSSに埋め込まれたデータも修正する必要がある。</li>
+		<li>古いブラウザは対応していない。</li>
+	</ul>
+	書式は下記。
+</p>
+<p><strong>data:[MIMEタイプ][;charset=文字セット][;base64],データ</strong></p>
+<pre>
+&lt;img src="data:image/jpeg;base64,/df82s/daj1AH・・・・・N9S1GMVB//2Q==" alt=""&gt;
+</pre>
+
+
+<hr class="sline">
+<h1 id="sct12">(12)HTTP</h1>
+<a href="#sct01">Top</a>
+<a href="#sct11">Before</a>
+<a href="#last">Next</a>
+<a href="#last">Last</a>
+<table class="sep">
+<caption>HTTPメソッド</caption>
+<tr>
+	<th>No</th>
+	<th>メソッド</th>
+	<th>概要</th>
+</tr>
+<tr>
+	<td>1</td>
+	<td>GET</td>
+	<td>URIで指定した情報を要求する。</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>POST</td>
+	<td>クライアントからデータを（名前と値）のセットで渡す。</td>
+</tr>
+<tr>
+	<td>3</td>
+	<td>HEAD</td>
+	<td>GETと同じだがHTTPヘッダのみを返す。</td>
+</tr>
+<tr>
+	<td>4</td>
+	<td>OPTIONS</td>
+	<td>通信オプションの通知などを行う。</td>
+</tr>
+<tr>
+	<td>5</td>
+	<td>PUT</td>
+	<td>URIで指定したサーバ上のファイルを置き換える。</td>
+</tr>
+<tr>
+	<td>6</td>
+	<td>PATCH</td>
+	<td>PUTと同じだが、差分のみを置き換える。</td>
+</tr>
+<tr>
+	<td>7</td>
+	<td>DELETE</td>
+	<td>URIで指定したサーバ上のファイルを削除する。</td>
+</tr>
+<tr>
+	<td>8</td>
+	<td>TRACE</td>
+	<td>サーバが受け取った要求行とヘッダ行をそのまま送り返す。</td>
+</tr>
+<tr>
+	<td>9</td>
+	<td>LINK</td>
+	<td>他の情報との関連付けを行う。</td>
+</tr>
+<tr>
+	<td>10</td>
+	<td>UNLINK</td>
+	<td>LINKで設定した関連を外す。</td>
+</tr>
+</table>
+
+<table class="sep">
+<caption>HTTPレスポンスコード</caption>
+<tr>
+	<th>コード</th>
+	<th>メソッド</th>
+	<th>概要</th>
+</tr>
+<tr class="rowTitle">
+	<td colspan="3">
+		1XX Informational(情報)
+		リクエストは受け取られた。処理は継続される。
+	</td>
+</tr>
+<tr>
+	<td>100</td>
+	<td>Continue</td>
+	<td>
+		継続。クライアントはリクエストを継続できる。
+		サーバがリクエストの最初の部分を受け取り、
+		まだ拒否していないことを示す。
+	</td>
+</tr>
+<tr>
+	<td>101</td>
+	<td>Switching Protocols</td>
+	<td>
+		プロトコル切替え。サーバはリクエストを理解し、
+		遂行のためにプロトコルの切替えを要求している。
+	</td>
+</tr>
+<tr>
+	<td>102</td>
+	<td>Processing</td>
+	<td>
+		処理中。WebDAVの拡張ステータスコード。
+		処理が継続されて行われていることを示す。
+	</td>
+</tr>
+<tr class="rowTitle">
+	<td colspan="3">
+		2XX Success(成功)
+		リクエストは受け取られ、理解され、受理された。
+	</td>
+</tr>
+<tr>
+	<td>200</td>
+	<td>OK</td>
+	<td>
+		OK。リクエストは成功し、レスポンスとともに
+		要求に応じた情報が返される。
+		ブラウザでページが正しく表示された場合は、
+		ほとんどがこのステータスコードを返している。
+	</td>
+</tr>
+<tr>
+	<td>201</td>
+	<td>Created</td>
+	<td>
+		作成。リクエストは完了し、新たに作成されたリソースのURIが返される。
+	</td>
+</tr>
+<tr>
+	<td>202</td>
+	<td>Accepted</td>
+	<td>受理。リクエストは受理されたが、処理は完了していない。</td>
+</tr>
+<tr>
+	<td>203</td>
+	<td>Non-Authoritative Information</td>
+	<td>
+		信頼できない情報。オリジナルのデータではなく、
+		ローカルやプロキシ等からの情報であることを示す。
+	</td>
+</tr>
+<tr>
+	<td>204</td>
+	<td>No Content</td>
+	<td>内容なし。リクエストを受理したが、返すべきレスポンスエンティティが存在しない場合に返される。</td>
+</tr>
+<tr>
+	<td>205</td>
+	<td>Reset Content</td>
+	<td>内容のリセット。リクエストを受理し、ユーザエージェントの画面をリセットする場合に返される。</td>
+</tr>
+<tr>
+	<td>206</td>
+	<td>Partial Content</td>
+	<td>部分的内容。部分的GETリクエストを受理したときに、返される。</td>
+</tr>
+<tr>
+	<td>207</td>
+	<td>Multi-Status</td>
+	<td>複数のステータス。WebDAVの拡張ステータスコード。</td>
+</tr>
+<tr>
+	<td>226</td>
+	<td>IM Used</td>
+	<td>IM使用。Delta encoding in HTTPの拡張ステータスコード。</td>
+</tr>
+<tr class="rowTitle">
+	<td colspan="3">
+		3xx Redirection(リダイレクション)
+		リクエストを完了させるために、追加的な処理が必要。
+	</td>
+</tr>
+<tr>
+	<td>300</td>
+	<td>Multiple Choices</td>
+	<td>
+		複数の選択。リクエストしたリソースが複数存在し、
+		ユーザやユーザーエージェントに選択肢を提示するときに返される。
+	</td>
+</tr>
+<tr>
+	<td>301</td>
+	<td>Moved Permanently</td>
+	<td>
+		恒久的に移動した。リクエストしたリソースが恒久的に移動されているときに返される。
+		Location:ヘッダに移動先のURLが示されている。
+	</td>
+</tr>
+<tr>
+	<td>302</td>
+	<td>Found</td>
+	<td>
+		発見した。リクエストしたリソースが一時的に移動されているときに返される。
+		Location:ヘッダに移動先のURLが示されている。
+	</td>
+</tr>
+<tr>
+	<td>303</td>
+	<td>See Other</td>
+	<td>
+		他を参照せよ。リクエストに対するレスポンスが他のURLに存在するときに返される。
+		Location:ヘッダに移動先のURLが示されている。
+	</td>
+</tr>
+<tr>
+	<td>304</td>
+	<td>Not Modified</td>
+	<td>未更新。リクエストしたリソースは更新されていないことを示す。</td>
+</tr>
+<tr>
+	<td>305</td>
+	<td>Use Proxy</td>
+	<td>
+		プロキシを使用せよ。レスポンスのLocation:ヘッダに示されるプロキシを使用して
+		リクエストを行わなければならないことを示す。
+	</td>
+</tr>
+<tr>
+	<td>306</td>
+	<td>(Unused)</td>
+	<td>
+		将来のために予約されている。
+		ステータスコードは前のバージョンの仕様書では使われていたが、
+		もはや使われておらず、将来のために予約されているとされる。
+	</td>
+</tr>
+<tr>
+	<td>307</td>
+	<td>Temporary Redirect</td>
+	<td>
+		一時的リダイレクト。リクエストしたリソースは一時的に移動されているときに返される。
+		Location:ヘッダに移動先のURLが示されている。
+	</td>
+</tr>
+<tr>
+	<td>308</td>
+	<td>Permanent Redirect</td>
+	<td>恒久的リダイレクト。</td>
+</tr>
+<tr class="rowTitle">
+	<td colspan="3">
+		4xx Client Error(クライアントエラー)
+		クライアントからのリクエストに誤りがあった。
+	</td>
+</tr>
+<tr>
+	<td>400</td>
+	<td>Bad Request</td>
+	<td>
+		リクエストが不正である。定義されていないメソッドを使うなど、
+		クライアントのリクエストがおかしい場合に返される。
+	</td>
+</tr>
+<tr>
+	<td>401</td>
+	<td>Unauthorized</td>
+	<td>
+		認証が必要である。Basic認証やDigest認証などを行うときに使用される。
+		たいていのブラウザはこのステータスを受け取ると、認証ダイアログを表示する。
+	</td>
+</tr>
+<tr>
+	<td>402</td>
+	<td>Payment Required</td>
+	<td>支払いが必要である。現在は実装されておらず、将来のために予約されているとされる。</td>
+</tr>
+<tr>
+	<td>403</td>
+	<td>Forbidden</td>
+	<td>
+		禁止されている。リソースにアクセスすることを拒否された。
+		リクエストはしたが処理できないという意味。
+	</td>
+</tr>
+<tr>
+	<td>404</td>
+	<td>Not Found</td>
+	<td>未検出。リソースが見つからなかった。</td>
+</tr>
+<tr>
+	<td>405</td>
+	<td>Method Not Allowed</td>
+	<td>許可されていないメソッド。許可されていないメソッドを使用しようとした。</td>
+</tr>
+<tr>
+	<td>406</td>
+	<td>Not Acceptable</td>
+	<td>受理できない。Accept関連のヘッダに受理できない内容が含まれている場合に返される。</td>
+</tr>
+<tr>
+	<td>407</td>
+	<td>Proxy Authentication Required</td>
+	<td>プロキシ認証が必要である。プロキシの認証が必要な場合に返される。</td>
+</tr>
+<tr>
+	<td>408</td>
+	<td>Request Timeout</td>
+	<td>リクエストタイムアウト。リクエストが時間以内に完了していない場合に返される。</td>
+</tr>
+<tr>
+	<td>409</td>
+	<td>Conflict</td>
+	<td>矛盾。要求は現在のリソースと矛盾するので完了出来ない。</td>
+</tr>
+<tr>
+	<td>410</td>
+	<td>Gone</td>
+	<td>
+		消滅した。リソースは恒久的に移動・消滅した。
+		どこに行ったかもわからない。
+		404 Not Foundと似ているが、こちらは二度と復活しない場合に使われる。
+		ただし、このコードは特別に設定しないと提示できないため、
+		リソースが消滅しても404コードを出すサイトが多い。
+	</td>
+</tr>
+<tr>
+	<td>411</td>
+	<td>Length Required</td>
+	<td>
+		長さが必要。Content-Length ヘッダがないので
+		サーバがアクセスを拒否した場合に返される。
+	</td>
+</tr>
+<tr>
+	<td>412</td>
+	<td>Precondition Failed</td>
+	<td>前提条件で失敗した。前提条件が偽だった場合に返される。</td>
+</tr>
+<tr>
+	<td>413</td>
+	<td>Request Entity Too Large</td>
+	<td>
+		リクエストエンティティが大きすぎる。
+		リクエストエンティティがサーバの許容範囲を超えている場合に返す。
+	</td>
+</tr>
+<tr>
+	<td>414</td>
+	<td>Request-URI Too Long</td>
+	<td>リクエストURIが大きすぎる。URIが長過ぎるのでサーバが処理を拒否した場合に返す。</td>
+</tr>
+<tr>
+	<td>415</td>
+	<td>Unsupported Media Type</td>
+	<td>
+		サポートしていないメディアタイプ。
+		指定されたメディアタイプがサーバでサポートされていない場合に返す。
+	</td>
+</tr>
+<tr>
+	<td>416</td>
+	<td>Requested Range Not Satisfiable</td>
+	<td>
+		リクエストしたレンジは範囲外にある。
+		実リソースのサイズを超えるデータを要求した。
+		たとえば、リソースのサイズが1024Byteしかないのに、
+		1025Byteを取得しようとした場合などに返す。
+	</td>
+</tr>
+<tr>
+	<td>417</td>
+	<td>Expectation Failed</td>
+	<td>
+		Expectヘッダによる拡張が失敗。その拡張はレスポンスできない。
+		またはプロキシサーバは、次に到達するサーバがレスポンスできないと判断している。
+	</td>
+</tr>
+<tr>
+	<td>418</td>
+	<td>I'm a teapot</td>
+	<td>
+		HTCPCP(Hyper Text Coffee Pot Control Protocol)/1.0の拡張ステータスコード。
+		ティーポットにコーヒーを淹れさせようとして、拒否された場合に返すとされる、
+		ジョークのコードである。
+	</td>
+</tr>
+<tr>
+	<td>422</td>
+	<td>Unprocessable Entity</td>
+	<td>処理できないエンティティ。WebDAVの拡張ステータスコード。</td>
+</tr>
+<tr>
+	<td>423</td>
+	<td>Locked</td>
+	<td>
+		ロックされている。WebDAVの拡張ステータスコード。
+		リクエストしたリソースがロックされている場合に返す。
+	</td>
+</tr>
+<tr>
+	<td>424</td>
+	<td>Failed Dependency</td>
+	<td>依存関係で失敗。WebDAVの拡張ステータスコード。</td>
+</tr>
+<tr>
+	<td>426</td>
+	<td>Upgrade Required</td>
+	<td>
+		アップグレード要求。
+		Upgrading to TLS Within HTTP/1.1の拡張ステータスコード。
+	</td>
+</tr>
+<tr class="rowTitle">
+	<td colspan="3">
+		5xx Server Error(サーバエラー)
+		サーバがリクエストの処理に失敗した。
+	</td>
+</tr>
+<tr>
+	<td>500</td>
+	<td>Internal Server Error</td>
+	<td>サーバ内部エラー。サーバ内部にエラーが発生した場合に返される。</td>
+</tr>
+<tr>
+	<td>501</td>
+	<td>Not Implemented</td>
+	<td>実装されていない。実装されていないメソッドを使用した。</td>
+</tr>
+<tr>
+	<td>502</td>
+	<td>Bad Gateway</td>
+	<td>
+		不正なゲートウェイ。ゲートウェイ・プロキシサーバは不正な要求を受け取り、
+		これを拒否した。
+	</td>
+</tr>
+<tr>
+	<td>503</td>
+	<td>Service Unavailable</td>
+	<td>サービス利用不可。サービスが一時的に過負荷やメンテナンスで使用不可能である。</td>
+</tr>
+<tr>
+	<td>504</td>
+	<td>Gateway Timeout</td>
+	<td>
+		ゲートウェイタイムアウト。ゲートウェイ・プロキシサーバは
+		URIから推測されるサーバからの適切なレスポンスがなくタイムアウトした。
+	</td>
+</tr>
+<tr>
+	<td>505</td>
+	<td>HTTP Version Not Supported</td>
+	<td>
+		サポートしていないHTTPバージョン。
+		リクエストがサポートされていないHTTPバージョンである場合に返される。
+	</td>
+</tr>
+<tr>
+	<td>506</td>
+	<td>Variant Also Negotiates</td>
+	<td>Transparent Content Negotiation in HTTPで定義されている拡張ステータスコード。</td>
+</tr>
+<tr>
+	<td>507</td>
+	<td>Insufficient Storage</td>
+	<td>
+		容量不足。WebDAVの拡張ステータスコード。
+		リクエストを処理するために必要なストレージの容量が足りない場合に返される。
+	</td>
+</tr>
+<tr>
+	<td>509</td>
+	<td>Bandwidth Limit Exceeded</td>
+	<td>
+		帯域幅制限超過。そのサーバに設定されている帯域幅(転送量)を
+		使い切った場合に返される。
+	</td>
+</tr>
+<tr>
+	<td>510</td>
+	<td>Not Extended</td>
+	<td>拡張できない。An HTTP Extension Frameworkで定義されている拡張ステータスコード。</td>
+</tr>
+</table>
+
+
+<span id="last"></span>
+<a href="#sct01">Top</a>
+<a href="#sct12">Before</a>
 <a href="#last">Next</a>
 <a href="#last">last</a>
 </body>
