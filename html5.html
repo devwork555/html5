@@ -2325,7 +2325,7 @@ value ＞＝ low AND value ＝＜ high
 	GoogleやMicrosoftの検索エンジンもHTML Microdataに対応しており、
 	HTMLにメタデータを埋め込む技術としてはデファクトスタンダードになっている。
 	HTML Microdataを用いてメタデータをHTMLに埋め込むには、
-	任意のHTMLに対して以下のような属性を付与する。
+	任意のHTMLに対して下記のような属性を付与する。
 </p>
 <table class="sep">
 <caption>HTML Microdata</caption>
@@ -2373,7 +2373,7 @@ value ＞＝ low AND value ＝＜ high
 	HTML、XHTMLに属性を付与する事でメタデータを指定できる仕様。
 	RDFa、RDFa Liteで表される情報はアイテムと呼ばれ、
 	アイテムが持つ属性はプロパティと呼ばれる。
-	アイテムを定義するには任意のHTML要素に対して以下のような属性を付与する。
+	アイテムを定義するには任意のHTML要素に対して下記のような属性を付与する。
 </p>
 <table class="sep">
 <caption>RDFa、RDFa Lite</caption>
@@ -2443,15 +2443,15 @@ value ＞＝ low AND value ＝＜ high
 	「data:」で始まるURIで、データの内容そのものをURI文字列内に埋め込むことができる。
 	通常はsrcに画像のURLを指定するが、その場合、画像ファイル用のHTTPリクエストが発行される。
 	data URIを使用すればHTTPリクエストを減らすことができる。
-	デメリットとしては以下のようなものがある。
-	<ul>
-		<li>データ量が増加する。</li>
-		<li>ブラウザのキャッシュを利用できない。</li>
-		<li>元の画像が変更になるたびにHTMLやCSSに埋め込まれたデータも修正する必要がある。</li>
-		<li>古いブラウザは対応していない。</li>
-	</ul>
-	書式は下記。
+	デメリットとしては下記のようなものがある。
 </p>
+<ul>
+	<li>データ量が増加する。</li>
+	<li>ブラウザのキャッシュを利用できない。</li>
+	<li>元の画像が変更になるたびにHTMLやCSSに埋め込まれたデータも修正する必要がある。</li>
+	<li>古いブラウザは対応していない。</li>
+</ul>
+<p>書式は下記。</p>
 <p><strong>data:[MIMEタイプ][;charset=文字セット][;base64],データ</strong></p>
 <pre>
 &lt;img src="data:image/jpeg;base64,/df82s/daj1AH・・・・・N9S1GMVB//2Q==" alt=""&gt;
@@ -2459,10 +2459,10 @@ value ＞＝ low AND value ＝＜ high
 
 
 <hr class="sline">
-<h1 id="sct12">(12)HTTP</h1>
+<h1 id="sct12">(12)HTTPメソッド・レスポンスコード</h1>
 <a href="#sct01">Top</a>
 <a href="#sct11">Before</a>
-<a href="#last">Next</a>
+<a href="#sct13">Next</a>
 <a href="#last">Last</a>
 <table class="sep">
 <caption>HTTPメソッド</caption>
@@ -2526,9 +2526,9 @@ value ＞＝ low AND value ＝＜ high
 <table class="sep">
 <caption>HTTPレスポンスコード</caption>
 <tr>
-	<th>コード</th>
-	<th>メソッド</th>
-	<th>概要</th>
+	<th style="white-space:nowrap;">コード</th>
+	<th style="white-space:nowrap;">メソッド</th>
+	<th style="white-space:nowrap;">概要</th>
 </tr>
 <tr class="rowTitle">
 	<td colspan="3">
@@ -2932,9 +2932,414 @@ value ＞＝ low AND value ＝＜ high
 </table>
 
 
-<span id="last"></span>
+<hr class="sline">
+<h1 id="sct13">(13)レスポンシブWebデザイン</h1>
 <a href="#sct01">Top</a>
 <a href="#sct12">Before</a>
+<a href="#sct14">Next</a>
+<a href="#last">Last</a>
+<p>
+	レスポンシブWebデザインとは、
+	<strong>
+		共通のHTMLをCSS3のメディアクエリ(Media Queries)で制御し、
+		デバイスの画面サイズに合わせてレイアウトを最適化して表示する手法。
+	</strong>
+</p>
+<img src="./static/rwebd.jpg" width="450" alt="レスポンシブWebデザイン概念" class="sep" style="display:block;margin-top:20px;">
+<table class="sep">
+<caption>レスポンシブWebデザインのメリット・デメリット</caption>
+<tr>
+	<th>メリット</th>
+	<th>デメリット</th>
+</tr>
+<tr>
+	<td>
+		<ul>
+			<li>
+				デバイスごとにHTMLを用意しなくてよくなるため、管理・修正がしやすくなる。
+			</li>
+			<li>
+				全デバイスで共通のURLとなるため、検索エンジンに適切にインデックスされ、
+				SEO上も効果がでると考えられる。
+			</li>
+		</ul>
+	</td>
+	<td>
+		<ul>
+			<li>
+				HTMLが全デバイス共通となるため、デバイスごとの個別表示に制限がややでる。
+			</li>
+		</ul>
+	</td>
+</tr>
+</table>
+<p>レスポンシブWebデザインの主な手法は下記。</p>
+<ol>
+	<li>メディアクエリ
+		<p>メディア(デバイス)ごとに適用するスタイルを変更する手法。</p>
+	</li>
+	<li>フルードイメージ
+		<p>
+			画面やレイアウト幅に合わせて画像サイズを拡大、
+			縮小してレイアウト調整する手法。
+			imgタグに「max-width: 100%」等を指定する。
+		</p>
+	</li>
+	<li>フルードグリッド
+		<p>
+			グリッドデザイン(ページをグリッドで区切り、
+			pxでレイアウトする手法)を、リキッドデザイン(可変)対応したもの。
+		</p>
+	</li>
+	<li>フルードデザイン
+		<p>ページをデバイスの横幅に合わせ、サイズを%などで調整するデザイン。</p>
+	</li>
+</ol>
+
+<hr>
+<p class="tl">■メディアタイプ</p>
+<p>メディアの種類を指定する。</p>
+<pre>
+&lt;link rel="stylesheet" href="test.css" type="text/css" <strong>media="print"</strong>&gt;
+</pre>
+<p>
+	「media=""」の部分をメディアタイプといい、メディアの種類を指定する。
+	メディアタイプは下記。
+</p>
+<table class="sep">
+<tr>
+	<th>メディアタイプ</th>
+	<th>概要</th>
+</tr>
+<tr>
+	<td>all</td>
+	<td>全てのメディア</td>
+</tr>
+<tr>
+	<td>screen</td>
+	<td>一般的なディスプレイ</td>
+</tr>
+<tr>
+	<td>speech</td>
+	<td>音声読み上げブラウザ</td>
+</tr>
+<tr>
+	<td>braille</td>
+	<td>点字ディスプレイなどのデバイス</td>
+</tr>
+<tr>
+	<td>embossed</td>
+	<td>点字プリンタ</td>
+</tr>
+<tr>
+	<td>handheld</td>
+	<td>ハンドヘルドデバイス(携帯用機器)</td>
+</tr>
+<tr>
+	<td>print</td>
+	<td>印刷用プリンタ</td>
+</tr>
+<tr>
+	<td>projection</td>
+	<td>プロジェクタ</td>
+</tr>
+<tr>
+	<td>tty</td>
+	<td>文字幅固定のデバイス</td>
+</tr>
+<tr>
+	<td>tv</td>
+	<td>テレビ</td>
+</tr>
+</table>
+
+<hr>
+<p class="tl">■メディア特性</p>
+<p>
+	表示方法に関する情報を記述するために使用される。
+	widthやheightなどの特性によって異なるスタイルを適用することができる。
+	メディア特性は下記。
+</p>
+<table class="sep">
+<tr>
+	<th>メディア特性</th>
+	<th>概要</th>
+	<th>指定値</th>
+</tr>
+<tr>
+	<td>width</td>
+	<td>表示領域(viewport)の横幅</td>
+	<td>数値</td>
+</tr>
+<tr>
+	<td>min-width</td>
+	<td>表示領域(viewport)の最小横幅</td>
+	<td>数値</td>
+</tr>
+<tr>
+	<td>max-width</td>
+	<td>表示領域(viewport)の最大横幅</td>
+	<td>数値</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>表示領域(viewport)の高さ</td>
+	<td>数値</td>
+</tr>
+<tr>
+	<td>min-height</td>
+	<td>表示領域(viewport)の最小高さ</td>
+	<td>数値</td>
+</tr>
+<tr>
+	<td>max-height</td>
+	<td>表示領域(viewport)の最大高さ</td>
+	<td>数値</td>
+</tr>
+<tr>
+	<td>device-width</td>
+	<td>デバイスの横幅</td>
+	<td>数値</td>
+</tr>
+<tr>
+	<td>min-device-width</td>
+	<td>デバイスの最小横幅</td>
+	<td>数値</td>
+</tr>
+<tr>
+	<td>max-device-width</td>
+	<td>デバイスの最大横幅</td>
+	<td>数値</td>
+</tr>
+<tr>
+	<td>orientation</td>
+	<td>デバイスの向き</td>
+	<td>portrait⇒縦長<br>landscape⇒横長</td>
+</tr>
+<tr>
+	<td>aspect-ratio</td>
+	<td>表示領域の横縦比</td>
+	<td>横縦比(例：16/9)</td>
+</tr>
+<tr>
+	<td>min-aspect-ratio</td>
+	<td>表示領域の最小横縦比</td>
+	<td>横縦比(例：16/9)</td>
+</tr>
+<tr>
+	<td>max-aspect-ratio</td>
+	<td>表示領域の最大横縦比</td>
+	<td>横縦比(例：16/9)</td>
+</tr>
+<tr>
+	<td>device-aspect-ratio</td>
+	<td>デバイスの横縦比</td>
+	<td>横縦比(例：16/9)</td>
+</tr>
+<tr>
+	<td>min-device-aspect-ratio</td>
+	<td>デバイスの最小横縦比</td>
+	<td>横縦比(例：16/9)</td>
+</tr>
+<tr>
+	<td>max-device-aspect-ratio</td>
+	<td>デバイスの最大横縦比</td>
+	<td>横縦比(例：16/9)</td>
+</tr>
+<tr>
+	<td>color</td>
+	<td>デバイスのカラー・コンポーネントあたりのビット数</td>
+	<td>整数</td>
+</tr>
+<tr>
+	<td>min-color</td>
+	<td>デバイスのカラー・コンポーネントあたりの最小ビット数</td>
+	<td>整数</td>
+</tr>
+<tr>
+	<td>max-color</td>
+	<td>デバイスのカラー・コンポーネントあたりの最大ビット数</td>
+	<td>整数</td>
+</tr>
+<tr>
+	<td>color-index</td>
+	<td>デバイスのカラー参照テーブルの項目数</td>
+	<td>整数</td>
+</tr>
+<tr>
+	<td>min-color-index</td>
+	<td>デバイスのカラー参照テーブルの最小項目数</td>
+	<td>整数</td>
+</tr>
+<tr>
+	<td>max-color-index</td>
+	<td>デバイスのカラー参照テーブルの最大項目数</td>
+	<td>整数</td>
+</tr>
+<tr>
+	<td>monochrome</td>
+	<td>白黒のフレーム・バッファーにおけるピクセルあたりのビット数</td>
+	<td>整数</td>
+</tr>
+<tr>
+	<td>min-monochrome</td>
+	<td>白黒のフレーム・バッファーにおけるピクセルあたりの最小ビット数</td>
+	<td>整数</td>
+</tr>
+<tr>
+	<td>max-monochrome</td>
+	<td>白黒のフレーム・バッファーにおけるピクセルあたりの最大ビット数</td>
+	<td>整数</td>
+</tr>
+<tr>
+	<td>resolution</td>
+	<td>デバイスの解像度</td>
+	<td>dpi OR dpcmで指定</td>
+</tr>
+<tr>
+	<td>min-resolution</td>
+	<td>デバイスの最小解像度</td>
+	<td>dpi OR dpcmで指定</td>
+</tr>
+<tr>
+	<td>max-resolution</td>
+	<td>デバイスの最大解像度</td>
+	<td>dpi OR dpcmで指定</td>
+</tr>
+<tr>
+	<td>scan</td>
+	<td>TVの走査方式</td>
+	<td>progressive<br>interlace</td>
+</tr>
+<tr>
+	<td>grid</td>
+	<td>デバイスがグリッドベースかそれ以外か</td>
+	<td>1⇒グリッドベース<br>0⇒それ以外</td>
+</tr>
+</table>
+
+<hr>
+<p class="tl">■メディアクエリの書式</p>
+<p>
+	メディアクエリではand演算子、,(カンマ = or演算子)、not演算子を使用し、
+	複数の条件を組み合わせて指定できる。書式は下記。
+</p>
+<pre>
+【HTML】
+&lt;link rel="stylesheet" href="test.css" <strong>media="書式"</strong>&gt;
+
+【CSS】
+<strong>@media 書式</strong>{
+  スタイル
+}
+</pre>
+<p>メディアタイプ、メディア特性の記述例は下記。<p>
+<ul>
+	<li>すべてのメディアタイプを指定
+		<pre>
+@media <strong>all</strong> and (min-width: 600px){
+  スタイル
+}
+		</pre>
+		「all」と「and」は省略できるので、メディアタイプの指定がない場合、
+		allが指定されていることになる。そのため上記は下記と同じになる。
+		<pre>
+【HTML】
+&lt;link <strong>media="(min-width: 600px)"</strong> rel="stylesheet" href="test.css"&gt;
+
+【CSS】
+<strong>@media (min-width:600px)</strong>{
+  スタイル
+}
+		</pre>
+	</li>
+	<li>メディアタイプのみ指定
+		<p>一般的なディスプレイを指定。</p>
+		<pre>
+【HTML】
+&lt;link <strong>media="screen"</strong> rel="stylesheet" href="test.css"&gt;
+
+【CSS】
+@media <strong>screen</strong>{
+  スタイル
+}
+		</pre>
+	</li>
+	<li>特定のメディアタイプを指定
+		<p>表示領域幅が480px以上の一般的なディスプレイを指定。</p>
+		<pre>
+【HTML】
+&lt;link <strong>media="screen and (min-width: 480px)"</strong> rel="stylesheet" href="test.css"&gt;
+
+【CSS】
+@media <strong>screen and (min-width: 480px)</strong> {
+  スタイル
+}
+		</pre>
+	</li>
+	<li>複数条件を指定
+		<p>
+			表示領域幅が480px以上の一般的なディスプレイ、
+			もしくはデバイス向きが横のハンドヘルドデバイスを指定。
+		</p>
+		<pre>
+【HTML】
+&lt;link <strong>media="screen and (min-width: 480px),handheld and (orientation:landscape)"</strong> rel="stylesheet" href="test.css"&gt;
+
+【CSS】
+@media <strong>screen and (min-width: 480px),handheld and (orientation:landscape)</strong> {
+  スタイル
+}
+		</pre>
+	</li>
+</ul>
+<p><strong>※メディアクエリはIE8ではサポートされていない。</strong></p>
+
+<hr>
+<p class="tl">■ブレークポイント</p>
+<p>
+	メディアクエリは、デバイスごとの解像度や表示領域などで適用するCSSを変更し、
+	デバイスごとの表示を切り替える。
+	そのためには表示を切り替えるポイントになる画面幅等を決める必要がある。
+	この切替ポイントをブレークポイントと呼ぶ。
+</p>
+<p>
+	現在では多様なデバイスが存在し、ブレークポイントに決まった数値はない。
+	そのため、一般的にはシェアが高いデバイスの値を基準にしてブレークポイントを決める。
+	まずは基準となるメジャーブレークポイント(小さい値から順に決める方が
+	メジャーブレークポイントの数を最小限に抑えられる)を決め、
+	その後、必要に応じてデバイスごとの細かい調整であるマイナーブレークポイントを決める。
+</p>
+
+<hr>
+<p class="tl">■グリッドデザイン、グリッドシステム</p>
+<ul>
+	<li>グリッドデザイン
+		<p>
+			縦横方向のグリッド上のガイドラインに沿ってデザインを行う手法。
+			コンテンツの目的に合わせ、グリッドやガター(グリッド間の隙間)を作成し、
+			ガイドラインとなるグリッドのレイアウトに沿って、画像、文字、ボタンなどを
+			配置する。
+		</p>
+	</li>
+	<li>グリッドシステム
+		<p>
+			グリッドを組み合わせることでデザインする手法。
+			コンテンツの目的に合わせ、グリッドやガター(グリッド間の隙間)を作成し、
+			ガイドラインとなるグリッドのレイアウトに沿って、画像、文字、ボタンなどを
+			配置する。
+		</p>
+		<img src="./static/gridsystem.png" width="450" alt="グリッドシステム" class="sep" style="display:block;margin-top:20px;">
+	</li>
+</ul>
+
+
+
+
+
+<span id="last"></span>
+<a href="#sct01">Top</a>
+<a href="#sct13">Before</a>
 <a href="#last">Next</a>
 <a href="#last">last</a>
 </body>
