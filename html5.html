@@ -808,7 +808,7 @@ function renderCanvas(){
 
 <hr>
 <p class="tl">■map,area</p>
-<img src="./static/japan1.gif" alt="日本地図" width="400" height="305" usemap="#shape1" id="shape1">
+<img src="./static/japan1.gif" width="400" height="305" alt="日本地図" usemap="#shape1" id="shape1">
 <map name="shape1">
 	<area shape="poly" coords="305,11,390,11,390,66,330,66,330,79,305,79" href="javascript:alert('北海道(図)');" alt="北海道">
 	<area shape="poly" coords="302,83,349,83,349,141,343,141,343,169,279,169,279,149,291,150,291,141,302,141" href="javascript:alert('東北(図)');" alt="東北">
@@ -3112,6 +3112,21 @@ value ＞＝ low AND value ＝＜ high
 	<td>数値</td>
 </tr>
 <tr>
+	<td>device-height</td>
+	<td>デバイスの高さ</td>
+	<td>数値</td>
+</tr>
+<tr>
+	<td>min-device-height</td>
+	<td>デバイスの最小高さ</td>
+	<td>数値</td>
+</tr>
+<tr>
+	<td>max-device-height</td>
+	<td>デバイスの最大高さ</td>
+	<td>数値</td>
+</tr>
+<tr>
 	<td>orientation</td>
 	<td>デバイスの向き</td>
 	<td>portrait⇒縦長<br>landscape⇒横長</td>
@@ -3325,8 +3340,511 @@ value ＞＝ low AND value ＝＜ high
 	<li>グリッドシステム
 		<p>グリッドを組み合わせてデザインする手法。</p>
 		<img src="./static/gridsystem.png" width="450" alt="グリッドシステム" class="sep" style="display:block;margin-top:20px;">
+		<pre>
+【HTML】
+&lt;div class="container clearfix"&gt;
+  &lt;div class="grid6 first"&gt;2等分&lt;/div&gt;
+  &lt;div class="grid6"&gt;2等分&lt;/div&gt;
+
+  &lt;div class="grid4 first"&gt;3等分&lt;/div&gt;
+  &lt;div class="grid4"&gt;3等分&lt;/div&gt;
+  &lt;div class="grid4"&gt;3等分&lt;/div&gt;
+
+  &lt;div class="grid3 first"&gt;4等分&lt;/div&gt;
+  &lt;div class="grid3"&gt;4等分&lt;/div&gt;
+  &lt;div class="grid3"&gt;4等分&lt;/div&gt; 
+  &lt;div class="grid3"&gt;4等分&lt;/div&gt; 
+&lt;/div&gt;
+
+【CSS】
+.container{
+  width: 978px;
+  margin: 0 auto;
+}
+
+.grid1, .grid2, .grid3, .grid4, .grid5, .grid6, .grid7, .grid8, .grid9, .grid10, .grid11 {
+  float: left;
+  display: inline;
+  margin-left: 30px;
+}
+
+.grid1 {width: 54px;}
+.grid2 {width: 138px;}
+.grid3 {width: 222px;}
+.grid4 {width: 306px;}
+.grid5 {width: 390px;}
+.grid6 {width: 474px;}
+.grid7 {width: 558px;}
+.grid8 {width: 642px;}
+.grid9 {width: 726px;}
+.grid10 {width: 810px;}
+.grid11 {width: 894px;}
+.first {margin-left: 0;clear: left;}
+
+/* clearfix */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+		</pre>
 	</li>
 </ul>
+
+<hr>
+<p class="tl">■フルードデザイン、フルードイメージ、フルードグリッド</p>
+<ul>
+	<li>フルードデザイン
+		<p>
+			画面幅に合わせて、コンテンツの横幅が可変するデザイン。
+			横幅を絶対単位(px)ではなく、相対単位(%等)で指定することで
+			画面幅によって可変するデザインが可能となる。
+		</p>
+	</li>
+	<li>フルードイメージ
+		<p>
+			CSSで画像のサイズをデバイスの画面内に収まるように、
+			縦横比を保持したまま拡大･縮小する技法。
+			CSSでimgタグに%で画像幅を指定する。想定される最大の画面幅に合わせて画像を
+			用意する。そのため容量が大きくなり、モバイルなどでは負担になるデメリットがある。
+		</p>
+		<pre>
+img {max-width: 100%;}
+
+<strong>img要素内ではwidth、heightの指定は行わない！</strong>
+		</pre>
+	</li>
+	<li>フルードグリッド
+		<p>
+			リキッドデザイン(可変)に対応したグリッドのこと。
+			グリッドデザインの幅を絶対単位(px)ではなく、相対単位(%等)で指定する。
+			値の変換式は下記。
+		</p>
+		<p>変換前の幅(px) ÷ 親要素の幅(px) × 100</p>
+		<strong>
+			%の小数点以下の扱いはブラウザによって切り上げ、切捨てなど扱いが異なる。
+		</strong>
+	</li>
+</ul>
+
+
+<hr class="sline">
+<h1 id="sct14">(14)スマートフォンの画面サイズと解像度</h1>
+<a href="#sct01">Top</a>
+<a href="#sct13">Before</a>
+<a href="#sct15">Next</a>
+<a href="#last">Last</a>
+<p class="tl">■デバイスピクセル、CSSピクセル</p>
+<p>
+	デバイスピクセルとCSSピクセルの比率のことをデバイスピクセル比と呼ぶ。
+	Retinaディスプレイが搭載されたiPhone4以降の解像度は940×640で
+	デバイスピクセル比は2:1になる。
+	デバイスピクセル比が1:1の場合、1CSSピクセルが1デバイスピクセルで描画される。
+	デバイスピクセル比が2:1の場合、1CSSピクセルが4デバイスピクセルで描画される。
+</p>
+<img src="./static/dcp.png" width="450" alt="グリッドシステム" class="sep" style="display:block;margin-top:20px;">
+
+<hr>
+<p class="tl">■ピクセル密度</p>
+<p>
+	ピクセル密度とは、1インチ内のピクセル数(単位：ppi ⇒ pixels per inch)。
+	1インチ内に何ドットを割り当てるかをドット密度(単位：dpi ⇒ dots per inch)というが、
+	基本的にppiのサイズとdpiのサイズは同じになる。
+</p>
+
+<hr>
+<p class="tl">■高解像度ディスプレイへの対応</p>
+<ol>
+	<li>高解像度用に大きなサイズの画像を用意
+		<p>
+			画像を読み込む際、大きなサイズの画像を用意して、
+			img要素のwidthとheightに<strong>実際に表示したいサイズ</strong>を指定する。
+			例えば、デバイスピクセル比が2:1、画像を150px×150pxにしたい場合は、
+			2倍のサイズ(300px×300px)の画像を用意し、img要素のwidthとheightに150を指定する。
+		</p>
+		<pre>
+&lt;img width="150" height="150"&gt;
+		</pre>
+	</li>
+	<li>メディアクエリで高解像度対応のスタイルを適用する
+		<p>
+			背景画像に指定し、メディアクエリで解像度別に切り替える。
+			「-webkig-device-pixel-ratio」はApple社がRetinaディスプレイ開発時に
+			独自に拡張したものだが、AndroidやChromeでも利用できるようになった。
+		</p>
+		<pre>
+.smp{
+  background-image: url('normal.png');
+}
+
+@media screen and (<strong>-webkit-device-pixel-ratio: 2</strong>){
+  .smp{
+    background-image: url('2bai.png');
+  }
+}
+		</pre>
+		<p>
+			ベンダープレフィックスとは草案段階の仕様を、ブラウザベンダーが実装する場合や
+			独自の拡張機能を実装する場合に付ける識別子のこと。
+			CSSの各プロパティの先頭に-moz、-webkitを追加する。
+		</p>
+		<ul>
+			<li>-moz ⇒ Firefox</li>
+			<li>-webkit ⇒ Chrome、Safari</li>
+			<li>-o ⇒ Opera</li>
+			<li>-ms ⇒ IE</li>
+		</ul>
+	</li>
+	<li>ビットマップ以外を使用する
+		<p>
+			拡大･縮小してもきれいなベクターデータ(SVG)を使用し、
+			CSSで描画できるところはCSSに置き換える。
+		</p>
+		<pre>
+【ビットマップ】
+&lt;img src="test.png"&gt;
+
+【ベクターデータ】
+&lt;object data="test.svg" type="image/svg+xml"&gt;
+		</pre>
+	</li>
+</ol>
+
+<hr>
+<p class="tl">■viewport</p>
+<p>
+	viewportをHTMLのmeta要素として記述することで、
+	デバイスの幅に合わせて表示されるようになる。
+	viewportの書式、値は下記。
+</p>
+<pre>
+&lt;meta name="viewport" content="[プロパティ]=[値](,[プロパティ]=[値]・・・)"&gt;
+</pre>
+<table class="sep">
+<tr>
+	<th>プロパティ</th>
+	<th>概要</th>
+	<th>初期値</th>
+	<th>値の範囲</th>
+</tr>
+<tr>
+	<td>width</td>
+	<td>viewportの横幅</td>
+	<td>980px</td>
+	<td>200～10000px、device-width</td>
+</tr>
+<tr>
+	<td>height</td>
+	<td>viewportの高さ</td>
+	<td>横幅と縦横比から計算される値</td>
+	<td>200～10000px、device-height</td>
+</tr>
+<tr>
+	<td>device-width</td>
+	<td>デバイスの横幅</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>device-height</td>
+	<td>デバイスの高さ</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>initial-scale</td>
+	<td>初期倍率</td>
+	<td>表示範囲から計算される値</td>
+	<td>minimum-scale～maximum-scale</td>
+</tr>
+<tr>
+	<td>minimum-scale</td>
+	<td>最小倍率</td>
+	<td>0.25</td>
+	<td>0～10</td>
+</tr>
+<tr>
+	<td>minimum-scale</td>
+	<td>最大倍率</td>
+	<td>1.6</td>
+	<td>0～10</td>
+</tr>
+<tr>
+	<td>user-scalable</td>
+	<td>拡大縮小の可否</td>
+	<td>yes(= 1)</td>
+	<td></td>
+</tr>
+</table>
+
+
+<hr class="sline">
+<h1 id="sct15">(15)軽量化・高速化技術</h1>
+<a href="#sct01">Top</a>
+<a href="#sct14">Before</a>
+<a href="#sct16">Next</a>
+<a href="#last">Last</a>
+<p class="tl">■CSSスプライト</p>
+<p>
+	CSSスプライトは、複数の画像を1ファイルにまとめ、
+	HTTPリクエスト数を減らし、レスポンスを高める技術。
+	画像の座標を指定して表示する画像を切り替える。
+	CSSスプライトで作成した場合、画像の修正コストが高くなる。
+	またbackground-repeatでリピート指定はできないため、
+	アイコンなどリピートの必要のない画像に適している。
+</p>
+
+<hr>
+<p class="tl">■async属性、defer属性</p>
+<p>
+	script要素にsrc属性がある場合、async属性やdefer属性を記述することで、
+	外部のスクリプトを非同期(ページ描画をブロックしない)に読込むことができる。
+	async属性を指定した場合、<strong>スクリプトファイル読込完了後</strong>
+	にスクリプトが実行される。
+	defer属性を指定した場合、<strong>ページの読込完了後</strong>
+	にスクリプトが実行される。
+	async属性とdefer属性の両方を指定した場合、async属性が優先され、
+	async属性をサポートしていないブラウザではdefer属性が適用される。
+</p>
+
+
+<hr class="sline">
+<h1 id="sct16">(16)その他の技術</h1>
+<a href="#sct01">Top</a>
+<a href="#sct15">Before</a>
+<a href="#sct17">Next</a>
+<a href="#last">Last</a>
+<p class="tl">■リセットCSS</p>
+<p>
+	ブラウザごとに各タグに対して初期値が異なる。
+	初期値が異なっているため、同じHTMLでもブラウザごとに
+	表示が異なる場合がある。
+	そのため、最初にブラウザの<strong>初期値をリセットするCSS(リセットCSS)</strong>を
+	読込み表示の差異をクリアする(CSSは上から順に読み込まれるので、
+	後に読み込んだもので上書きされる)。
+	代表的なリセットCSSは下記。
+</p>
+<ul>
+	<li>html5reset.css</li>
+	<li>YUI Library</li>
+</ul>
+<p>
+	リセットCSSはスタイルを初期化するものだが、有用なスタイルを残して正常化する
+	目的で開発されたものがNormalize.css。
+</p>
+
+<hr>
+<p class="tl">■ファビコン、アイコン</p>
+<p>
+	ファビコン(Favorite icon)とは、ブラウザのアドレスバーの左側や、
+	ブックマーク時にURLの左側に表示されるアイコンのこと。
+	作成手順は下記。
+</p>
+<ol>
+	<li>ico形式(.ico)でアイコンを作成する。サイズは16px×16pxが好ましい。
+		<p>
+			gif形式、png形式や、サイズ32px×32px、48px×48px、64px×64px、
+			128px×128px、258px×258px等だとブラウザによっては表示されない。
+		</p>
+	</li>
+	<li>作成したファビコンをサーバにアップロードする。</li>
+	<li>head要素内のlink要素でファビコンを指定する。
+		<pre>
+&lt;link rel="shortcut icon" href="ファビコンのURL"&gt;
+		</pre>
+	</li>
+</ol>
+
+<hr>
+<p class="tl">■電話番号へのリンク</p>
+<p>
+	スマートフォンのブラウザではHTMLに記述された電話番号は
+	自動的にリンクとなり、タップすると通話できる仕様になっている。
+	電話番号だけでなく、郵便番号等の数字も自動的にリンクになる。
+	なお、meta要素で自動リンクを制御できる。
+</p>
+<pre>
+&lt;meta name="format-detection" content="telephone=no"&gt;
+</pre>
+
+<hr>
+<p class="tl">■スタンドアローンモード</p>
+<p>
+	スタンドアローンモードを指定すると、アドレスバーが非表示となり、
+	アプリのような表示になる。
+	なお、スタンドアローンモードに対応しているのはiOSのみ。
+</p>
+<pre>
+&lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+
+content属性でステータスバーの表示を指定することも可能
+&lt;meta name="apple-mobile-web-app-status-bar-style" content="default"&gt;
+
+※content属性に指定する値
+default ⇒ デフォルトの表示
+black ⇒ 黒色
+black-translucent ⇒ 黒色半透明
+</pre>
+
+
+<hr class="sline">
+<h1 id="sct17">(17)アプリケーションキャッシュ</h1>
+<a href="#sct01">Top</a>
+<a href="#sct16">Before</a>
+<a href="#sct18">Next</a>
+<a href="#last">Last</a>
+<p>
+	オフラインWebアプリケーションを実現するために、HTML5から導入された仕組み。
+	アプリケーションキャッシュを使用すると、HTML、CSS、JavaScript、画像といった
+	リソースをローカルにキャッシュさせることができる。
+	アプリケーションキャッシュはJavaScriptからも制御することができ、
+	キャッシュ動作の進捗状況を監視する等も可能。
+</p>
+<p>
+	アプリケーションキャッシュは<strong>マニフェストファイル</strong>と呼ばれる
+	構成ファイルによって制御される。
+	マニフェストファイルはテキストファイルで、拡張子を<strong>.appcache</strong>
+	にするのが一般的で、MIMEタイプ<strong>text/cache-manifest</strong>で配信する必要がある
+	(Webサーバで設定する)。
+</p>
+<p>
+	apatchの場合、httpd.confファイルと同フォルダにある、mime.typeというファイルに記載するか、
+	.htaccessファイルに記載する。
+</p>
+<pre>
+【マニフェストファイル】
+CACHE MANIFEST
+
+test.html
+test.css
+
+
+【mime.type】
+text/cache-manifest        appcache
+
+【.htaccess】
+AddType text/cache-manifest appcache
+</pre>
+<p>
+	マニフェストファイル作成後、html要素のmanifest属性に
+	マニフェストファイルのURLを指定する。
+	manifest属性が指定されている場合の動作は下記。
+</p>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html manifest="manifest.appcache"&gt;
+</pre>
+<img src="./static/cache.png" width="250" alt="アプリケーションキャッシュの動作" class="sep" style="display:block;margin-top:20px;">
+<p>
+	マニフェストファイルに従ってキャッシュが完了すると、
+	オフラインでも利用可能になる。
+	マニフェストファイルが以前と1バイトでも異なっていれば、
+	アプリケーションキャッシュが更新される。逆を言えば、
+	<strong>
+		マニフェストファイルが更新されないと、
+		アプリケーションキャッシュは更新されない。
+	</strong>
+	そのため、アプリケーションキャッシュを利用する場合、リソースを更新したら
+	マニフェストファイルも更新する必要がある。
+	一般的にはマニフェストファイルにファイルのバージョンを表すコメント行を設け、
+	リソースを更新するたびに、コメント行を更新することが多い。
+</p>
+<pre>
+CACHE MANIFEST
+
+#time stamp 20150626 10:00:00 ← リソース更新時にコメントも更新
+test.html
+test.css
+</pre>
+
+<hr>
+<p class="tl">■マニフェストファイルの書式</p>
+<pre>
+CACHE MANIFEST
+
+#time stamp 20150626 10:00:00
+
+#セクション未指定(CACHEセクションとして扱われる)
+test.html
+
+#FALLBACKセクション
+FALLBACK:
+./    fallback.html
+
+#CACHEセクション
+CACHE:
+test.css
+
+#SETTINGSセクション
+SETTINGS:
+prefer-online
+
+#NETWORKセクション
+NETWORK:
+*
+</pre>
+<p>マニフェストファイルの書式の基本ルールは下記。</p>
+<ul>
+	<li>1行目に<strong>CACHE MANIFEST</strong>を記載する。</li>
+	<li><strong>text/cache-manifest</strong>というMIMEタイプで配信する。</li>
+	<li>文字コードは<strong>UTF-8</strong>にする。</li>
+	<li>#で始まる行はコメントになる。</li>
+	<li>エントリは改行で区切られ、改行コードはLF、CRLF、CRのどれでもよい。</li>
+	<li>相対URLを用いる場合はマニフェストファイルのURLが基準となる。</li>
+	<li>他オリジン(スキーム＋ホスト＋ポート)のリソースを指定することはできない</li>
+</ul>
+<p>マニフェストファイルのセクションに関する基本ルールは下記</p>
+<ul>
+	<li>セクションはセクション名に続けて:(コロン)を記述し改行する。</li>
+	<li>セクションの範囲は別セクションが始まるまで。</li>
+	<li>同じセクションを複数回記述してもよい。</li>
+	<li>セクションを<strong>明示的に記述していない場合はCACHEセクション</strong>になる。</li>
+	<li>セクションには下記4種類がある。
+		<ol>
+			<li>CACHE</li>
+			<li>FALLBACK</li>
+			<li>NETWORK</li>
+			<li>SETTING</li>
+		</ol>
+	</li>
+</ul>
+<ol>
+	<li>CACHEセクション
+		<p>
+			このセクションに記述されたリソースは自動的にキャッシュされる。
+			セクションを明示的に指定していない場合もCACHEセクションとなる。
+		</p>
+	</li>
+	<li>FALLBACKセクション
+		<p>リソースにアクセスできなかった場合の代替リソースを指定する。書式は下記。</p>
+		<pre>
+代替リソースを用いる対象となるリソース 代替リソース
+
+FALLBACK:
+/ fallback.html
+
+1つめのリソースは<strong>前方一致で比較</strong>される。
+		</pre>
+	</li>
+	<li>NETWORKセクション
+		<p>
+			NETWORKセクションのリソースは、必ずネットワークから取得される。
+			NETWORKセクションも前方一致で比較される。*も指定可能。
+		</p>
+	</li>
+	<li>SETTEINGSセクション
+		<p>
+			アプリケーションキャッシュの設定を行うセクション。
+			現状はprefer-onlineのみ指定できる。
+			prefer-onlineを指定するとアプリケーションキャッシュがオフライン時のみ利用され、
+			オンライン時は利用されなくなる。
+		</p>
+	</li>
+</ol>
+
 
 
 
@@ -3334,7 +3852,7 @@ value ＞＝ low AND value ＝＜ high
 
 <span id="last"></span>
 <a href="#sct01">Top</a>
-<a href="#sct13">Before</a>
+<a href="#sct16">Before</a>
 <a href="#last">Next</a>
 <a href="#last">last</a>
 </body>

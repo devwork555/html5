@@ -214,10 +214,21 @@
 </li>
 <li>
 	em
-	<p>1文字分の長さを1として算出される。</p>
-	<p style="font-size:1.5em;">style="font-size:1.5em;"</p>
-	<p style="font-size:1em;">style="font-size:1em;"</p>
-	<p style="font-size:0.5em;">style="font-size:0.5em;"</p>
+	<p>その要素の親要素に対する割合で算出される</p>
+	<div style="font-size:12px;">
+		<p style="font-size:1.5em;">style="font-size:1.5em;"</p>
+		<p style="font-size:1em;">style="font-size:1em;"</p>
+		<p style="font-size:0.5em;">style="font-size:0.5em;"</p>
+	</div>
+</li>
+<li>
+	rem
+	<p>HTMLの単位に対する割合で算出される</p>
+	<div style="font-size:12px;">
+		<p style="font-size:1.5rem;">style="font-size:1.5rem;"</p>
+		<p style="font-size:1rem;">style="font-size:1rem;"</p>
+		<p style="font-size:0.5rem;">style="font-size:0.5rem;"</p>
+	</div>
 </li>
 </ul>
 
