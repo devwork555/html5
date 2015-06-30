@@ -9,6 +9,9 @@
 			color: #ff0000;
 			font-weight: bold;
 		}
+		img{
+			max-width: 100%;
+		}
 		table,th,td{
 			border:1px solid;
 			border-collapse:collapse;
@@ -257,7 +260,7 @@
 
 <ul>
 <li>
-	<strong>全ての要素</strong>に適用される
+	<strong>全ての要素</strong>に適用
 	<p>*{margin: 0;}</p>
 </li>
 <li>
@@ -265,7 +268,7 @@
 	<p>div *{margin: 0;}</p>
 </li>
 <li>
-	div<strong>要素に含まれる</strong>p要素に適用 */
+	div<strong>要素に含まれる</strong>p要素に適用
 	<p>div p{margin: 0;}</p>
 	<pre>
 &lt;div&gt;
@@ -430,11 +433,11 @@
 	<p>a:focus{font-weight: bold;}</p>
 </li>
 <li>:first-child
-	<p>指定要素の最初の子要素にスタイルを適用</p>
+	<p>指定要素の親要素の最初の子要素にスタイルを適用</p>
 	<p>.classname:first-child{font-weight: bold;}</p>
 </li>
 <li>:last-child
-	<p>指定要素の最後の子要素にスタイルを適用</p>
+	<p>指定要素の親要素の最後の子要素にスタイルを適用</p>
 	<p>.classname:last-child{font-weight: bold;}</p>
 </li>
 <li>:target
@@ -458,7 +461,7 @@
 </li>
 <li>:nth-child(n)
 	<p>
-		指定要素の最初からn番目の要素にスタイルを適用。
+		指定要素の親要素の最初からn番目の要素にスタイルを適用。
 		<strong>
 			指定要素以外の要素もカウントされるため、
 			指定要素以外の要素がn番目にあたる場合、
@@ -469,7 +472,7 @@
 </li>
 <li>:nth-last-child(n)
 	<p>
-		指定要素の最後からn番目の要素にスタイルを適用。
+		指定要素の親要素の最後からn番目の要素にスタイルを適用。
 		<strong>
 			指定要素以外の要素もカウントされるため、
 			指定要素以外の要素がn番目にあたる場合、
@@ -480,28 +483,28 @@
 </li>
 <li>:nth-of-type(n)
 	<p>
-		指定要素の最初からn番目の要素にスタイルを適用。
+		指定要素の親要素の最初からn番目の要素にスタイルを適用。
 		<strong>指定要素以外の要素はカウントされない</strong>
 	</p>
 	<p>li:nth-of-type(2){color: red;}</p>
 </li>
 <li>:nth-last-of-type(n)
 	<p>
-		指定要素の最後からn番目の要素にスタイルを適用。
+		指定要素の親要素の最後からn番目の要素にスタイルを適用。
 		<strong>指定要素以外の要素はカウントされない</strong>
 	</p>
 	<p>li:nth-last-of-type(2){color: red;}</p>
 </li>
 <li>:first-of-type
 	<p>
-		指定要素の最初の要素にスタイルを適用。
+		指定要素の親要素の最初の要素にスタイルを適用。
 		<strong>指定要素以外の要素はカウントされない</strong>
 	</p>
 	<p>li:first-of-type{color: red;}</p>
 </li>
 <li>:last-of-type
 	<p>
-		指定要素の最後の要素にスタイルを適用。
+		指定要素の親要素の最後の要素にスタイルを適用。
 		<strong>指定要素以外の要素はカウントされない</strong>
 	</p>
 	<p>li:last-of-type{color: red;}</p>
@@ -657,7 +660,7 @@
 <a href="#sct06">Before</a>
 <a href="#sct08">Next</a>
 <a href="#last">Last</a>
-<img src="./static/boxmodel.gif" width="450" alt="ボックスモデル" style="display:block;margin-top:20px;">
+<img src="./static/boxmodel.gif" alt="ボックスモデル" style="display:block;margin-top:20px;">
 <p class="tl">■width,height</p>
 <p>要素の幅(width)、高さ(height)を決める。相対単位、もしくは絶対単位で値を指定する。</p>
 <div style="border:1px solid;width:300px;height:300px;">
