@@ -289,7 +289,7 @@
   &lt;p&gt;div要素の内容&lt;/p&gt;
 &lt;/div&gt;
 </pre>
-<p>特別な意味を持たない要素。どうしても他の要素を指定するのが適切出ない場合のみ使用する。</p>
+<p>特別な意味を持たない要素。どうしても他の要素を指定するのが適切でない場合のみ使用する。</p>
 
 <hr>
 <p class="tl">■pre</p>
@@ -303,10 +303,7 @@
   インデント、改行もそのまま表示される。
 &lt;/pre&gt;
 </pre>
-<p>
-	整形済みテキスト。インデント、改行もそのまま表示される。
-	フォントサイズが替わる。
-</p>
+<p>整形済みテキスト。インデント、改行もそのまま表示される。</p>
 
 <hr>
 <p class="tl">■blockquote</p>
@@ -318,10 +315,7 @@ blockquote要素の内容
   blockquote要素の内容
 &lt;/blockquote&gt;
 </pre>
-<p>
-	インデントされる。
-	他から文書などを引用したセクションであることを表す。
-</p>
+<p>他から文書などを引用したセクションであることを表す。</p>
 
 <hr>
 <p class="tl">■figure,figcaption</p>
@@ -366,10 +360,7 @@ blockquote要素の内容
 &lt;/strong&gt;
 普通の文言
 </pre>
-<p>
-	太字になる。
-	入れ子にすることも可能。入れ子の階層が深いほど、その内容の重要性が増す。
-</p>
+<p>入れ子にすることも可能。入れ子の階層が深いほど、その内容の重要性が増す。</p>
 
 <hr>
 <p class="tl">■small</p>
@@ -377,11 +368,7 @@ blockquote要素の内容
 <pre>
 本文&lt;small class="el"&gt;注意事項：注意！&lt;/small&gt;
 </pre>
-<p>
-	フォントサイズが小さくなる。
-	注意事項、免責事項等に使用する。
-	<strong>重要度や強調の意味は無い。</strong>
-</p>
+<p>注意事項、免責事項等に使用する。<strong>重要度や強調の意味は無い。</strong></p>
 
 <hr>
 <p class="tl">■time</p>
@@ -620,10 +607,7 @@ aaaaaaaaaaaaaaaaaaaaaa⇒&lt;wbr class="el"&gt;return
 <pre>
 &lt;ins class="el"&gt;追加されたテキストや画像&lt;/ins&gt;
 </pre>
-<p>
-	下線が付く。
-	追加された部分であることを示す際に使用する。
-</p>
+<p>追加された部分であることを示す際に使用する。</p>
 
 <hr>
 <p class="tl">■del</p>
@@ -631,10 +615,7 @@ aaaaaaaaaaaaaaaaaaaaaa⇒&lt;wbr class="el"&gt;return
 <pre>
 &lt;del class="el"&gt;削除箇所　削除箇所&lt;/del&gt;
 </pre>
-<p>
-	取消線が付く。
-	削除された部分であることを示す際に使用する。
-</p>
+<p>削除された部分であることを示す際に使用する。</p>
 
 <hr>
 <p class="tl">■s</p>
@@ -642,10 +623,7 @@ aaaaaaaaaaaaaaaaaaaaaa⇒&lt;wbr class="el"&gt;return
 <pre>
 &lt;s class="el"&gt;正確ではないテキスト&lt;/s&gt;
 </pre>
-<p>
-	取消線が付く。
-	テキストが正確でないことを示す場合に使用する。
-</p>
+<p>テキストが正確でないことを示す場合に使用する。</p>
 
 
 <hr class="sline">
@@ -856,12 +834,12 @@ function renderCanvas(){
 			任意のimg要素のイメージマップを定義する。
 			map要素内に複数のarea要素を配置する。
 			また、map要素の中には、その他のコンテンツも配置することが可能。
+			id属性を指定する場合は、name属性と同値にしなければならない。
 		</p>
 	</li>
 	<li>area
 		<p>
 			画像内にリンクを指定する場合にmap要素内に指定する。
-			id属性を指定する場合は、name属性と同値にしなければならない。
 			HTML5ではリンク領域はarea要素でのみ指定が可能となった。
 			また、input要素との関連付けが不可となった。
 		</p>
@@ -980,7 +958,7 @@ function renderCanvas(){
 		<p>表組みを作成する際に使用する。レイアウトのために使用すべきではない。</p>
 	</li>
 	<li>thead
-		<p>表のヘッダを定義する。table要素内に1つのみ記述可能。</p>
+		<p>表のヘッダを定義する。<strong>table要素内に1つのみ</strong>記述可能。</p>
 	</li>
 	<li>tbody
 		<p>
@@ -990,7 +968,7 @@ function renderCanvas(){
 		</p>
 	</li>
 	<li>tfoot
-		<p>表のフッタを定義する。table要素内に1つのみ記述可能。</p>
+		<p>表のフッタを定義する。<strong>table要素内に1つのみ</strong>記述可能。</p>
 	</li>
 	<li>th
 		<p>表の見出しを表す。scope属性によって、どのデータの見出しかを指定することができる。</p>
@@ -1086,7 +1064,7 @@ function renderCanvas(){
 </pre>
 <p>
 	表のタイトルを表す。table要素の子要素のため必ずtable要素が親要素として必要となり、
-	1つのtable要素に対して1つのみ指定可能。
+	<strong>1つのtable要素に対して1つのみ</strong>指定可能。
 	table要素がfigure要素内に記述されている場合はcaption要素ではなく、
 	figcaption要素を使用する。
 </p>
@@ -3093,7 +3071,7 @@ img {max-width: 100%;}
 	<td>0～10</td>
 </tr>
 <tr>
-	<td>minimum-scale</td>
+	<td>maximum-scale</td>
 	<td>最大倍率</td>
 	<td>1.6</td>
 	<td>0～10</td>
