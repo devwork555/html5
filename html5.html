@@ -10,6 +10,9 @@
 			color: #ff0000;
 			font-weight: bold;
 		}
+		img{
+			max-width: 100%;
+		}
 		.tl{
 			font-weight:bold;
 			font-size:1.5em;
@@ -786,7 +789,7 @@ function renderCanvas(){
 
 <hr>
 <p class="tl">■map,area</p>
-<img src="./static/japan1.gif" width="400" height="305" alt="日本地図" usemap="#shape1" id="shape1">
+<img src="./static/japan1.gif" alt="日本地図" usemap="#shape1" id="shape1">
 <map name="shape1">
 	<area shape="poly" coords="305,11,390,11,390,66,330,66,330,79,305,79" href="javascript:alert('北海道(図)');" alt="北海道">
 	<area shape="poly" coords="302,83,349,83,349,141,343,141,343,169,279,169,279,149,291,150,291,141,302,141" href="javascript:alert('東北(図)');" alt="東北">
@@ -807,7 +810,7 @@ function renderCanvas(){
 	<area shape="rect" coords="31,114,105,132" href="javascript:alert('九州(テキスト)');" alt="九州">
 </map>
 <pre>
-&lt;img src="./static/japan1.gif" alt="日本地図" width="400" height="305" usemap="#shape1" id="shape1"&gt;
+&lt;img src="./static/japan1.gif" alt="日本地図" usemap="#shape1" id="shape1"&gt;
 &lt;map name="shape1"&gt;
   &lt;area shape="poly" coords="305,11,390,11,390,66,330,66,330,79,305,79" href="javascript:alert('北海道(図)');" alt="北海道"&gt;
   &lt;area shape="poly" coords="302,83,349,83,349,141,343,141,343,169,279,169,279,149,291,150,291,141,302,141" href="javascript:alert('東北(図)');" alt="東北"&gt;
@@ -2449,7 +2452,7 @@ value ＞＝ low AND value ＝＜ high
 		デバイスの画面サイズに合わせてレイアウトを最適化して表示する手法。
 	</strong>
 </p>
-<img src="./static/rwebd.jpg" width="450" alt="レスポンシブWebデザイン概念" class="sep" style="display:block;margin-top:20px;">
+<img src="./static/rwebd.jpg" alt="レスポンシブWebデザイン概念" class="sep" style="display:block;margin-top:20px;">
 <table class="sep">
 <caption>レスポンシブWebデザインのメリット・デメリット</caption>
 <tr>
@@ -2843,7 +2846,7 @@ value ＞＝ low AND value ＝＜ high
 	</li>
 	<li>グリッドシステム
 		<p>グリッドを組み合わせてデザインする手法。</p>
-		<img src="./static/gridsystem.png" width="450" alt="グリッドシステム" class="sep" style="display:block;margin-top:20px;">
+		<img src="./static/gridsystem.png" alt="グリッドシステム" class="sep" style="display:block;margin-top:20px;">
 		<pre>
 【HTML】
 &lt;div class="container clearfix"&gt;
@@ -2949,7 +2952,7 @@ img {max-width: 100%;}
 	デバイスピクセル比が1:1の場合、1CSSピクセルが1デバイスピクセルで描画される。
 	デバイスピクセル比が2:1の場合、1CSSピクセルが4デバイスピクセルで描画される。
 </p>
-<img src="./static/dcp.png" width="450" alt="グリッドシステム" class="sep" style="display:block;margin-top:20px;">
+<img src="./static/dcp.png" alt="グリッドシステム" class="sep" style="display:block;margin-top:20px;">
 
 <hr>
 <p class="tl">■ピクセル密度</p>
@@ -3277,7 +3280,7 @@ AddType text/cache-manifest appcache
 &lt;!DOCTYPE html&gt;
 &lt;html manifest="manifest.appcache"&gt;
 </pre>
-<img src="./static/cache.png" width="250" alt="アプリケーションキャッシュの動作" class="sep" style="display:block;margin-top:20px;">
+<img src="./static/cache.png" alt="アプリケーションキャッシュの動作" class="sep" style="display:block;margin-top:20px;">
 <p>
 	マニフェストファイルに従ってキャッシュが完了すると、
 	オフラインでも利用可能になる。
