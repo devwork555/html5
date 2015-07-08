@@ -2515,7 +2515,7 @@ q::after{
 <h1 id="sct15">(15)アニメーション関連のプロパティ</h1>
 <a href="#sct01">Top</a>
 <a href="#sct14">Before</a>
-<a href="#last">Next</a>
+<a href="#sct16">Next</a>
 <a href="#last">Last</a>
 <p class="tl">■transition</p>
 <p>
@@ -2728,6 +2728,64 @@ div.ani3{
   &lt;div class="ani3"&gt;アニメ&lt;/div&gt;
 &lt;/div&gt;
 </pre>
+
+
+<hr class="sline">
+<h1 id="sct16">(16)@ルール</h1>
+<a href="#sct01">Top</a>
+<a href="#sct15">Before</a>
+<a href="#last">Next</a>
+<a href="#last">Last</a>
+<p>CSSには@で始まる@ルール(at-rule)と呼ばれる書式が定められている。</p>
+<p class="tl">■@charset</p>
+<p>
+	外部スタイルシートの文字コードを指定する。
+	外部CSSファイルの先頭に1つのみ記述する。style要素内には記述できない。
+</p>
+<pre>
+@charset "UTF-8"
+</pre>
+
+<hr>
+<p class="tl">■@import</p>
+<p>
+	外部スタイルシートを読み込む際に使用する。
+	style要素内や外部スタイルシートの中で記述することができるが、
+	他の@ルール宣言よりも前に記述しなければならない。
+	ただし、<strong>@charsetがある場合にはその直後に記述する。</strong>
+	複数の@importを記述した場合には、複数のCSSファイルを統合して、
+	あたかも1つのCSSファイルのように適用される。
+</p>
+<pre>
+@import url("sample.css");
+@import url('sample.css');
+@import url(sample.css);
+</pre>
+<p>@importの最後にメディアタイプを記述することも可能。</p>
+<pre>
+@import url("sample.css") screen,tv;
+</pre>
+
+<hr>
+<p class="tl">■@media</p>
+<p>メディアタイプを指定してスタイルを適用する際に使用する。</p>
+<pre>
+@media scree{
+  background-color: #f33;
+}
+</pre>
+
+<hr>
+<p class="tl">■@page</p>
+<p>
+	ページボックス(主に印刷スタイルとして指定される限定された大きさのボックス。
+	内容全体がこの範囲内に入るように縮小出力されたり、複数のシートに分割出力される)を
+	定義する際に使用する。
+</p>
+<pre>
+@page{margin:15px;}
+</pre>
+
 
 <span id="last"></span>
 <a href="#sct01">Top</a>
