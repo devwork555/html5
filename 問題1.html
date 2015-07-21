@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viweport" content="width=device-width,initial-scale=1.0">
+<title>問題</title>
+<style type="text/css">
+pre{
+	font-size: 1.2em;
+}
+.qst{
+	list-style-type: upper-alpha;
+}
+.ans{
+	display: block;
+	color: #f33;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+.sep{
+	margin-top: 30px;
+}
+</style>
+<script type="text/javascript">
+function answer(no){
+	document.getElementById('btnAnswer' + no).style.display = 'none';
+	document.getElementById('btnBack' + no).style.display = 'block';
+	document.getElementById('ans' + no).style.display = 'block';
+}
+
+function back(no){
+	document.getElementById('btnAnswer' + no).style.display = 'block';
+	document.getElementById('btnBack' + no).style.display = 'none';
+	document.getElementById('ans' + no).style.display = 'none';
+}
+</script>
+</head>
+<body>
+<form id="frm">
+
+<!-- 問題 -->
+<p id="sct01">
+	【問1】
+	<a href="#sct01">Top</a>
+	<a href="#sct01">Before</a>
+	<a href="#sct02">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	以下にあげるHTTPメソッドのうち、実際には存在しないものはどれか。
+	1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a1a"><input type="radio" id="a1a" name="a1">GET</label></li>
+	<li><label for="a1b"><input type="radio" id="a1b" name="a1">TRACE</label></li>
+	<li><label for="a1c"><input type="radio" id="a1c" name="a1">SAVE</label></li>
+	<li><label for="a1d"><input type="radio" id="a1d" name="a1">PUT</label></li>
+	<li><label for="a1e"><input type="radio" id="a1e" name="a1">OPTIONS</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans1" class="ans" style="display:none;">【回答】C</p>
+<input type="button" id="btnAnswer1" value="回答表示" onclick="answer(1)" style="display:block;">
+<input type="button" id="btnBack1" value="回答非表示" onclick="back(1)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct02" class="sep">
+	【問2】
+	<a href="#sct01">Top</a>
+	<a href="#sct01">Before</a>
+	<a href="#sct03">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	HTTPで使用されるヘッダフィールドの名前と説明の組み合わせのうち、
+	間違っているものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a2a"><input type="radio" id="a2a" name="a2">Authorization　⇒　認証情報</label></li>
+	<li><label for="a2b"><input type="radio" id="a2b" name="a2">Referer　⇒　リクエストの送信元</label></li>
+	<li><label for="a2c"><input type="radio" id="a2c" name="a2">User-Agent　⇒　クライアントの識別情報(ブラウザなど)</label></li>
+	<li><label for="a2d"><input type="radio" id="a2d" name="a2">Content-Encoding　⇒　コンテンツの文字コード</label></li>
+	<li><label for="a2e"><input type="radio" id="a2e" name="a2">Cookie　⇒　クライアントにクッキーを設定する</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans2" class="ans" style="display:none;">【回答】E</p>
+<input type="button" id="btnAnswer2" value="回答表示" onclick="answer(2)" style="display:block;">
+<input type="button" id="btnBack2" value="回答非表示" onclick="back(2)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct03" class="sep">
+	【問3】
+	<a href="#sct01">Top</a>
+	<a href="#sct02">Before</a>
+	<a href="#sct04">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	HTTPレスポンスにおいて、以下の状況に適したステータスコードの組み合わせを
+	選びなさい。
+</p>
+<p>a：リソースは恒久的に移動した。</p>
+<p>b：リソースが見つからない。</p>
+<p>c：認証されていない。</p>
+<ol class="qst">
+	<li><label for="a3a"><input type="radio" id="a3a" name="a3">a：301　b：404　c：400</label></li>
+	<li><label for="a3b"><input type="radio" id="a3b" name="a3">a：301　b：404　c：401</label></li>
+	<li><label for="a3c"><input type="radio" id="a3c" name="a3">a：307　b：400　c：401</label></li>
+	<li><label for="a3d"><input type="radio" id="a3d" name="a3">a：307　b：404　c：400</label></li>
+	<li><label for="a3e"><input type="radio" id="a3e" name="a3">a：307　b：404　c：401</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans3" class="ans" style="display:none;">【回答】B</p>
+<input type="button" id="btnAnswer3" value="回答表示" onclick="answer(3)" style="display:block;">
+<input type="button" id="btnBack3" value="回答非表示" onclick="back(3)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct04" class="sep">
+	【問4】
+	<a href="#sct01">Top</a>
+	<a href="#sct03">Before</a>
+	<a href="#sct05">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	Cookieについて述べた説明のうち、
+	間違っているものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a4a"><input type="radio" id="a4a" name="a4">Cookieとは、Webアプリケーションがクライアント側に少量のデータを保存することができる仕組みである。</label></li>
+	<li><label for="a4b"><input type="radio" id="a4b" name="a4">Cookieは文字列データに限られる。</label></li>
+	<li><label for="a4c"><input type="radio" id="a4c" name="a4">Cookieのサイズはそれぞれ、最大4キロバイトに制限されている。</label></li>
+	<li><label for="a4d"><input type="radio" id="a4d" name="a4">サーバは、Set-Cookieというヘッダを用いてクライアント側にCookieを保存する。</label></li>
+	<li><label for="a4e"><input type="radio" id="a4e" name="a4">サーバからの要求に応じて、異なるドメインのCookieを送信する事もある。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans4" class="ans" style="display:none;">【回答】E</p>
+<input type="button" id="btnAnswer4" value="回答表示" onclick="answer(4)" style="display:block;">
+<input type="button" id="btnBack4" value="回答非表示" onclick="back(4)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct05" class="sep">
+	【問5】
+	<a href="#sct01">Top</a>
+	<a href="#sct04">Before</a>
+	<a href="#sct06">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	「http://example.com?a=b」というURLを例に取り、URLについて述べた説明のうち、
+	間違っているものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a5a"><input type="radio" id="a5a" name="a5">URLの先頭(例では「http」)は「スキーム名」と呼ばれ、URLを扱うプロトコルによって異なる。</label></li>
+	<li><label for="a5b"><input type="radio" id="a5b" name="a5">この例におけるドメイン名は「example.com」である。</label></li>
+	<li><label for="a5c"><input type="radio" id="a5c" name="a5">URLにおいてポート番号が省略された際、常に80番として解釈される。</label></li>
+	<li><label for="a5d"><input type="radio" id="a5d" name="a5">URLでは、特定の記号やマルチバイト文字列をそのまま扱うことができないため、URLエンコードと呼ばれる変換処理が必要となる。</label></li>
+	<li><label for="a5e"><input type="radio" id="a5e" name="a5">URLパラメータが複数ある場合は、「&amp;」で区切る。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans5" class="ans" style="display:none;">【回答】C</p>
+<input type="button" id="btnAnswer5" value="回答表示" onclick="answer(5)" style="display:block;">
+<input type="button" id="btnBack5" value="回答非表示" onclick="back(5)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct06" class="sep">
+	【問6】
+	<a href="#sct01">Top</a>
+	<a href="#sct05">Before</a>
+	<a href="#sct07">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	IPアドレスについて述べた文章のうち、
+	間違っているものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a6a"><input type="radio" id="a6a" name="a6">127.0.0.1は、自身の端末と通信するためのアドレスである。</label></li>
+	<li><label for="a6b"><input type="radio" id="a6b" name="a6">同じネットワークに属する端末で、IPアドレスは重複してはならない。</label></li>
+	<li><label for="a6c"><input type="radio" id="a6c" name="a6">所属するネットワークは、サブネットマスクを使って識別する事ができる。</label></li>
+	<li><label for="a6d"><input type="radio" id="a6d" name="a6">IPv4は、32ビットのアドレス空間しか持たないため、IPアドレスは不足している。</label></li>
+	<li><label for="a6e"><input type="radio" id="a6e" name="a6">IPv6は、256ビットのアドレス空間を持つ。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans6" class="ans" style="display:none;">【回答】E</p>
+<input type="button" id="btnAnswer6" value="回答表示" onclick="answer(6)" style="display:block;">
+<input type="button" id="btnBack6" value="回答非表示" onclick="back(6)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct07" class="sep">
+	【問7】
+	<a href="#sct01">Top</a>
+	<a href="#sct06">Before</a>
+	<a href="#sct08">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	Webページ上で画像を扱う際によく使用される技術とその特徴について、
+	正しく説明しているものを全て選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="c7a"><input type="checkbox" id="c7a" name="c7">JPGは、写真などのように色数の多い画像で高い圧縮率を持つ画像ファイル形式。透過も可能。</label></li>
+	<li><label for="c7b"><input type="checkbox" id="c7b" name="c7">PNGは、フルカラー(1677万色)の画像を扱う事ができる画像ファイル形式。透過も可能。</label></li>
+	<li><label for="c7c"><input type="checkbox" id="c7c" name="c7">GIFは、256色以下の画像を扱える画像ファイル形式。透過は不可能。</label></li>
+	<li><label for="c7d"><input type="checkbox" id="c7d" name="c7">SVGは、ベクターグラフィックスを扱う事のできるバイナリデータによる画像ファイル形式。</label></li>
+	<li><label for="c7e"><input type="checkbox" id="c7e" name="c7">canvasは、JavaScriptによって描画可能なビットマップの画像領域。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans7" class="ans" style="display:none;">【回答】B、E</p>
+<input type="button" id="btnAnswer7" value="回答表示" onclick="answer(7)" style="display:block;">
+<input type="button" id="btnBack7" value="回答非表示" onclick="back(7)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct08" class="sep">
+	【問8】
+	<a href="#sct01">Top</a>
+	<a href="#sct07">Before</a>
+	<a href="#sct09">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	以下の(　)を埋める単語を答えなさい(大文字、小文字も正確に答えなさい)。
+</p>
+<p>
+	Ajax(Asynchronous JavaScript + XML)の中心となったのは、
+	(　)と呼ばれる、非同期のHTTP通信を行う事ができるJavaScriptインターフェイスである。
+</p>
+<!-- 回答 -->
+<p id="ans8" class="ans" style="display:none;">【回答】XMLHttpRequest</p>
+<input type="button" id="btnAnswer8" value="回答表示" onclick="answer(8)" style="display:block;">
+<input type="button" id="btnBack8" value="回答非表示" onclick="back(8)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct09" class="sep">
+	【問9】
+	<a href="#sct01">Top</a>
+	<a href="#sct08">Before</a>
+	<a href="#sct10">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	以下の(　)を埋める単語を答えなさい。
+</p>
+<p>
+	JavaScriptは標準化団体による仕様策定が進められている言語であり、
+	その仕様は(　)という名称で呼ばれている。
+</p>
+<!-- 回答 -->
+<p id="ans9" class="ans" style="display:none;">【回答】ECMAScript</p>
+<input type="button" id="btnAnswer9" value="回答表示" onclick="answer(9)" style="display:block;">
+<input type="button" id="btnBack9" value="回答非表示" onclick="back(9)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct10" class="sep">
+	【問10】
+	<a href="#sct01">Top</a>
+	<a href="#sct09">Before</a>
+	<a href="#sct11">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	XHTMLについて述べた以下の文章のうち、
+	間違っているものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a10a"><input type="radio" id="a10a" name="a10">XHTMLは、HTMLをXMLの文法で定義し直したマークアップ言語である。</label></li>
+	<li><label for="a10b"><input type="radio" id="a10b" name="a10">HTML5の語彙を扱うXHTMLの事を、特に「XHTML5」と呼ぶ事がある。</label></li>
+	<li><label for="a10c"><input type="radio" id="a10c" name="a10">XHTMLは、HTMLに比べると文法が厳格である。</label></li>
+	<li><label for="a10d"><input type="radio" id="a10d" name="a10">XHTML5の先頭には「&lt;?xhtml version="5.0"?&gt;」と記述する。</label></li>
+	<li><label for="a10e"><input type="radio" id="a10e" name="a10">XHTMLはXMLファイルの一種なので、XML関連の様々な技術と相性がよい。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans10" class="ans" style="display:none;">【回答】D</p>
+<input type="button" id="btnAnswer10" value="回答表示" onclick="answer(10)" style="display:block;">
+<input type="button" id="btnBack10" value="回答非表示" onclick="back(10)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct11" class="sep">
+	【問11】
+	<a href="#sct01">Top</a>
+	<a href="#sct10">Before</a>
+	<a href="#sct12">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	以下の(　)を埋める単語を答えなさい。
+</p>
+<p>
+	(　)は、HTMLやXMLの文書をアプリケーションから扱うためのAPIである。
+	W3Cで標準化が行われており、JavaScriptでWebページを動的に変更する際にも用いられる。
+</p>
+<!-- 回答 -->
+<p id="ans11" class="ans" style="display:none;">【回答】DOM</p>
+<input type="button" id="btnAnswer11" value="回答表示" onclick="answer(11)" style="display:block;">
+<input type="button" id="btnBack11" value="回答非表示" onclick="back(11)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct12" class="sep">
+	【問12】
+	<a href="#sct01">Top</a>
+	<a href="#sct11">Before</a>
+	<a href="#sct13">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	以下のうち、W3Cで標準化が進められている技術を全て選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a12a"><input type="checkbox" id="a12a" name="a12">HTML</label></li>
+	<li><label for="a12b"><input type="checkbox" id="a12b" name="a12">SQL</label></li>
+	<li><label for="a12c"><input type="checkbox" id="a12c" name="a12">CSS</label></li>
+	<li><label for="a12d"><input type="checkbox" id="a12d" name="a12">ECMAScript</label></li>
+	<li><label for="a12e"><input type="checkbox" id="a12e" name="a12">DOM</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans12" class="ans" style="display:none;">【回答】A、C、E</p>
+<input type="button" id="btnAnswer12" value="回答表示" onclick="answer(12)" style="display:block;">
+<input type="button" id="btnBack12" value="回答非表示" onclick="back(12)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct13" class="sep">
+	【問13】
+	<a href="#sct01">Top</a>
+	<a href="#sct12">Before</a>
+	<a href="#sct14">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	データベースについて述べた説明のうち、
+	間違っているものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a13a"><input type="radio" id="a13a" name="a13">リレーションナルデータベース(RDB)は、データを複数の表形式で保持するタイプのデータベースである。</label></li>
+	<li><label for="a13b"><input type="radio" id="a13b" name="a13">昨今、キーと値のペアで構成されるキーバリューストア(KVS)という形式のデータベースも増えてきている。</label></li>
+	<li><label for="a13c"><input type="radio" id="a13c" name="a13">KVSはSQLという言語を用いてデータを操作する事ができる。</label></li>
+	<li><label for="a13d"><input type="radio" id="a13d" name="a13">SQLは、ANSIやISOといった団体によって標準化が進められている。</label></li>
+	<li><label for="a13e"><input type="radio" id="a13e" name="a13">Webアプリケーションのバックエンドにおいて、データベースは一般的に利用されている。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans13" class="ans" style="display:none;">【回答】C</p>
+<input type="button" id="btnAnswer13" value="回答表示" onclick="answer(13)" style="display:block;">
+<input type="button" id="btnBack13" value="回答非表示" onclick="back(13)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct14" class="sep">
+	【問14】
+	<a href="#sct01">Top</a>
+	<a href="#sct13">Before</a>
+	<a href="#sct15">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	ドメイン名について述べた説明のうち、
+	間違っているものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a14a"><input type="radio" id="a14a" name="a14">ドメイン名は、インターネット上で個々の端末を識別するための名前である。</label></li>
+	<li><label for="a14b"><input type="radio" id="a14b" name="a14">ドメイン名は、W3Cによって世界中で重複しないように運用、管理されている。</label></li>
+	<li><label for="a14c"><input type="radio" id="a14c" name="a14">DNS(Domain Name System)は、ドメイン名とIPアドレスの対応を管理する階層的な分散型データベースシステムである。</label></li>
+	<li><label for="a14d"><input type="radio" id="a14d" name="a14">ドメイン名は、ドットで区切られた階層構造を持つ。</label></li>
+	<li><label for="a14e"><input type="radio" id="a14e" name="a14">ドメインの最後尾にある.comや.jpなどは、TLD(Top Level Domain)と呼ばれる。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans14" class="ans" style="display:none;">【回答】B</p>
+<input type="button" id="btnAnswer14" value="回答表示" onclick="answer(14)" style="display:block;">
+<input type="button" id="btnBack14" value="回答非表示" onclick="back(14)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct15" class="sep">
+	【問15】
+	<a href="#sct01">Top</a>
+	<a href="#sct14">Before</a>
+	<a href="#sct16">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	リバースプロキシについて述べた説明のうち、
+	間違っているものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a15a"><input type="radio" id="a15a" name="a15">リバースプロキシは、クライアントの代理として通信先の端末と接続するために、クライアント側に設置されるサーバである。</label></li>
+	<li><label for="a15b"><input type="radio" id="a15b" name="a15">リバースプロキシは、サーバへのアクセスに先立ち認証やアクセス制御を加える事で、セキュリティの向上をもたらす事ができる。</label></li>
+	<li><label for="a15c"><input type="radio" id="a15c" name="a15">リバースプロキシは、サーバへのアクセスを適切に振り分ける事で、サーバの負荷を分散させる事ができる。</label></li>
+	<li><label for="a15d"><input type="radio" id="a15d" name="a15">リバースプロキシは、キャッシュや圧縮などを行う事で、パフォーマンスの向上をもたらす事ができる。</label></li>
+	<li><label for="a15e"><input type="radio" id="a15e" name="a15">リバースプロキシは、クライアントとの通信をHTTPSで、実際に処理を行うサーバとはHTTPでやりとりするといった事を可能にする。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans15" class="ans" style="display:none;">【回答】A</p>
+<input type="button" id="btnAnswer15" value="回答表示" onclick="answer(15)" style="display:block;">
+<input type="button" id="btnBack15" value="回答非表示" onclick="back(15)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct16" class="sep">
+	【問16】
+	<a href="#sct01">Top</a>
+	<a href="#sct15">Before</a>
+	<a href="#sct17">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	Web広告の課金方式で「商品購入などの成果に応じて課金される広告」は
+	次のうちどれか。1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a16a"><input type="radio" id="a16a" name="a16">インプレッション保障型広告</label></li>
+	<li><label for="a16b"><input type="radio" id="a16b" name="a16">PPC広告</label></li>
+	<li><label for="a16c"><input type="radio" id="a16c" name="a16">クリック保障型広告</label></li>
+	<li><label for="a16d"><input type="radio" id="a16d" name="a16">アフィリエイト広告</label></li>
+	<li><label for="a16e"><input type="radio" id="a16e" name="a16">バナー広告</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans16" class="ans" style="display:none;">【回答】D</p>
+<input type="button" id="btnAnswer16" value="回答表示" onclick="answer(16)" style="display:block;">
+<input type="button" id="btnBack16" value="回答非表示" onclick="back(16)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct17" class="sep">
+	【問17】
+	<a href="#sct01">Top</a>
+	<a href="#sct16">Before</a>
+	<a href="#sct18">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	TCPやUDPについて述べた説明のうち、
+	間違っているものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a17a"><input type="radio" id="a17a" name="a17">TCPは、再送制御やエラー訂正機能を持ち、信頼性の高い通信を実現できる。</label></li>
+	<li><label for="a17b"><input type="radio" id="a17b" name="a17">TCPは、通信に先立ち、3ウェイ・ハンドシェイクと呼ばれる手順で接続を確立する。</label></li>
+	<li><label for="a17c"><input type="radio" id="a17c" name="a17">UDPは、再送制御やエラー訂正機能はないが、TCPに比べて高速な通信を行える。</label></li>
+	<li><label for="a17d"><input type="radio" id="a17d" name="a17">TCPもUDPのどちらも、IPの上位プロトコルとしてエンドツーエンドの通信を担う。</label></li>
+	<li><label for="a17e"><input type="radio" id="a17e" name="a17">ポート番号はTCPにしか存在しない概念である。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans17" class="ans" style="display:none;">【回答】E</p>
+<input type="button" id="btnAnswer17" value="回答表示" onclick="answer(17)" style="display:block;">
+<input type="button" id="btnBack17" value="回答非表示" onclick="back(17)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct18" class="sep">
+	【問18】
+	<a href="#sct01">Top</a>
+	<a href="#sct17">Before</a>
+	<a href="#sct19">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	Webページ内でCSSを使用するための方法について述べた以下の記述のうち、
+	間違っているものを選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a18a"><input type="radio" id="a18a" name="a18">style要素を用いて、HTML文書内にCSSを直接記述する事ができる。</label></li>
+	<li><label for="a18b"><input type="radio" id="a18b" name="a18">style要素は、head要素内に記述しなくてはならない。</label></li>
+	<li><label for="a18c"><input type="radio" id="a18c" name="a18">style属性を用いて、要素に適用するCSSを記述する事ができる。</label></li>
+	<li><label for="a18d"><input type="radio" id="a18d" name="a18">link要素を用いて外部のスタイルシートを読み込む事ができる。</label></li>
+	<li><label for="a18e"><input type="radio" id="a18e" name="a18">link要素でスタイルシートを読み込む場合、type属性は省略する事ができる。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans18" class="ans" style="display:none;">【回答】B</p>
+<input type="button" id="btnAnswer18" value="回答表示" onclick="answer(18)" style="display:block;">
+<input type="button" id="btnBack18" value="回答非表示" onclick="back(18)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct19" class="sep">
+	【問19】
+	<a href="#sct01">Top</a>
+	<a href="#sct18">Before</a>
+	<a href="#sct20">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	以下のHTMLにおいて、2番目のli要素(内容として"b"を持つもの)を
+	選択できないセレクタはどれか。
+</p>
+<pre>
+  &lt;ul id="list"&gt;
+    &lt;li&gt;a&lt;/li&gt;
+    &lt;li class="active"&gt;b&lt;/li&gt;
+    &lt;li&gt;c&lt;/li&gt;
+  &lt;/ul&gt;
+</pre>
+<ol class="qst">
+	<li><label for="a19a"><input type="radio" id="a19a" name="a19">.active</label></li>
+	<li><label for="a19b"><input type="radio" id="a19b" name="a19">#list:nth-child(2)</label></li>
+	<li><label for="a19c"><input type="radio" id="a19c" name="a19">#list li:nth-child(2)</label></li>
+	<li><label for="a19d"><input type="radio" id="a19d" name="a19">li:nth-of-type(2)</label></li>
+	<li><label for="a19e"><input type="radio" id="a19e" name="a19">li[class="active"]</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans19" class="ans" style="display:none;">【回答】B</p>
+<input type="button" id="btnAnswer19" value="回答表示" onclick="answer(19)" style="display:block;">
+<input type="button" id="btnBack19" value="回答非表示" onclick="back(19)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct20" class="sep">
+	【問20】
+	<a href="#sct01">Top</a>
+	<a href="#sct19">Before</a>
+	<a href="#sct21">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	以下のHTMLにおいて、「段落2」という内容を持つp要素を
+	選択できないセレクタはどれか。
+</p>
+<pre>
+  &lt;div&gt;
+    &lt;p&gt;段落1&lt;/p&gt;
+    &lt;section&gt;
+      &lt;h2&gt;見出し&lt;/h2&gt;
+      &lt;p&gt;段落2&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;p&gt;段落3&lt;/p&gt;
+  &lt;/div&gt;
+</pre>
+<ol class="qst">
+	<li><label for="a20a"><input type="radio" id="a20a" name="a20">h2~p</label></li>
+	<li><label for="a20b"><input type="radio" id="a20b" name="a20">h2+p</label></li>
+	<li><label for="a20c"><input type="radio" id="a20c" name="a20">section&gt;p</label></li>
+	<li><label for="a20d"><input type="radio" id="a20d" name="a20">p:nth-child(2)</label></li>
+	<li><label for="a20e"><input type="radio" id="a20e" name="a20">p:nth-of-type(2)</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans20" class="ans" style="display:none;">【回答】E</p>
+<input type="button" id="btnAnswer20" value="回答表示" onclick="answer(20)" style="display:block;">
+<input type="button" id="btnBack20" value="回答非表示" onclick="back(20)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct21" class="sep">
+	【問21】
+	<a href="#sct01">Top</a>
+	<a href="#sct20">Before</a>
+	<a href="#sct22">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	以下のh2要素を選択できるCSSセレクタを全て選びなさい。
+</p>
+<pre>
+  &lt;h2 class="chap-title"&gt;章タイトル&lt;/h2&gt;
+</pre>
+<ol class="qst">
+	<li><label for="a21a"><input type="checkbox" id="a21a" name="a21">.chap-title</label></li>
+	<li><label for="a21b"><input type="checkbox" id="a21b" name="a21">[.chap-title]</label></li>
+	<li><label for="a21c"><input type="checkbox" id="a21c" name="a21">[class^="chap"]</label></li>
+	<li><label for="a21d"><input type="checkbox" id="a21d" name="a21">[class]</label></li>
+	<li><label for="a21e"><input type="checkbox" id="a21e" name="a21">[*]</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans21" class="ans" style="display:none;">【回答】A、C、D</p>
+<input type="button" id="btnAnswer21" value="回答表示" onclick="answer(21)" style="display:block;">
+<input type="button" id="btnBack21" value="回答非表示" onclick="back(21)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct22" class="sep">
+	【問22】
+	<a href="#sct01">Top</a>
+	<a href="#sct21">Before</a>
+	<a href="#sct23">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	以下のCSSを指定されたdiv要素が、実際に画面上で占める幅(マージンを含む)は
+	何ピクセルになるか。適切な値を選択肢から選びなさい。
+</p>
+<pre>
+  #box{
+    width: 150px;
+    padding: 10px 10px 10px 20px;
+    border 5px solid gray;
+    margin: 0;
+    margin-right: 20px;
+  }
+</pre>
+<ol class="qst">
+	<li><label for="a22a"><input type="radio" id="a22a" name="a22">150px</label></li>
+	<li><label for="a22b"><input type="radio" id="a22b" name="a22">170px</label></li>
+	<li><label for="a22c"><input type="radio" id="a22c" name="a22">190px</label></li>
+	<li><label for="a22d"><input type="radio" id="a22d" name="a22">210px</label></li>
+	<li><label for="a22e"><input type="radio" id="a22e" name="a22">230px</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans22" class="ans" style="display:none;">【回答】D</p>
+<input type="button" id="btnAnswer22" value="回答表示" onclick="answer(22)" style="display:block;">
+<input type="button" id="btnBack22" value="回答非表示" onclick="back(22)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct23" class="sep">
+	【問23】
+	<a href="#sct01">Top</a>
+	<a href="#sct22">Before</a>
+	<a href="#sct24">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	以下のCSSを指定されたdiv要素が、実際に画面上で占める幅(マージンを含む)は
+	何ピクセルになるか。適切な値を選択肢から選びなさい。
+</p>
+<pre>
+  #box{
+    width: 150px;
+    padding: 10px 10px 10px 20px;
+    border 5px solid gray;
+    margin: 0;
+    margin-right: 20px;
+    box-sizing: border-box;
+  }
+</pre>
+<ol class="qst">
+	<li><label for="a23a"><input type="radio" id="a23a" name="a23">150px</label></li>
+	<li><label for="a23b"><input type="radio" id="a23b" name="a23">170px</label></li>
+	<li><label for="a23c"><input type="radio" id="a23c" name="a23">190px</label></li>
+	<li><label for="a23d"><input type="radio" id="a23d" name="a23">210px</label></li>
+	<li><label for="a23e"><input type="radio" id="a23e" name="a23">230px</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans23" class="ans" style="display:none;">【回答】B</p>
+<input type="button" id="btnAnswer23" value="回答表示" onclick="answer(23)" style="display:block;">
+<input type="button" id="btnBack23" value="回答非表示" onclick="back(23)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct24" class="sep">
+	【問24】
+	<a href="#sct01">Top</a>
+	<a href="#sct23">Before</a>
+	<a href="#sct25">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	以下のHTMLにおいて、「猫」を囲むli要素を選択する事のできる
+	CSSセレクタを全て選びなさい。
+</p>
+<pre>
+  &lt;ul id="animals"&gt;
+    &lt;li class="dog pet"&gt;犬&lt;/li&gt;
+    &lt;li class="cat pet"&gt;猫&lt;/li&gt;
+    &lt;li class="bird pet"&gt;鳥&lt;/li&gt;
+  &lt;/ul&gt;
+</pre>
+<ol class="qst">
+	<li><label for="a24a"><input type="checkbox" id="a24a" name="a24">.pet:first-child</label></li>
+	<li><label for="a24b"><input type="checkbox" id="a24b" name="a24">.cat</label></li>
+	<li><label for="a24c"><input type="checkbox" id="a24c" name="a24">.cat.pet</label></li>
+	<li><label for="a24d"><input type="checkbox" id="a24d" name="a24">.cat .pet</label></li>
+	<li><label for="a24e"><input type="checkbox" id="a24e" name="a24">#cat</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans24" class="ans" style="display:none;">【回答】B、C</p>
+<input type="button" id="btnAnswer24" value="回答表示" onclick="answer(24)" style="display:block;">
+<input type="button" id="btnBack24" value="回答非表示" onclick="back(24)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct25" class="sep">
+	【問25】
+	<a href="#sct01">Top</a>
+	<a href="#sct24">Before</a>
+	<a href="#sct26">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	以下のHTMLをブラウザで表示すると、どうなるか。
+	正しいものを1つ選びなさい。
+</p>
+<pre>
+  &lt;ul id="list1"&gt;
+    &lt;li&gt;おはよう&lt;br&gt;ございます&lt;/li&gt;
+    &lt;li&gt;こんにちは&lt;/li&gt;
+    &lt;li&gt;こんばんは&lt;/li&gt;
+    &lt;li&gt;おやすみ&lt;br&gt;なさい&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;style&gt;
+  #list1{
+    display: flex;
+  }
+
+  #list1 li{
+    width: 25%;
+  }
+  &lt;/style&gt;
+</pre>
+<ol class="qst">
+	<li><label for="a25a"><input type="radio" id="a25a" name="a25">全てのli要素が縦並びになる。</label></li>
+	<li><label for="a25b"><input type="radio" id="a25b" name="a25">全てのli要素が横並びになる。li要素の高さはそれぞれ異なる。</label></li>
+	<li><label for="a25c"><input type="radio" id="a25c" name="a25">全てのli要素が横並びになる。li要素の高さは全て揃えられる。</label></li>
+	<li><label for="a25d"><input type="radio" id="a25d" name="a25">li要素は横並びになるが、一番最後のli要素は折り返して次の行に表示される。li要素の高さはそれぞれ異なる。</label></li>
+	<li><label for="a25e"><input type="radio" id="a25e" name="a25">li要素は横並びになるが、一番最後のli要素は折り返して次の行に表示される。li要素の高さは全て揃えられる。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans25" class="ans" style="display:none;">【回答】C</p>
+<input type="button" id="btnAnswer25" value="回答表示" onclick="answer(25)" style="display:block;">
+<input type="button" id="btnBack25" value="回答非表示" onclick="back(25)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct26" class="sep">
+	【問26】
+	<a href="#sct01">Top</a>
+	<a href="#sct25">Before</a>
+	<a href="#sct27">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	CSSの単位について記述した以下の文章を正しく穴埋めできる選択肢を選びなさい。
+</p>
+<p>
+	CSSで使用できる相対単位としては、親要素の幅や高さに対する割合で指定する
+	(　a　)、親要素のフォントサイズを1としてサイズを指定可能な(　b　)、
+	ルート要素(html要素)のフォントサイズを1としてサイズを指定可能な(　c　)などがある。
+</p>
+<ol class="qst">
+	<li><label for="a26a"><input type="radio" id="a26a" name="a26">a：pct　b：em　c：rem</label></li>
+	<li><label for="a26b"><input type="radio" id="a26b" name="a26">a：pct　b：ex　c：%</label></li>
+	<li><label for="a26c"><input type="radio" id="a26c" name="a26">a：%　b：ex　c：rex</label></li>
+	<li><label for="a26d"><input type="radio" id="a26d" name="a26">a：%　b：em　c：rem</label></li>
+	<li><label for="a26e"><input type="radio" id="a26e" name="a26">a：%　b：ch　c：rch</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans26" class="ans" style="display:none;">【回答】D</p>
+<input type="button" id="btnAnswer26" value="回答表示" onclick="answer(26)" style="display:block;">
+<input type="button" id="btnBack26" value="回答非表示" onclick="back(26)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct27" class="sep">
+	【問27】
+	<a href="#sct01">Top</a>
+	<a href="#sct26">Before</a>
+	<a href="#sct28">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	以下のソースコードをブラウザで確認すると、どのような結果が得られるか、
+	正しいものを1つ選びなさい。
+</p>
+<pre>
+  &lt;style&gt;
+  #para{
+    color: red;
+    background-color: red;
+    border: 1px solid red;
+  }
+
+  p{
+    color: black !important;
+    background-color: pink;
+  }
+  &lt;/style&gt;
+
+  &lt;p id="para" style="color:blue;border:1px solid blue;"&gt;
+    こんにちは
+  &lt;/p&gt;
+</pre>
+<ol class="qst">
+	<li><label for="a27a"><input type="radio" id="a27a" name="a27">文字色：黒　背景色：赤　ボーダー：赤</label></li>
+	<li><label for="a27b"><input type="radio" id="a27b" name="a27">文字色：黒　背景色：赤　ボーダー：青</label></li>
+	<li><label for="a27c"><input type="radio" id="a27c" name="a27">文字色：黒　背景色：ピンク　ボーダー：赤</label></li>
+	<li><label for="a27d"><input type="radio" id="a27d" name="a27">文字色：黒　背景色：ピンク　ボーダー：青</label></li>
+	<li><label for="a27e"><input type="radio" id="a27e" name="a27">文字色：青　背景色：赤　ボーダー：青</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans27" class="ans" style="display:none;">【回答】B</p>
+<input type="button" id="btnAnswer27" value="回答表示" onclick="answer(27)" style="display:block;">
+<input type="button" id="btnBack27" value="回答非表示" onclick="back(27)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct28" class="sep">
+	【問28】
+	<a href="#sct01">Top</a>
+	<a href="#sct27">Before</a>
+	<a href="#sct29">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	Webフォントを使用するためのキーワードやプロパティについて、
+	正しい組み合わせを選びなさい。
+</p>
+<pre>
+  (　a　){
+    (　b　): 'bokutachi';
+    (　c　): url('bokutachi');
+  }
+</pre>
+<ol class="qst">
+	<li><label for="a28a"><input type="radio" id="a28a" name="a28">a：@font-face　b：font-name　c：url</label></li>
+	<li><label for="a28b"><input type="radio" id="a28b" name="a28">a：@font-face　b：font-name　c：src</label></li>
+	<li><label for="a28c"><input type="radio" id="a28c" name="a28">a：@font-face　b：font-family　c：url</label></li>
+	<li><label for="a28d"><input type="radio" id="a28d" name="a28">a：@font-face　b：font-family　c：src</label></li>
+	<li><label for="a28e"><input type="radio" id="a28e" name="a28">a：@web-font　b：font-family　c：url</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans28" class="ans" style="display:none;">【回答】D</p>
+<input type="button" id="btnAnswer28" value="回答表示" onclick="answer(28)" style="display:block;">
+<input type="button" id="btnBack28" value="回答非表示" onclick="back(28)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct29" class="sep">
+	【問29】
+	<a href="#sct01">Top</a>
+	<a href="#sct28">Before</a>
+	<a href="#sct30">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	CSSによるボックスの変形について述べた以下の記述のうち、
+	間違っているものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a29a"><input type="radio" id="a29a" name="a29">CSSによるボックスの変形は、transformというプロパティを用いて行う。</label></li>
+	<li><label for="a29b"><input type="radio" id="a29b" name="a29">回転(rotate)やゆがみ(skew)に指定する角度の単位は、ラジアン(rad)しか指定できない。</label></li>
+	<li><label for="a29c"><input type="radio" id="a29c" name="a29">matrixという関数を用いて、変換マトリックスを行列の形式で直接指定する事ができる。</label></li>
+	<li><label for="a29d"><input type="radio" id="a29d" name="a29">2Dの変形だけではなく、3Dの変形も行う事ができる。</label></li>
+	<li><label for="a29e"><input type="radio" id="a29e" name="a29">複数の変形をスペース区切りで同時に指定する事ができる。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans29" class="ans" style="display:none;">【回答】B</p>
+<input type="button" id="btnAnswer29" value="回答表示" onclick="answer(29)" style="display:block;">
+<input type="button" id="btnBack29" value="回答非表示" onclick="back(29)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct30" class="sep">
+	【問30】
+	<a href="#sct01">Top</a>
+	<a href="#sct29">Before</a>
+	<a href="#sct31">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	CSS Transitionに関して述べた以下の文章のうち、
+	間違っているものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a30a"><input type="radio" id="a30a" name="a30">transitionを使用すると、プロパティの状態遷移をアニメーションを伴って実行させる事ができる。</label></li>
+	<li><label for="a30b"><input type="radio" id="a30b" name="a30">transition-propertyプロパティを使用すると、CSS Transitionの対象となるプロパティを指定できる。</label></li>
+	<li><label for="a30c"><input type="radio" id="a30c" name="a30">transition-durationプロパティプロパティを使用すると、アニメーションにかける時間を指定できる。</label></li>
+	<li><label for="a30d"><input type="radio" id="a30d" name="a30">transition-startプロパティを使用すると、アニメーションの遅延時間を指定できる。</label></li>
+	<li><label for="a30e"><input type="radio" id="a30e" name="a30">transitionに関わるプロパティは、transitionプロパティでまとめて指定できる。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans30" class="ans" style="display:none;">【回答】D</p>
+<input type="button" id="btnAnswer30" value="回答表示" onclick="answer(30)" style="display:block;">
+<input type="button" id="btnBack30" value="回答非表示" onclick="back(30)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct31" class="sep">
+	【問31】
+	<a href="#sct01">Top</a>
+	<a href="#sct30">Before</a>
+	<a href="#sct32">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	以下のソースコードを実行した結果について述べた文章のうち、
+	正しいものを全て選びなさい。
+</p>
+<pre>
+  &lt;div id="animate-box"&gt;&lt;/div&gt;
+
+  &lt;style&gt;
+  #animate-box{
+    border: 1px solid gray;
+    width: 100px;
+    height: 100px;
+    animation: box-anim 3s infinite;
+  }
+
+  @keyframes box-anim{
+    0%{
+      transform: rotate(0deg) scale(1);
+    }
+
+    50%{
+      transform: rotate(360deg) scale(1.5);
+    }
+
+    100%{
+      transform: rotate(0deg) scale(2);
+    }
+  }
+  &lt;/style&gt;
+</pre>
+<ol class="qst">
+	<li><label for="a31a"><input type="checkbox" id="a31a" name="a31">ボックスに対する回転と拡大のアニメーションが同時に行われる。</label></li>
+	<li><label for="a31b"><input type="checkbox" id="a31b" name="a31">アニメーションは無限に実行される。</label></li>
+	<li><label for="a31c"><input type="checkbox" id="a31c" name="a31">ボックスは1.5秒かけて回転し、その後1.5秒間そのまま静止する。</label></li>
+	<li><label for="a31d"><input type="checkbox" id="a31d" name="a31">1回のアニメーションは3秒間かけて行われる。</label></li>
+	<li><label for="a31e"><input type="checkbox" id="a31e" name="a31">アニメーションが繰り返されるたびに、ボックスの大きさは大きくなり続ける。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans31" class="ans" style="display:none;">【回答】A、B、D</p>
+<input type="button" id="btnAnswer31" value="回答表示" onclick="answer(31)" style="display:block;">
+<input type="button" id="btnBack31" value="回答非表示" onclick="back(31)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct32" class="sep">
+	【問32】
+	<a href="#sct01">Top</a>
+	<a href="#sct31">Before</a>
+	<a href="#sct33">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	backgroundプロパティに関する以下の記述のうち、
+	間違っているものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a32a"><input type="radio" id="a32a" name="a32">background-sizeプロパティを使用して、背景画像のサイズを指定する事ができる。</label></li>
+	<li><label for="a32b"><input type="radio" id="a32b" name="a32">background-imageプロパティを用いて、背景にグラデーションを指定することができる。</label></li>
+	<li><label for="a32c"><input type="radio" id="a32c" name="a32">background-multipleプロパティを用いて、背景画像を複数指定する事ができる。</label></li>
+	<li><label for="a32d"><input type="radio" id="a32d" name="a32">background-attachmentプロパティを用いて、背景画像を固定するかスクロールするかを指定する事ができる。</label></li>
+	<li><label for="a32e"><input type="radio" id="a32e" name="a32">background-originプロパティを用いて、背景画像が表示される範囲を指定する事ができる。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans32" class="ans" style="display:none;">【回答】C</p>
+<input type="button" id="btnAnswer32" value="回答表示" onclick="answer(32)" style="display:block;">
+<input type="button" id="btnBack32" value="回答非表示" onclick="back(32)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct33" class="sep">
+	【問33】
+	<a href="#sct01">Top</a>
+	<a href="#sct32">Before</a>
+	<a href="#sct34">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	HTML5のソースファイルに関する基本的なルールについて述べたいかの文章のうち、
+	正しいものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a33a"><input type="radio" id="a33a" name="a33">ファイル名の拡張子を必ず.html5にする必要がある。</label></li>
+	<li><label for="a33b"><input type="radio" id="a33b" name="a33">ファイルの先頭に&lt;?xml version="1.0"?&gt;と記述する必要がある。</label></li>
+	<li><label for="a33c"><input type="radio" id="a33c" name="a33">ソースコードの文字エンコーディングはUTF-8にしなくてはならない。</label></li>
+	<li><label for="a33d"><input type="radio" id="a33d" name="a33">ファイルの先頭にDOCTYPE宣言を記述する必要がある。</label></li>
+	<li><label for="a33e"><input type="radio" id="a33e" name="a33">html要素を必ず記述しなくてはならない。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans33" class="ans" style="display:none;">【回答】D</p>
+<input type="button" id="btnAnswer33" value="回答表示" onclick="answer(33)" style="display:block;">
+<input type="button" id="btnBack33" value="回答非表示" onclick="back(33)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct34" class="sep">
+	【問34】
+	<a href="#sct01">Top</a>
+	<a href="#sct33">Before</a>
+	<a href="#sct35">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	HTML5のソースファイルの先頭に記述する内容として、
+	正しいものをすべて選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a34a"><input type="checkbox" id="a34a" name="a34">&lt;!DOCTYPE html&gt;</label></li>
+	<li><label for="a34b"><input type="checkbox" id="a34b" name="a34">&lt;!DOCTYPE html PUBLIC "-//W3C/DTD HTML 4.01 Transitional//EN"&gt;</label></li>
+	<li><label for="a34c"><input type="checkbox" id="a34c" name="a34">&lt;!doctype&gt;</label></li>
+	<li><label for="a34d"><input type="checkbox" id="a34d" name="a34">&lt;!doctype HTML&gt;</label></li>
+	<li><label for="a34e"><input type="checkbox" id="a34e" name="a34">&lt;?html version="5.0"?&gt;</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans34" class="ans" style="display:none;">【回答】A、D</p>
+<input type="button" id="btnAnswer34" value="回答表示" onclick="answer(34)" style="display:block;">
+<input type="button" id="btnBack34" value="回答非表示" onclick="back(34)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct35" class="sep">
+	【問35】
+	<a href="#sct01">Top</a>
+	<a href="#sct34">Before</a>
+	<a href="#sct36">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	以下のマークアップのうち、製作者の意図通りに解釈されるもの
+	(p要素の中にspan要素が入れ子になっている)を全て選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a35a"><input type="checkbox" id="a35a" name="a35">&lt;p&gt;&lt;span&gt;新着のお知らせ&lt;/span&gt;</label></li>
+	<li><label for="a35b"><input type="checkbox" id="a35b" name="a35">&lt;p&gt;&lt;span&gt;新着のお知らせ&lt;/span&gt;&lt;/p&gt;</label></li>
+	<li><label for="a35c"><input type="checkbox" id="a35c" name="a35">&lt;p&gt;&lt;span&gt;新着のお知らせ</label></li>
+	<li><label for="a35d"><input type="checkbox" id="a35d" name="a35">&lt;p&gt;&lt;span&gt;新着のお知らせ&lt;/p&gt;</label></li>
+	<li><label for="a35e"><input type="checkbox" id="a35e" name="a35">&lt;p&gt;&lt;span&gt;新着のお知らせ&lt;/p&gt;&lt;/span&gt;</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans35" class="ans" style="display:none;">【回答】A、B</p>
+<input type="button" id="btnAnswer35" value="回答表示" onclick="answer(35)" style="display:block;">
+<input type="button" id="btnBack35" value="回答非表示" onclick="back(35)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct36" class="sep">
+	【問36】
+	<a href="#sct01">Top</a>
+	<a href="#sct35">Before</a>
+	<a href="#sct37">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	真偽値を表す属性において「偽」の状態を指定するには、どのようにしたらよいか。
+	「checked」という属性を例とした以下の選択肢のうち、間違っているものを全て選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a36a"><input type="checkbox" id="a36a" name="a36">checked=""</label></li>
+	<li><label for="a36b"><input type="checkbox" id="a36b" name="a36">checked="no"</label></li>
+	<li><label for="a36c"><input type="checkbox" id="a36c" name="a36">checked="false"</label></li>
+	<li><label for="a36d"><input type="checkbox" id="a36d" name="a36">checked="!checked"</label></li>
+	<li><label for="a36e"><input type="checkbox" id="a36e" name="a36">属性の指定を行わない</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans36" class="ans" style="display:none;">【回答】A、B、C、D</p>
+<input type="button" id="btnAnswer36" value="回答表示" onclick="answer(36)" style="display:block;">
+<input type="button" id="btnBack36" value="回答非表示" onclick="back(36)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct37" class="sep">
+	【問37】
+	<a href="#sct01">Top</a>
+	<a href="#sct36">Before</a>
+	<a href="#sct38">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	セクショニング・ルートにならない要素を以下のうちから1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a37a"><input type="radio" id="a37a" name="a37">td</label></li>
+	<li><label for="a37b"><input type="radio" id="a37b" name="a37">blockquote</label></li>
+	<li><label for="a37c"><input type="radio" id="a37c" name="a37">body</label></li>
+	<li><label for="a37d"><input type="radio" id="a37d" name="a37">header</label></li>
+	<li><label for="a37e"><input type="radio" id="a37e" name="a37">fieldset</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans37" class="ans" style="display:none;">【回答】D</p>
+<input type="button" id="btnAnswer37" value="回答表示" onclick="answer(37)" style="display:block;">
+<input type="button" id="btnBack37" value="回答非表示" onclick="back(37)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct38" class="sep">
+	【問38】
+	<a href="#sct01">Top</a>
+	<a href="#sct37">Before</a>
+	<a href="#sct39">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	セクショニング・コンテンツに分類される要素を、以下のうちから3つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a38a"><input type="checkbox" id="a38a" name="a38">header</label></li>
+	<li><label for="a38b"><input type="checkbox" id="a38b" name="a38">section</label></li>
+	<li><label for="a38c"><input type="checkbox" id="a38c" name="a38">aside</label></li>
+	<li><label for="a38d"><input type="checkbox" id="a38d" name="a38">footer</label></li>
+	<li><label for="a38e"><input type="checkbox" id="a38e" name="a38">nav</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans38" class="ans" style="display:none;">【回答】B、C、E</p>
+<input type="button" id="btnAnswer38" value="回答表示" onclick="answer(38)" style="display:block;">
+<input type="button" id="btnBack38" value="回答非表示" onclick="back(38)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct39" class="sep">
+	【問39】
+	<a href="#sct01">Top</a>
+	<a href="#sct38">Before</a>
+	<a href="#sct40">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	main要素に関して、次の中から正しい記述を選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a39a"><input type="radio" id="a39a" name="a39">main要素は、セクショニング・コンテンツとして分類される要素で、文書のアウトラインを構成する。</label></li>
+	<li><label for="a39b"><input type="radio" id="a39b" name="a39">main要素は、1つのHTML文書中で一度しか使用する事ができない。</label></li>
+	<li><label for="a39c"><input type="radio" id="a39c" name="a39">main要素は、article要素の内部で使用しなくてはならない。</label></li>
+	<li><label for="a39d"><input type="radio" id="a39d" name="a39">main要素は、body要素の代わりに用いる事ができる。</label></li>
+	<li><label for="a39e"><input type="radio" id="a39e" name="a39">main要素は、HTML4.01から存在したが、HTML5になって意味が変更された要素である。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans39" class="ans" style="display:none;">【回答】B</p>
+<input type="button" id="btnAnswer39" value="回答表示" onclick="answer(39)" style="display:block;">
+<input type="button" id="btnBack39" value="回答非表示" onclick="back(39)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct40" class="sep">
+	【問40】
+	<a href="#sct01">Top</a>
+	<a href="#sct39">Before</a>
+	<a href="#sct41">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	以下のコードから生成されるアウトラインを正しく表したものを選びなさい。
+</p>
+<pre>
+  &lt;body&gt;
+    &lt;h1&gt;1&lt;/h1&gt;
+    &lt;article&gt;
+      &lt;h1&gt;2&lt;/h1&gt;
+      &lt;h2&gt;3&lt;/h2&gt;
+      &lt;h2&gt;4&lt;/h2&gt;
+    &lt;/article&gt;
+  &lt;/body&gt;
+</pre>
+<ol class="qst">
+	<li>
+		<label for="a40a">
+			<input type="radio" id="a40a" name="a40">
+		</label>
+		<pre>
+  1
+    2
+      3
+    4
+		</pre>
+	</li>
+	<li>
+		<label for="a40b">
+			<input type="radio" id="a40b" name="a40">
+		</label>
+		<pre>
+  1
+    2
+    3
+      4
+		</pre>
+	</li>
+	<li>
+		<label for="a40c">
+			<input type="radio" id="a40c" name="a40">
+		</label>
+		<pre>
+  1
+    2
+      3
+      4
+		</pre>
+	</li>
+	<li>
+		<label for="a40d">
+			<input type="radio" id="a40d" name="a40">
+		</label>
+		<pre>
+  1
+    2
+    3
+    4
+		</pre>
+	</li>
+	<li>
+		<label for="a40e">
+			<input type="radio" id="a40e" name="a40">
+		</label>
+		<pre>
+  1
+  2
+    3
+  4
+		</pre>
+	</li>
+</ol>
+<!-- 回答 -->
+<p id="ans40" class="ans" style="display:none;">【回答】C</p>
+<input type="button" id="btnAnswer40" value="回答表示" onclick="answer(40)" style="display:block;">
+<input type="button" id="btnBack40" value="回答非表示" onclick="back(40)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct41" class="sep">
+	【問41】
+	<a href="#sct01">Top</a>
+	<a href="#sct40">Before</a>
+	<a href="#sct42">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	以下の要素のうち、HTML5で廃止になった要素はどれか。1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a41a"><input type="radio" id="a41a" name="a41">&lt;small&gt;</label></li>
+	<li><label for="a41b"><input type="radio" id="a41b" name="a41">&lt;b&gt;</label></li>
+	<li><label for="a41c"><input type="radio" id="a41c" name="a41">&lt;big&gt;</label></li>
+	<li><label for="a41d"><input type="radio" id="a41d" name="a41">&lt;em&gt;</label></li>
+	<li><label for="a41e"><input type="radio" id="a41e" name="a41">&lt;strong&gt;</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans41" class="ans" style="display:none;">【回答】C</p>
+<input type="button" id="btnAnswer41" value="回答表示" onclick="answer(41)" style="display:block;">
+<input type="button" id="btnBack41" value="回答非表示" onclick="back(41)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct42" class="sep">
+	【問42】
+	<a href="#sct01">Top</a>
+	<a href="#sct41">Before</a>
+	<a href="#sct43">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	HTML5から利用可能になったルビ関連の要素について、
+	正しい使い方をしている組み合わせを選びなさい。
+	このマークアップをブラウザで表示し、期待する結果を以下に示す。
+</p>
+<ul>
+	<li>
+		ルビに対応したブラウザで表示すると「清少納言」という漢字に対して
+		「せいしょうなごん」というルビが表示される。
+	</li>
+	<li>
+		ルビに対応していないブラウザで表示すると、ルビに関連した要素が無視され、
+		「清少納言(せいしょうなごん)」と表示される。
+	</li>
+</ul>
+<p>
+	&lt;(　a　)&gt;清少納言&lt;(　b　)&gt;(&lt;/(　b　)&gt;&lt;(　c　)&gt;せいしょうなごん&lt;/(　c　)&gt;&lt;(　b　)&gt;)&lt;/(　b　)&gt;&lt;/(　a　)&gt;
+</p>
+<ol class="qst">
+	<li><label for="a42a"><input type="radio" id="a42a" name="a42">a：ruby　b：rt　c：rp</label></li>
+	<li><label for="a42b"><input type="radio" id="a42b" name="a42">a：ruby　b：rp　c：rt</label></li>
+	<li><label for="a42c"><input type="radio" id="a42c" name="a42">a：rtc　b：rt　c：rp</label></li>
+	<li><label for="a42d"><input type="radio" id="a42d" name="a42">a：rtc　b：rp　c：rt</label></li>
+	<li><label for="a42e"><input type="radio" id="a42e" name="a42">a：rb　b：rp　c：rt</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans42" class="ans" style="display:none;">【回答】B</p>
+<input type="button" id="btnAnswer42" value="回答表示" onclick="answer(42)" style="display:block;">
+<input type="button" id="btnBack42" value="回答非表示" onclick="back(42)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct43" class="sep">
+	【問43】
+	<a href="#sct01">Top</a>
+	<a href="#sct42">Before</a>
+	<a href="#sct44">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	以下のマークアップを実行した結果について、正しい事を述べている選択肢を
+	全て選びなさい。
+</p>
+<pre>
+  &lt;video&gt;
+    &lt;source src="video.ogv" type="video/ogg"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    この動画を再生するには、HTML5に対応したブラウザを使用してください。
+  &lt;/vido&gt;
+</pre>
+<ol class="qst">
+	<li><label for="a43a"><input type="checkbox" id="a43a" name="a43">ブラウザがmp4に対応しておらず、ogvに対応している場合、video.ogvが表示される。</label></li>
+	<li><label for="a43b"><input type="checkbox" id="a43b" name="a43">ブラウザがogvに対応しておらず、mp4に対応している場合、video.mp4が表示される。</label></li>
+	<li><label for="a43c"><input type="checkbox" id="a43c" name="a43">ブラウザがogvにもmp4にも対応している場合、video.mp4が表示される。</label></li>
+	<li><label for="a43d"><input type="checkbox" id="a43d" name="a43">ブラウザがogvにもmp4にも対応していない場合、「この動画を・・・」というメッセージが表示される。</label></li>
+	<li><label for="a43e"><input type="checkbox" id="a43e" name="a43">ブラウザがogvにもmp4にも対応していない場合、何も表示されない。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans43" class="ans" style="display:none;">【回答】A、B、E</p>
+<input type="button" id="btnAnswer43" value="回答表示" onclick="answer(43)" style="display:block;">
+<input type="button" id="btnBack43" value="回答非表示" onclick="back(43)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct44" class="sep">
+	【問44】
+	<a href="#sct01">Top</a>
+	<a href="#sct43">Before</a>
+	<a href="#sct45">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	input要素のtype属性として使用できるものを2つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a44a"><input type="checkbox" id="a44a" name="a44">mailaddress</label></li>
+	<li><label for="a44b"><input type="checkbox" id="a44b" name="a44">integer</label></li>
+	<li><label for="a44c"><input type="checkbox" id="a44c" name="a44">card</label></li>
+	<li><label for="a44d"><input type="checkbox" id="a44d" name="a44">tel</label></li>
+	<li><label for="a44e"><input type="checkbox" id="a44e" name="a44">url</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans44" class="ans" style="display:none;">【回答】D、E</p>
+<input type="button" id="btnAnswer44" value="回答表示" onclick="answer(44)" style="display:block;">
+<input type="button" id="btnBack44" value="回答非表示" onclick="back(44)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct45" class="sep">
+	【問45】
+	<a href="#sct01">Top</a>
+	<a href="#sct44">Before</a>
+	<a href="#sct46">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	ファイル選択フィールド(&lt;input type="file"&gt;)に関する以下の記述のうち、
+	正しいものを2つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a45a"><input type="checkbox" id="a45a" name="a45">maxlength属性を指定すると、ファイルの最大サイズを指定できる。</label></li>
+	<li><label for="a45b"><input type="checkbox" id="a45b" name="a45">multiple属性を指定すると、複数のファイルを同時に選択できるようになる。</label></li>
+	<li><label for="a45c"><input type="checkbox" id="a45c" name="a45">folder属性を指定すると、フォルダの選択が可能になる。</label></li>
+	<li><label for="a45d"><input type="checkbox" id="a45d" name="a45">pattern属性を指定すると、指定したパターンのファイル名を持つファイルのみ選択可能となる。</label></li>
+	<li><label for="a45e"><input type="checkbox" id="a45e" name="a45">accept属性を用いて、選択するファイルの種類をMIMEタイプで絞り込む事ができる。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans45" class="ans" style="display:none;">【回答】B、E</p>
+<input type="button" id="btnAnswer45" value="回答表示" onclick="answer(45)" style="display:block;">
+<input type="button" id="btnBack45" value="回答非表示" onclick="back(45)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct46" class="sep">
+	【問46】
+	<a href="#sct01">Top</a>
+	<a href="#sct45">Before</a>
+	<a href="#sct47">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	dl要素について述べた以下の記述のうち、正しいものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a46a"><input type="radio" id="a46a" name="a46">dl要素は用語の定義リストを表す。</label></li>
+	<li><label for="a46b"><input type="radio" id="a46b" name="a46">dl要素内では、dd要素が表す値に対するキーとなる文字列(名前やタイトル、ラベルなど)をdt要素で表す。</label></li>
+	<li><label for="a46c"><input type="radio" id="a46c" name="a46">1つのdt要素に対し、対応するdd要素がない場合はエラーになる。</label></li>
+	<li><label for="a46d"><input type="radio" id="a46d" name="a46">1つのdt要素に対し、対応するdd要素が複数ある場合はエラーになる。</label></li>
+	<li><label for="a46e"><input type="radio" id="a46e" name="a46">dl要素は順序付きリストとしても扱う事ができる。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans46" class="ans" style="display:none;">【回答】B</p>
+<input type="button" id="btnAnswer46" value="回答表示" onclick="answer(46)" style="display:block;">
+<input type="button" id="btnBack46" value="回答非表示" onclick="back(46)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct47" class="sep">
+	【問47】
+	<a href="#sct01">Top</a>
+	<a href="#sct46">Before</a>
+	<a href="#sct48">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	次の要素のうち、HTML文書に必ず記述しなくてはならない要素を全て選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a47a"><input type="checkbox" id="a47a" name="a47">&lt;html&gt;</label></li>
+	<li><label for="a47b"><input type="checkbox" id="a47b" name="a47">&lt;head&gt;</label></li>
+	<li><label for="a47c"><input type="checkbox" id="a47c" name="a47">&lt;title&gt;</label></li>
+	<li><label for="a47d"><input type="checkbox" id="a47d" name="a47">&lt;meta&gt;</label></li>
+	<li><label for="a47e"><input type="checkbox" id="a47e" name="a47">&lt;body&gt;</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans47" class="ans" style="display:none;">【回答】C</p>
+<input type="button" id="btnAnswer47" value="回答表示" onclick="answer(47)" style="display:block;">
+<input type="button" id="btnBack47" value="回答非表示" onclick="back(47)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct48" class="sep">
+	【問48】
+	<a href="#sct01">Top</a>
+	<a href="#sct47">Before</a>
+	<a href="#sct49">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	script要素について述べたいかの記述のうち、間違っているものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a48a"><input type="checkbox" id="a48a" name="a48">script要素は、外部のスクリプトファイルの読み込みにも、スクリプトをHTML文書内に記述するのにも用いる事ができる。</label></li>
+	<li><label for="a48b"><input type="checkbox" id="a48b" name="a48">type属性を省略する事はできない。</label></li>
+	<li><label for="a48c"><input type="checkbox" id="a48c" name="a48">defer属性を指定すると、文書の読み込みが完了するまで、スクリプトの実行を遅延させる。</label></li>
+	<li><label for="a48d"><input type="checkbox" id="a48d" name="a48">async属性を指定すると、非同期でスクリプトファイルを読み込み、読み込み完了した時点で実行する。</label></li>
+	<li><label for="a48e"><input type="checkbox" id="a48e" name="a48">async属性とdefer属性は同時にしようする事はできない。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans48" class="ans" style="display:none;">【回答】B</p>
+<input type="button" id="btnAnswer48" value="回答表示" onclick="answer(48)" style="display:block;">
+<input type="button" id="btnBack48" value="回答非表示" onclick="back(48)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct49" class="sep">
+	【問49】
+	<a href="#sct01">Top</a>
+	<a href="#sct48">Before</a>
+	<a href="#sct50">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	見出し要素について述べた以下の記述のうち、正しいものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a49a"><input type="radio" id="a49a" name="a49">1つのページに、複数のh1要素を記述してもよい。</label></li>
+	<li><label for="a49b"><input type="radio" id="a49b" name="a49">見出し要素は必ずheader要素内に記述しなくてはならない。</label></li>
+	<li><label for="a49c"><input type="radio" id="a49c" name="a49">title要素を省略した場合、ページ内の一番最初の見出し要素がページタイトルとして用いられる。</label></li>
+	<li><label for="a49d"><input type="radio" id="a49d" name="a49">section、articleなどのセクショニング・コンテンツと共に用いないとエラーになる。</label></li>
+	<li><label for="a49e"><input type="radio" id="a49e" name="a49">section、articleなどのセクショニング・コンテンツが見出し要素を持たない場合、エラーになる。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans49" class="ans" style="display:none;">【回答】A</p>
+<input type="button" id="btnAnswer49" value="回答表示" onclick="answer(49)" style="display:block;">
+<input type="button" id="btnBack49" value="回答非表示" onclick="back(49)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct50" class="sep">
+	【問50】
+	<a href="#sct01">Top</a>
+	<a href="#sct49">Before</a>
+	<a href="#sct51">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	HTML5から追加されたfigure要素について述べた以下の記述のうち、
+	間違っているものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a50a"><input type="radio" id="a50a" name="a50">figure要素は、文中の図や表を表す。</label></li>
+	<li><label for="a50b"><input type="radio" id="a50b" name="a50">figure要素のキャプションはfigcaption要素を用いて記述する。</label></li>
+	<li><label for="a50c"><input type="radio" id="a50c" name="a50">figcaption要素は記述しなくてもよい。</label></li>
+	<li><label for="a50d"><input type="radio" id="a50d" name="a50">figcaption要素は、figure要素内の一番最初に記述しなくてはならない。</label></li>
+	<li><label for="a50e"><input type="radio" id="a50e" name="a50">figure要素はセクショニング・ルートであり、その内側に独立したアウトラインを構成する。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans50" class="ans" style="display:none;">【回答】D</p>
+<input type="button" id="btnAnswer50" value="回答表示" onclick="answer(50)" style="display:block;">
+<input type="button" id="btnBack50" value="回答非表示" onclick="back(50)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct51" class="sep">
+	【問51】
+	<a href="#sct01">Top</a>
+	<a href="#sct50">Before</a>
+	<a href="#sct52">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	フォーム関連要素の入力値チェックに関して述べた以下の記述のうち、
+	間違っているものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a51a"><input type="radio" id="a51a" name="a51">required属性を使用して、入力を必須にする事ができる。</label></li>
+	<li><label for="a51b"><input type="radio" id="a51b" name="a51">maxlength属性を使用して、入力値の最大長を指定できる。</label></li>
+	<li><label for="a51c"><input type="radio" id="a51c" name="a51">max属性を使用して、入力値の最大値を指定できる。</label></li>
+	<li><label for="a51d"><input type="radio" id="a51d" name="a51">pattern属性を使用して、「pattern="email"」や「pattern="url"」など、パターンを指定した入力チェックを行うことができる。</label></li>
+	<li><label for="a51e"><input type="radio" id="a51e" name="a51">必要に応じて、入力値チェックを行わずにフォーム送信を行う事ができる。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans51" class="ans" style="display:none;">【回答】D</p>
+<input type="button" id="btnAnswer51" value="回答表示" onclick="answer(51)" style="display:block;">
+<input type="button" id="btnBack51" value="回答非表示" onclick="back(51)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct52" class="sep">
+	【問52】
+	<a href="#sct01">Top</a>
+	<a href="#sct51">Before</a>
+	<a href="#sct53">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	HTML5で追加されたフォーム関連要素のうち、実際には存在しないものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a52a"><input type="radio" id="a52a" name="a52">keygen</label></li>
+	<li><label for="a52b"><input type="radio" id="a52b" name="a52">meter</label></li>
+	<li><label for="a52c"><input type="radio" id="a52c" name="a52">progress</label></li>
+	<li><label for="a52d"><input type="radio" id="a52d" name="a52">datagrid</label></li>
+	<li><label for="a52e"><input type="radio" id="a52e" name="a52">output</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans52" class="ans" style="display:none;">【回答】D</p>
+<input type="button" id="btnAnswer52" value="回答表示" onclick="answer(52)" style="display:block;">
+<input type="button" id="btnBack52" value="回答非表示" onclick="back(52)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct53" class="sep">
+	【問53】
+	<a href="#sct01">Top</a>
+	<a href="#sct52">Before</a>
+	<a href="#sct54">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	canvas要素について述べた以下の記述のうち、正しいものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a53a"><input type="radio" id="a53a" name="a53">src属性を指定して、任意の画像を読み込むことができる。</label></li>
+	<li><label for="a53b"><input type="radio" id="a53b" name="a53">ベクターグラフィックスを表示するための要素である。</label></li>
+	<li><label for="a53c"><input type="radio" id="a53c" name="a53">alt属性を指定して、代替テキストを表す事ができる。</label></li>
+	<li><label for="a53d"><input type="radio" id="a53d" name="a53">width属性やheight属性を用いて、幅や高さを指定する。</label></li>
+	<li><label for="a53e"><input type="radio" id="a53e" name="a53">Javascriptを用いることなく、画像の描画を行う事ができる。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans53" class="ans" style="display:none;">【回答】D</p>
+<input type="button" id="btnAnswer53" value="回答表示" onclick="answer(53)" style="display:block;">
+<input type="button" id="btnBack53" value="回答非表示" onclick="back(53)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct54" class="sep">
+	【問54】
+	<a href="#sct01">Top</a>
+	<a href="#sct53">Before</a>
+	<a href="#sct55">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	data URIについて述べた以下の記述のうち、間違っているものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a54a"><input type="radio" id="a54a" name="a54">画像などのバイナリデータをdata URIで表す事が可能である。</label></li>
+	<li><label for="a54b"><input type="radio" id="a54b" name="a54">data URIは元のデータに比べてデータ量を圧縮する事ができる。</label></li>
+	<li><label for="a54c"><input type="radio" id="a54c" name="a54">data URIはHTMLやCSSに埋め込んで利用できる。</label></li>
+	<li><label for="a54d"><input type="radio" id="a54d" name="a54">data URIはdata要素やカスタムデータ属性とは直接の関連がない。</label></li>
+	<li><label for="a54e"><input type="radio" id="a54e" name="a54">data URIはHTTPリクエスト数を減らす事ができ、Webアプリケーションのパフォーマンスの向上が期待できる。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans54" class="ans" style="display:none;">【回答】B</p>
+<input type="button" id="btnAnswer54" value="回答表示" onclick="answer(54)" style="display:block;">
+<input type="button" id="btnBack54" value="回答非表示" onclick="back(54)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct55" class="sep">
+	【問55】
+	<a href="#sct01">Top</a>
+	<a href="#sct54">Before</a>
+	<a href="#sct56">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	メディアクエリを記述可能な箇所について述べた以下の記述のうち、
+	間違っているものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a55a"><input type="radio" id="a55a" name="a55">link要素のmedia属性</label></li>
+	<li><label for="a55b"><input type="radio" id="a55b" name="a55">style要素のmedia属性</label></li>
+	<li><label for="a55c"><input type="radio" id="a55c" name="a55">source要素のmedia属性</label></li>
+	<li><label for="a55d"><input type="radio" id="a55d" name="a55">script要素のmedia属性</label></li>
+	<li><label for="a55e"><input type="radio" id="a55e" name="a55">CSS内の@media</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans55" class="ans" style="display:none;">【回答】D</p>
+<input type="button" id="btnAnswer55" value="回答表示" onclick="answer(55)" style="display:block;">
+<input type="button" id="btnBack55" value="回答非表示" onclick="back(55)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct56" class="sep">
+	【問56】
+	<a href="#sct01">Top</a>
+	<a href="#sct55">Before</a>
+	<a href="#sct57">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	viewportの幅が800pxの環境で、以下のCSSが適用された結果を
+	正しく表している選択肢を選びなさい。
+</p>
+<pre>
+  #container{
+    color: red;
+    background-color: white;
+    width: 100%
+  }
+
+  @media screen and (min-width: 481px){
+    #container{
+      color: black;
+    }
+  }
+
+  @media screen and (min-width: 481px) and (max-width: 768px){
+    #container{
+      background-color: gray;
+    }
+  }
+
+  @media screen and (min-width: 769px){
+    #container{
+      width: 768px;
+    }
+  }
+</pre>
+<ol class="qst">
+	<li><label for="a56a"><input type="radio" id="a56a" name="a56">文字色：赤　背景色：白　幅：100%</label></li>
+	<li><label for="a56b"><input type="radio" id="a56b" name="a56">文字色：赤　背景色：グレー　幅：100%</label></li>
+	<li><label for="a56c"><input type="radio" id="a56c" name="a56">文字色：黒　背景色：白　幅：768px</label></li>
+	<li><label for="a56d"><input type="radio" id="a56d" name="a56">文字色：黒　背景色：白　幅：100%</label></li>
+	<li><label for="a56e"><input type="radio" id="a56e" name="a56">文字色：黒　背景色：グレー　幅：768px</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans56" class="ans" style="display:none;">【回答】C</p>
+<input type="button" id="btnAnswer56" value="回答表示" onclick="answer(56)" style="display:block;">
+<input type="button" id="btnBack56" value="回答非表示" onclick="back(56)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct57" class="sep">
+	【問57】
+	<a href="#sct01">Top</a>
+	<a href="#sct56">Before</a>
+	<a href="#sct58">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	モバイルデバイスでの表示を考慮したWebサイトの設計について述べた
+	以下の文章のうち、間違っているものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a57a"><input type="radio" id="a57a" name="a57">メディアクエリを使用すると、デバイスの環境に応じてCSSを切り替える事ができる。</label></li>
+	<li><label for="a57b"><input type="radio" id="a57b" name="a57">高解像度ディスプレイでの表示を考慮し、ビットマップ画像はサイズの大きなものを用意するとよい。</label></li>
+	<li><label for="a57c"><input type="radio" id="a57c" name="a57">複数の画像ファイルを1つのファイルにまとめる事でHTTPリクエスト数を減らすテクニックの事を、フルードイメージと呼ぶ。</label></li>
+	<li><label for="a57d"><input type="radio" id="a57d" name="a57">SVGは表示時のサイズやスクリーンの解像度に関わらず、常にクリアに表示される画像形式である。</label></li>
+	<li><label for="a57e"><input type="radio" id="a57e" name="a57">画像や要素の横幅を%単位で指定する事で、親要素に対して相対的なサイズを指定でき、スクリーンサイズに応じて自動的に伸縮するようになる。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans57" class="ans" style="display:none;">【回答】C</p>
+<input type="button" id="btnAnswer57" value="回答表示" onclick="answer(57)" style="display:block;">
+<input type="button" id="btnBack57" value="回答非表示" onclick="back(57)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct58" class="sep">
+	【問58】
+	<a href="#sct01">Top</a>
+	<a href="#sct57">Before</a>
+	<a href="#sct59">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	メディアクエリを使用して、「幅768px以下のデバイス上では、
+	メインコンテンツ(main要素)を画面いっぱいに表示したい」という要件を満たしたい。
+	どのようなメディアクエリを記述すればよいか。以下の＿＿に当てはまるものを1つ選びなさい。
+</p>
+<pre>
+  &lt;main&gt;・・・&lt;/main&gt;
+
+  &lt;style&gt;
+  main{
+    width: 960px;
+  }
+
+  @media screen and ＿＿{
+    main{
+      width: 100%;
+    }
+  }
+  &lt;/style&gt;
+</pre>
+<ol class="qst">
+	<li><label for="a58a"><input type="radio" id="a58a" name="a58">(max-width: 768px)</label></li>
+	<li><label for="a58b"><input type="radio" id="a58b" name="a58">(max-width: 769px)</label></li>
+	<li><label for="a58c"><input type="radio" id="a58c" name="a58">(max-device-width: 768px)</label></li>
+	<li><label for="a58d"><input type="radio" id="a58d" name="a58">(max-device-width: 769px)</label></li>
+	<li><label for="a58e"><input type="radio" id="a58e" name="a58">(max-screen-width: 768px)</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans58" class="ans" style="display:none;">【回答】C</p>
+<input type="button" id="btnAnswer58" value="回答表示" onclick="answer(58)" style="display:block;">
+<input type="button" id="btnBack58" value="回答非表示" onclick="back(58)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct59" class="sep">
+	【問59】
+	<a href="#sct01">Top</a>
+	<a href="#sct58">Before</a>
+	<a href="#sct60">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	デバイスが横向きの状態でviewportの幅が600pxの場合、
+	適用されるCSSファイルはどれか。当てはまるものを全て選びなさい。
+</p>
+<pre>
+  &lt;link rel="stylesheet" href="1.css"&gt;
+  &lt;link rel="stylesheet" href="2.css" media="(min-width: 481px)"&gt;
+  &lt;link rel="stylesheet" href="3.css" media="(min-width: 481px) 
+    and (orientation: portrait)"&gt;
+  &lt;link rel="stylesheet" href="4.css" media="(min-width: 481px) 
+    and (orientation: landscape)"&gt;
+  &lt;link rel="stylesheet" href="5.css" media="(min-width: 769px)"&gt;
+</pre>
+<ol class="qst">
+	<li><label for="a59a"><input type="checkbox" id="a59a" name="a59">1.css</label></li>
+	<li><label for="a59b"><input type="checkbox" id="a59b" name="a59">2.css</label></li>
+	<li><label for="a59c"><input type="checkbox" id="a59c" name="a59">3.css</label></li>
+	<li><label for="a59d"><input type="checkbox" id="a59d" name="a59">4.css</label></li>
+	<li><label for="a59e"><input type="checkbox" id="a59e" name="a59">5.css</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans59" class="ans" style="display:none;">【回答】A、B、D</p>
+<input type="button" id="btnAnswer59" value="回答表示" onclick="answer(59)" style="display:block;">
+<input type="button" id="btnBack59" value="回答非表示" onclick="back(59)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct60" class="sep">
+	【問60】
+	<a href="#sct01">Top</a>
+	<a href="#sct59">Before</a>
+	<a href="#sct61">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	以下の(　)にあてはまる単語を答えなさい。
+</p>
+<p>
+	アプリケーションキャッシュを利用するには、
+	キャッシュマニフェストファイルを作成し、
+	そのURLをhtml要素の(　)属性に指定する。
+</p>
+<!-- 回答 -->
+<p id="ans60" class="ans" style="display:none;">【回答】manifest</p>
+<input type="button" id="btnAnswer60" value="回答表示" onclick="answer(60)" style="display:block;">
+<input type="button" id="btnBack60" value="回答非表示" onclick="back(60)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct61" class="sep">
+	【問61】
+	<a href="#sct01">Top</a>
+	<a href="#sct60">Before</a>
+	<a href="#sct62">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	アプリケーションキャッシュのマニフェストファイルに関する説明のうち、
+	間違っているものを1つ選びなさい。
+</p>
+<ol class="qst">
+	<li><label for="a61a"><input type="radio" id="a61a" name="a61">ファイルの先頭は"CACHE MANIFEST"とうい文字列でなくてはならない。</label></li>
+	<li><label for="a61b"><input type="radio" id="a61b" name="a61">text/cache-manifestというMIMEタイプで配信される必要がある。</label></li>
+	<li><label for="a61c"><input type="radio" id="a61c" name="a61">「.manifest」という拡張子を持つファイル名を付けるのが一般的である。</label></li>
+	<li><label for="a61d"><input type="radio" id="a61d" name="a61">"#"で始まる行はコメントとして取り扱われる。</label></li>
+	<li><label for="a61e"><input type="radio" id="a61e" name="a61">文字コードはUTF-8である必要がある。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans61" class="ans" style="display:none;">【回答】C</p>
+<input type="button" id="btnAnswer61" value="回答表示" onclick="answer(61)" style="display:block;">
+<input type="button" id="btnBack61" value="回答非表示" onclick="back(61)" style="display:none;">
+
+
+<!-- 問題 -->
+<p id="sct62" class="sep">
+	【問62】
+	<a href="#sct01">Top</a>
+	<a href="#sct61">Before</a>
+	<a href="#last">Next</a>
+	<a href="#last">Last</a>
+</p>
+<p>
+	以下のキャッシュマニフェストファイルについて述べた文章のうち、
+	間違っているものを1つ選びなさい。
+</p>
+<pre>
+  CACHE MANIFEST
+
+  # Timestamp: 20150101000000
+  hello.html
+
+  FALLBACK:
+  / fallback.html
+
+  CACHE:
+  hello.css
+
+  SETTINGS:
+  prefer-online
+
+  NETWORK:
+  *
+</pre>
+<ol class="qst">
+	<li><label for="a62a"><input type="radio" id="a62a" name="a62">hello.htmlが書かれた行はどのセクションにも属していないため、CACHEセクションに属しているとみなされる。</label></li>
+	<li><label for="a62b"><input type="radio" id="a62b" name="a62">このキャッシュマニフェストファイルの更新チェックに失敗すると、fallback.htmlが表示される。</label></li>
+	<li><label for="a62c"><input type="radio" id="a62c" name="a62">hello.html、fallback.html、hello.cssはいずれもローカルにキャッシュされる。</label></li>
+	<li><label for="a62d"><input type="radio" id="a62d" name="a62">このWebアプリケーションは、ドメイン外のサーバにもアクセスできる(img要素に外部ドメインの画像URLを指定するなど)。</label></li>
+	<li><label for="a62e"><input type="radio" id="a62e" name="a62">アプリケーションキャッシュはオフライン時にのみ利用される。オンライン時はアプリケーションキャッシュを無視して、通常のネットワークアクセスが行われる。</label></li>
+</ol>
+<!-- 回答 -->
+<p id="ans62" class="ans" style="display:none;">【回答】B</p>
+<input type="button" id="btnAnswer62" value="回答表示" onclick="answer(62)" style="display:block;">
+<input type="button" id="btnBack62" value="回答非表示" onclick="back(62)" style="display:none;">
+
+
+<div id="last" style="margin-top:20px;"></div>
+<a href="#sct01">Top</a>
+<a href="#sct62">Before</a>
+<a href="#last">Next</a>
+<a href="#last">Last</a>
+</form>
+</body>
+</html>
