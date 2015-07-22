@@ -8,6 +8,9 @@
 pre{
 	font-size: 1.2em;
 }
+li{
+	padding-top:10px;
+}
 .qst{
 	list-style-type: upper-alpha;
 }
@@ -186,7 +189,7 @@ function back(no){
 	<li><label for="a6e"><input type="radio" id="a6e" name="a6">IPv6は、256ビットのアドレス空間を持つ。</label></li>
 </ol>
 <!-- 回答 -->
-<p id="ans6" class="ans" style="display:none;">【回答】E</p>
+<p id="ans6" class="ans" style="display:none;">【回答】E　(IPv6は128ビット)</p>
 <input type="button" id="btnAnswer6" value="回答表示" onclick="answer(6)" style="display:block;">
 <input type="button" id="btnBack6" value="回答非表示" onclick="back(6)" style="display:none;">
 
@@ -211,7 +214,10 @@ function back(no){
 	<li><label for="c7e"><input type="checkbox" id="c7e" name="c7">canvasは、JavaScriptによって描画可能なビットマップの画像領域。</label></li>
 </ol>
 <!-- 回答 -->
-<p id="ans7" class="ans" style="display:none;">【回答】B、E</p>
+<div id="ans7" class="ans" style="display:none;">
+	<p>【回答】B、E</p>
+	<p>JPGは透過を行えない。GIFは透過可能。SVGはXML形式のテキストデータ。</p>
+</div>
 <input type="button" id="btnAnswer7" value="回答表示" onclick="answer(7)" style="display:block;">
 <input type="button" id="btnBack7" value="回答非表示" onclick="back(7)" style="display:none;">
 
@@ -1405,11 +1411,11 @@ function back(no){
 	script要素について述べたいかの記述のうち、間違っているものを1つ選びなさい。
 </p>
 <ol class="qst">
-	<li><label for="a48a"><input type="checkbox" id="a48a" name="a48">script要素は、外部のスクリプトファイルの読み込みにも、スクリプトをHTML文書内に記述するのにも用いる事ができる。</label></li>
-	<li><label for="a48b"><input type="checkbox" id="a48b" name="a48">type属性を省略する事はできない。</label></li>
-	<li><label for="a48c"><input type="checkbox" id="a48c" name="a48">defer属性を指定すると、文書の読み込みが完了するまで、スクリプトの実行を遅延させる。</label></li>
-	<li><label for="a48d"><input type="checkbox" id="a48d" name="a48">async属性を指定すると、非同期でスクリプトファイルを読み込み、読み込み完了した時点で実行する。</label></li>
-	<li><label for="a48e"><input type="checkbox" id="a48e" name="a48">async属性とdefer属性は同時にしようする事はできない。</label></li>
+	<li><label for="a48a"><input type="radio" id="a48a" name="a48">script要素は、外部のスクリプトファイルの読み込みにも、スクリプトをHTML文書内に記述するのにも用いる事ができる。</label></li>
+	<li><label for="a48b"><input type="radio" id="a48b" name="a48">type属性を省略する事はできない。</label></li>
+	<li><label for="a48c"><input type="radio" id="a48c" name="a48">defer属性を指定すると、文書の読み込みが完了するまで、スクリプトの実行を遅延させる。</label></li>
+	<li><label for="a48d"><input type="radio" id="a48d" name="a48">async属性を指定すると、非同期でスクリプトファイルを読み込み、読み込み完了した時点で実行する。</label></li>
+	<li><label for="a48e"><input type="radio" id="a48e" name="a48">async属性とdefer属性は同時にしようする事はできない。</label></li>
 </ol>
 <!-- 回答 -->
 <p id="ans48" class="ans" style="display:none;">【回答】B</p>
