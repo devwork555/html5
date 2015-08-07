@@ -137,7 +137,7 @@
 <p>色の指定は英単語(キーワード)、もしくは数値で行う。</p>
 <p class="tl">■英単語(キーワード)での指定</p>
 <ul>
-<li><p style="color:red;">color:red;</p></li>
+<li><p style="color:red;">color: red;</p></li>
 <li><p style="color:blue;">color: blue;</p></li>
 </ul>
 <p class="tl">■数値での指定</p>
@@ -2688,16 +2688,20 @@ div.ani2{
 			</li>
 			<li>forwards
 				<p>
-					@keyframesの0%位置で始まり、100%位置で終了する。
+					再生中以外は、再生開始直後のプロパティを適用する。
+					(順再生であれば、@keyframesの0%の状態、
+					逆再生であれば、@keyframesの100%の状態)
 				</p>
 			</li>
 			<li>backwards
 				<p>
-					開始時点の位置で始まり、開始時点の位置で終了する。
+					再生中以外は、再生終了直前のプロパティを適用する。
+					(順再生であれば、@keyframesの100%の状態、
+					逆再生であれば、@keyframesの0%の状態)
 				</p>
 			</li>
 			<li>both
-				<p>@keyframesの0%の位置で始まり、@keyframesの100%の位置で終了する。</p>
+				<p>再生開始前は開始直後の状態、再生終了後は終了直前の状態となる。</p>
 			</li>
 		</ul>
 	</li>
