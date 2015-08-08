@@ -2686,27 +2686,28 @@ div.ani2{
 		<p>アニメーションが再生中でない場合の状態を指定する。</p>
 		<ul style="list-style-type:decimal">
 			<li>none
-				<p>再生中以外は、元々指定されいてる状態となる。</p>
+				<ul>
+					<li>開始：初期状態</li>
+					<li>終了：初期状態</li>
+				</ul>
 			</li>
 			<li>forwards
-				<p>
-					アニメーション適用前の状態から開始し、
-					アニメーション終了後、@keyframesの100%の値で終了する。
-				</p>
+				<ul>
+					<li>開始：初期状態</li>
+					<li>終了：@keyfarmesの100%の状態</li>
+				</ul>
 			</li>
 			<li>backwards
-				<p>
-					@keyframesの'0%'の値を即座に適用して、
-					animation-delayで指定した時間の間もその状態を維持する。
-					アニメーション終了後はスタイル適用前の状態に戻る。
-				</p>
+				<ul>
+					<li>開始：@keyframesの0%の状態</li>
+					<li>終了：初期状態</li>
+				</ul>
 			</li>
 			<li>both
-				<p>
-					@keyframesの'0%'の値を即座に適用して、
-					animation-delayで指定した時間の間もその状態を維持する。
-					アニメーション終了後、@keyframesの100%の値で終了する。
-				</p>
+				<ul>
+					<li>開始：@keyframesの0%の状態</li>
+					<li>終了：@keyfarmesの100%の状態</li>
+				</ul>
 			</li>
 		</ul>
 	</li>
