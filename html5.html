@@ -37,6 +37,9 @@
 		.rowTitle{
 			background-color: #f5fffa;
 		}
+		.txtCenter{
+			text-align: center;
+		}
 	</style>
 	<script type="text/javascript">
 	function renderCanvas(){
@@ -347,9 +350,118 @@ blockquote要素の内容
 &lt;a href="http://www.google.co.jp" target="_blank" rel="noreferrer" type="text/html" hreflang="ja"&gt;リンク&lt;/a&gt;
 </pre>
 <p>
-	href属性が存在しない場合、target属性、download属性、rel属性、hreflang属性、type属性は記述できない。
-	target="_blank"が非推奨ではなくなった。
+	href属性を指定していない場合、他の属性も指定できない(グローバル属性は指定可能)。
+	HTML5で追加されたdownload属性は、リンク先がダウンロード用のファイルであることを示す。
+	rel属性はarea要素とlink要素でも指定でき、指定できる値は要素によって異なる。
+	rel属性に指定できる値は下記。
 </p>
+<table>
+<tr>
+	<th>値</th>
+	<th>概要</th>
+	<th>a要素</th>
+	<th>area要素</th>
+	<th>link要素</th>
+</tr>
+<tr>
+	<td>alternate</td>
+	<td>代替文書へのリンク</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">○</td>
+</tr>
+<tr>
+	<td>autor</td>
+	<td>執筆者に関する情報へのリンク</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">○</td>
+</tr>
+<tr>
+	<td>bookmark</td>
+	<td>このリンクを含む最も近いセクションへのパーマリンク</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">×</td>
+</tr>
+<tr>
+	<td>help</td>
+	<td>ヘルプへのリンク</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">○</td>
+</tr>
+<tr>
+	<td>icon</td>
+	<td>アイコンの画像ファイルへのリンク</td>
+	<td class="txtCenter">×</td>
+	<td class="txtCenter">×</td>
+	<td class="txtCenter">○</td>
+</tr>
+<tr>
+	<td>license</td>
+	<td>ライセンスに関する文書へのリンク</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">○</td>
+</tr>
+<tr>
+	<td>next</td>
+	<td>次の文書へのリンク</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">○</td>
+</tr>
+<tr>
+	<td>nofollow</td>
+	<td>リンク先については保証できないことを示す</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">×</td>
+</tr>
+<tr>
+	<td>noreferrer</td>
+	<td>リンク先についてはリンク元のページが知らされないことを示す</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">×</td>
+</tr>
+<tr>
+	<td>prefetch</td>
+	<td>事前に読み込んでキャッシュしておくべきファイルへのリンク</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">○</td>
+</tr>
+<tr>
+	<td>prev</td>
+	<td>前の文書へのリンク</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">○</td>
+</tr>
+<tr>
+	<td>search</td>
+	<td>検索が可能なページへのリンク</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">○</td>
+</tr>
+<tr>
+	<td>stylesheet</td>
+	<td>読み込んで適用するスタイルシート</td>
+	<td class="txtCenter">×</td>
+	<td class="txtCenter">×</td>
+	<td class="txtCenter">○</td>
+</tr>
+<tr>
+	<td>tag</td>
+	<td>この文書に適用するタグに関する情報へのリンク</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">○</td>
+	<td class="txtCenter">×</td>
+</tr>
+</table>
 
 <hr>
 <p class="tl">■strong</p>
