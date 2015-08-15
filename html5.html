@@ -57,11 +57,62 @@
 </head>
 <body onload="renderCanvas()">
 
-
-<h1 id="sct01">(1)セクション関連の要素</h1>
+<h1 id="sct01">(1)HTML5の基本構文</h1>
 <a href="#sct01">Top</a>
 <a href="#sct01">Before</a>
 <a href="#sct02">Next</a>
+<a href="#last">Last</a>
+<p class="tl">■DOCTYPE宣言</p>
+<p>
+	HTML5のDOCTYPE宣言はブラウザの表示モードを<strong>標準モード</strong>にする
+	目的で指定する。DOCTYPE宣言は<strong>大文字小文字どちらで記載してもよい。</strong>
+</p>
+<p>
+	現在普及しているブラウザのほとんどは、HTMLの文法が無視されていた
+	古い時代のページを表示させるための後方互換モードと、
+	HTMLの標準仕様に準拠したページを表示させるための標準モードという
+	2つのモードを持っている。後方互換モードではHTML5で書かれたページを正しく表示できない。
+	DOCTYPE宣言ない場合、現在のブラウザは後方互換モードで表示してしまう。
+</p>
+
+<hr>
+<p class="tl">■コメント</p>
+<p>
+	&lt;!--と--&gt;で囲んだ範囲HTMLのコメントとなる。
+	コメント内部に<strong>連続したハイフン(--)を含むことはできない。</strong>
+	また、コメントは
+	<strong>
+		&gt;、または-&gt;で開始することはできず、
+		-で終了することもできない。
+	</strong>
+</p>
+
+<hr>
+<p class="tl">■属性値</p>
+<p>
+	あらかじめ決められたキーワードの中から値を選択する方式の属性のことを、
+	<strong>列挙属性</strong>と呼ぶ。キーワードは大文字小文字を区別しない。
+	属性名だけで指定できる属性を<strong>論理属性</strong>と呼ぶ。
+	論理属性には値を指定する場合、空文字列を指定するか(属性名="")、
+	属性名を指定する(属性名="属性名")必要がある。
+</p>
+<p>
+	id属性の値には<strong>空白文字(半角スペース、タブ、改行)を含むことはできない。</strong>
+	空白文字が使えない以外は使用できる文字に制限はない。
+</p>
+<p>
+	data-*(カスタムデータ属性)の属性名の中には
+	<strong>アルファベットの大文字を含むことはできない。</strong>
+	なお、カスタムデータ属性は、サイト内部で利用するために用意された属性であり、
+	サイトとは無関係な外部アプリ等から利用するためのものではない。
+</p>
+
+
+<hr class="sline">
+<h1 id="sct02">(2)セクション関連の要素</h1>
+<a href="#sct01">Top</a>
+<a href="#sct01">Before</a>
+<a href="#sct03">Next</a>
 <a href="#last">Last</a>
 <p class="tl">■header</p>
 <header>
@@ -75,6 +126,7 @@
 		セクション内でのヘッダ構造として定義する。セクションに対して一度だけ記述できる
 		通常はセクションの見出し(h1～h6)を含むように意図されているが必須ではない。
 		header要素はセクショニング要素ではないため、<strong>アウトラインを生成しない。</strong>
+		<strong>header要素にheader要素、footer要素、main要素を含むことはできない。</strong>
 	</p>
 
 	<hr>
@@ -101,6 +153,7 @@
 		ナビゲーションを定義する。
 		ドキュメント内の全てのサイドメニューやリンクをnav要素にするのではなく、
 		主にサイト内のコンテンツを移動する主要なナビゲーションに使用する。
+		<strong>nav要素にmain要素を含むことはできない。</strong>
 	</p>
 </header>
 
@@ -135,6 +188,7 @@
 	セクションのフッタ構造を定義する。
 	セクションのフッタの場合と、ページ全体のフッタの場合がある。
 	必ずしもセクションの最後に記載する必要はない。
+	<strong>footer要素にheader要素、footer要素、main要素を含むことはできない。</strong>
 </p>
 
 <hr>
@@ -169,6 +223,7 @@
 <p>
 	独立したコンテンツとして再配布可能、または再利用可能なコンテンツを記述する。
 	article要素が入れ子になる場合、内側の要素の内容は、外側の要素の内容と関連している内容となる。
+	<strong>article要素にmain要素を含むことはできない。</strong>
 </p>
 
 <hr>
@@ -181,14 +236,17 @@
   &lt;h2&gt;AsideTitle&lt;/h2&gt;
 &lt;/aside&gt;
 </pre>
-<p>メインコンテンツ以外の内容を指定する要素。</p>
+<p>
+	メインコンテンツ以外の内容を指定する要素。
+	<strong>aside要素にmain要素を含むことはできない。</strong>
+</p>
 
 
 <hr class="sline">
-<h1 id="sct02">(2)グルーピング関連の要素</h1>
+<h1 id="sct03">(3)グルーピング関連の要素</h1>
 <a href="#sct01">Top</a>
-<a href="#sct01">Before</a>
-<a href="#sct03">Next</a>
+<a href="#sct02">Before</a>
+<a href="#sct04">Next</a>
 <a href="#last">Last</a>
 <p class="tl">■main</p>
 <main class="el">
@@ -203,8 +261,7 @@
 	その文書のメインコンテンツであることを表す。
 	main要素はコンテンツを区分するが、文書のアウトラインに影響することも、
 	影響されることもない。
-	文書内でmain要素は1つのみ記述できる。
-	main要素の中には、header要素、nav要素、footer要素は含まない。
+	<strong>main要素は文書内で1つのみ記述できる。</strong>
 </p>
 
 <hr>
@@ -339,10 +396,10 @@ blockquote要素の内容
 
 
 <hr class="sline">
-<h1 id="sct03">(3)テキスト関連の要素</h1>
+<h1 id="sct04">(4)テキスト関連の要素</h1>
 <a href="#sct01">Top</a>
-<a href="#sct02">Before</a>
-<a href="#sct04">Next</a>
+<a href="#sct03">Before</a>
+<a href="#sct05">Next</a>
 <a href="#last">Last</a>
 <p class="tl">■a</p>
 <a href="http://www.google.co.jp" target="_blank" rel="noreferrer" type="text/html" hreflang="ja">リンク</a>
@@ -660,37 +717,40 @@ log&lt;sub class="el"&gt;10&lt;/sub&gt;X
 
 <hr>
 <p class="tl">■mark</p>
-<p><mark class="el" style="background-color:lightgreen;">ハイライト</mark></p>
+<p><mark class="el">ハイライト</mark></p>
 <pre>
-&lt;mark class="el" style="background-color:lightgreen;"&gt;ハイライト&lt;/mark&gt;
+&lt;mark class="el"&gt;ハイライト&lt;/mark&gt;
 </pre>
 <p>
-	ハイライトさせることにより注意が向くようにするために使用する。
+	元々はそうなっていないテキストの一部を、参照してもらいやすいように目立たせるために使用する。
 	重要性は表さない。
 </p>
 
 <hr>
-<p class="tl">■ruby,rt,rp,rtc</p>
+<p class="tl">■ruby,rb,rt,rp,rtc</p>
 <p>
 	<ruby class="el">
-		漢字<rp>(</rp><rt>かんじ</rt><rp>)</rp>
+		<rb>漢字</rb><rp>(</rp><rt>かんじ</rt><rp>)</rp>
 	</ruby>
 </p>
 <p>
 <pre>
 &lt;ruby class="el"&gt;
-  漢字&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;かんじ&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;
+  &lt;rb&gt;漢字&lt;/rb&gt;&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;かんじ&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;
 &lt;/ruby&gt;
 </pre>
 <ul>
 	<li>ruby
 		<p>ルビ(ふりがな)を振る場合に使用する。</p>
 	</li>
+	<li>rb
+		<p>ルビ(ふりがな)を振る対象(省略可)。</p>
+	</li>
 	<li>rt
 		<p>ルビ(ふりがな)を振る。</p>
 	</li>
 	<li>rp
-		<p>ルビ(ふりがな)をサポートしていないブラウザの場合用の文言を記述する</p>
+		<p>ルビ(ふりがな)をサポートしていないブラウザの場合用の文言を記述する。</p>
 	</li>
 	<li>rtc
 		<p>
@@ -706,7 +766,10 @@ log&lt;sub class="el"&gt;10&lt;/sub&gt;X
 <pre>
 &lt;bdi class="el" title="The bdi element is not supported by browsers yet"&gt;right&lt;/bdi&gt;あいうえお
 </pre>
-<p>テキストの一部分を異なる文字の表記方向に指定する場合に使用する。</p>
+<p>
+	テキストの一部分を異なる文字の表記方向に指定する場合に使用する
+	(Unicodeの双方向アルゴリズムの影響を受けないように分離・独立させる)。
+</p>
 
 <hr>
 <p class="tl">■wbr</p>
@@ -742,10 +805,10 @@ aaaaaaaaaaaaaaaaaaaaaa⇒&lt;wbr class="el"&gt;return
 
 
 <hr class="sline">
-<h1 id="sct04">(4)画像・動画関連の要素</h1>
+<h1 id="sct05">(5)画像・動画関連の要素</h1>
 <a href="#sct01">Top</a>
-<a href="#sct03">Before</a>
-<a href="#sct05">Next</a>
+<a href="#sct04">Before</a>
+<a href="#sct06">Next</a>
 <a href="#last">Last</a>
 <p class="tl">■img</p>
 <img src="./static/kaeru.gif" alt="カエル">
@@ -990,10 +1053,10 @@ function renderCanvas(){
 
 
 <hr class="sline">
-<h1 id="sct05">(5)テーブル関連の要素</h1>
+<h1 id="sct06">(6)テーブル関連の要素</h1>
 <a href="#sct01">Top</a>
-<a href="#sct04">Before</a>
-<a href="#sct06">Next</a>
+<a href="#sct05">Before</a>
+<a href="#sct07">Next</a>
 <a href="#last">Last</a>
 <p class="tl">■table,thead,tbody,tfoot,th,td</p>
 <table class="el">
@@ -1370,10 +1433,10 @@ function renderCanvas(){
 
 
 <hr class="sline">
-<h1 id="sct06">(6)フォーム関連の要素</h1>
+<h1 id="sct07">(7)フォーム関連の要素</h1>
 <a href="#sct01">Top</a>
-<a href="#sct05">Before</a>
-<a href="#sct07">Next</a>
+<a href="#sct06">Before</a>
+<a href="#sct08">Next</a>
 <a href="#last">Last</a>
 <p class="tl">■form</p>
 <form id="frm1" name="frm1" method="post" accept-charset="UTF-8" target="_blank" novalidate autocomplete="on">
@@ -1671,10 +1734,10 @@ value ＞＝ low AND value ＝＜ high
 
 
 <hr class="sline">
-<h1 id="sct07">(7)インタラクティブ関連の要素</h1>
+<h1 id="sct08">(8)インタラクティブ関連の要素</h1>
 <a href="#sct01">Top</a>
-<a href="#sct06">Before</a>
-<a href="#sct08">Next</a>
+<a href="#sct07">Before</a>
+<a href="#sct09">Next</a>
 <a href="#last">Last</a>
 <p class="tl">■details,summary</p>
 <details open class="el">
@@ -1695,17 +1758,17 @@ value ＞＝ low AND value ＝＜ high
 
 
 <hr class="sline">
-<h1 id="sct08">(8)グローバル属性</h1>
+<h1 id="sct09">(9)グローバル属性</h1>
 <a href="#sct01">Top</a>
-<a href="#sct07">Before</a>
-<a href="#sct09">Next</a>
+<a href="#sct08">Before</a>
+<a href="#sct10">Next</a>
 <a href="#last">Last</a>
 <p>
 	グローバル属性とは、どの要素にも使用できる属性のこと。
 	主要なグローバル属性は下記。
 </p>
 <table class="sep">
-<caption>グローバル属性</caption>
+<caption>グローバル属性(赤字がHTML5で追加された属性)</caption>
 <tr>
 	<th>No</th>
 	<th>属性名</th>
@@ -1723,29 +1786,15 @@ value ＞＝ low AND value ＝＜ high
 </tr>
 <tr>
 	<td>3</td>
-	<td>contenteditable</td>
-	<td>要素の内容を編集可能かどうかを指定する属性。</td>
-</tr>
-<tr>
-	<td>4</td>
-	<td>contextmenu</td>
+	<td><span style="color:red;">contenteditable</span></td>
 	<td>
-		要素のコンテキストメニューを指定する属性。<br>
-		(menu要素のid値をcontextmenu属性に指定する)
+		要素の内容を編集可能かどうかを指定する属性。<br>
+		contenteditable="true"<br>
+		contenteditable="false"
 	</td>
 </tr>
 <tr>
-	<td>5</td>
-	<td>data-*</td>
-	<td>要素にカスタム（独自、オリジナル）・データを格納する属性。</td>
-</tr>
-<tr>
-	<td>6</td>
-	<td>datetime</td>
-	<td>ins要素、del要素での日付、日時を指定する属性。</td>
-</tr>
-<tr>
-	<td>7</td>
+	<td>4</td>
 	<td>dir</td>
 	<td>
 		要素内のテキストの方向を指定する属性。<br>
@@ -1754,53 +1803,60 @@ value ＞＝ low AND value ＝＜ high
 	</td>
 </tr>
 <tr>
-	<td>8</td>
-	<td>drragable</td>
-	<td>要素をドラッグ可能かどうかを指定する属性。</td>
-</tr>
-<tr>
-	<td>9</td>
-	<td>hidden</td>
+	<td>5</td>
+	<td><span style="color:red;">hidden</span></td>
 	<td>関連性がある要素かどうかを指定する属性。</td>
 </tr>
 <tr>
-	<td>10</td>
+	<td>6</td>
 	<td>id</td>
 	<td>要素に固有のidを指定する属性。</td>
 </tr>
 <tr>
-	<td>11</td>
+	<td>7</td>
 	<td>lang</td>
 	<td>要素内の言語コードを指定する属性。</td>
 </tr>
 <tr>
-	<td>12</td>
-	<td>spellcheck</td>
-	<td>要素内のテキストのスペルチェックをするかしないかを指定する属性。</td>
+	<td>8</td>
+	<td><span style="color:red;">spellcheck</span></td>
+	<td>
+		要素内のテキストのスペルチェックをするかしないかを指定する属性。<br>
+		spellcheck="true"<br>
+		spellcheck="false"
+	</td>
 </tr>
 <tr>
-	<td>13</td>
+	<td>9</td>
 	<td>style</td>
 	<td>スタイルシートを要素に直接指定するための属性。</td>
 </tr>
 <tr>
-	<td>14</td>
+	<td>10</td>
 	<td>tabindex</td>
 	<td>要素のタブインデックスを指定する属性。</td>
 </tr>
 <tr>
-	<td>15</td>
+	<td>11</td>
 	<td>title</td>
 	<td>要素に関する補足情報を指定する属性。</td>
 </tr>
+<tr>
+	<td>12</td>
+	<td><span style="color:red;">translate</span></td>
+	<td>
+		ローカライズの際に翻訳するかどうかを指定する属性。<br>
+		translate="yes"<br>
+		translate="no"
+	</td>
+</tr>
 </table>
 
-
 <hr class="sline">
-<h1 id="sct09">(9)廃止された要素･属性</h1>
+<h1 id="sct10">(10)廃止された要素･属性</h1>
 <a href="#sct01">Top</a>
-<a href="#sct08">Before</a>
-<a href="#sct10">Next</a>
+<a href="#sct09">Before</a>
+<a href="#sct11">Next</a>
 <a href="#last">Last</a>
 <p>HTML5で廃止された要素と属性は下記。</p>
 
@@ -2402,10 +2458,10 @@ value ＞＝ low AND value ＝＜ high
 
 
 <hr class="sline">
-<h1 id="sct10">(10)セマンティックWeb</h1>
+<h1 id="sct11">(11)セマンティックWeb</h1>
 <a href="#sct01">Top</a>
-<a href="#sct09">Before</a>
-<a href="#sct11">Next</a>
+<a href="#sct10">Before</a>
+<a href="#sct12">Next</a>
 <a href="#last">Last</a>
 <p>
 	HTMLにメタデータを埋め込むことにより、プログラムによって自動的に情報を
@@ -2520,10 +2576,10 @@ value ＞＝ low AND value ＝＜ high
 
 
 <hr class="sline">
-<h1 id="sct11">(11)カスタムデータ属性、data URI</h1>
+<h1 id="sct12">(12)カスタムデータ属性、data URI</h1>
 <a href="#sct01">Top</a>
-<a href="#sct10">Before</a>
-<a href="#sct12">Next</a>
+<a href="#sct11">Before</a>
+<a href="#sct13">Next</a>
 <a href="#last">Last</a>
 <p>■カスタムデータ属性</p>
 <p>
@@ -2557,10 +2613,10 @@ value ＞＝ low AND value ＝＜ high
 
 
 <hr class="sline">
-<h1 id="sct12">(12)レスポンシブWebデザイン</h1>
+<h1 id="sct13">(13)レスポンシブWebデザイン</h1>
 <a href="#sct01">Top</a>
-<a href="#sct11">Before</a>
-<a href="#sct13">Next</a>
+<a href="#sct12">Before</a>
+<a href="#sct14">Next</a>
 <a href="#last">Last</a>
 <p>
 	レスポンシブWebデザインとは、
@@ -3057,10 +3113,10 @@ img {max-width: 100%;}
 
 
 <hr class="sline">
-<h1 id="sct13">(13)スマートフォンの画面サイズと解像度</h1>
+<h1 id="sct14">(14)スマートフォンの画面サイズと解像度</h1>
 <a href="#sct01">Top</a>
-<a href="#sct12">Before</a>
-<a href="#sct14">Next</a>
+<a href="#sct13">Before</a>
+<a href="#sct15">Next</a>
 <a href="#last">Last</a>
 <p class="tl">■デバイスピクセル、CSSピクセル</p>
 <p>
@@ -3207,10 +3263,10 @@ img {max-width: 100%;}
 
 
 <hr class="sline">
-<h1 id="sct14">(14)軽量化・高速化技術</h1>
+<h1 id="sct15">(15)軽量化・高速化技術</h1>
 <a href="#sct01">Top</a>
-<a href="#sct13">Before</a>
-<a href="#sct15">Next</a>
+<a href="#sct14">Before</a>
+<a href="#sct16">Next</a>
 <a href="#last">Last</a>
 <p class="tl">■CSSスプライト</p>
 <p>
@@ -3237,10 +3293,10 @@ img {max-width: 100%;}
 
 
 <hr class="sline">
-<h1 id="sct15">(15)その他の技術</h1>
+<h1 id="sct16">(16)その他の技術</h1>
 <a href="#sct01">Top</a>
-<a href="#sct14">Before</a>
-<a href="#sct16">Next</a>
+<a href="#sct15">Before</a>
+<a href="#sct17">Next</a>
 <a href="#last">Last</a>
 <p class="tl">■リセットCSS</p>
 <p>
@@ -3352,10 +3408,10 @@ black-translucent ⇒ 黒色半透明
 </ul>
 
 <hr class="sline">
-<h1 id="sct16">(16)アプリケーションキャッシュ</h1>
+<h1 id="sct17">(17)アプリケーションキャッシュ</h1>
 <a href="#sct01">Top</a>
-<a href="#sct15">Before</a>
-<a href="#sct17">Next</a>
+<a href="#sct16">Before</a>
+<a href="#sct18">Next</a>
 <a href="#last">Last</a>
 <p>
 	オフラインWebアプリケーションを実現するために、HTML5から導入された仕組み。
@@ -3508,9 +3564,9 @@ FALLBACK:
 
 
 <hr class="sline">
-<h1 id="sct17">(17)HTTP・HTTPS</h1>
+<h1 id="sct18">(18)HTTP・HTTPS</h1>
 <a href="#sct01">Top</a>
-<a href="#sct16">Before</a>
+<a href="#sct17">Before</a>
 <a href="#last">Next</a>
 <a href="#last">Last</a>
 <p class="tl">■HTTPメソッド</p>
@@ -4072,7 +4128,7 @@ FALLBACK:
 
 <span id="last"></span>
 <a href="#sct01">Top</a>
-<a href="#sct17">Before</a>
+<a href="#sct18">Before</a>
 <a href="#last">Next</a>
 <a href="#last">Last</a>
 </body>
